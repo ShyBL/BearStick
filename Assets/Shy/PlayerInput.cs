@@ -9,6 +9,7 @@ public class PlayerInput : MonoBehaviour
     [Header(" Actions ")]
     public Action onMove;
     public Action onMoveStopped;
+    public Action onJump;
     
     public Vector3 moveVector;
     
@@ -40,6 +41,11 @@ public class PlayerInput : MonoBehaviour
     {
         moveVector = Vector3.zero;
         onMoveStopped?.Invoke();
+    }
+    
+    private void OnJumpPerformed(InputAction.CallbackContext context)
+    {
+        onJump?.Invoke();
     }
     
 }
