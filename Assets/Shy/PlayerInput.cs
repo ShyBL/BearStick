@@ -19,6 +19,7 @@ public class PlayerInput : MonoBehaviour
         actionAsset.Enable();
         actionAsset.Player.Move.performed += OnMovePerformed;
         actionAsset.Player.Move.canceled += OnMoveCanceled;
+        actionAsset.Player.Jump.performed += OnJumpPerformed;
     }
 
     private void OnDisable()

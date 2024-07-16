@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 23784222}
   - component: {fileID: 23784221}
   - component: {fileID: 23784223}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3233caaf0c904d8886689b1a7e1ff1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1643986186}
   rb: {fileID: 1643986187}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  groundCheckBoxSize: {x: 4, y: 4}
+  groundCastDistance: 0.1
 --- !u!4 &1582907967
 Transform:
   m_ObjectHideFlags: 0
@@ -862,8 +868,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 1209795245}
   playerPhysx: {fileID: 1582907966}
-  canMove: 1
   moveSpeed: 8
+  airVelocity: 8
+  jumpForce: 15
+  canMove: 1
   moveInputVector: {x: 0, y: 0, z: 0}
 --- !u!4 &1643986186
 Transform:
