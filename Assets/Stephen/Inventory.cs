@@ -79,28 +79,71 @@ public class Inventory : MonoBehaviour
         // Don't load the inventory until initialization is done
         yield return new WaitUntil(() => m_IsInventoryReady);
 
+        // Create each item in the stored items
         foreach (StoredItem loadedItem in StoredItems)
         {
-            // Create the new item visual, which is the visual element that appears in the inventory
-            loadedItem.RootVisual = new ItemVisual(loadedItem.Details);
-
-            AddItemToInventoryGrid(loadedItem.RootVisual);
-
-            bool inventoryHasSpace = GetPositionForItem(loadedItem);
-
-            // If we don't have space remove the item from the grid and continue on
-            // TODO add more here for what happens when inventory is full
-            if (!inventoryHasSpace)
-            {
-                Debug.Log("No space - Cannot pick up the item");
-                RemoveItemFromInventoryGrid(loadedItem.RootVisual);
-                loadedItem.RootVisual = null;
-                continue;
-            }
-
-            // Call this to make the item ready to be shown after we know it's in a valid place
-            ConfigureInventoryItem(loadedItem);
+            CreateItem(loadedItem);
         }
+    }
+
+    // Public function for adding an item to the inventory,
+    // returns true if there was room, false if there was not
+    public bool AddItem(Item item)
+    {
+        // Create a stored item class for the new item
+        StoredItem sItem = new StoredItem
+        {
+            Details = item
+        };
+
+        // Call create item function to create the item in the inventory
+        return CreateItem(sItem);
+    }
+
+    // Creates the visual element for an item and adds it to the inventory grid
+    // Only does that if there is room for the item, returning true if there is room and false if there isn't
+    private bool CreateItem(StoredItem item)
+    {
+        // Create the new item visual, which is the visual element that appears in the inventory
+        item.RootVisual = new ItemVisual(item.Details);
+
+        AddItemToInventoryGrid(item.RootVisual);
+
+        bool inventoryHasSpace = GetPositionForItem(item);
+
+        // If we don't have space remove the item from the grid and continue on
+        if (!inventoryHasSpace)
+        {
+            Debug.Log("No space - Cannot pick up the item");
+            RemoveItemFromInventoryGrid(item.RootVisual);
+            item.RootVisual = null;
+            return false;
+        }
+
+        // Call this to make the item ready to be shown after we know it's in a valid place
+        ConfigureInventoryItem(item);
+
+        return true;
+    }
+
+    // Deletes the passed in stored item, getting rid of its icon visual element
+    // and removing it from the stored items list
+    private void DeleteItem(StoredItem item)
+    {
+        // Remove the visual element from it's parent to get rid of it from the document
+        item.RootVisual.parent.Clear();
+        // Then remove it from the stored item list
+        StoredItems.Remove(item);
+    }
+
+    // Clears all items from the inventory, removing them from the list and their visual elements
+    public void ClearInventory()
+    {
+        // For each item in the list remove its visual element from it's parent
+        foreach (StoredItem item in StoredItems)
+            item.RootVisual.parent.Clear();
+        // Once we finish clearing out the visual elements we can clear the list
+        StoredItems.Clear();
     }
 
     // Finds the first available slot in the inventory and puts the passed in
