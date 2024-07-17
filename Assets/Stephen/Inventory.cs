@@ -26,6 +26,7 @@ public class Inventory : MonoBehaviour
     private VisualElement m_InventoryGrid; // Grid that contains the slot, "Grid" in the UXML file.
     private bool m_IsInventoryReady; // Bool for signaling that inventory has finished initializing and is ready to load.
     private bool m_LayoutReady; // Bool for signaling that the layout engine has finished it's work and VisualElements are setup.
+    private int m_InventoryValue = 0; // The total value of the inventory, is calculated as items are added and removed.
 
     private void Awake()
     {
@@ -123,6 +124,9 @@ public class Inventory : MonoBehaviour
         // Call this to make the item ready to be shown after we know it's in a valid place
         ConfigureInventoryItem(item);
 
+        // Add to the invevntory value the value of the item that was just added
+        m_InventoryValue += item.Details.SellPrice;
+
         return true;
     }
 
@@ -134,6 +138,8 @@ public class Inventory : MonoBehaviour
         item.RootVisual.parent.Clear();
         // Then remove it from the stored item list
         StoredItems.Remove(item);
+        // Remove from the inventory value the price of the item that was just removed
+        m_InventoryValue -= item.Details.SellPrice;
     }
 
     // Clears all items from the inventory, removing them from the list and their visual elements
@@ -144,6 +150,14 @@ public class Inventory : MonoBehaviour
             item.RootVisual.parent.Clear();
         // Once we finish clearing out the visual elements we can clear the list
         StoredItems.Clear();
+        // Reset the inventory value
+        m_InventoryValue = 0;
+    }
+
+    // Returns the pre-calculated value of the inventory
+    public int GetInventoryvalue()
+    {
+        return m_InventoryValue;
     }
 
     // Finds the first available slot in the inventory and puts the passed in
