@@ -13,18 +13,18 @@ public class ItemVisual : VisualElement
 
         name = $"{m_Item.FriendlyName}";
         style.height = m_Item.SlotDimension.Height *
-            Inventory.SlotDimension.Height;
+            Inventory.SlotDimension.y;
         style.width = m_Item.SlotDimension.Width *
-            Inventory.SlotDimension.Width;
+            Inventory.SlotDimension.x;
         style.visibility = Visibility.Hidden;
 
-        /*VisualElement icon = new VisualElement
+        VisualElement icon = new VisualElement
         {
             style = { backgroundImage = m_Item.Icon.texture }
         };
         Add(icon);
 
-        icon.AddToClassList("visual-icon");*/
+        icon.AddToClassList("visual-icon");
         AddToClassList("visual-icon-container");
     }
 

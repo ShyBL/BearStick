@@ -7,18 +7,18 @@
     border-right-color: rgb(255, 255, 255);
     border-top-color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255);
-    width: 60px;
-    height: 60px;
+    width: 24%;
+    height: 16.7%;
 }
 
 .visual-icon-container {
     height: 100%;
     width: 100%;
-    position: absolute;
     padding: 15px;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 255, 255);
     border-width: 1px;
     border-color: rgb(75, 75, 75);
+    position: absolute;
 }
 
 .visual-icon {
