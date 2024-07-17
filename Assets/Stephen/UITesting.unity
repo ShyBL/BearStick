@@ -184,7 +184,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -350,6 +350,41 @@ MonoBehaviour:
       width: 0
       height: 0
   - Details: {fileID: 11400000, guid: 689683d209d6cab48ac9e69ce2760c08, type: 2}
+    OverlapRectangle:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+  - Details: {fileID: 11400000, guid: 970abc73273b84f4699a9c81ccc38ded, type: 2}
+    OverlapRectangle:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+  - Details: {fileID: 11400000, guid: 689683d209d6cab48ac9e69ce2760c08, type: 2}
+    OverlapRectangle:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+  - Details: {fileID: 11400000, guid: 970abc73273b84f4699a9c81ccc38ded, type: 2}
+    OverlapRectangle:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+  - Details: {fileID: 11400000, guid: 970abc73273b84f4699a9c81ccc38ded, type: 2}
+    OverlapRectangle:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+  - Details: {fileID: 11400000, guid: 970abc73273b84f4699a9c81ccc38ded, type: 2}
     OverlapRectangle:
       serializedVersion: 2
       x: 0

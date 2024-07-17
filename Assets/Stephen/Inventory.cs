@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 [Serializable]
 public class StoredItem
 {
-    public InventoryItem Details; // The actual data for the item.
+    public Item Details; // The actual data for the item.
     public ItemVisual RootVisual; // The visual element for displaying the item in the inventory. Icon-Container -> Icon.
     [HideInInspector]
     public Rect OverlapRectangle; // The slots this item takes up in the inventory. Top left slot is (0,0) and so on. Used for checking for open slots.
@@ -17,12 +17,11 @@ public class StoredItem
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance; // Since this class is static you can use this instance to access it following the singleton pattern.
-    public static Vector2 SlotDimension { get; private set; } // Dimensions of a slot, is calculated after layout is ready and is used for positioning Icons.
 
     public List<StoredItem> StoredItems = new List<StoredItem>(); // All the items currently stored in the inventory. Only the Details variables are set in editor, rest are created in LoadInventory.
     public Dimensions InventoryDimensions; // Dimensions of the inventory, set in the editor to a static number based on layout.
 
-    private Vector2 m_Origin; // Origin position of the inventory based on the first slot in it.
+    private List<List<VisualElement>> m_SlotMap = new List<List<VisualElement>>();
     private VisualElement m_Root; // Root visual element of the inventory, "Container" in the UXML file.
     private VisualElement m_InventoryGrid; // Grid that contains the slot, "Grid" in the UXML file.
     private bool m_IsInventoryReady; // Bool for signaling that inventory has finished initializing and is ready to load.
@@ -55,8 +54,8 @@ public class Inventory : MonoBehaviour
         // Give the UI toolkit time to initialize the layout
         yield return new WaitUntil(() => m_LayoutReady);
 
-        // Calculate size of slots
-        ConfigureSlotDimensions();
+        // Create a map of all the slots
+        ConfigureSlotMap();
         // Mark inventory as ready and initialized
         m_IsInventoryReady = true;
     }
@@ -138,9 +137,8 @@ public class Inventory : MonoBehaviour
                     continue;
 
                 // If no conflict was found this position is valid and will be used for the item.
-                // Set item position and it's rectangle for overlap checking in the future.
-                SetItemPosition(newItem.RootVisual, new Vector2(m_Origin.x + SlotDimension.x * x,
-                    m_Origin.y + SlotDimension.y * y));
+                // Add item as child of the correct slot and it's rectangle for overlap checking in the future.
+                m_SlotMap[y][x].Add(newItem.RootVisual);
                 newItem.OverlapRectangle = itemRect;
 
                 return true;
@@ -150,26 +148,34 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    // Sets up the SlotDimension variable with the correct size of slots.
-    // Slots afaik shouldn't get bigger or smaller if resolution scales so this shouldn't need to
-    // be called again for resolution changes.
-    private void ConfigureSlotDimensions()
+    // Gets all slots from the grid and adds them to a 2D list to map all the slots
+    private void ConfigureSlotMap()
     {
-        // Gets a slot from the grid
-        VisualElement firstSlot = m_InventoryGrid.Q<VisualElement>("Slot1");
+        // For keeping track of the current coordinate we're on in the loop
+        int x = 0; int y = 0;
 
-        // Builds a new vector based on the size of that slot, saves it for later use.
-        SlotDimension = new Vector2(firstSlot.worldBound.width, firstSlot.worldBound.height);
+        // Start by adding the first list to the 2d list
+        m_SlotMap.Add(new List<VisualElement>());
 
-        // Save the origin so we can add it to the position as an offset when positioning icons.
-        m_Origin = new Vector2(firstSlot.layout.x, firstSlot.layout.y);
-    }
+        // Slots are already in order due to how they were created in the UI builder
+        foreach (VisualElement slot in m_InventoryGrid.Children())
+        {
+            // If we go over the edge of the inventory width wise
+            if(x >= InventoryDimensions.Width)
+            {
+                // Add a new row
+                m_SlotMap.Add(new List<VisualElement>());
+                // Wrap around to the first slot on the next row
+                x = 0;
+                y++;
+            }
 
-    //Sets the position of an element from a vector, using the top left corner as an origin
-    private static void SetItemPosition(VisualElement element, Vector2 vector)
-    {
-        element.style.left = vector.x; // X position is distance from left
-        element.style.top = vector.y; // Y position is distance from top
+            // Add the slot visual element to it's position in the 2d list
+            m_SlotMap[y].Add(slot);
+
+            // Move on to the next slot
+            x++;
+        }
     }
 
     // Adds the passed in visual element to the inventory grid by adding it as a child of the grid

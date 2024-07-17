@@ -1,10 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+// Sample item data, could be used for all item data or just for inventory/shop
 [CreateAssetMenu(fileName = "New Item", menuName = "Data/Item")]
-public class InventoryItem : ScriptableObject
+public class Item : ScriptableObject
 {
     public string ID = Guid.NewGuid().ToString();
     public string FriendlyName;
@@ -14,6 +13,7 @@ public class InventoryItem : ScriptableObject
     public Dimensions SlotDimension;
 }
 
+// Custom Dimensions variable, basically an int 2d vector
 [Serializable]
 public struct Dimensions
 {
