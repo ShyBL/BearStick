@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
     public Action onMove;
     public Action onMoveStopped;
     public Action onJump;
+    public Action onInteract;
     
     public Vector3 moveVector;
     
@@ -20,6 +21,7 @@ public class PlayerInput : MonoBehaviour
         actionAsset.Player.Move.performed += OnMovePerformed;
         actionAsset.Player.Move.canceled += OnMoveCanceled;
         actionAsset.Player.Jump.performed += OnJumpPerformed;
+        actionAsset.Player.Interact.performed += OnInteractPerformed;
     }
 
     private void OnDisable()
@@ -47,6 +49,11 @@ public class PlayerInput : MonoBehaviour
     private void OnJumpPerformed(InputAction.CallbackContext context)
     {
         onJump?.Invoke();
+    }
+
+    private void OnInteractPerformed(InputAction.CallbackContext context)
+    {
+        onInteract?.Invoke();
     }
     
 }
