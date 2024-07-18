@@ -43,6 +43,23 @@ public class Inventory : MonoBehaviour
 
     private void Start() => StartCoroutine(LoadInventory());
 
+    private void Update()
+    {
+        // When Q is pressed switch whether the inventory is being displayed or not
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            switch(m_Root.resolvedStyle.display)
+            {
+                case DisplayStyle.Flex:
+                    m_Root.style.display = DisplayStyle.None;
+                    break;
+                case DisplayStyle.None:
+                    m_Root.style.display = DisplayStyle.Flex;
+                    break;
+            }
+        }
+    }
+
     // Initializes the inventory. Should only need to be called in Awake.
     private IEnumerator Configure()
     {
@@ -85,6 +102,9 @@ public class Inventory : MonoBehaviour
         {
             CreateItem(loadedItem);
         }
+
+        // Now that inventory is setup time to hide it by default.
+        m_Root.style.display = DisplayStyle.None;
     }
 
     // Public function for adding an item to the inventory,
