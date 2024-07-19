@@ -1,6 +1,4 @@
 .slots {
-    width: 70px;
-    height: 70px;
     border-top-width: 1px;
     border-right-width: 1px;
     border-bottom-width: 1px;
@@ -9,4 +7,31 @@
     border-right-color: rgb(255, 255, 255);
     border-top-color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255);
+    width: 24%;
+    height: 16.7%;
+}
+
+.visual-icon-container {
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(183, 183, 183, 0);
+    border-width: 1px;
+    border-color: rgb(75, 75, 75);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.visual-icon {
+    height: 100%;
+    width: 100%;
+    -unity-background-scale-mode: scale-to-fit;
+    position: absolute;
+    background-color: rgb(202, 202, 202);
 }
