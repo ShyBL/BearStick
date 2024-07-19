@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class PhysicsCollectible : MonoBehaviour
 {
-    private Collectable collectable;
+    [SerializeField] private float launchForce;
+    [SerializeField] private float randomFactor;
+    
+    public Item collectable;
     private Rigidbody2D rigidBody;
 
     private void Awake()
@@ -17,19 +20,19 @@ public class PhysicsCollectible : MonoBehaviour
 
     private void Launch()
     {
-        float launchForce = 10f;
-        float randomFactor = 2f;
-
-        float randomX = Random.Range(-randomFactor, randomFactor);
-        float randomY = Random.Range(0.8f, 1f) * launchForce;
-
-        Vector2 launchDirection = new Vector2(randomX, randomY).normalized;
-
-        rigidBody.velocity = launchDirection * launchForce;
+        // float randomX = Random.Range(-randomFactor, randomFactor);
+        // float randomY = Random.Range(0.8f, 1f) * launchForce;
+        //
+        // Vector2 launchDirection = new Vector2(randomX, randomY).normalized;
+        //
+        // rigidBody.velocity = launchDirection * launchForce;
+        
     }
 
-    public void SetCollectable(Collectable inputCollectable)
+    public void SetCollectable(Item inputCollectable)
     {
         collectable = inputCollectable;
+
+        GetComponent<SpriteRenderer>().sprite = collectable.Icon;
     }
 }

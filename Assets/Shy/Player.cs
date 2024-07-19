@@ -40,7 +40,12 @@ public class Player : MonoBehaviour
         playerInput.onMoveStopped -= MovementHandler;
         playerInput.onJump -= HandleJumping;
     }
-    
+
+    private void Update()
+    {
+        MovementHandler();
+    }
+
     private void MovementHandler()
     {
         if (canMove) 
@@ -53,10 +58,12 @@ public class Player : MonoBehaviour
 
     private void HandleJumping()
     {
-        if (isGrounded())
-        {
-            Jump();
-        }
+        Jump();
+
+        // if (isGrounded())
+        // {
+        //     Jump();
+        // }
     }
     
     public void EnableMovement() => canMove = true;

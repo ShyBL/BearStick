@@ -5,10 +5,11 @@ using UnityEngine.InputSystem;
 public class Stash : MonoBehaviour
 {
     // Here is a list of pickups, serialized so level designers can add pickups to the list for the goal area.
-    [SerializeField] private List<Collectable> collectableList;
+    [SerializeField] private List<Item> collectableList;
     [SerializeField] private PlayerInput playerInput;
 
     [SerializeField] private GameObject physicsCollectable;
+    [SerializeField] private GameObject textGameObject;
 
     // This boolean determines if this goal area has been used or not.
     private bool inRange = false;
@@ -19,6 +20,7 @@ public class Stash : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = true;
+            textGameObject.SetActive(true);
         }
     }
 
@@ -28,6 +30,7 @@ public class Stash : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
+            textGameObject.SetActive(false);
         }
     }
 
@@ -42,7 +45,7 @@ public class Stash : MonoBehaviour
     {
         if (inRange)
         {
-            foreach (Collectable collectable in collectableList)
+            foreach (Item collectable in collectableList)
             {
                 PhysicsCollectible newCollectable = Instantiate(physicsCollectable).GetComponent<PhysicsCollectible>();
                 newCollectable.SetCollectable(collectable);
