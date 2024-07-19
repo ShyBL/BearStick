@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="" />
+    <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Matt/PhysicsCollectible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Matt/PhysicsCollectible.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Matt/PlayerInteractBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Matt/PlayerInteractBox.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +15,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Daniel/FmodAudioManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
@@ -88,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721384054812</updated>
-      <workItem from="1721384090849" duration="741000" />
+      <workItem from="1721384090849" duration="1144000" />
     </task>
     <servers />
   </component>

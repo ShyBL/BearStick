@@ -8,10 +8,10 @@ public class PlayerInteractBox : MonoBehaviour
     {
         if (other.CompareTag("Collectable"))
         {
-            if (Inventory.AddItem(collectable))
-            {
-                Destroy(other.gameObject);
-            }
+            // if (Inventory.AddItem(collectable))
+            // {
+            //     Destroy(other.gameObject);
+            // }
         }
     }
 }
