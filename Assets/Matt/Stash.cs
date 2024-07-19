@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,6 +41,8 @@ public class Stash : MonoBehaviour
         playerInput.onInteract += Interact;
     }
 
+    [SerializeField] private Transform OutPoint;
+    
     // Allows the input action to spawn collectibles from the list as long as the player is within range.
     private void Interact()
     {
@@ -47,7 +50,7 @@ public class Stash : MonoBehaviour
         {
             foreach (Item collectable in collectableList)
             {
-                PhysicsCollectible newCollectable = Instantiate(physicsCollectable).GetComponent<PhysicsCollectible>();
+                PhysicsCollectible newCollectable = Instantiate(physicsCollectable,OutPoint.position,quaternion.identity).GetComponent<PhysicsCollectible>();
                 newCollectable.SetCollectable(collectable);
             }
         }

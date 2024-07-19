@@ -20,13 +20,12 @@ public class PhysicsCollectible : MonoBehaviour
 
     private void Launch()
     {
-        // float randomX = Random.Range(-randomFactor, randomFactor);
-        // float randomY = Random.Range(0.8f, 1f) * launchForce;
-        //
-        // Vector2 launchDirection = new Vector2(randomX, randomY).normalized;
-        //
-        // rigidBody.velocity = launchDirection * launchForce;
+        float randomX = Random.Range(-randomFactor, randomFactor);
+        float randomY = Random.Range(0.8f, 1f) * launchForce;
         
+        Vector2 launchDirection = new Vector2(randomX, randomY).normalized;
+        
+        rigidBody.velocity = launchDirection * launchForce;
     }
 
     public void SetCollectable(Item inputCollectable)

@@ -12,8 +12,8 @@ public class PlayerInteractBox : MonoBehaviour
             Debug.Log($"Picked a {other.gameObject.name}");
             
             Destroy(other.gameObject);
-            
-            if (Inventory.AddItem(other.GetComponent<PhysicsCollectible>().collectable))
+            var Collectible = other.GetComponent<PhysicsCollectible>();
+            if (Inventory.AddItem(Collectible.collectable))
             {
                 Destroy(other.gameObject);
             }
