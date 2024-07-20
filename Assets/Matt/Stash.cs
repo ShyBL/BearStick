@@ -48,11 +48,14 @@ public class Stash : MonoBehaviour
     {
         if (inRange)
         {
+            Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
+            
             foreach (Item collectable in collectableList)
             {
                 PhysicsCollectible newCollectable = Instantiate(physicsCollectable,OutPoint.position,quaternion.identity).GetComponent<PhysicsCollectible>();
                 newCollectable.SetCollectable(collectable);
             }
+            Player.Instance.EnableMovement();
         }
     }
 }

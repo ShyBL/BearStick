@@ -33,4 +33,9 @@ public class PlayerPhysx : MonoBehaviour
     {
         rb.velocity = new Vector3(jumpVector.x * airVelocity, jumpForce,jumpVector.z * airVelocity);
     }
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireCube(playerTransform.position - playerTransform.up * groundCastDistance, groundCheckBoxSize); // ground check visual
+    }
 }

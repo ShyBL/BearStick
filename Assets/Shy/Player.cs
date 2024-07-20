@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 moveInputVector;
     
     public static Player Instance;
-    
+    [SerializeField] public Inventory Inventory;
+
     private void Awake()
     {
         if (Instance == null)
@@ -51,7 +52,9 @@ public class Player : MonoBehaviour
         if (canMove) 
         {
             moveInputVector = playerInput.moveVector;
-
+            
+            Flip();
+            
             playerPhysx.HandleMovement(moveInputVector, moveSpeed);
         }
     }
@@ -64,6 +67,17 @@ public class Player : MonoBehaviour
         // {
         //     Jump();
         // }
+    }
+
+    public int facingDirection;
+    
+    public void Flip() // change the x axis of the scale to -1 if its facing left and 1 if its facing right
+    {
+        if (moveInputVector.x != 0)
+        {
+            facingDirection = moveInputVector.x > 0 ? 1 : -1;
+            transform.localScale = new Vector3(1 * facingDirection, 1, 1);
+        }
     }
     
     public void EnableMovement() => canMove = true;
