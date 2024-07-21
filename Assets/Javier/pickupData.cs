@@ -1,94 +1,66 @@
-//PickupData class inherits from ScriptableObject
-class PickupData : ScriptableObject
+#import <string>
+//pickup data class
+class PickupData
 {
-    //Declaring variables to be used
-    int gainValue;
-    int rarity;
-    int originalValue;
-    int originalRarity;
-    string name;
+    //Declaring variables to be used - taken from the GDD
+    [SerializeField] private int weight;
+    [SerializeField] private int value;
+    [SerializeField] private string definition;
+    [SerializeField] private string name;
+    [SerializeField] private string rarity[4] = { "Common", "Uncommon", "Rare", "Exotic" };
 
-    //Sprite variable
-    Sprite pickupSprite;
-
-    //GainValue function
-    //getter and setter
-    int GainValue
+    //weight - getter and setter
+    public int GetWeight()
     {
-        get { return gainValue; }
-        set { gainValue = value; }
+        return weight;
     }
 
-    //Rarity function
-    //getter and setter
-    int Rarity
+    public void SetWeight(int newWeight)
     {
-        get { return rarity; }
-        set { rarity = value; }
+        weight = newWeight;
     }
 
-    //I believe this is similar to a C++ class constructor
-    //On initialization, object will have gainValue, rarity, and name set
-    Initialize()
+    //value - getter and setter
+    public int GetValue()
     {
-        originalValue = gainValue;
-        originalRarity = rarity;
-
-        SetSprite();
-        name = pickupSprite.sprite.name;
+        return value;
     }
 
-    //Sets value back to default on reset
-    ResetData()
+    public void SetValue(int newValue)
     {
-        gainValue = originalValue;
-        rarity = originalValue;
+        value = newValue;
     }
 
-    SetSprite()
+    //definition - getter and setter
+    public string GetDefinition()
     {
-        //Load sprites from the "Pickups" folder
-        Sprite[] sprites = Resources.LoadAll<Sprite>("Pickups");
-
-        string rarityName = GetRarityName(rarity);
-
-        //LINQ (?) function to shuffle list and find the first sprite with the matching name
-        sprites selectedSprite = sprites
-            .OrderBy(sprites => Random.value)
-            .FirstOrDefault(sprite => sprite.name.Contains(rarityName));
-
-        if (selectedSprite != null)
-        {
-            pickupSprite = selectedSprite;
-        }
-        else
-        {
-            selectedSprite = sprites
-                .OrderBy(sprite => Random.value)
-                .FirstOrDefault(sprites => sprite.name.Contains(rarityName));
-
-            if (selectedSprite != null)
-            {
-                pickupSprite = selectedSprite;
-            }
-        }
+        return definition;
     }
 
-    //Pseudo randomization of pickup rarity
-    string GetRarityName(int i)
+    public void SetDefinition(string newDefinition)
     {
-        if (i > 5)
-        {
-            return "Rare";
-        }
-        else if (i > 2)
-        {
-            return "Uncommon";
-        }
-        else
-        {
-            return "Common";
-        }
+        definition = newDefinition;
     }
 
+    //name - getter and setter
+    public string GetName()
+    {
+        return name;
+    }
+
+    public void SetName(string newName)
+    {
+        name = newName;
+    }
+
+    //rarity - getter and setter
+    public string GetRarity(int i)
+    {
+        return rarity[i];
+    }
+
+    public void SetRarity(int i, string newRarity)
+    {
+        rarity[i] = newRarity;
+    }
 }
