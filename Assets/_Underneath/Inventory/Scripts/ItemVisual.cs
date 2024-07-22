@@ -45,28 +45,40 @@ public class ItemVisual : VisualElement
         RegisterCallback<PointerOutEvent>(OnPointerOut);
     }
 
+    // When the mouse goes over the inventory slot
     void OnPointerOver(PointerOverEvent data)
     {
-        MouseMovement(m_Root.WorldToLocal(data.position));
+        // Convert moust position from world space to local space of root element, then assign that as the position
+        MoveTooltip(m_Root.WorldToLocal(data.position));
+        // Add the tooltip to the root element so it will render
         m_Root.Add(m_Tooltip);
 
+        // Register the mouse movment event so the tooltip will move with the mouse
         RegisterCallback<PointerMoveEvent>(MouseMovementEvent);
     }
 
+    // When the mouse leaves the inventory slot
     void OnPointerOut(PointerOutEvent data)
     {
+        // Deregister the move event as we no longer need it
         UnregisterCallback<PointerMoveEvent>(MouseMovementEvent);
 
+        // Remove the tooltip from the root element so it no longer renders
         m_Root.Remove(m_Tooltip);
     }
 
+    // When the mouse moves, only registered when the mouse is hovering over the inventory slot
     void MouseMovementEvent(PointerMoveEvent data)
     {
-        MouseMovement(m_Root.WorldToLocal(data.position));
+        // Convert moust position from world space to local space of root element, then assign that as the position
+        MoveTooltip(m_Root.WorldToLocal(data.position));
     }
 
-    void MouseMovement(UnityEngine.Vector2 pos)
+    // Moves the tooltip based on the provided position, assumed position is in local space of the root element
+    void MoveTooltip(UnityEngine.Vector2 pos)
     {
+        // Have to have + 1 here so that the tooltip doesn't steal the mouse cursor and cause
+        // the pointer out function above to be called too early
         m_Tooltip.style.left = pos.x + 1;
         m_Tooltip.style.top = pos.y + 1;
     }
