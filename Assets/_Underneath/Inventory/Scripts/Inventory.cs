@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour
     public Dimensions InventoryDimensions; // Dimensions of the inventory, set in the editor to a static number based on layout.
 
     private List<List<VisualElement>> m_SlotMap = new List<List<VisualElement>>();
-    private VisualElement m_Root; // Root visual element of the inventory, "Container" in the UXML file.
+    private VisualElement m_Root; // Root visual element of the inventory, all elements in the UXML file are children of this.
     private VisualElement m_InventoryGrid; // Grid that contains the slot, "Grid" in the UXML file.
     private bool m_IsInventoryReady; // Bool for signaling that inventory has finished initializing and is ready to load.
     private bool m_LayoutReady; // Bool for signaling that the layout engine has finished it's work and VisualElements are setup.
@@ -126,7 +126,7 @@ public class Inventory : MonoBehaviour
     private bool CreateItem(StoredItem item)
     {
         // Create the new item visual, which is the visual element that appears in the inventory
-        item.RootVisual = new ItemVisual(item.Details);
+        item.RootVisual = new ItemVisual(item.Details, m_Root);
 
         AddItemToInventoryGrid(item.RootVisual);
 

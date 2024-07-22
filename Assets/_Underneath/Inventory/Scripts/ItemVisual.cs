@@ -1,12 +1,18 @@
+using System.Numerics;
+using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 public class ItemVisual : VisualElement
 {
     private readonly Item m_Item;
+    private VisualElement m_Root;
+    private VisualElement m_Icon;
+    private VisualElement m_Tooltip;
 
-    public ItemVisual(Item item)
+    public ItemVisual(Item item, VisualElement root)
     {
         m_Item = item;
+        m_Root = root;
 
         // Name it based on the user friendly name of the item.
         name = $"{m_Item.FriendlyName}";
@@ -14,7 +20,7 @@ public class ItemVisual : VisualElement
         style.visibility = Visibility.Hidden;
 
         // Create the actual icon image child element
-        VisualElement icon = new VisualElement
+        m_Icon = new VisualElement
         {
             style = {
                 backgroundImage = m_Item.Icon.texture,
@@ -24,10 +30,44 @@ public class ItemVisual : VisualElement
                 height = Length.Percent(100 * item.SlotDimension.Height)
             }
         };
-        Add(icon);
+        Add(m_Icon);
+
+        // Create the tool tip but don't add it for now, only add it when the mouse hovers over the icon.
+        m_Tooltip = new VisualElement();
 
         // Add the selectors to the elements created so the correct styles are applied
-        icon.AddToClassList("visual-icon");
+        m_Icon.AddToClassList("visual-icon");
+        m_Tooltip.AddToClassList("tooltip");
         AddToClassList("visual-icon-container");
+
+        // Register events for pointer entering and leaving the icon.
+        RegisterCallback<PointerOverEvent>(OnPointerOver);
+        RegisterCallback<PointerOutEvent>(OnPointerOut);
+    }
+
+    void OnPointerOver(PointerOverEvent data)
+    {
+        MouseMovement(m_Root.WorldToLocal(data.position));
+        m_Root.Add(m_Tooltip);
+
+        RegisterCallback<PointerMoveEvent>(MouseMovementEvent);
+    }
+
+    void OnPointerOut(PointerOutEvent data)
+    {
+        UnregisterCallback<PointerMoveEvent>(MouseMovementEvent);
+
+        m_Root.Remove(m_Tooltip);
+    }
+
+    void MouseMovementEvent(PointerMoveEvent data)
+    {
+        MouseMovement(m_Root.WorldToLocal(data.position));
+    }
+
+    void MouseMovement(UnityEngine.Vector2 pos)
+    {
+        m_Tooltip.style.left = pos.x + 1;
+        m_Tooltip.style.top = pos.y + 1;
     }
 }

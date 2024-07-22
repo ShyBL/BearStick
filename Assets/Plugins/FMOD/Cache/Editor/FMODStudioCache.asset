@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Daniel/FMOD_Build/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638569622620000000
+  lastModified: 638572465126572163
   FileSizes: []
   Exists: 1
 --- !u!114 &-8870288114844295893
@@ -202,7 +202,7 @@ MonoBehaviour:
   Path: Assets/Daniel/FMOD_Build/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638569622620000000
+  lastModified: 638572465126420115
   FileSizes: []
   Exists: 1
 --- !u!114 &-2780979386849603393
@@ -271,7 +271,7 @@ MonoBehaviour:
   Path: Assets/Daniel/FMOD_Build/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638569622620000000
+  lastModified: 638572465126435284
   FileSizes:
   - Name: 
     Value: 1536
@@ -421,7 +421,7 @@ MonoBehaviour:
   - {fileID: -3653378984985025045}
   StringsBanks:
   - {fileID: -2169363623663154856}
-  cacheTime: 638569622620000000
+  cacheTime: 638572465126602420
   cacheVersion: 131618
 --- !u!114 &2709301757199182426
 MonoBehaviour:
@@ -438,7 +438,7 @@ MonoBehaviour:
   Path: Assets/Daniel/FMOD_Build/Character.bank
   Name: Character
   StudioPath: bank:/Character
-  lastModified: 638569622590000000
+  lastModified: 638572465126172195
   FileSizes: []
   Exists: 1
 --- !u!114 &3149266970908195078
@@ -619,7 +619,7 @@ MonoBehaviour:
   Path: Assets/Daniel/FMOD_Build/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638569622620000000
+  lastModified: 638572465126602420
   FileSizes: []
   Exists: 1
 --- !u!114 &7787294972202181904
