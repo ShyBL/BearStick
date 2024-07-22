@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] public PlayerInput playerInput;
     [SerializeField] private PlayerPhysx playerPhysx;
+    [SerializeField] private PlayerVisualizer playerVisualizer;
     
     [Header(" Movement ")]
     [SerializeField] private float moveSpeed = 8f;
@@ -26,8 +27,14 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
-    
+
+    private void Start()
+    {
+        playerVisualizer.SetIdle();
+    }
+
     private void OnEnable()
     {
         playerInput.onMove += MovementHandler;
@@ -44,19 +51,33 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        MovementHandler();
+        if (canMove)
+        {
+            moveInputVector = playerInput.moveVector;
+
+            if (moveInputVector.x != 0)
+            {
+                MovementHandler();
+            }
+            else
+            {
+                StopMovementHandler();
+            }
+        }
+    }
+
+    private void StopMovementHandler()
+    {
+        StopInPlace();
+        playerVisualizer.SetIdle();
     }
 
     private void MovementHandler()
     {
-        if (canMove) 
-        {
-            moveInputVector = playerInput.moveVector;
-            
-            Flip();
-            
-            playerPhysx.HandleMovement(moveInputVector, moveSpeed);
-        }
+        Flip();
+        playerVisualizer.SetRun();
+        playerPhysx.HandleMovement(moveInputVector, moveSpeed);
+        
     }
 
     private void HandleJumping()
@@ -71,12 +92,18 @@ public class Player : MonoBehaviour
 
     public int facingDirection;
     
-    public void Flip() // change the x axis of the scale to -1 if its facing left and 1 if its facing right
+    public void Flip() 
     {
+        // change the x axis of the scale to -1 if its facing left and 1 if its facing right
+        // if (moveInputVector.x != 0)
+        // {
+        //     facingDirection = moveInputVector.x > 0 ? 1 : -1;
+        //     transform.localScale = new Vector3(1 * facingDirection, 1, 1);
+        // }
+        
         if (moveInputVector.x != 0)
         {
-            facingDirection = moveInputVector.x > 0 ? 1 : -1;
-            transform.localScale = new Vector3(1 * facingDirection, 1, 1);
+            playerVisualizer.spriteComponent.flipX = moveInputVector.x > 0;
         }
     }
     
@@ -85,7 +112,7 @@ public class Player : MonoBehaviour
     public void StopInPlace() => playerPhysx.HandleMovement(new Vector3(0,0,0), 0);
     
     public void Jump() => playerPhysx.Jump(moveInputVector, airVelocity, jumpForce);
-    public Vector3 velocity() => playerPhysx.CurrentVelocity();
+    public Vector3 Velocity() => playerPhysx.CurrentVelocity();
     public bool isGrounded() => playerPhysx.IsGrounded;
     
 }

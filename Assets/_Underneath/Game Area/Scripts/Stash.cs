@@ -7,8 +7,6 @@ public class Stash : MonoBehaviour
 {
     // Here is a list of pickups, serialized so level designers can add pickups to the list for the goal area.
     [SerializeField] private List<Item> collectableList;
-    [SerializeField] private PlayerInput playerInput;
-
     [SerializeField] private GameObject physicsCollectable;
     [SerializeField] private GameObject textGameObject;
 
@@ -36,9 +34,9 @@ public class Stash : MonoBehaviour
     }
 
     // Subscribes this object to the player's input action.
-    private void OnEnable()
+    private void Start()
     {
-        playerInput.onInteract += Interact;
+        Player.Instance.playerInput.onInteract += Interact;
     }
 
     [SerializeField] private Transform OutPoint;

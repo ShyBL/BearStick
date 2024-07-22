@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerDetector : MonoBehaviour
+public class ExampleDetector : MonoBehaviour
 {
     public GameObject detectedItem;
     public bool itemDetected;
@@ -10,11 +10,12 @@ public class PlayerDetector : MonoBehaviour
         itemDetected = false;
     }
 }
-public class PlayerItemDetector : PlayerDetector
+public class ExampleItemDetector : ExampleDetector
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PhysicsCollectible collectible)) // replace PhysicsCollectible class with any other feature
+        // replace PhysicsCollectible class with any other feature
+        if (other.TryGetComponent(out PhysicsCollectible collectible)) 
         {
             detectedItem = other.gameObject;
             itemDetected = true;
