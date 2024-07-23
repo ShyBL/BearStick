@@ -1,4 +1,5 @@
 using System;
+using FMOD.Studio;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -27,7 +28,6 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
 
     private void Start()
@@ -39,14 +39,14 @@ public class Player : MonoBehaviour
     {
         playerInput.onMove += MovementHandler;
         playerInput.onMoveStopped += MovementHandler;
-        playerInput.onJump += HandleJumping;
+        playerInput.onJump += JumpingHandler;
     }
 
     private void OnDisable()
     {
         playerInput.onMove -= MovementHandler;
         playerInput.onMoveStopped -= MovementHandler;
-        playerInput.onJump -= HandleJumping;
+        playerInput.onJump -= JumpingHandler;
     }
 
     private void Update()
@@ -61,6 +61,10 @@ public class Player : MonoBehaviour
             }
             else
             {
+                if (playerPhysx.CurrentVelocity().y > 0)
+                {
+                    return;
+                }
                 StopMovementHandler();
             }
         }
@@ -69,6 +73,7 @@ public class Player : MonoBehaviour
     private void StopMovementHandler()
     {
         StopInPlace();
+        AudioManager.instance.StopEvent(FMODEvents.instance.FootstepsEvent);
         playerVisualizer.SetIdle();
     }
 
@@ -76,20 +81,23 @@ public class Player : MonoBehaviour
     {
         Flip();
         playerVisualizer.SetRun();
-        playerPhysx.HandleMovement(moveInputVector, moveSpeed);
         
+        playerPhysx.HandleMovement(moveInputVector, moveSpeed);
+        AudioManager.instance.PlayEvent(FMODEvents.instance.FootstepsEvent, transform.position);
     }
-
-    private void HandleJumping()
+ 
+    private void JumpingHandler()
     {
-        Jump();
+        playerVisualizer.SetJump();
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.Jump,transform.position);
+        playerPhysx.Jump(moveInputVector, airVelocity, jumpForce);
 
         // if (isGrounded())
         // {
         //     Jump();
         // }
     }
-
+    
     public int facingDirection;
     
     public void Flip() 
