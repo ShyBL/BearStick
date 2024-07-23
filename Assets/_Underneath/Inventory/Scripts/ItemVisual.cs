@@ -145,7 +145,7 @@ public class ItemVisual : VisualElement
         MoveTooltip(m_Root.WorldToLocal(data.position));
     }
 
-    // Function for moving the tooltip to the passed position, use this instead of move item for moving tooltip
+    // Function for moving the tooltip to the passed position, use this instead of move element for moving tooltip
     void MoveTooltip(UnityEngine.Vector2 pos)
     {
         // Have to have + 1 here so that the tooltip doesn't steal the mouse cursor and cause
@@ -153,6 +153,7 @@ public class ItemVisual : VisualElement
         MoveElement(m_Tooltip, pos + new UnityEngine.Vector2(1, 1));
     }
 
+    // Function for moving the item icons, use this instead of move element for moving an item icon
     void MoveItem(UnityEngine.Vector2 pos)
     {
         MoveElement(m_Icon, pos);
