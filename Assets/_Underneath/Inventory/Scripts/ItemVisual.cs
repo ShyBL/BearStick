@@ -1,6 +1,8 @@
 using System.Numerics;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
+using static UnityEditor.Progress;
 
 public class ItemVisual : VisualElement
 {
@@ -8,6 +10,8 @@ public class ItemVisual : VisualElement
     private VisualElement m_Root;
     private VisualElement m_Icon;
     private VisualElement m_Tooltip;
+    private bool m_TooltipShown = false;
+    private bool m_Dragging = false;
 
     public ItemVisual(Item item, VisualElement root)
     {
@@ -44,31 +48,54 @@ public class ItemVisual : VisualElement
         RegisterCallback<PointerOverEvent>(OnPointerOver);
         RegisterCallback<PointerOutEvent>(OnPointerOut);
         RegisterCallback<PointerDownEvent>(OnPointerDown);
-        RegisterCallback<PointerUpEvent>(OnPointerUp);
     }
 
+    // When the mouse is pressed on a slot we need to start dragging that item
     void OnPointerDown(PointerDownEvent data)
     {
+        // Hides the tool tip while we are dragging
+        HideTooltip();
 
+        // Set the icon's position to the current position of the mouse
+        MoveItem(data.localPosition);
+
+        // Register the mouse move event for dragging, use m_Root so it keeps tracking
+        // movement even if cursor manages to get outside the icon.
+        m_Root.RegisterCallback<PointerMoveEvent>(DragItem);
+
+        // Set dragging to true
+        m_Dragging = true;
     }
 
-    void OnPointerUp(PointerUpEvent data)
+    // Mouse move event for dragging the item, called while dragging an item every time the mouse moves
+    void DragItem(PointerMoveEvent data)
     {
+        // If the player is still holding the mouse button and dragging the item
+        if (Input.GetMouseButton(0))
+            // Move the item, converting the world position of the mouse to the local position of the slot
+            MoveItem(this.WorldToLocal(data.position));
+        // If we're not holding the mouse anymore we need to stop dragging
+        else
+        {
+            // Unregister the drag event
+            m_Root.UnregisterCallback<PointerMoveEvent>(DragItem);
 
+            // For now reset the icon back to its origin, this will be for invalid drags
+            m_Icon.style.left = 0;
+            m_Icon.style.top = 0;
+
+            // Set dragging back to false
+            m_Dragging = false;
+        }
     }
 
-    void MoveItem(PointerMoveEvent data)
-    {
-
-    }
-
-    // When the mouse goes over the inventory slot
+    // When the mouse goes over the inventory slot start showing the tooltip
     void OnPointerOver(PointerOverEvent data)
     {
         ShowTooltip(data.position);
     }
 
-    // When the mouse leaves the inventory slot
+    // When the mouse leaves the inventory slot hide the tooltip
     void OnPointerOut(PointerOutEvent data)
     {
         HideTooltip();
@@ -77,23 +104,37 @@ public class ItemVisual : VisualElement
     // Shows the tooltip and handles registering the mouse movement event for moving it with the mouse
     void ShowTooltip(UnityEngine.Vector2 pos)
     {
-        // Convert moust position from world space to local space of root element, then assign that as the position
-        MoveTooltip(m_Root.WorldToLocal(pos));
-        // Add the tooltip to the root element so it will render
-        m_Root.Add(m_Tooltip);
+        // Check to make sure we aren't already showing the tooltip and that we aren't dragging the item
+        if (m_TooltipShown == false && m_Dragging == false)
+        {
+            // Convert moust position from world space to local space of root element, then assign that as the position
+            MoveTooltip(m_Root.WorldToLocal(pos));
+            // Add the tooltip to the root element so it will render
+            m_Root.Add(m_Tooltip);
 
-        // Register the mouse movment event so the tooltip will move with the mouse
-        RegisterCallback<PointerMoveEvent>(TooltipMouseMovement);
+            // Register the mouse movment event so the tooltip will move with the mouse
+            RegisterCallback<PointerMoveEvent>(TooltipMouseMovement);
+
+            // Set tooltip to shown locally
+            m_TooltipShown = true;
+        }
     }
 
     // Function that actually removes the tooltip and gets rid of the mouse movement callback event
     void HideTooltip()
     {
-        // Deregister the move event as we no longer need it since tooltip will be hidden
-        UnregisterCallback<PointerMoveEvent>(TooltipMouseMovement);
+        // Check to make sure the tool tip is actually be shown
+        if (m_TooltipShown == true)
+        {
+            // Deregister the move event as we no longer need it since tooltip will be hidden
+            UnregisterCallback<PointerMoveEvent>(TooltipMouseMovement);
 
-        // Remove the tooltip from the root element so it no longer renders
-        m_Root.Remove(m_Tooltip);
+            // Remove the tooltip from the root element so it no longer renders
+            m_Root.Remove(m_Tooltip);
+
+            // Set tooltip to hidden locally
+            m_TooltipShown = false;
+        }
     }
 
     // When the mouse moves this is called to move the tooltip, only registered when the mouse 
@@ -109,13 +150,18 @@ public class ItemVisual : VisualElement
     {
         // Have to have + 1 here so that the tooltip doesn't steal the mouse cursor and cause
         // the pointer out function above to be called too early
-        MoveItem(m_Tooltip, pos + new UnityEngine.Vector2(1, 1));
+        MoveElement(m_Tooltip, pos + new UnityEngine.Vector2(1, 1));
+    }
+
+    void MoveItem(UnityEngine.Vector2 pos)
+    {
+        MoveElement(m_Icon, pos);
     }
 
     // Moves the tooltip based on the provided position, assumed position is in local space of the root element
-    void MoveItem(VisualElement item, UnityEngine.Vector2 pos)
+    void MoveElement(VisualElement item, UnityEngine.Vector2 pos)
     {
-        item.style.left = pos.x + 1;
-        item.style.top = pos.y + 1;
+        item.style.left = pos.x;
+        item.style.top = pos.y;
     }
 }
