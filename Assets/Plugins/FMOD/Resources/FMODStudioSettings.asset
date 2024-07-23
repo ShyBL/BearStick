@@ -318,7 +318,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: 
-  sourceBankPath: Assets/Daniel/FMOD_Build
+  sourceBankPath: Assets/_Underneath/Sound/Assets/FMOD_Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

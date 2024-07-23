@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class AudioManager : MonoBehaviour
 {
@@ -90,6 +92,38 @@ public class AudioManager : MonoBehaviour
         return emitter;
     }
 
+    private PLAYBACK_STATE PlaybackState(EventInstance instance)
+    {
+        instance.getPlaybackState(out PLAYBACK_STATE state);
+        return state;
+    }
+    
+    public EventInstance? GetInstance(EventInstance eventInstance)
+    {
+        foreach (var getInstance in eventInstances.Where(getInstance => getInstance.ToString() == eventInstance.ToString()))
+        {
+            return getInstance;
+        }
+
+        return null;
+    }
+    
+    public void PlayEvent(EventInstance fmodEvent, Vector3 posInWorld)
+    {
+        if (PlaybackState(fmodEvent) != PLAYBACK_STATE.PLAYING)
+        {
+            fmodEvent.set3DAttributes(RuntimeUtils.To3DAttributes(posInWorld));
+            fmodEvent.start();
+        }
+    }
+    
+    public void StopEvent(EventInstance fmodEvent)
+    {
+        fmodEvent.stop(STOP_MODE.ALLOWFADEOUT);
+        fmodEvent.release();
+    }
+    
+    
     private void CleanUp()
     {
         // stop and release any created instances

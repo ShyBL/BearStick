@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using FMODUnity;
 
@@ -27,6 +29,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Pause { get; private set; }
     [field: SerializeField] public EventReference UnPause { get; private set; }
 
+    public EventInstance FootstepsEvent { get; private set; }
     public static FMODEvents instance { get; private set; }
 
     private void Awake()
@@ -36,5 +39,10 @@ public class FMODEvents : MonoBehaviour
             Debug.LogError("Found more than one FMOD Events instance in the scene.");
         }
         instance = this;
+    }
+
+    private void Start()
+    {
+        FootstepsEvent = AudioManager.instance.CreateInstance(Footsteps);
     }
 }
