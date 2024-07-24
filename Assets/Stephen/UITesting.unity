@@ -408,6 +408,7 @@ MonoBehaviour:
   InventoryDimensions:
     Height: 6
     Width: 4
+  m_MaxWeight: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

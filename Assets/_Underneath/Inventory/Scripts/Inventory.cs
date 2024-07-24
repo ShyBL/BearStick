@@ -27,6 +27,9 @@ public class Inventory : MonoBehaviour
     private bool m_IsInventoryReady; // Bool for signaling that inventory has finished initializing and is ready to load.
     private bool m_LayoutReady; // Bool for signaling that the layout engine has finished it's work and VisualElements are setup.
     private int m_InventoryValue = 0; // The total value of the inventory, is calculated as items are added and removed.
+    [SerializeField]
+    private float m_MaxWeight;
+    private float m_CurrentWeight;
 
     private void Awake()
     {
@@ -125,6 +128,9 @@ public class Inventory : MonoBehaviour
     // Only does that if there is room for the item, returning true if there is room and false if there isn't
     private bool CreateItem(StoredItem item)
     {
+        if (item.Details.Weight + m_CurrentWeight > m_MaxWeight)
+            return false;
+
         // Create the new item visual, which is the visual element that appears in the inventory
         item.RootVisual = new ItemVisual(item, m_Root, this);
 
@@ -146,6 +152,7 @@ public class Inventory : MonoBehaviour
 
         // Add to the invevntory value the value of the item that was just added
         m_InventoryValue += item.Details.SellPrice;
+        m_CurrentWeight += item.Details.Weight;
 
         return true;
     }
@@ -160,6 +167,7 @@ public class Inventory : MonoBehaviour
         StoredItems.Remove(item);
         // Remove from the inventory value the price of the item that was just removed
         m_InventoryValue -= item.Details.SellPrice;
+        m_CurrentWeight -= item.Details.Weight;
     }
 
     // Clears all items from the inventory, removing them from the list and their visual elements
@@ -172,6 +180,7 @@ public class Inventory : MonoBehaviour
         StoredItems.Clear();
         // Reset the inventory value
         m_InventoryValue = 0;
+        m_CurrentWeight = 0;
     }
 
     // Returns the pre-calculated value of the inventory
