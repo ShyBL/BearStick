@@ -126,7 +126,7 @@ public class Inventory : MonoBehaviour
     private bool CreateItem(StoredItem item)
     {
         // Create the new item visual, which is the visual element that appears in the inventory
-        item.RootVisual = new ItemVisual(item.Details, m_Root);
+        item.RootVisual = new ItemVisual(item, m_Root, this);
 
         AddItemToInventoryGrid(item.RootVisual);
 
@@ -152,7 +152,7 @@ public class Inventory : MonoBehaviour
 
     // Deletes the passed in stored item, getting rid of its icon visual element
     // and removing it from the stored items list
-    private void DeleteItem(StoredItem item)
+    public void DeleteItem(StoredItem item)
     {
         // Remove the visual element from it's parent to get rid of it from the document
         item.RootVisual.parent.Clear();

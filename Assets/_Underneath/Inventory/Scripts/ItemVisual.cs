@@ -6,20 +6,24 @@ using static UnityEditor.Progress;
 
 public class ItemVisual : VisualElement
 {
-    private readonly Item m_Item;
+    private StoredItem m_Item;
+    private Inventory m_InventoryComp;
     private VisualElement m_Root;
+    private VisualElement m_Inventory;
     private VisualElement m_Icon;
     private VisualElement m_Tooltip;
     private bool m_TooltipShown = false;
     private bool m_Dragging = false;
 
-    public ItemVisual(Item item, VisualElement root)
+    public ItemVisual(StoredItem item, VisualElement root, Inventory inventoryComp)
     {
         m_Item = item;
         m_Root = root;
+        m_Inventory = m_Root.Q<VisualElement>("Inventory");
+        m_InventoryComp = inventoryComp;
 
         // Name it based on the user friendly name of the item.
-        name = $"{m_Item.FriendlyName}";
+        name = $"{m_Item.Details.FriendlyName}";
         // Set it to hidden at first so it doesn't show up till we find a spot for it in inventory.
         style.visibility = Visibility.Hidden;
 
@@ -27,11 +31,11 @@ public class ItemVisual : VisualElement
         m_Icon = new VisualElement
         {
             style = {
-                backgroundImage = m_Item.Icon.texture,
+                backgroundImage = m_Item.Details.Icon.texture,
                 // TODO in the future if we support bigger items change this as this only works with 1x1 items
                 // Set the width and length depending on the size of the object using percent as pixel had floating point inaccuracies.
-                width = Length.Percent(100 * item.SlotDimension.Width),
-                height = Length.Percent(100 * item.SlotDimension.Height)
+                width = Length.Percent(100 * item.Details.SlotDimension.Width),
+                height = Length.Percent(100 * item.Details.SlotDimension.Height)
             }
         };
         Add(m_Icon);
@@ -48,6 +52,7 @@ public class ItemVisual : VisualElement
         RegisterCallback<PointerOverEvent>(OnPointerOver);
         RegisterCallback<PointerOutEvent>(OnPointerOut);
         RegisterCallback<PointerDownEvent>(OnPointerDown);
+        m_InventoryComp = inventoryComp;
     }
 
     // When the mouse is pressed on a slot we need to start dragging that item
@@ -62,31 +67,52 @@ public class ItemVisual : VisualElement
         // Register the mouse move event for dragging, use m_Root so it keeps tracking
         // movement even if cursor manages to get outside the icon.
         m_Root.RegisterCallback<PointerMoveEvent>(DragItem);
+        m_Root.RegisterCallback<PointerUpEvent>(OnPointerUp);
 
         // Set dragging to true
         m_Dragging = true;
     }
 
+    void OnPointerUp(PointerUpEvent data) 
+    {
+        EndDragging(data.position);
+    }
+
     // Mouse move event for dragging the item, called while dragging an item every time the mouse moves
     void DragItem(PointerMoveEvent data)
     {
-        // If the player is still holding the mouse button and dragging the item
-        if (Input.GetMouseButton(0))
+        // If the mouse is still being held down
+        if(Input.GetMouseButton(0))
             // Move the item, converting the world position of the mouse to the local position of the slot
             MoveItem(this.WorldToLocal(data.position));
-        // If we're not holding the mouse anymore we need to stop dragging
+        // If the mouse isn't held down anymore
         else
-        {
-            // Unregister the drag event
-            m_Root.UnregisterCallback<PointerMoveEvent>(DragItem);
+            // Call the function to end dragging
+            EndDragging(data.position);
+    }
 
-            // For now reset the icon back to its origin, this will be for invalid drags
+    // Ends the dragging, either removing the item if outside the inventory or resetting it if inside the inventory
+    void EndDragging(UnityEngine.Vector2 pos)
+    {
+        // Unregister the drag event
+        m_Root.UnregisterCallback<PointerMoveEvent>(DragItem);
+        m_Root.UnregisterCallback<PointerUpEvent>(OnPointerUp);
+
+        // Check if the mouse is currently inside the inventory box
+        if (m_Inventory.localBound.Contains(m_Inventory.WorldToLocal(pos)))
+        {
+            // If it is reset the item back to its slot
             m_Icon.style.left = 0;
             m_Icon.style.top = 0;
-
-            // Set dragging back to false
-            m_Dragging = false;
         }
+        // If it's not inside the inventory
+        else
+            // TODO add code to spew the item out here
+            // Delete the item from the inventory
+            m_InventoryComp.DeleteItem(m_Item);
+
+        // Set dragging back to false
+        m_Dragging = false;
     }
 
     // When the mouse goes over the inventory slot start showing the tooltip
