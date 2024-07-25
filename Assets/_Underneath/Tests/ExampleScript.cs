@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using FMODUnity;
+//using FMODUnity;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -21,7 +21,7 @@ public class ExampleStash : MonoBehaviour
     [SerializeField] private SpriteRenderer visual;
     [SerializeField] private Animator animator;
     
-    private EventReference _stashSound;
+   // private EventReference _stashSound;
     private List<GameObject> _collectablesList;
     private bool _inRange;
 
@@ -40,13 +40,13 @@ public class ExampleStash : MonoBehaviour
         {
             case StashType.Dumpster:
                 
-                _stashSound = FMODEvents.instance.Dumpster;
+                //_stashSound = FMODEvents.instance.Dumpster;
                 visual.sprite = stashData.stashSprite;
                 break;
             
             case StashType.Trashcan:
                 
-                _stashSound = FMODEvents.instance.Trashcan;
+                //_stashSound = FMODEvents.instance.Trashcan;
                 visual.sprite = stashData.stashSprite;
                 break;
             
@@ -93,7 +93,7 @@ public class ExampleStash : MonoBehaviour
     private void Interact()
     {
         animator.Play("Open");
-        AudioManager.instance.PlayOneShot(_stashSound,transform.position);
+        //AudioManager.instance.PlayOneShot(_stashSound,transform.position);
             
         Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
 

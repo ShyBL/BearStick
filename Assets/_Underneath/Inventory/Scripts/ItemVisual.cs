@@ -1,8 +1,5 @@
-using System.Numerics;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
-using static UnityEditor.Progress;
 
 public class ItemVisual : VisualElement
 {
