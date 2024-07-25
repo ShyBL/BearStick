@@ -11,6 +11,7 @@ public class Item : ScriptableObject
     public int SellPrice;
     public Sprite Icon;
     public Dimensions SlotDimension;
+    public float Weight;
 }
 
 // Custom Dimensions variable, basically an int 2d vector
