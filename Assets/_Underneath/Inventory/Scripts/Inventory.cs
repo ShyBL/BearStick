@@ -34,6 +34,7 @@ public class Inventory : MonoBehaviour
     private UIDocument m_Hud;
     private Label m_CurrentWeightElement;
     private Label m_MaxWeightElement;
+    private Button m_InventoryButton;
 
     private void Awake()
     {
@@ -55,15 +56,7 @@ public class Inventory : MonoBehaviour
         // When Q is pressed switch whether the inventory is being displayed or not
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            switch(m_Root.resolvedStyle.display)
-            {
-                case DisplayStyle.Flex:
-                    m_Root.style.display = DisplayStyle.None;
-                    break;
-                case DisplayStyle.None:
-                    m_Root.style.display = DisplayStyle.Flex;
-                    break;
-            }
+            ToggleInventory();
         }
     }
 
@@ -78,6 +71,8 @@ public class Inventory : MonoBehaviour
         m_MaxWeightElement = m_Hud.rootVisualElement.Q<Label>("MaxWeight");
         m_MaxWeightElement.text = m_MaxWeight.ToString();
         m_CurrentWeightElement.text = m_CurrentWeight.ToString();
+        m_InventoryButton = m_Hud.rootVisualElement.Q<Button>("Inventory");
+        m_InventoryButton.RegisterCallback<ClickEvent>(ToggleInventory);
         //m_Root.RegisterCallback<GeometryChangedEvent>(OnLayoutFinished);
 
         // Give the UI toolkit time to initialize the layout
@@ -87,6 +82,19 @@ public class Inventory : MonoBehaviour
         ConfigureSlotMap();
         // Mark inventory as ready and initialized
         m_IsInventoryReady = true;
+    }
+
+    private void ToggleInventory(ClickEvent evt = null)
+    {
+        switch (m_Root.resolvedStyle.display)
+        {
+            case DisplayStyle.Flex:
+                m_Root.style.display = DisplayStyle.None;
+                break;
+            case DisplayStyle.None:
+                m_Root.style.display = DisplayStyle.Flex;
+                break;
+        }
     }
 
     // Commented out related code for this function as this is no longer needed for now
