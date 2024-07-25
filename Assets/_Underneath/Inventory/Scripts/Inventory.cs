@@ -77,6 +77,7 @@ public class Inventory : MonoBehaviour
         m_CurrentWeightElement = m_Hud.rootVisualElement.Q<Label>("CurrentWeight");
         m_MaxWeightElement = m_Hud.rootVisualElement.Q<Label>("MaxWeight");
         m_MaxWeightElement.text = m_MaxWeight.ToString();
+        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
         //m_Root.RegisterCallback<GeometryChangedEvent>(OnLayoutFinished);
 
         // Give the UI toolkit time to initialize the layout
