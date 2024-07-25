@@ -36,7 +36,7 @@ public class Inventory : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            StartCoroutine(Configure());
+            Configure();
         }
         else if (Instance != this)
         {
@@ -64,16 +64,16 @@ public class Inventory : MonoBehaviour
     }
 
     // Initializes the inventory. Should only need to be called in Awake.
-    private IEnumerator Configure()
+    private void Configure()
     {
         // Get the document and visual elements we will need
         UIDocument doc = GetComponentInChildren<UIDocument>();
         m_Root = doc.rootVisualElement;
         m_InventoryGrid = m_Root.Q<VisualElement>("Grid");
-        m_Root.RegisterCallback<GeometryChangedEvent>(OnLayoutFinished);
+        //m_Root.RegisterCallback<GeometryChangedEvent>(OnLayoutFinished);
 
         // Give the UI toolkit time to initialize the layout
-        yield return new WaitUntil(() => m_LayoutReady);
+        //yield return new WaitUntil(() => m_LayoutReady);
 
         // Create a map of all the slots
         ConfigureSlotMap();
@@ -81,6 +81,8 @@ public class Inventory : MonoBehaviour
         m_IsInventoryReady = true;
     }
 
+    // Commented out related code for this function as this is no longer needed for now
+    // and it seems to not be consistent, as when I switched computers it stopped working.
     // Function that is called when the root element of the inventory document changes.
     // Is used for determining when the layout is finished being created during Configuration.
     // Will be useful to use if we handle changing resolutions.
