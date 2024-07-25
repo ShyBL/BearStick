@@ -30,6 +30,10 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private float m_MaxWeight;
     private float m_CurrentWeight;
+    [SerializeField]
+    private UIDocument m_Hud;
+    private Label m_CurrentWeightElement;
+    private Label m_MaxWeightElement;
 
     private void Awake()
     {
@@ -70,6 +74,9 @@ public class Inventory : MonoBehaviour
         UIDocument doc = GetComponentInChildren<UIDocument>();
         m_Root = doc.rootVisualElement;
         m_InventoryGrid = m_Root.Q<VisualElement>("Grid");
+        m_CurrentWeightElement = m_Hud.rootVisualElement.Q<Label>("CurrentWeight");
+        m_MaxWeightElement = m_Hud.rootVisualElement.Q<Label>("MaxWeight");
+        m_MaxWeightElement.text = m_MaxWeight.ToString();
         //m_Root.RegisterCallback<GeometryChangedEvent>(OnLayoutFinished);
 
         // Give the UI toolkit time to initialize the layout
@@ -155,6 +162,7 @@ public class Inventory : MonoBehaviour
         // Add to the invevntory value the value of the item that was just added
         m_InventoryValue += item.Details.SellPrice;
         m_CurrentWeight += item.Details.Weight;
+        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
 
         return true;
     }
@@ -170,6 +178,7 @@ public class Inventory : MonoBehaviour
         // Remove from the inventory value the price of the item that was just removed
         m_InventoryValue -= item.Details.SellPrice;
         m_CurrentWeight -= item.Details.Weight;
+        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
     }
 
     // Clears all items from the inventory, removing them from the list and their visual elements
@@ -183,6 +192,7 @@ public class Inventory : MonoBehaviour
         // Reset the inventory value
         m_InventoryValue = 0;
         m_CurrentWeight = 0;
+        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
     }
 
     // Returns the pre-calculated value of the inventory
