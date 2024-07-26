@@ -1,4 +1,5 @@
-.text-spacing {
-    color: rgb(255, 255, 255);
-    font-size: 160%;
+.text {
+    flex-direction: row;
+    font-size: 52px;
+    color: rgb(224, 224, 224);
 }
