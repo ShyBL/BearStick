@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8942679700314427768}
   - component: {fileID: 1151536332091045168}
+  - component: {fileID: 3885687441023041008}
   m_Layer: 0
   m_Name: EndOfDayUI
   m_TagString: Untagged
@@ -48,3 +49,19 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 841704ee1795c654589d4fe9a22603ee, type: 3}
   m_SortingOrder: 1
+--- !u!114 &3885687441023041008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833380432408288992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea73fd31c060dd143a72ff368ca4db4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseExpenses: 20
+  ExpensesIncrease: 5
+  IncreaseFrequency: 3
+  m_PlayerData: {fileID: 11400000, guid: 24549b6c0f9b1c840a0b14e4debfd69a, type: 2}

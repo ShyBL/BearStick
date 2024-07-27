@@ -2,25 +2,25 @@
     <Style src="project://database/Assets/Stephen/EndDayStyle.uss?fileID=7433441132597879392&amp;guid=e6f185c8a553f0947bc33406172bc40b&amp;type=3#EndDayStyle" />
     <ui:VisualElement name="Container" class="text-spacing" style="margin-top: 10%; margin-right: 20%; margin-bottom: 10%; margin-left: 20%; flex-grow: 1;">
         <ui:VisualElement name="Window" style="flex-grow: 1; background-color: rgb(0, 0, 0); border-top-left-radius: 3%; border-top-right-radius: 3%; border-bottom-right-radius: 3%; border-bottom-left-radius: 3%; flex-direction: row; padding-top: 5%; padding-right: 5%; padding-bottom: 5%; padding-left: 5%;">
-            <ui:VisualElement name="TextList" style="flex-grow: 1; width: 26%; justify-content: center;">
+            <ui:VisualElement name="TextList" style="flex-grow: 1; width: 15%; justify-content: center;">
                 <ui:VisualElement name="PrevMoneyParent" class="text">
-                    <ui:Label tabindex="-1" text="Previous Money:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-spacing" style="width: 75%;" />
+                    <ui:Label tabindex="-1" text="Previous Money:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-spacing" style="width: 77%;" />
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PrevMoney" />
                 </ui:VisualElement>
                 <ui:VisualElement name="EarnedMoneyParent" class="text" style="flex-direction: row;">
-                    <ui:Label tabindex="-1" text="Money Earned:" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 75%;" />
+                    <ui:Label tabindex="-1" text="Money Earned:" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 77%;" />
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EarnedMoney" />
                 </ui:VisualElement>
                 <ui:VisualElement name="ExpensesParent" class="text" style="flex-direction: row;">
-                    <ui:Label tabindex="-1" text="Expenses:" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 75%;" />
+                    <ui:Label tabindex="-1" text="Expenses:" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 77%;" />
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Expenses" />
                 </ui:VisualElement>
                 <ui:VisualElement name="TotalMoneyParent" class="text" style="flex-direction: row;">
-                    <ui:Label tabindex="-1" text="Total Money:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-spacing" style="width: 75%;" />
+                    <ui:Label tabindex="-1" text="Total Money:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-spacing" style="width: 77%;" />
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalMoney" class="text-spacing" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Image" style="background-image: url(&quot;project://database/Assets/_Underneath/Player/Animation/Emma_Idle_sheet.png?fileID=451886154&amp;guid=f23660cb7d1776a4681a8f3f37c216c3&amp;type=3#Emma_Idle_sheet_0&quot;); -unity-background-scale-mode: scale-to-fit; margin-top: 7%; margin-right: 7%; margin-bottom: 7%; margin-left: 7%; flex-grow: 1;" />
+            <ui:VisualElement name="Image" style="background-image: url(&quot;project://database/Assets/_Underneath/Player/Animation/Emma_Idle_sheet.png?fileID=451886154&amp;guid=f23660cb7d1776a4681a8f3f37c216c3&amp;type=3#Emma_Idle_sheet_0&quot;); -unity-background-scale-mode: scale-to-fit; margin-top: 7%; margin-right: 0; margin-bottom: 7%; margin-left: 7%; flex-grow: 1;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
