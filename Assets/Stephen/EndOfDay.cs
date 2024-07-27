@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,6 +15,7 @@ public class EndOfDay : MonoBehaviour
     private Label m_TotalMoneyLabel;
     private Label m_EarnedMoneyLabel;
     private Label m_ExpensesLabel;
+    private Label m_Title;
 
     void Start()
     {
@@ -22,15 +24,22 @@ public class EndOfDay : MonoBehaviour
         m_TotalMoneyLabel = m_Document.rootVisualElement.Q<Label>("TotalMoney");
         m_EarnedMoneyLabel = m_Document.rootVisualElement.Q<Label>("EarnedMoney");
         m_ExpensesLabel = m_Document.rootVisualElement.Q<Label>("Expenses");
+        m_Title = m_Document.rootVisualElement.Q<Label>("Title");
+        m_Document.rootVisualElement.Q<Button>("Exit").RegisterCallback<ClickEvent>(ExitPressed);
         PlayerData.Instance.IncreaseExpenses(BaseExpenses);
         m_Document.rootVisualElement.style.display = DisplayStyle.None;
-        EndDay();
+    }
+
+    void ExitPressed(ClickEvent evt)
+    {
+        m_Document.rootVisualElement.style.display = DisplayStyle.None;
     }
 
     public void EndDay()
     {
         m_Document.rootVisualElement.style.display = DisplayStyle.Flex;
 
+        m_Title.text = "Day " + PlayerData.Instance.GetDayCount();
         m_PrevMoneyLabel.text = "$" + PlayerData.Instance.GetMoney().ToString();
         m_EarnedMoneyLabel.text = "$" + PlayerData.Instance.GetMoneyEarned().ToString();
 
@@ -43,5 +52,6 @@ public class EndOfDay : MonoBehaviour
         m_ExpensesLabel.text = "$" + PlayerData.Instance.GetExpenses().ToString();
         m_TotalMoneyLabel.text = "$" + PlayerData.Instance.GetMoney().ToString();
 
+        PlayerData.Instance.IncrementDayCount();
     }
 }
