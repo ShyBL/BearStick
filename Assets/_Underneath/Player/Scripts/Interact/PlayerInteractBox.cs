@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInteractBox : MonoBehaviour
 {
-    [SerializeField] private Inventory Inventory; // have to insert in the inspector
+    //[SerializeField] private Inventory Inventory; // have to insert in the inspector
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Collectable"))
@@ -13,7 +13,7 @@ public class PlayerInteractBox : MonoBehaviour
             
             var collectible = other.GetComponent<PhysicsCollectible>();
             
-            if (Inventory.AddItem(collectible.collectable)) // if you have space
+            if (Player.Instance.Inventory.AddItem(collectible.collectable)) // if you have space
             {
                 Destroy(other.gameObject);
             }
