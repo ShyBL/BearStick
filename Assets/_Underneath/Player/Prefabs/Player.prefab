@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5004930048528496464}
   - component: {fileID: 2861636631572309541}
   - component: {fileID: 4048408613977973965}
-  - component: {fileID: 5653847592084798024}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -129,19 +128,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &5653847592084798024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2514201769875417504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
 --- !u!1 &2942129072151311213
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +140,7 @@ GameObject:
   - component: {fileID: 3878882947387569265}
   - component: {fileID: 7365951421248579780}
   - component: {fileID: 1869259751290676772}
+  - component: {fileID: 2310153849885307640}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -266,6 +253,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.05, y: 0}
   m_Size: {x: 0.3, y: 0.64}
   m_Direction: 0
+--- !u!114 &2310153849885307640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942129072151311213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a684c009caa5945a1055245e6591bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3654763751334551890
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,8 +571,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4785660932464887808}
-  - component: {fileID: 646233391885963375}
-  - component: {fileID: 8348962496561608852}
   m_Layer: 0
   m_Name: SoundEmiter
   m_TagString: Untagged
@@ -596,118 +593,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9154314289465190505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &646233391885963375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6341521705249812588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15930316e41c4295bb8cb74f97615b6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterVolume: 1
-  musicVolume: 1
-  ambienceVolume: 1
-  SFXVolume: 1
---- !u!114 &8348962496561608852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6341521705249812588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92b3f75949c04cc3956565fed3b905ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Music>k__BackingField:
-    Guid:
-      Data1: -183087993
-      Data2: 1267859473
-      Data3: -162963839
-      Data4: -1186688770
-    Path: event:/Music/Music
-  <Footsteps>k__BackingField:
-    Guid:
-      Data1: -1806913121
-      Data2: 1076087810
-      Data3: 990959747
-      Data4: -2015725449
-    Path: event:/CHARACTER/Footsteps
-  <Jump>k__BackingField:
-    Guid:
-      Data1: -36099641
-      Data2: 1245533231
-      Data3: 77851061
-      Data4: -1821681271
-    Path: event:/CHARACTER/Jump
-  <Land>k__BackingField:
-    Guid:
-      Data1: -1306322137
-      Data2: 1186448129
-      Data3: 2127111593
-      Data4: -2012178687
-    Path: event:/CHARACTER/Land
-  <OpenBag>k__BackingField:
-    Guid:
-      Data1: 1121472072
-      Data2: 1257265429
-      Data3: -1445541712
-      Data4: 184851483
-    Path: event:/CHARACTER/Bag
-  <CollectedItem>k__BackingField:
-    Guid:
-      Data1: 1052823571
-      Data2: 1322795423
-      Data3: -1221432169
-      Data4: -898203818
-    Path: event:/CHARACTER/CollectItem
-  <Dumpster>k__BackingField:
-    Guid:
-      Data1: -1357412773
-      Data2: 1265033874
-      Data3: 1587919273
-      Data4: -525831730
-    Path: event:/CHARACTER/Dumpster
-  <Trashcan>k__BackingField:
-    Guid:
-      Data1: -1726563311
-      Data2: 1332925163
-      Data3: -432660811
-      Data4: -687344899
-    Path: event:/CHARACTER/GarbageCan
-  <Stash>k__BackingField:
-    Guid:
-      Data1: 264241405
-      Data2: 1102505475
-      Data3: -316780640
-      Data4: -1769853662
-    Path: event:/CHARACTER/Stash
-  <Click>k__BackingField:
-    Guid:
-      Data1: 1437840984
-      Data2: 1236308650
-      Data3: 690215351
-      Data4: 113904849
-    Path: event:/UI/Click
-  <Pause>k__BackingField:
-    Guid:
-      Data1: 124733730
-      Data2: 1296942420
-      Data3: -338796116
-      Data4: -1117349467
-    Path: event:/UI/Bubble
-  <UnPause>k__BackingField:
-    Guid:
-      Data1: 482298072
-      Data2: 1248832726
-      Data3: -1850413143
-      Data4: -68100204
-    Path: event:/UI/Bubble2
 --- !u!1 &8522632386573339144
 GameObject:
   m_ObjectHideFlags: 0

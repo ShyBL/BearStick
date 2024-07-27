@@ -1,0 +1,5 @@
+.text {
+    flex-direction: row;
+    font-size: 52px;
+    color: rgb(224, 224, 224);
+}
