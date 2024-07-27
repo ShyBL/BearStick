@@ -30,13 +30,18 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private float m_MaxWeight;
     private float m_CurrentWeight;
+    [SerializeField]
+    private UIDocument m_Hud;
+    private Label m_CurrentWeightElement;
+    private Label m_MaxWeightElement;
+    private Button m_InventoryButton;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            StartCoroutine(Configure());
+            Configure();
         }
         else if (Instance != this)
         {
@@ -51,29 +56,27 @@ public class Inventory : MonoBehaviour
         // When Q is pressed switch whether the inventory is being displayed or not
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            switch(m_Root.resolvedStyle.display)
-            {
-                case DisplayStyle.Flex:
-                    m_Root.style.display = DisplayStyle.None;
-                    break;
-                case DisplayStyle.None:
-                    m_Root.style.display = DisplayStyle.Flex;
-                    break;
-            }
+            ToggleInventory();
         }
     }
 
     // Initializes the inventory. Should only need to be called in Awake.
-    private IEnumerator Configure()
+    private void Configure()
     {
         // Get the document and visual elements we will need
         UIDocument doc = GetComponentInChildren<UIDocument>();
         m_Root = doc.rootVisualElement;
         m_InventoryGrid = m_Root.Q<VisualElement>("Grid");
-        m_Root.RegisterCallback<GeometryChangedEvent>(OnLayoutFinished);
+        m_CurrentWeightElement = m_Hud.rootVisualElement.Q<Label>("CurrentWeight");
+        m_MaxWeightElement = m_Hud.rootVisualElement.Q<Label>("MaxWeight");
+        m_MaxWeightElement.text = m_MaxWeight.ToString();
+        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
+        m_InventoryButton = m_Hud.rootVisualElement.Q<Button>("Inventory");
+        m_InventoryButton.RegisterCallback<ClickEvent>(ToggleInventory);
+        //m_Root.RegisterCallback<GeometryChangedEvent>(OnLayoutFinished);
 
         // Give the UI toolkit time to initialize the layout
-        yield return new WaitUntil(() => m_LayoutReady);
+        //yield return new WaitUntil(() => m_LayoutReady);
 
         // Create a map of all the slots
         ConfigureSlotMap();
@@ -81,6 +84,21 @@ public class Inventory : MonoBehaviour
         m_IsInventoryReady = true;
     }
 
+    private void ToggleInventory(ClickEvent evt = null)
+    {
+        switch (m_Root.resolvedStyle.display)
+        {
+            case DisplayStyle.Flex:
+                m_Root.style.display = DisplayStyle.None;
+                break;
+            case DisplayStyle.None:
+                m_Root.style.display = DisplayStyle.Flex;
+                break;
+        }
+    }
+
+    // Commented out related code for this function as this is no longer needed for now
+    // and it seems to not be consistent, as when I switched computers it stopped working.
     // Function that is called when the root element of the inventory document changes.
     // Is used for determining when the layout is finished being created during Configuration.
     // Will be useful to use if we handle changing resolutions.
@@ -153,6 +171,7 @@ public class Inventory : MonoBehaviour
         // Add to the invevntory value the value of the item that was just added
         m_InventoryValue += item.Details.SellPrice;
         m_CurrentWeight += item.Details.Weight;
+        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
 
         return true;
     }
@@ -168,6 +187,7 @@ public class Inventory : MonoBehaviour
         // Remove from the inventory value the price of the item that was just removed
         m_InventoryValue -= item.Details.SellPrice;
         m_CurrentWeight -= item.Details.Weight;
+        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
     }
 
     // Clears all items from the inventory, removing them from the list and their visual elements
@@ -181,6 +201,7 @@ public class Inventory : MonoBehaviour
         // Reset the inventory value
         m_InventoryValue = 0;
         m_CurrentWeight = 0;
+        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
     }
 
     // Returns the pre-calculated value of the inventory
