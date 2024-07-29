@@ -12,6 +12,11 @@ public class ItemVisual : VisualElement
     private bool m_TooltipShown = false;
     private bool m_Dragging = false;
 
+    private Label m_TooltipTitle;
+    private Label m_TooltipWeight;
+    private Label m_TooltipValue;
+    private Label m_TooltipDesc;
+
     public ItemVisual(StoredItem item, VisualElement root, Inventory inventoryComp)
     {
         m_Item = item;
@@ -39,10 +44,27 @@ public class ItemVisual : VisualElement
 
         // Create the tool tip but don't add it for now, only add it when the mouse hovers over the icon.
         m_Tooltip = new VisualElement();
+        m_TooltipTitle = new Label("Title");
+        m_TooltipValue = new Label("Value");
+        m_TooltipWeight = new Label("Weight");
+        m_TooltipDesc = new Label("Description");
+        VisualElement bar = new VisualElement();
+        
+        // Add all the sub parts of the tool tip component to the tooltip
+        m_Tooltip.Add(m_TooltipTitle);
+        m_Tooltip.Add(bar);
+        bar.Add(m_TooltipWeight);
+        bar.Add(m_TooltipValue);
+        m_Tooltip.Add(m_TooltipDesc);
 
         // Add the selectors to the elements created so the correct styles are applied
         m_Icon.AddToClassList("visual-icon");
         m_Tooltip.AddToClassList("tooltip");
+        bar.AddToClassList("tooltip-horizontal");
+        m_TooltipTitle.AddToClassList("tooltip-title");
+        m_TooltipValue.AddToClassList("tooltip-text");
+        m_TooltipWeight.AddToClassList("tooltip-text");
+        m_TooltipDesc.AddToClassList("tooltip-desc");
         AddToClassList("visual-icon-container");
 
         // Register events for pointer to handle tooltip and dragging items.
