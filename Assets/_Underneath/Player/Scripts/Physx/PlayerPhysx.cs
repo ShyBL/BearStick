@@ -11,15 +11,23 @@ public class PlayerPhysx : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Vector2 groundCheckBoxSize;
     [SerializeField] private float groundCastDistance;
-
-    public bool IsGrounded => Physics.BoxCast(
-        playerTransform.position,
-        groundCheckBoxSize / 2,
-        -playerTransform.up,
-        out _,
-        playerTransform.rotation,
-        groundCastDistance,
+    
+    public bool IsGrounded => 
+        Physics2D.BoxCast(
+        transform.position, 
+        groundCheckBoxSize, 
+        0, 
+        -transform.up, 
+        groundCastDistance, 
         whatIsGround
+        // Physics.BoxCast(
+        // playerTransform.position,
+        // groundCheckBoxSize / 2,
+        // -playerTransform.up,
+        // out _,
+        // playerTransform.rotation,
+        // groundCastDistance,
+        // whatIsGround
     );
     public void HandleMovement(Vector3 movement, float speed)
     {
