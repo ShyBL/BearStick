@@ -71,4 +71,11 @@ public class PlayerState
         yield return new WaitForSeconds(seconds);
         isBusy = false;
     }
+    
+    protected void LedgeDetection()
+    {
+        if (player.playerPhysx.IsLedgeDetected())
+            stateMachine.ChangeState(stateMachine.ledgeGrabState);
+
+    }
 }
