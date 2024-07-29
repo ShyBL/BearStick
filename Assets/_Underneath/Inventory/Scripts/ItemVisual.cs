@@ -157,6 +157,12 @@ public class ItemVisual : VisualElement
             // Add the tooltip to the root element so it will render
             m_Root.Add(m_Tooltip);
 
+            // Add item information here so that if it changes while the game is running it will update
+            m_TooltipValue.text = "$" + m_Item.Details.SellPrice.ToString();
+            m_TooltipWeight.text = m_Item.Details.Weight.ToString() + " kg";
+            m_TooltipDesc.text = m_Item.Details.Description;
+            m_TooltipTitle.text = m_Item.Details.FriendlyName;
+
             // Register the mouse movment event so the tooltip will move with the mouse
             RegisterCallback<PointerMoveEvent>(TooltipMouseMovement);
 
