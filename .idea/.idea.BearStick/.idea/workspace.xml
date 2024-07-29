@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stephen/EndOfDay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stephen/EndOfDay.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Interact/PlayerInteractBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Interact/PlayerInteractBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Tests/FullTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Tests/FullTestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Physx/PlayerPhysx.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Physx/PlayerPhysx.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Tests/ExampleScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Tests/ExampleScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +23,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Daniel/FmodAudioManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerWallJumpState.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -109,7 +113,8 @@
       <workItem from="1721728737793" duration="2707000" />
       <workItem from="1721929589259" duration="23000" />
       <workItem from="1721929716908" duration="304000" />
-      <workItem from="1722096438087" duration="1296000" />
+      <workItem from="1722096438087" duration="1509000" />
+      <workItem from="1722205563684" duration="7527000" />
     </task>
     <servers />
   </component>
@@ -118,6 +123,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

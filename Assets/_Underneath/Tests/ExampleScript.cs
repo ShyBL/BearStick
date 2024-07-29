@@ -128,7 +128,7 @@ public class ExampleItemDetector : MonoBehaviour
             // or create a designated method to call the feature from within Player
             // ie MovementHandler()
             
-            if (Player.Instance.Inventory.AddItem(collectible.collectable))
+            if (Player.Instance.inventory.AddItem(collectible.collectable))
             {
                 Destroy(other.gameObject);
             }

@@ -1,11 +1,12 @@
 using System;
 //using FMOD.Studio;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
     public static Player Instance;
-    
+    [Header(" Components ")]
     [SerializeField] public PlayerInput playerInput;
     [SerializeField] public PlayerPhysx playerPhysx;
     [SerializeField] public PlayerVisualizer playerVisualizer;
@@ -14,12 +15,15 @@ public class Player : MonoBehaviour
     [Header(" Movement ")]
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float airVelocity = 8f;
-    [SerializeField] private float jumpForce = 15;
+    [SerializeField] public float jumpForce = 15;
+    [SerializeField] public float wallJumpForce = 15;
+    [SerializeField] public float wallSlideSpeed = 8f;
+
     [SerializeField] public bool canMove = true;
     [SerializeField] public Vector3 moveInputVector;
     
-    
-    [SerializeField] public Inventory Inventory;
+    [Header(" Inventory ")]
+    [SerializeField] public Inventory inventory;
 
     private void Awake()
     {

@@ -13,7 +13,7 @@ public class PlayerInteractBox : MonoBehaviour
             
             var collectible = other.GetComponent<PhysicsCollectible>();
             
-            if (Player.Instance.Inventory.AddItem(collectible.collectable)) // if you have space
+            if (Player.Instance.inventory.AddItem(collectible.collectable)) // if you have space
             {
                 Destroy(other.gameObject);
             }
