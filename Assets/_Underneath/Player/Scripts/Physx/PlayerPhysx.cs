@@ -42,8 +42,74 @@ public class PlayerPhysx : MonoBehaviour
         rb.velocity = new Vector3(jumpVector.x * airVelocity, jumpForce,jumpVector.z * airVelocity);
     }
     
+    [Header(" Wall Collision ")]
+    [SerializeField] private LayerMask whatIsWall;
+    [SerializeField] private float wallCastDistance;
+    [Header(" Ledge Rays Parameters ")]
+    private bool ledgeRaysEnabled = true;
+    [SerializeField] private float ledgeRaysDistance;
+    [SerializeField] private float ledgeRaysSpacing;
+    [SerializeField] private Vector3 ledgeRaysPositionOffset;
+    private bool topLedgeRayDetected;
+    private bool bottomLedgeRayDetected;
+
+    [Header(" Rays Info ")]
+    private Vector3 topRayStartPosition;
+    private Vector3 topRayDestination;
+    private Vector3 bottomRayStartPosition;
+    private Vector3 bottomRayDestination;
+    public bool IsWallDetected() => Physics2D.Raycast(transform.position, Vector2.right * Player.Instance.facingDirection, wallCastDistance, whatIsWall);
+    public bool IsLedgeDetected() => DetectLedges();
+
+    public bool DetectLedges() 
+    {
+        if(ledgeRaysEnabled)
+        {
+            TopRayDetection();
+            BottomRayDetection();
+            return (!topLedgeRayDetected && bottomLedgeRayDetected);
+        }
+        return false;
+    }
+    
+    private void TopRayDetection()
+    {
+        float xStart = transform.position.x + ledgeRaysPositionOffset.x;
+        float yStart = transform.position.y + ledgeRaysPositionOffset.y + ledgeRaysSpacing;
+        topRayStartPosition = new Vector3(xStart,yStart);
+        topRayDestination = new Vector3(xStart + ledgeRaysDistance * Player.Instance.facingDirection, yStart);
+
+        topLedgeRayDetected = RayCastDetectWall(topRayStartPosition, ledgeRaysDistance);
+    }
+    
+    private void BottomRayDetection()
+    {
+        float xStart = transform.position.x + ledgeRaysPositionOffset.x;
+        float yStart = transform.position.y + ledgeRaysPositionOffset.y - ledgeRaysSpacing;
+        bottomRayStartPosition = new Vector2(xStart,yStart);
+        bottomRayDestination = new Vector3(xStart + ledgeRaysDistance * Player.Instance.facingDirection, yStart);
+        bottomLedgeRayDetected = RayCastDetectWall(bottomRayStartPosition, ledgeRaysDistance);
+    }
+
+    private bool RayCastDetectWall(Vector2 startPosition, float distance)
+    {
+        Vector3 start = new Vector3(startPosition.x ,startPosition.y, 0);
+        return Physics2D.Raycast(start, Vector2.right * Player.Instance.facingDirection, distance, whatIsWall);
+    }
+    
+    // When object in hierarchy is selected, will show where the ground and wall checks will happen
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireCube(playerTransform.position - playerTransform.up * groundCastDistance, groundCheckBoxSize); // ground check visual
+        Gizmos.DrawWireCube(transform.position - transform.up * groundCastDistance, groundCheckBoxSize); // GroundCheck
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + wallCastDistance * Player.Instance.facingDirection, transform.position.y)); // WallCheck
+
+        // Ledge Detection
+        if (ledgeRaysEnabled)
+        {
+            Gizmos.color = topLedgeRayDetected ? Color.green : Color.grey;
+            Gizmos.DrawLine(topRayStartPosition, topRayDestination);
+            Gizmos.color = bottomLedgeRayDetected ? Color.green : Color.grey;
+            Gizmos.DrawLine(bottomRayStartPosition, bottomRayDestination);
+        }
     }
 }
