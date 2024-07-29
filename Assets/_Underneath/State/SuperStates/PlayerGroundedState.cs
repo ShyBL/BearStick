@@ -38,7 +38,7 @@ public class PlayerGroundedState : PlayerState
 
     private void OnJump()
     {
-        if (player.isGrounded())
+        if (player.IsGrounded())
             stateMachine.ChangeState(stateMachine.JumpState);
     }
 }

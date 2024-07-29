@@ -78,14 +78,13 @@ public class Player : MonoBehaviour
  
     private void JumpingHandler()
     {
-        playerPhysx.Jump(moveInputVector, airVelocity, jumpForce);
-        // if (isGrounded())
-        // {
-        //     Jump();
-        // }
+        if (IsGrounded())
+        {
+            Jump();
+        }
     }
     
-    public int facingDirection;
+    //public int facingDirection;
     
     public void Flip() 
     {
@@ -108,6 +107,6 @@ public class Player : MonoBehaviour
     
     public void Jump() => playerPhysx.Jump(moveInputVector, airVelocity, jumpForce);
     public Vector3 Velocity() => playerPhysx.CurrentVelocity();
-    public bool isGrounded() => playerPhysx.IsGrounded;
+    public bool IsGrounded() => playerPhysx.IsGrounded;
     
 }

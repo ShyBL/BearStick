@@ -37,7 +37,7 @@ public class PlayerMoveState : PlayerGroundedState
 
     private void CheckIfFalling()
     {
-        if (!player.isGrounded())
+        if (!player.IsGrounded())
             stateMachine.ChangeState(stateMachine.AirState);
     }
 }
