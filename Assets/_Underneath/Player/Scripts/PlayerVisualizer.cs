@@ -65,4 +65,15 @@ public class PlayerVisualizer : MonoBehaviour
         }
         currentState = stateToEnable;
     }
+
+
+    public void PlayAnimation(string animName)
+    {
+        animatorComponent.Play(animName);
+    }
+
+    public void SetYBlend(float rbVelocityY)
+    {
+        throw new NotImplementedException();
+    }
 }

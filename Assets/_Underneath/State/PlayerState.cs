@@ -35,7 +35,7 @@ public class PlayerState
     /// </summary>
     public virtual void Enter()
     {
-        player.Visualizer.PlayAnimation(_animName);
+        player.playerVisualizer.PlayAnimation(_animName);
         Debug.Log("Entered : " + this.ToString());
     }
 
@@ -47,7 +47,7 @@ public class PlayerState
         stateDuration -= Time.deltaTime;
         if (player.canMove)
             SetMovementVector();
-        player.Visualizer.SetYBlend(rbVelocity.y);
+        player.playerVisualizer.SetYBlend(rbVelocity.y);
 
     }
 

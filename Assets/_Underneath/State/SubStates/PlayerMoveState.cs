@@ -15,15 +15,11 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        StartFootstepSound();
-        ParticlesManager.PlayFXByType(FXType.Footsteps);
     }
 
     public override void Exit()
     {
         base.Exit();
-        StopFootstepSound();
-        ParticlesManager.StopFXByType(FXType.Footsteps);
     }
 
     public override void Update()
@@ -46,32 +42,5 @@ public class PlayerMoveState : PlayerGroundedState
             stateMachine.ChangeState(stateMachine.AirState);
     }
 
-    private void StartFootstepSound()
-    {
-        if (footstepCoroutine == null)
-        {
-            footstepCoroutine = player.StartCoroutine(FootstepSoundCoroutine());
-        }
-    }
 
-    private void StopFootstepSound()
-    {
-        if (footstepCoroutine != null)
-        {
-            player.StopCoroutine(footstepCoroutine);
-            footstepCoroutine = null;
-        }
-    }
-
-    private IEnumerator FootstepSoundCoroutine()
-    {
-        while (true)
-        {
-            if (moveInputVector != Vector3.zero)// && player.isGrounded())
-            {
-                SoundManager.PlaySound(soundType.WALKING);
-            }
-            yield return new WaitForSeconds(footstepInterval);
-        }
-    }
 }

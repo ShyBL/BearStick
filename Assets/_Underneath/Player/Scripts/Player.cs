@@ -5,15 +5,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] public PlayerInput playerInput;
-    [SerializeField] private PlayerPhysx playerPhysx;
-    [SerializeField] private PlayerVisualizer playerVisualizer;
-    
+    [SerializeField] public PlayerPhysx playerPhysx;
+    [SerializeField] public PlayerVisualizer playerVisualizer;
+
     [Header(" Movement ")]
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float airVelocity = 8f;
     [SerializeField] private float jumpForce = 15;
-    [SerializeField] private bool canMove = true;
-    [SerializeField] private Vector3 moveInputVector;
+    [SerializeField] public bool canMove = true;
+    [SerializeField] public Vector3 moveInputVector;
     
     public static Player Instance;
     [SerializeField] public Inventory Inventory;

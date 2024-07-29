@@ -25,7 +25,7 @@ public class PlayerAirState : PlayerState
 
     private void SetYBlendAnimation()
     {
-        player.Visualizer.SetYBlend(player.Physx.CurrentVelocity().y);
+        player.playerVisualizer.SetYBlend(player.playerPhysx.CurrentVelocity().y);
     }
 
     public override void Exit()
@@ -35,7 +35,7 @@ public class PlayerAirState : PlayerState
     
     private void CheckIfIdle()
     {
-        if (player.isGrounded() && player.Physx.CurrentVelocity().y < LANDING_THRESHOLD)
+        if (player.isGrounded() && player.playerPhysx.CurrentVelocity().y < LANDING_THRESHOLD)
         {
             stateMachine.ChangeState(stateMachine.IdleState);
         }

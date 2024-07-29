@@ -12,10 +12,8 @@ public class PlayerStateMachine
     public PlayerMoveState MoveState { get; private set; }
     public PlayerAirState AirState { get; private set; }
     public PlayerJumpState JumpState { get; private set; }
-    public PlayerAttackState AttackState { get; private set; }
     public PlayerPickUpState PickUpState { get; private set; }
     
-    public PlayerDestroyState DestroyState { get; private set; }
 
     #endregion [--- States ---]
     public void Initialize()
@@ -38,16 +36,11 @@ public class PlayerStateMachine
         MoveState = new PlayerMoveState(_player, this, States.MOVE);
         AirState = new PlayerAirState(_player, this, States.AIR);
         JumpState = new PlayerJumpState(_player,this, States.JUMP);
-        //AttackState = new PlayerAttackState(_player, this, States.ATTACK);
         PickUpState = new PlayerPickUpState(_player, this, States.PICKUP);
-        //DestroyState = new PlayerDestroyState(_player, this, States.DESTROY);
 
     }
 
-    private float GetAnimationLength(string animName)
-    {
-        return _player.Visualizer.GetAnimationLength(animName);
-    }
+
 
     private void InitPlayer()
     {

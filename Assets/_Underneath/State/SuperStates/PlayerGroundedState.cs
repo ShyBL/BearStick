@@ -25,16 +25,14 @@ public class PlayerGroundedState : PlayerState
 
     private void Subscribe()
     {
-        player.InputManager.onJump += OnJump;
-        player.InputManager.onAction += OnAction;
+        player.playerInput.onJump += OnJump;
     }
 
 
 
     private void Unsubscribe()
     {
-        player.InputManager.onJump -= OnJump;
-        player.InputManager.onAction -= OnAction;
+        player.playerInput.onJump -= OnJump;
 
     }  
 
@@ -44,44 +42,4 @@ public class PlayerGroundedState : PlayerState
             stateMachine.ChangeState(stateMachine.JumpState);
 
     }
-
-    /// <summary>
-    /// Action will pickup if player over item, else will attack.
-    /// </summary>
-    private void OnAction()
-    {
-        //if (!player.isGrounded() || !canAttack) 
-        if (!canAttack)
-        {
-            Debug.Log("Cant Attack");
-            return;
-        }
-
-        if (IsOverPickup())
-        {
-            stateMachine.ChangeState(stateMachine.PickUpState);
-        }
-            
-        else if (IsOverDestroyable())
-        {
-            stateMachine.ChangeState(stateMachine.DestroyState);
-        }
-        else
-        {
-            stateMachine.ChangeState(stateMachine.AttackState);
-        }
-            
-
-    }
-
-    private bool IsOverPickup()
-    {
-        return player.ItemDetector.itemDetected ? true : false;
-    }
-    
-    private bool IsOverDestroyable()
-    {
-        return player.ItemDestroyer.itemDetected ? true : false;
-    }
-
 }
