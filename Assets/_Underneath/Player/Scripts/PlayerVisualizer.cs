@@ -65,15 +65,16 @@ public class PlayerVisualizer : MonoBehaviour
         }
         currentState = stateToEnable;
     }
-
-
+    
     public void PlayAnimation(string animName)
     {
         animatorComponent.Play(animName);
     }
 
-    public void SetYBlend(float rbVelocityY)
+    private static string Y_BLEND_ANIMATION = "yVelocity";
+    
+    public void SetYBlend(float value)
     {
-        throw new NotImplementedException();
+        animatorComponent.SetFloat(Y_BLEND_ANIMATION, value);
     }
 }

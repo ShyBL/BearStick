@@ -8,7 +8,6 @@ public class PlayerJumpState : PlayerAirState
     public override void Enter()
     {
         base.Enter();
-        player.Jump();
     }
 
     public override void Exit()

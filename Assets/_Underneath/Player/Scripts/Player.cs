@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+    
     [SerializeField] public PlayerInput playerInput;
     [SerializeField] public PlayerPhysx playerPhysx;
     [SerializeField] public PlayerVisualizer playerVisualizer;
-
+    public PlayerStateMachine playerStateMachine;
+    
     [Header(" Movement ")]
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float airVelocity = 8f;
@@ -15,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] public bool canMove = true;
     [SerializeField] public Vector3 moveInputVector;
     
-    public static Player Instance;
+    
     [SerializeField] public Inventory Inventory;
 
     private void Awake()
@@ -32,7 +35,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        playerVisualizer.SetIdle();
+        playerStateMachine = new PlayerStateMachine();
+        playerStateMachine.Initialize();
     }
 
     private void OnEnable()
@@ -51,47 +55,30 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (canMove)
-        {
-            moveInputVector = playerInput.moveVector;
-
-            if (moveInputVector.x != 0)
-            {
-                MovementHandler();
-            }
-            else
-            {
-                if (playerPhysx.CurrentVelocity().y > 0)
-                {
-                    return;
-                }
-                StopMovementHandler();
-            }
-        }
+        playerStateMachine.currentState.Update();
+        
+        
     }
 
     private void StopMovementHandler()
     {
         StopInPlace();
-        //AudioManager.instance.StopEvent(FMODEvents.instance.FootstepsEvent);
         playerVisualizer.SetIdle();
     }
 
     private void MovementHandler()
     {
-        Flip();
-        playerVisualizer.SetRun();
-        
-        playerPhysx.HandleMovement(moveInputVector, moveSpeed);
-        //AudioManager.instance.PlayEvent(FMODEvents.instance.FootstepsEvent, transform.position);
+        if (canMove)
+        {
+            moveInputVector = playerInput.moveVector;
+            Flip();
+            playerPhysx.HandleMovement(moveInputVector, moveSpeed);
+        }
     }
  
     private void JumpingHandler()
     {
-        playerVisualizer.SetJump();
-        //AudioManager.instance.PlayOneShot(FMODEvents.instance.Jump,transform.position);
         playerPhysx.Jump(moveInputVector, airVelocity, jumpForce);
-
         // if (isGrounded())
         // {
         //     Jump();

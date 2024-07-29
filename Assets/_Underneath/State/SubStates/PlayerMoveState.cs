@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class PlayerMoveState : PlayerGroundedState
 {
-    private Coroutine footstepCoroutine;
-    private float footstepInterval = 0.45f;
-
     public PlayerMoveState(Player _player, PlayerStateMachine _stateMachine, string animName) : base(_player, _stateMachine, animName)
     {
     }
@@ -15,10 +12,12 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        //AudioManager.instance.PlayEvent(FMODEvents.instance.FootstepsEvent, transform.position);
     }
 
     public override void Exit()
     {
+        //AudioManager.instance.StopEvent(FMODEvents.instance.FootstepsEvent);
         base.Exit();
     }
 
@@ -27,7 +26,7 @@ public class PlayerMoveState : PlayerGroundedState
         base.Update();
         
         CheckIfStopped();
-        //CheckIfFalling();
+        CheckIfFalling();
     }
 
     private void CheckIfStopped()
@@ -41,6 +40,4 @@ public class PlayerMoveState : PlayerGroundedState
         if (!player.isGrounded())
             stateMachine.ChangeState(stateMachine.AirState);
     }
-
-
 }

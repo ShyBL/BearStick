@@ -12,7 +12,7 @@ public class PlayerStateMachine
     public PlayerMoveState MoveState { get; private set; }
     public PlayerAirState AirState { get; private set; }
     public PlayerJumpState JumpState { get; private set; }
-    public PlayerPickUpState PickUpState { get; private set; }
+    //public PlayerPickUpState PickUpState { get; private set; }
     
 
     #endregion [--- States ---]
@@ -36,7 +36,7 @@ public class PlayerStateMachine
         MoveState = new PlayerMoveState(_player, this, States.MOVE);
         AirState = new PlayerAirState(_player, this, States.AIR);
         JumpState = new PlayerJumpState(_player,this, States.JUMP);
-        PickUpState = new PlayerPickUpState(_player, this, States.PICKUP);
+        //PickUpState = new PlayerPickUpState(_player, this, States.PICKUP);
 
     }
 

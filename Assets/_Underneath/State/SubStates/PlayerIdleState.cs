@@ -29,7 +29,6 @@ public class PlayerIdleState : PlayerGroundedState
 
     private void CheckIfMoving()
     {
-
         if (player.canMove && moveInputVector != Vector3.zero)
         {
             stateMachine.ChangeState(stateMachine.MoveState);
