@@ -29,14 +29,26 @@ public class PlayerPhysx : MonoBehaviour
         // groundCastDistance,
         // whatIsGround
     );
+    
     public void HandleMovement(Vector3 movement, float speed)
     {
         rb.velocity = new Vector3(movement.x * speed, rb.velocity.y,movement.z * speed);
     }
     
-    public Vector3 CurrentVelocity() => new Vector3(rb.velocity.x, rb.velocity.y);
+    public void EnableGravity()
+    {
+        rb.gravityScale = 4f;
+    }
     
-
+    public void DisableGravity()
+    {
+        rb.velocity = Vector2.zero;
+        rb.gravityScale = 0f;
+    }
+    
+    public Vector3 CurrentVelocity() => new Vector3(rb.velocity.x, rb.velocity.y);
+    public void SetVelocity(float vX, float vY) => rb.velocity = new Vector2(vX, vY);
+    
     public void Jump(Vector3 jumpVector, float airVelocity, float jumpForce)
     {
         rb.velocity = new Vector3(jumpVector.x * airVelocity, jumpForce,jumpVector.z * airVelocity);
@@ -45,6 +57,7 @@ public class PlayerPhysx : MonoBehaviour
     [Header(" Wall Collision ")]
     [SerializeField] private LayerMask whatIsWall;
     [SerializeField] private float wallCastDistance;
+    
     [Header(" Ledge Rays Parameters ")]
     private bool ledgeRaysEnabled = true;
     [SerializeField] private float ledgeRaysDistance;
@@ -60,7 +73,8 @@ public class PlayerPhysx : MonoBehaviour
     private Vector3 bottomRayDestination;
     public bool IsWallDetected() => Physics2D.Raycast(transform.position, Vector2.right * Player.Instance.facingDirection, wallCastDistance, whatIsWall);
     public bool IsLedgeDetected() => DetectLedges();
-
+    public void EnableLedgeRays() => ledgeRaysEnabled = true;
+    public void DisableLedgeRays() => ledgeRaysEnabled = false;
     public bool DetectLedges() 
     {
         if(ledgeRaysEnabled)

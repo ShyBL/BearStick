@@ -72,10 +72,20 @@ public class PlayerState
         isBusy = false;
     }
     
+    public IEnumerator StopLedgeRaysFor(float _seconds)
+    {
+        player.playerPhysx.DisableLedgeRays();
+        yield return new WaitForSeconds(_seconds);
+        player.playerPhysx.EnableLedgeRays();
+
+    }
+    
+    protected bool isGrabbingLedge;
+    
     protected void LedgeDetection()
     {
         if (player.playerPhysx.IsLedgeDetected())
-            stateMachine.ChangeState(stateMachine.ledgeGrabState);
+            stateMachine.ChangeState(stateMachine.LedgeGrabState);
 
     }
 }
