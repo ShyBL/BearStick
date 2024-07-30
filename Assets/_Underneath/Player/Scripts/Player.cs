@@ -1,5 +1,4 @@
 using System;
-using FMOD.Studio;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -73,7 +72,6 @@ public class Player : MonoBehaviour
     private void StopMovementHandler()
     {
         StopInPlace();
-        AudioManager.instance.StopEvent(FMODEvents.instance.FootstepsEvent);
         playerVisualizer.SetIdle();
     }
 
@@ -83,13 +81,11 @@ public class Player : MonoBehaviour
         playerVisualizer.SetRun();
         
         playerPhysx.HandleMovement(moveInputVector, moveSpeed);
-        AudioManager.instance.PlayEvent(FMODEvents.instance.FootstepsEvent, transform.position);
     }
  
     private void JumpingHandler()
     {
         playerVisualizer.SetJump();
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.Jump,transform.position);
         playerPhysx.Jump(moveInputVector, airVelocity, jumpForce);
 
         // if (isGrounded())

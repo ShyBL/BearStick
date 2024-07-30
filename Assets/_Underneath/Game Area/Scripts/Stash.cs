@@ -53,8 +53,6 @@ public class Stash : MonoBehaviour
         {
             _animator.Play("Open");
             
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.Dumpster,transform.position);
-            
             Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
             
             foreach (Item collectable in collectableList)
