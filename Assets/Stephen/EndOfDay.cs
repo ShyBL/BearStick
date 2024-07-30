@@ -3,6 +3,19 @@ using UnityEngine.UIElements;
 
 public class EndOfDay : MonoBehaviour
 {
+    public static EndOfDay Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(this);
+        }
+    }
+    
     public int BaseExpenses;
     public int ExpensesIncrease;
     public int IncreaseFrequency;

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 36490afc-8b93-4475-ac93-f49368d62b08
   FriendlyName: Square
   Description: I'm a square
-  SellPrice: 1
+  SellPrice: 10
   Icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   SlotDimension:
     Height: 1

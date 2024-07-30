@@ -67,4 +67,15 @@ public class PlayerData : MonoBehaviour
     {
         return m_NewMoney;
     }
+
+    public void DoCache()
+    {
+        for (var index = 0; index < Player.Instance.inventory.StoredItems.Count; index++)
+        {
+            var storedItem = Player.Instance.inventory.StoredItems[index];
+            IncreaseMoney(storedItem.Details.SellPrice);
+            Player.Instance.inventory.StoredItems.Remove(storedItem);
+        }
+        EndOfDay.Instance.EndDay();
+    }
 }
