@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 918093450}
   - component: {fileID: 918093452}
   m_Layer: 3
-  m_Name: 9-Sliced
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1344,8 +1344,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 702093772}
     - target: {fileID: 3878882947387569265, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 702093772}
+    - target: {fileID: 3878882947387569265, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: jumpForce
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052180297955331267, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: groundCastDistance
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: groundCheckBoxSize.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: groundCheckBoxSize.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341521705249812588, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069475123296289546, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 24a5d5857008fd34bb5bc46a62848a77, type: 2}
+    - target: {fileID: 7667757941945476830, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 9154314289465190505, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_LocalPosition.x

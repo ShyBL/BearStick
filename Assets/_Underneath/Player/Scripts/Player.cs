@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         playerStateMachine.currentState.Update();
+        MovementHandler();
     }
 
     private void MovementHandler()
@@ -85,16 +86,16 @@ public class Player : MonoBehaviour
     public void Flip() 
     {
         // change the x axis of the scale to -1 if its facing left and 1 if its facing right
-        if (moveInputVector.x != 0)
-        {
-            facingDirection = moveInputVector.x > 0 ? 1 : -1;
-            transform.localScale = new Vector3(1 * facingDirection, 1, 1);
-        }
-        
         // if (moveInputVector.x != 0)
         // {
-        //     playerVisualizer.spriteComponent.flipX = moveInputVector.x > 0;
+        //     facingDirection = moveInputVector.x > 0 ? 1 : -1;
+        //     transform.localScale = new Vector3(1 * facingDirection, 1, 1);
         // }
+        
+        if (moveInputVector.x != 0)
+        {
+            playerVisualizer.spriteComponent.flipX = moveInputVector.x > 0;
+        }
     }
     
     public void EnableMovement() => canMove = true;
