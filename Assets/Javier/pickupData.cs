@@ -1,13 +1,16 @@
-#import <string>
+
 //pickup data class
-class PickupData
+
+using UnityEngine;
+
+public class PickupData
 {
     //Declaring variables to be used - taken from the GDD
     [SerializeField] private int weight;
     [SerializeField] private int value;
     [SerializeField] private string definition;
     [SerializeField] private string name;
-    [SerializeField] private string rarity[4] = { "Common", "Uncommon", "Rare", "Exotic" };
+    [SerializeField] private string[] rarity = { "Common", "Uncommon", "Rare", "Exotic" };
 
     //weight - getter and setter
     public int GetWeight()
