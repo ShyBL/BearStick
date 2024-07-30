@@ -39,7 +39,59 @@
 .tooltip {
     position: absolute;
     width: 15%;
-    height: 30%;
+    height: auto;
     flex-grow: 1;
     background-color: rgb(0, 0, 0);
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    justify-content: center;
+}
+
+.tooltip-title {
+    color: rgb(255, 255, 255);
+    font-size: 46px;
+    -unity-font-style: bold;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
+    -unity-text-align: upper-left;
+    margin-top: -10px;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: -1px;
+}
+
+.tooltip-text {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    flex-grow: 1;
+}
+
+.tooltip-desc {
+    margin-top: 4px;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    white-space: normal;
+}
+
+.tooltip-horizontal {
+    flex-direction: row;
 }

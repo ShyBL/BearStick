@@ -12,6 +12,11 @@ public class ItemVisual : VisualElement
     private bool m_TooltipShown = false;
     private bool m_Dragging = false;
 
+    private Label m_TooltipTitle;
+    private Label m_TooltipWeight;
+    private Label m_TooltipValue;
+    private Label m_TooltipDesc;
+
     public ItemVisual(StoredItem item, VisualElement root, Inventory inventoryComp)
     {
         m_Item = item;
@@ -39,10 +44,27 @@ public class ItemVisual : VisualElement
 
         // Create the tool tip but don't add it for now, only add it when the mouse hovers over the icon.
         m_Tooltip = new VisualElement();
+        m_TooltipTitle = new Label("Title");
+        m_TooltipValue = new Label("Value");
+        m_TooltipWeight = new Label("Weight");
+        m_TooltipDesc = new Label("Description");
+        VisualElement bar = new VisualElement();
+        
+        // Add all the sub parts of the tool tip component to the tooltip
+        m_Tooltip.Add(m_TooltipTitle);
+        m_Tooltip.Add(bar);
+        bar.Add(m_TooltipWeight);
+        bar.Add(m_TooltipValue);
+        m_Tooltip.Add(m_TooltipDesc);
 
         // Add the selectors to the elements created so the correct styles are applied
         m_Icon.AddToClassList("visual-icon");
         m_Tooltip.AddToClassList("tooltip");
+        bar.AddToClassList("tooltip-horizontal");
+        m_TooltipTitle.AddToClassList("tooltip-title");
+        m_TooltipValue.AddToClassList("tooltip-text");
+        m_TooltipWeight.AddToClassList("tooltip-text");
+        m_TooltipDesc.AddToClassList("tooltip-desc");
         AddToClassList("visual-icon-container");
 
         // Register events for pointer to handle tooltip and dragging items.
@@ -134,6 +156,12 @@ public class ItemVisual : VisualElement
             MoveTooltip(m_Root.WorldToLocal(pos));
             // Add the tooltip to the root element so it will render
             m_Root.Add(m_Tooltip);
+
+            // Add item information here so that if it changes while the game is running it will update
+            m_TooltipValue.text = "$" + m_Item.Details.SellPrice.ToString();
+            m_TooltipWeight.text = m_Item.Details.Weight.ToString() + " kg";
+            m_TooltipDesc.text = m_Item.Details.Description;
+            m_TooltipTitle.text = m_Item.Details.FriendlyName;
 
             // Register the mouse movment event so the tooltip will move with the mouse
             RegisterCallback<PointerMoveEvent>(TooltipMouseMovement);
