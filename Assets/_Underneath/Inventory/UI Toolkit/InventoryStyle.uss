@@ -3,12 +3,13 @@
     border-right-width: 1px;
     border-bottom-width: 1px;
     border-left-width: 1px;
-    border-left-color: rgb(255, 255, 255);
-    border-right-color: rgb(255, 255, 255);
-    border-top-color: rgb(255, 255, 255);
-    border-bottom-color: rgb(255, 255, 255);
-    width: 24%;
-    height: 16.7%;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    width: 22%;
+    height: 15%;
+    background-image: url("project://database/Assets/Stephen/Final-InventorySlot.png?fileID=21300000&guid=5020bb5febb973b4ba7f18eab6f9f2a5&type=3#Final-InventorySlot");
 }
 
 .visual-icon-container {
