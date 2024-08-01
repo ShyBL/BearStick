@@ -121,7 +121,532 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Emma_sheet_v2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6487db6af79af448cd5c5d822ede0a
+      internalID: 1053707520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_1
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1507232fed508644dbec8e7404a048e4
+      internalID: -336842030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_2
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e8deff31510834bb3a5cceb52bce5c
+      internalID: -1896178027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_3
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e203cb5dfa1324345935d9b82d9f996a
+      internalID: 246697506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_4
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbebbaadacd76224b8b56378b9a59020
+      internalID: 1342082138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_5
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 3096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae8db0fdb8fce34486779339d276d2b
+      internalID: -1197954620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_6
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 3096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8971a9e2933fd8c43ba37b2b9c0a9a8b
+      internalID: -983990929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_7
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 3096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a12fc156276404dab9ad82d8d02771
+      internalID: 348910575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758e5d682d56b984685f7b5ed7ba8c88
+      internalID: -1863188102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_9
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27089ac5d7e183e48beda98f3c801ba1
+      internalID: -1540416108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_10
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3566f1c5ce8cd0d49a999c4ed8b80945
+      internalID: -710123597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_11
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fd5d0447a0653408d8591b615e3447
+      internalID: -1452435610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_12
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c98298bd1317e4b9759c2547d71dc2
+      internalID: 532355184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_13
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39ca33f7dbdf534aa737bbecc007dfb
+      internalID: -628357635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_14
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b73ebd87c80d648af62afea608f379
+      internalID: 632289367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_15
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f82f5f8bf1135c4dacc55b83fd50cce
+      internalID: 1619513557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46867d88b1deff44cb95991e95cc0039
+      internalID: -296172758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_17
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5e3f0dc4bd4e54492f39c24aadf614
+      internalID: -2007390816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_18
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cafc5982ef307a439eb9cfaeed96752
+      internalID: 146940638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_19
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7825ddcdb8c8440b2a4daad1f87ac3
+      internalID: 1713945194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_20
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2976c620018f3be43803ad5da40092a4
+      internalID: 1033152567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_21
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4f062561abdd64e853f85690fa0b22
+      internalID: 1805446169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_22
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802484c37714d004c9d03c692bee3c42
+      internalID: 610379121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_23
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1096
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5e05d5b039a414fb93c2b57059caf0
+      internalID: -711147050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a16fd1452d53244b9f0266cc9bb45f7
+      internalID: -532823093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +657,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Emma_sheet_v2_0: 1053707520
+      Emma_sheet_v2_1: -336842030
+      Emma_sheet_v2_10: -710123597
+      Emma_sheet_v2_11: -1452435610
+      Emma_sheet_v2_12: 532355184
+      Emma_sheet_v2_13: -628357635
+      Emma_sheet_v2_14: 632289367
+      Emma_sheet_v2_15: 1619513557
+      Emma_sheet_v2_16: -296172758
+      Emma_sheet_v2_17: -2007390816
+      Emma_sheet_v2_18: 146940638
+      Emma_sheet_v2_19: 1713945194
+      Emma_sheet_v2_2: -1896178027
+      Emma_sheet_v2_20: 1033152567
+      Emma_sheet_v2_21: 1805446169
+      Emma_sheet_v2_22: 610379121
+      Emma_sheet_v2_23: -711147050
+      Emma_sheet_v2_24: -532823093
+      Emma_sheet_v2_3: 246697506
+      Emma_sheet_v2_4: 1342082138
+      Emma_sheet_v2_5: -1197954620
+      Emma_sheet_v2_6: -983990929
+      Emma_sheet_v2_7: 348910575
+      Emma_sheet_v2_8: -1863188102
+      Emma_sheet_v2_9: -1540416108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
