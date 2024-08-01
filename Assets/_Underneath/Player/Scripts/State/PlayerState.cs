@@ -36,7 +36,7 @@ public class PlayerState
     public virtual void Enter()
     {
         player.playerVisualizer.PlayAnimation(_animName);
-        Debug.Log("Entered : " + this.ToString());
+        //Debug.Log("Entered : " + this.ToString());
     }
 
     /// <summary>

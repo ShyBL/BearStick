@@ -14,6 +14,7 @@ public class PlayerAirState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.playerInput.onJump += CheckIfCloseToWall;
     }
 
     public override void Update()
@@ -31,14 +32,25 @@ public class PlayerAirState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        player.playerInput.onJump -= CheckIfCloseToWall;
     }
     
     private void CheckIfIdle()
     {
         if (player.IsGrounded() && player.playerPhysx.CurrentVelocity().y < LANDING_THRESHOLD)
         {
+            
             stateMachine.ChangeState(stateMachine.IdleState);
         }
     }
 
+    private void CheckIfCloseToWall()
+    {
+        //Player detects a wall while theyre in the air
+        if(player.playerPhysx.IsWallDetected())
+        {
+            stateMachine.ChangeState(stateMachine.WallJumpState);
+
+        }
+    }
 }

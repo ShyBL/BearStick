@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
         
         if (moveInputVector.x != 0)
         {
+            facingDirection = moveInputVector.x > 0 ? 1 : -1;
             playerVisualizer.spriteComponent.flipX = moveInputVector.x > 0;
         }
     }

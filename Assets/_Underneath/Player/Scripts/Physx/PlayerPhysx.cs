@@ -51,11 +51,13 @@ public class PlayerPhysx : MonoBehaviour
     
     public void Jump(Vector3 jumpVector, float airVelocity, float jumpForce)
     {
+        bIsJumping = true;
         rb.velocity = new Vector3(jumpVector.x * airVelocity, jumpForce,jumpVector.z * airVelocity);
     }
     
     [Header(" Wall Collision ")]
     [SerializeField] private LayerMask whatIsWall;
+    [SerializeField] private Vector2 wallCheckBoxSize;
     [SerializeField] private float wallCastDistance;
     
     [Header(" Ledge Rays Parameters ")]
@@ -71,7 +73,8 @@ public class PlayerPhysx : MonoBehaviour
     private Vector3 topRayDestination;
     private Vector3 bottomRayStartPosition;
     private Vector3 bottomRayDestination;
-    public bool IsWallDetected() => Physics2D.Raycast(transform.position, Vector2.right * Player.Instance.facingDirection, wallCastDistance, whatIsWall);
+    public bool IsWallDetected() => Physics2D.BoxCast(transform.position, wallCheckBoxSize, 0, new Vector2(Player.Instance.facingDirection, 0), wallCastDistance, whatIsWall);
+    public bool bIsJumping = false;
     public bool IsLedgeDetected() => DetectLedges();
     public void EnableLedgeRays() => ledgeRaysEnabled = true;
     public void DisableLedgeRays() => ledgeRaysEnabled = false;
@@ -114,8 +117,8 @@ public class PlayerPhysx : MonoBehaviour
     // When object in hierarchy is selected, will show where the ground and wall checks will happen
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireCube(transform.position - transform.up * groundCastDistance, groundCheckBoxSize); // GroundCheck
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + wallCastDistance * Player.Instance.facingDirection, transform.position.y)); // WallCheck
+        //Gizmos.DrawWireCube(transform.position - transform.up * groundCastDistance, groundCheckBoxSize); // GroundCheck * Player.Instance.facingDirection
+        Gizmos.DrawWireCube(transform.position - new Vector3(Player.Instance.facingDirection, 0) * wallCastDistance, wallCheckBoxSize); // WallCheck
 
         // Ledge Detection
         if (ledgeRaysEnabled)
