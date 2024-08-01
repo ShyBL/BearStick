@@ -25,6 +25,7 @@ public class PlayerJumpState : PlayerAirState
     {
         if (player.playerPhysx.CurrentVelocity().y < 0)
         {
+            player.playerPhysx.bIsJumping = false;
             stateMachine.ChangeState(stateMachine.AirState);
         }
     }
