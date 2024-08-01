@@ -7,7 +7,7 @@ public class PhysicsCollectible : MonoBehaviour
     
     public Item collectable;
     private Rigidbody2D rigidBody;
-
+    
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
