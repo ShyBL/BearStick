@@ -96,6 +96,11 @@ public class Player : MonoBehaviour
             //Debug.Log("groundStop");
             stopWallJump();
         }
+
+        if (isWallJumping && isWalled())
+        {
+            stopWallJump();
+        }
     }
 
     private void StopMovementHandler()
@@ -212,7 +217,7 @@ public class Player : MonoBehaviour
         {
             canMove = false;
             isWallJumping = true;
-            StopInPlace();
+            //StopInPlace();
             moveInputVector = new Vector3(0f, 0f, 0f);
 
             rb.velocity = new Vector2(wJumpDir * wJumpForce.x, wJumpForce.y);
