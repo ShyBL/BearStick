@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     public Action onInteract;
 
     public Action onBagOpened;
+    public Action onDialogueEnd;
     
     public Vector3 moveVector;
     
@@ -25,6 +26,7 @@ public class PlayerInput : MonoBehaviour
         actionAsset.Player.Jump.performed += OnJumpPerformed;
         actionAsset.Player.Interact.performed += OnInteractPerformed;
         actionAsset.Player.OpenBag.performed += OnBagOpenedPerformed;
+        actionAsset.Player.EndDialogue.performed += OnDialogueEnded;
     }
 
    
@@ -64,5 +66,10 @@ public class PlayerInput : MonoBehaviour
     private void OnBagOpenedPerformed(InputAction.CallbackContext context)
     {
         onBagOpened?.Invoke();
+    }
+
+    private void OnDialogueEnded(InputAction.CallbackContext context)
+    {
+        onDialogueEnd?.Invoke();
     }
 }
