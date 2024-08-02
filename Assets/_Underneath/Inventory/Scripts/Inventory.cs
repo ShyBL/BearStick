@@ -49,16 +49,17 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void Start() => StartCoroutine(LoadInventory());
-
-    private void Update()
+    private void OnDisable()
     {
-        // When Q is pressed switch whether the inventory is being displayed or not
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            ToggleInventory();
-        }
+        Player.Instance.playerInput.onBagOpened -= onToggleInventory;
     }
+
+    private void OnEnable()
+    {
+        Player.Instance.playerInput.onBagOpened += onToggleInventory;
+    }
+
+    private void Start() => StartCoroutine(LoadInventory());
 
     // Initializes the inventory. Should only need to be called in Awake.
     private void Configure()
@@ -84,8 +85,12 @@ public class Inventory : MonoBehaviour
         m_IsInventoryReady = true;
     }
 
+
     private void ToggleInventory(ClickEvent evt = null)
     {
+      
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.OpenBag, Player.Instance.gameObject.transform.position);
+       
         switch (m_Root.resolvedStyle.display)
         {
             case DisplayStyle.Flex:
@@ -95,6 +100,11 @@ public class Inventory : MonoBehaviour
                 m_Root.style.display = DisplayStyle.Flex;
                 break;
         }
+    }
+
+    private void onToggleInventory()
+    {
+        ToggleInventory();
     }
 
     // Commented out related code for this function as this is no longer needed for now
