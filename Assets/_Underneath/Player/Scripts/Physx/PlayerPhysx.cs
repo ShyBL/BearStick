@@ -30,6 +30,10 @@ public class PlayerPhysx : MonoBehaviour
         // whatIsGround
     );
     
+    public void Start()
+    {
+        wallCheckFacingDirection = new Vector3(Player.Instance.facingDirection, 0);
+    }
     public void HandleMovement(Vector3 movement, float speed)
     {
         rb.velocity = new Vector3(movement.x * speed, rb.velocity.y,movement.z * speed);
@@ -59,7 +63,7 @@ public class PlayerPhysx : MonoBehaviour
     [SerializeField] private LayerMask whatIsWall;
     [SerializeField] private Vector2 wallCheckBoxSize;
     [SerializeField] private float wallCastDistance;
-    private Vector3 wallCheckFacingDirection = new Vector3(Player.Instance.facingDirection, 0);
+    private Vector3 wallCheckFacingDirection;
 
     [Header(" Ledge Rays Parameters ")]
     private bool ledgeRaysEnabled = true;

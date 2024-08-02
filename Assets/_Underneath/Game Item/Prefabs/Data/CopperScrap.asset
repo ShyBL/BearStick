@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: a42aeb06-8ba4-4906-a328-7a3bfbf7b1c8
   FriendlyName: Copper Scrap
-  Description: 
+  Description: A piece of copper. Useful salvage.
   SellPrice: 5
   Icon: {fileID: 1821178428, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:

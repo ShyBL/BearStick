@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: f4b32478-a566-4310-a47d-dd74fd1faafd
   FriendlyName: Nearly Empty Pizza Box
-  Description: 
+  Description: "The cardboard has to be useful for something\u2026"
   SellPrice: 2
   Icon: {fileID: 1743088626, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:

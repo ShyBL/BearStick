@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 64bbd4ba-97f2-4e84-9fb6-30dbf4201d58
   FriendlyName: Propane Tank
-  Description: 
+  Description: An empty metal tank. A rare find!
   SellPrice: 15
   Icon: {fileID: 1067937131, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:

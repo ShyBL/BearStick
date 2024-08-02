@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 91e363e5-f394-42d4-a4d4-b453d3fbb232
   FriendlyName: Spoon
-  Description: 
+  Description: Looks like someone is missing their spoon.
   SellPrice: 8
   Icon: {fileID: 1885251302, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:

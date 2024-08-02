@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5004930048528496464}
   - component: {fileID: 2861636631572309541}
   - component: {fileID: 4048408613977973965}
+  - component: {fileID: 1579546266234154619}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -128,6 +129,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1579546266234154619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2514201769875417504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &2942129072151311213
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,9 +201,11 @@ MonoBehaviour:
   moveSpeed: 2
   airVelocity: 2
   jumpForce: 2
+  wallJumpForce: 15
+  wallSlideSpeed: 8
   canMove: 1
   moveInputVector: {x: 0, y: 0, z: 0}
-  Inventory: {fileID: 0}
+  inventory: {fileID: 0}
   facingDirection: 0
 --- !u!50 &7365951421248579780
 Rigidbody2D:
@@ -355,7 +371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd2a57b01ee8a546b10f392367c9470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory: {fileID: 0}
 --- !u!1 &4052180297955331267
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +574,7 @@ SpriteRenderer:
   m_Size: {x: 12.28, y: 14.04}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6341521705249812588
@@ -644,3 +659,12 @@ MonoBehaviour:
     m_Bits: 8
   groundCheckBoxSize: {x: 0, y: 0}
   groundCastDistance: 0
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 0
+  wallCheckBoxSize: {x: 0, y: 0}
+  wallCastDistance: 0
+  ledgeRaysDistance: 0
+  ledgeRaysSpacing: 0
+  ledgeRaysPositionOffset: {x: 0, y: 0, z: 0}
+  bIsJumping: 0

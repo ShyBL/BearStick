@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: b31f8cdb-15ab-427c-b0f4-5f1898bc0596
   FriendlyName: Spring
-  Description: Goes boing
+  Description: Still pretty springy!
   SellPrice: 3
   Icon: {fileID: 942943304, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:

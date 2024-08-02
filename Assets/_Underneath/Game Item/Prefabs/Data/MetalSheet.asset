@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: b4dbefce-307a-4074-bef7-d923b0617c90
   FriendlyName: Metal Sheet
-  Description: 
+  Description: Perhaps this was once part of a larger whole?
   SellPrice: 7
   Icon: {fileID: 567783056, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:
