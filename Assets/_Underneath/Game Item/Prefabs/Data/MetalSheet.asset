@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d16508b3605d246beb92a74c8f5bb6, type: 3}
+  m_Name: MetalSheet
+  m_EditorClassIdentifier: 
+  ID: b4dbefce-307a-4074-bef7-d923b0617c90
+  FriendlyName: Metal Sheet
+  Description: 
+  SellPrice: 7
+  Icon: {fileID: 567783056, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
+  SlotDimension:
+    Height: 5
+    Width: 2
+  Weight: 4
