@@ -59,7 +59,8 @@ public class PlayerPhysx : MonoBehaviour
     [SerializeField] private LayerMask whatIsWall;
     [SerializeField] private Vector2 wallCheckBoxSize;
     [SerializeField] private float wallCastDistance;
-    
+    private Vector3 wallCheckFacingDirection = new Vector3(Player.Instance.facingDirection, 0);
+
     [Header(" Ledge Rays Parameters ")]
     private bool ledgeRaysEnabled = true;
     [SerializeField] private float ledgeRaysDistance;
@@ -118,7 +119,7 @@ public class PlayerPhysx : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         //Gizmos.DrawWireCube(transform.position - transform.up * groundCastDistance, groundCheckBoxSize); // GroundCheck * Player.Instance.facingDirection
-        Gizmos.DrawWireCube(transform.position - new Vector3(Player.Instance.facingDirection, 0) * wallCastDistance, wallCheckBoxSize); // WallCheck
+        Gizmos.DrawWireCube(transform.position - wallCheckFacingDirection * wallCastDistance, wallCheckBoxSize); // WallCheck
 
         // Ledge Detection
         if (ledgeRaysEnabled)

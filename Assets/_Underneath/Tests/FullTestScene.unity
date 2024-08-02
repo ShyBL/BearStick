@@ -1724,16 +1724,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4561311522582680487, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_Size.x
-      value: 10
+      value: 6.44
       objectReference: {fileID: 0}
     - target: {fileID: 4561311522582680487, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_Size.y
-      value: 10
+      value: 7.32
       objectReference: {fileID: 0}
     - target: {fileID: 4561311522582680487, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1053707520, guid: 5e97f00c368e211458da5c67b4af18de, type: 3}
+      objectReference: {fileID: -437292834, guid: 5e97f00c368e211458da5c67b4af18de, type: 3}
     - target: {fileID: 4561311522582680487, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
