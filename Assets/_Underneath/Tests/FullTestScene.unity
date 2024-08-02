@@ -1739,8 +1739,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: wallCastDistance
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: whatIsWall.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: groundCastDistance
       value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: wallCheckBoxSize.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: wallCheckBoxSize.y
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: groundCheckBoxSize.x
@@ -1760,7 +1776,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 24a5d5857008fd34bb5bc46a62848a77, type: 2}
     - target: {fileID: 7667757941945476830, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9154314289465190505, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_LocalPosition.x

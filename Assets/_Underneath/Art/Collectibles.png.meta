@@ -123,169 +123,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Collectibles_0
+      name: Spoon
       rect:
         serializedVersion: 2
         x: 9
-        y: 291
+        y: 120
         width: 20
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cb69f97d2639d647940b706bae08a37
-      internalID: -154307283
+      spriteID: cd670b70ae87af34690f211ee53715c1
+      internalID: 1885251302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collectibles_1
+      name: Wire
       rect:
         serializedVersion: 2
-        x: 54
-        y: 287
+        x: 44
+        y: 116
         width: 58
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c04444b2bcfb9bb4782b89791c753385
-      internalID: -1545733187
+      spriteID: 29fd94d98a7636c44b083b1aed4277d7
+      internalID: 942943304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collectibles_2
+      name: Tire
       rect:
         serializedVersion: 2
-        x: 128
-        y: 277
+        x: 108
+        y: 106
         width: 94
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2661be4022f2d234b8244cadf31071a8
-      internalID: 1357360488
+      spriteID: 7ce850c6ac3a5f640b29ca0ba57d35ed
+      internalID: 198488723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collectibles_3
+      name: Copper
       rect:
         serializedVersion: 2
-        x: 0
-        y: 199
+        x: 214
+        y: 105
+        width: 50
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3112c182cb4849f44b64863f386c57ae
+      internalID: 1821178428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 93
         width: 127
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dd9280c4ac415d44b774e382eada221
-      internalID: 1701668137
+      spriteID: 393ed38ca56e9d844a918b5391245feb
+      internalID: 567783056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collectibles_4
+      name: Turnip
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 97
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d6faa6c149d7344b12f53294431859
+      internalID: 32037936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pizza
       rect:
         serializedVersion: 2
         x: 26
-        y: 118
+        y: 22
         width: 86
         height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a41ad4cfee5bb024686d96263aa79d95
-      internalID: -52368687
+      spriteID: 10fa85e16d7595b4cb577e0f5327ae9d
+      internalID: 1743088626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collectibles_5
+      name: Can
       rect:
         serializedVersion: 2
-        x: 166
-        y: 118
+        x: 156
+        y: 22
         width: 44
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802e7928d5b26e849abdedeb9c99d376
-      internalID: 421311089
+      spriteID: 6c3f712802cd4c74999f507a26959adc
+      internalID: 919286881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collectibles_6
+      name: Water
       rect:
         serializedVersion: 2
-        x: 32
+        x: 246
         y: 14
         width: 21
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deca9fa5667193240bd6973932f95419
-      internalID: -1391129772
+      spriteID: adff7d374545b5546a2cb4ab7a60d393
+      internalID: 1351142319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collectibles_7
+      name: Tank
       rect:
         serializedVersion: 2
-        x: 105
+        x: 309
         y: 2
         width: 79
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59e1fc3916c165b47a26b498582b7cc3
-      internalID: -1367557842
+      spriteID: 3ec42cb59abd9d846bc55175b85f611e
+      internalID: 1067937131
       vertices: []
       indices: 
       edges: []
@@ -301,14 +343,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Collectibles_0: -154307283
-      Collectibles_1: -1545733187
-      Collectibles_2: 1357360488
-      Collectibles_3: 1701668137
-      Collectibles_4: -52368687
-      Collectibles_5: 421311089
-      Collectibles_6: -1391129772
-      Collectibles_7: -1367557842
+      Can: 919286881
+      Copper: 1821178428
+      Pizza: 1743088626
+      Sheet: 567783056
+      Spoon: 1885251302
+      Tank: 1067937131
+      Tire: 198488723
+      Turnip: 32037936
+      Water: 1351142319
+      Wire: 942943304
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
