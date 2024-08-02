@@ -730,11 +730,11 @@ MonoBehaviour:
     Path: event:/CHARACTER/Dumpster
   <Trashcan>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1726563311
+      Data2: 1332925163
+      Data3: -432660811
+      Data4: -687344899
+    Path: event:/CHARACTER/GarbageCan
   <Stash>k__BackingField:
     Guid:
       Data1: 264241405

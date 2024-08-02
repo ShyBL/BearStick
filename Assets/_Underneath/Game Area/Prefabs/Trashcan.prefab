@@ -207,6 +207,7 @@ MonoBehaviour:
   physicsCollectable: {fileID: 2485555635434482877, guid: 4460af2fd4760ec419f4ff424cf9383a, type: 3}
   textGameObject: {fileID: 7188652764937471931}
   _animator: {fileID: 6123234645651693956}
+  type: 1
   OutPoint: {fileID: 6410753281846934463}
 --- !u!1 &6698058631323191658
 GameObject:

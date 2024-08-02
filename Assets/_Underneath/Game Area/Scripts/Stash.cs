@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
+public enum StashType { Dumpster, Trashcan }
 public class Stash : MonoBehaviour
 {
     // Here is a list of pickups, serialized so level designers can add pickups to the list for the goal area.
@@ -13,6 +14,8 @@ public class Stash : MonoBehaviour
     private GameObject textGameObject;
     [SerializeField]
     private Animator _animator;
+
+    public StashType type;
 
     // This boolean determines if this goal area has been used or not.
     private bool inRange = false;
@@ -51,18 +54,32 @@ public class Stash : MonoBehaviour
         if (inRange)
         {
             _animator.Play("Open");
-            
-            //AudioManager.instance.PlayOneShot(FMODEvents.instance.Dumpster,transform.position);
-            
+
+            PlaySoundByType();
+
             Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
-            
+
             foreach (Item collectable in collectableList)
             {
-                PhysicsCollectible newCollectable = Instantiate(physicsCollectable,OutPoint.position,quaternion.identity).GetComponent<PhysicsCollectible>();
+                PhysicsCollectible newCollectable = Instantiate(physicsCollectable, OutPoint.position, quaternion.identity).GetComponent<PhysicsCollectible>();
                 newCollectable.SetCollectable(collectable);
             }
-            
+
             Player.Instance.EnableMovement();
+        }
+    }
+
+    private void PlaySoundByType()
+    {
+        switch (type)
+        {
+            case StashType.Dumpster:
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.Dumpster, transform.position);
+                break;
+
+            case StashType.Trashcan:
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.Trashcan, transform.position);
+                break;
         }
     }
 }
