@@ -149,7 +149,12 @@ public class Inventory : MonoBehaviour
         };
 
         // Call create item function to create the item in the inventory
-        return CreateItem(sItem);
+        bool result = CreateItem(sItem);
+
+        if(result)
+            StoredItems.Add(sItem);
+
+        return result;
     }
 
     // Creates the visual element for an item and adds it to the inventory grid
