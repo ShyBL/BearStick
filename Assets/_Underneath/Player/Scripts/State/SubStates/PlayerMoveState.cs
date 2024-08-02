@@ -12,7 +12,7 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        //AudioManager.instance.PlayEvent(FMODEvents.instance.FootstepsEvent, transform.position);
+        AudioManager.instance.PlayEvent(FMODEvents.instance.FootstepsEvent, player.gameObject.transform.position);
     }
 
     public override void Exit()

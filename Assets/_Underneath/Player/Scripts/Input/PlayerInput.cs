@@ -11,6 +11,8 @@ public class PlayerInput : MonoBehaviour
     public Action onMoveStopped;
     public Action onJump;
     public Action onInteract;
+
+    public Action onBagOpened;
     
     public Vector3 moveVector;
     
@@ -22,7 +24,10 @@ public class PlayerInput : MonoBehaviour
         actionAsset.Player.Move.canceled += OnMoveCanceled;
         actionAsset.Player.Jump.performed += OnJumpPerformed;
         actionAsset.Player.Interact.performed += OnInteractPerformed;
+        actionAsset.Player.OpenBag.performed += OnBagOpenedPerformed;
     }
+
+   
 
     private void OnDisable()
     {
@@ -56,4 +61,8 @@ public class PlayerInput : MonoBehaviour
         onInteract?.Invoke();
     }
     
+    private void OnBagOpenedPerformed(InputAction.CallbackContext context)
+    {
+        onBagOpened?.Invoke();
+    }
 }
