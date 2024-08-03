@@ -3,6 +3,7 @@
 public class PlayerPhysx : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private Player racc;
 
     [Header(" RB Settings ")]
     [SerializeField] private Rigidbody2D rb;
@@ -31,7 +32,10 @@ public class PlayerPhysx : MonoBehaviour
 
     public void Jump(Vector3 jumpVector, float airVelocity, float jumpForce)
     {
+        if (racc.isGrounded())
+        {
         rb.velocity = new Vector3(jumpVector.x * airVelocity, jumpForce,jumpVector.z * airVelocity);
+        }
     }
     
     private void OnDrawGizmosSelected()

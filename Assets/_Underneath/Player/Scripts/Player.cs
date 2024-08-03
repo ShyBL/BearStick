@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] private bool canMove = true;
     [SerializeField] private Vector3 moveInputVector;
     private bool grounded;
+    private bool isJumping = false;
     
     public static Player Instance;
     [SerializeField] public Inventory Inventory;
@@ -79,7 +80,15 @@ public class Player : MonoBehaviour
                 {
                     return;
                 }
+                if (playerPhysx.CurrentVelocity().y < 0)
+                {
+                    playerVisualizer.SetFall();
+                    //return;
+                }
+                else if (grounded)
+                {
                 StopMovementHandler();
+                }
             }
         }
 
@@ -87,6 +96,7 @@ public class Player : MonoBehaviour
         wallJump();
 
         grounded = isGrounded();
+
     }
 
     private void FixedUpdate()
@@ -97,9 +107,28 @@ public class Player : MonoBehaviour
             stopWallJump();
         }
 
+        Debug.Log(grounded);
+
         if (isWallJumping && isWalled())
         {
             stopWallJump();
+        }
+
+        if (grounded && isJumping)
+        {
+            isJumping = false;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (grounded && moveInputVector.x == 0)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 
@@ -114,7 +143,10 @@ public class Player : MonoBehaviour
         if (!isWallJumping)
         {
             Flip();
-            playerVisualizer.SetRun();
+            if (grounded && !isJumping)
+            {
+                playerVisualizer.SetRun();
+            }
         
             playerPhysx.HandleMovement(moveInputVector, moveSpeed);
         }
@@ -124,6 +156,7 @@ public class Player : MonoBehaviour
     {
         if (grounded)
         {
+            isJumping = true;
             playerVisualizer.SetJump();
             playerPhysx.Jump(moveInputVector, airVelocity, jumpForce);
         }
@@ -163,11 +196,17 @@ public class Player : MonoBehaviour
     public void DisableMovement() => canMove = false;
     public void StopInPlace() => playerPhysx.HandleMovement(new Vector3(0,0,0), 0);
     
-    public void Jump() => playerPhysx.Jump(moveInputVector, airVelocity, jumpForce);
+    public void Jump()
+    {
+        if (grounded)
+        {
+            playerPhysx.Jump(moveInputVector, airVelocity, jumpForce);
+        }
+    }
     public Vector3 Velocity() => playerPhysx.CurrentVelocity();
     //public bool isGrounded() => playerPhysx.IsGrounded;
 
-    private bool isGrounded()
+    public bool isGrounded()
     {
         return Physics2D.OverlapCircle(gCheck.position, 0.1f, gLayer);
     }
@@ -242,7 +281,7 @@ public class Player : MonoBehaviour
 
     private void stopWallJump()
     {
-        Debug.Log("wjStopped");
+        //Debug.Log("wjStopped");
         isWallJumping = false; 
         canMove = true;
     }

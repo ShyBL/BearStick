@@ -11,18 +11,31 @@ public class cameraFollow : MonoBehaviour
 
     private Vector3 camSpot;
 
+    [Header("Cam Constraints")]
+    public float xMin;
+    public float xMax;
+    public float yMin;
+    public float yMax;
+
     // Update is called once per frame
     private void FixedUpdate()
     {
+        float xClamp = Mathf.Clamp(racc.position.x, xMin, xMax);
+        float yClamp = Mathf.Clamp(racc.position.y, yMin, yMax);
+
         if (Mathf.Abs(camSpot.x - racc.position.x) > deadZone.x)
         {
             getCamPos();
-            transform.position = camSpot;
+            Vector3 fixedPos = new Vector3(Mathf.Clamp(camSpot.x, xMin, xMax), Mathf.Clamp(camSpot.y, yMin, yMax), offset.z);
+            //transform.position = camSpot;
+            transform.position = fixedPos;
         }
         else if (Mathf.Abs(camSpot.y - racc.position.y) > deadZone.y)
         {
             getCamPos();
-            transform.position = camSpot;
+            Vector3 fixedPos = new Vector3(Mathf.Clamp(camSpot.x, xMin, xMax), Mathf.Clamp(camSpot.y, yMin, yMax), offset.z);
+            //transform.position = camSpot;
+            transform.position = fixedPos;
         }
     }
 

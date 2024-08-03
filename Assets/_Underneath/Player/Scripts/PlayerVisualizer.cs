@@ -6,6 +6,7 @@ public class PlayerVisualizer : MonoBehaviour
 {
     private Animator animatorComponent;
     public SpriteRenderer spriteComponent;
+    [SerializeField] private Player racc;
     
     [SerializeField] private string idleBoolParameter;
     [SerializeField] private string runBoolParameter;
@@ -42,6 +43,18 @@ public class PlayerVisualizer : MonoBehaviour
             pushingBoolParameter,
             pullingBoolParameter
         };
+    }
+
+    private void Update()
+    {
+        if (racc.isGrounded())
+        {
+            animatorComponent.SetBool("grounded", true);
+        }
+        else
+        {
+            animatorComponent.SetBool("grounded", false);
+        }
     }
 
     public void SetIdle() => SetBoolState(idleBoolParameter);
