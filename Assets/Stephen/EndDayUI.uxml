@@ -25,7 +25,7 @@
                         <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalMoney" class="text-spacing" />
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="Image" style="background-image: url(&quot;project://database/Assets/_Underneath/Player/Animation/Emma_Idle_sheet.png?fileID=451886154&amp;guid=f23660cb7d1776a4681a8f3f37c216c3&amp;type=3#Emma_Idle_sheet_0&quot;); -unity-background-scale-mode: scale-to-fit; margin-top: 7%; margin-right: 0; margin-bottom: 7%; margin-left: 7%; flex-grow: 1;" />
+                <ui:VisualElement name="Image" style="background-image: url(&quot;project://database/Assets/_Underneath/Player/Sprites/Emma_sheet_v2.png?fileID=-437292834&amp;guid=5e97f00c368e211458da5c67b4af18de&amp;type=3#Emma_sheet_v2_0&quot;); -unity-background-scale-mode: scale-to-fit; margin-top: 5%; margin-right: 0; margin-bottom: 5%; margin-left: 7%; flex-grow: 1;" />
             </ui:VisualElement>
             <ui:VisualElement style="justify-content: center; align-items: center; height: 20%;">
                 <ui:Button text="Continue" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" style="width: 26%; height: 75%; border-left-color: rgb(79, 79, 79); border-right-color: rgb(79, 79, 79); border-top-color: rgb(79, 79, 79); border-bottom-color: rgb(79, 79, 79); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; font-size: 52px; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px;" />
