@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Cache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Cache.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerJumpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerJumpState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerMoveState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Sound/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMODEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMODEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Tests/FullTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Tests/FullTestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +18,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Daniel/FmodAudioManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Near/cameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerWallJumpState.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -122,7 +111,7 @@
       <workItem from="1721929716908" duration="304000" />
       <workItem from="1722096438087" duration="1509000" />
       <workItem from="1722205563684" duration="7527000" />
-      <workItem from="1722627132879" duration="4195000" />
+      <workItem from="1722627132879" duration="4745000" />
     </task>
     <servers />
   </component>
