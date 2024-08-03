@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour
 
     public Action onBagOpened;
     public Action onDialogueEnd;
+    public Action onPauseMenu;
     
     public Vector3 moveVector;
     
@@ -27,6 +28,7 @@ public class PlayerInput : MonoBehaviour
         actionAsset.Player.Interact.performed += OnInteractPerformed;
         actionAsset.Player.OpenBag.performed += OnBagOpenedPerformed;
         actionAsset.Player.EndDialogue.performed += OnDialogueEnded;
+        actionAsset.Player.PauseMenu.performed += OnPauseMenu;
     }
 
    
@@ -71,5 +73,10 @@ public class PlayerInput : MonoBehaviour
     private void OnDialogueEnded(InputAction.CallbackContext context)
     {
         onDialogueEnd?.Invoke();
+    }
+
+    private void OnPauseMenu(InputAction.CallbackContext context)
+    {
+        onPauseMenu?.Invoke();
     }
 }

@@ -1,0 +1,5 @@
+.button {
+    font-size: 36px;
+    -unity-font-style: bold;
+    width: 100%;
+}
