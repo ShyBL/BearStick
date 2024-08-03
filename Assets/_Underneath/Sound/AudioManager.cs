@@ -117,6 +117,16 @@ public class AudioManager : MonoBehaviour
         }
     }
     
+    public void PlayEvent(EventInstance fmodEvent, Vector3 posInWorld, string paramName, int paramValue)
+    {
+        if (PlaybackState(fmodEvent) != PLAYBACK_STATE.PLAYING)
+        {
+            fmodEvent.setParameterByName(paramName, paramValue);
+            fmodEvent.set3DAttributes(RuntimeUtils.To3DAttributes(posInWorld));
+            fmodEvent.start();
+        }
+    }
+    
     public void StopEvent(EventInstance fmodEvent)
     {
         fmodEvent.stop(STOP_MODE.ALLOWFADEOUT);

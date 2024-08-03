@@ -1,7 +1,4 @@
-using System;
-using FMOD.Studio;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
@@ -25,6 +22,8 @@ public class Player : MonoBehaviour
     [Header(" Inventory ")]
     [SerializeField] public Inventory inventory;
 
+    [Header(" Sound ")]
+    [SerializeField] public GameObject footstepsGameObject;
     private void Awake()
     {
         if (Instance == null)

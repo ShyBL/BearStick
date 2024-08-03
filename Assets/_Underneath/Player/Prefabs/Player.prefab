@@ -586,6 +586,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4785660932464887808}
+  - component: {fileID: 6824439447339157606}
+  - component: {fileID: 9059608130146819439}
   m_Layer: 0
   m_Name: SoundEmiter
   m_TagString: Untagged
@@ -605,9 +607,194 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7614297254511159629}
   m_Father: {fileID: 9154314289465190505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6824439447339157606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341521705249812588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15930316e41c4295bb8cb74f97615b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  musicVolume: 1
+  ambienceVolume: 1
+  SFXVolume: 1
+--- !u!114 &9059608130146819439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341521705249812588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b3f75949c04cc3956565fed3b905ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Music>k__BackingField:
+    Guid:
+      Data1: -183087993
+      Data2: 1267859473
+      Data3: -162963839
+      Data4: -1186688770
+    Path: event:/Music/Music
+  <Footsteps>k__BackingField:
+    Guid:
+      Data1: -1806913121
+      Data2: 1076087810
+      Data3: 990959747
+      Data4: -2015725449
+    Path: event:/CHARACTER/Footsteps
+  <Jump>k__BackingField:
+    Guid:
+      Data1: -36099641
+      Data2: 1245533231
+      Data3: 77851061
+      Data4: -1821681271
+    Path: event:/CHARACTER/Jump
+  <Land>k__BackingField:
+    Guid:
+      Data1: -1306322137
+      Data2: 1186448129
+      Data3: 2127111593
+      Data4: -2012178687
+    Path: event:/CHARACTER/Land
+  <OpenBag>k__BackingField:
+    Guid:
+      Data1: 1121472072
+      Data2: 1257265429
+      Data3: -1445541712
+      Data4: 184851483
+    Path: event:/CHARACTER/Bag
+  <CollectedItem>k__BackingField:
+    Guid:
+      Data1: 1052823571
+      Data2: 1322795423
+      Data3: -1221432169
+      Data4: -898203818
+    Path: event:/CHARACTER/CollectItem
+  <CrateDrag>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <Dumpster>k__BackingField:
+    Guid:
+      Data1: -1357412773
+      Data2: 1265033874
+      Data3: 1587919273
+      Data4: -525831730
+    Path: event:/CHARACTER/Dumpster
+  <Trashcan>k__BackingField:
+    Guid:
+      Data1: -1726563311
+      Data2: 1332925163
+      Data3: -432660811
+      Data4: -687344899
+    Path: event:/CHARACTER/GarbageCan
+  <Stash>k__BackingField:
+    Guid:
+      Data1: 264241405
+      Data2: 1102505475
+      Data3: -316780640
+      Data4: -1769853662
+    Path: event:/CHARACTER/Stash
+  <Click>k__BackingField:
+    Guid:
+      Data1: 1437840984
+      Data2: 1236308650
+      Data3: 690215351
+      Data4: 113904849
+    Path: event:/UI/Click
+  <Pause>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <UnPause>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+--- !u!1 &8271848796004542132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7614297254511159629}
+  - component: {fileID: 1418311705545550972}
+  m_Layer: 0
+  m_Name: Footsteps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7614297254511159629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8271848796004542132}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4785660932464887808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1418311705545550972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8271848796004542132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1806913121
+      Data2: 1076087810
+      Data3: 990959747
+      Data4: -2015725449
+    Path: event:/CHARACTER/Footsteps
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params:
+  - Name: Material
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8522632386573339144
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,9 @@ public class PlayerJumpState : PlayerAirState
     public override void Enter()
     {
         base.Enter();
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.Jump, player.gameObject.transform.position);
+        AudioManager.instance.PlayEvent
+        (FMODEvents.instance.JumpEvent, player.gameObject.transform.position,
+            "Material", 0);
     }
 
     public override void Exit()

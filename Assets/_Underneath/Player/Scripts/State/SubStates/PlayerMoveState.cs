@@ -12,19 +12,21 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        AudioManager.instance.PlayEvent(FMODEvents.instance.FootstepsEvent, player.gameObject.transform.position);
+
     }
 
     public override void Exit()
     {
-        //AudioManager.instance.StopEvent(FMODEvents.instance.FootstepsEvent);
+        
         base.Exit();
     }
 
     public override void Update()
     {
         base.Update();
-        
+        AudioManager.instance.PlayEvent
+        (FMODEvents.instance.FootstepsEvent, player.gameObject.transform.position,
+            "Material", 0);
         CheckIfStopped();
         CheckIfFalling();
     }
@@ -32,12 +34,17 @@ public class PlayerMoveState : PlayerGroundedState
     private void CheckIfStopped()
     {
         if (moveInputVector == Vector3.zero)
+        {
             stateMachine.ChangeState(stateMachine.IdleState);
+        }
+            
     }
 
     private void CheckIfFalling()
     {
         if (!player.IsGrounded())
+        {
             stateMachine.ChangeState(stateMachine.AirState);
+        }
     }
 }

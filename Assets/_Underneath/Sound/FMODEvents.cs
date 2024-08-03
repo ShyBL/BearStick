@@ -14,11 +14,13 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Footsteps { get; private set; }
     [field: SerializeField] public EventReference Jump { get; private set; }
     [field: SerializeField] public EventReference Land { get; private set; }
+
     [field: SerializeField] public EventReference OpenBag { get; private set; }
 
     [field: Header("Item SFX")]
     [field: SerializeField] public EventReference CollectedItem { get; private set; }
-    
+    [field: SerializeField] public EventReference CrateDrag { get; private set; }
+
     [field: Header("Area SFX")]
     [field: SerializeField] public EventReference Dumpster { get; private set; }
     [field: SerializeField] public EventReference Trashcan { get; private set; }
@@ -30,6 +32,9 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference UnPause { get; private set; }
 
     public EventInstance FootstepsEvent { get; private set; }
+    public EventInstance JumpEvent { get; private set; }
+    public EventInstance LandEvent { get; private set; }
+
     public static FMODEvents instance { get; private set; }
 
     private void Awake()
@@ -44,5 +49,7 @@ public class FMODEvents : MonoBehaviour
     private void Start()
     {
         FootstepsEvent = AudioManager.instance.CreateInstance(Footsteps);
+        JumpEvent = AudioManager.instance.CreateInstance(Jump);
+        LandEvent = AudioManager.instance.CreateInstance(Land);
     }
 }
