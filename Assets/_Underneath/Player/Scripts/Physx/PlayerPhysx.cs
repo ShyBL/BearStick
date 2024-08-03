@@ -55,8 +55,8 @@ public class PlayerPhysx : MonoBehaviour
     
     public void Jump(Vector3 jumpVector, float airVelocity, float jumpForce)
     {
-        bIsJumping = true;
         rb.velocity = new Vector3(jumpVector.x * airVelocity, jumpForce,jumpVector.z * airVelocity);
+        bIsJumping = true;
     }
     
     [Header(" Wall Collision ")]

@@ -41,13 +41,14 @@ public class PlayerAirState : PlayerState
         {
             
             stateMachine.ChangeState(stateMachine.IdleState);
+            player.playerPhysx.bIsJumping = false;
         }
     }
 
     private void CheckIfCloseToWall()
     {
         //Player detects a wall while theyre in the air
-        if(player.playerPhysx.IsWallDetected())
+        if(player.playerPhysx.IsWallDetected() & !player.playerPhysx.bIsJumping)
         {
             stateMachine.ChangeState(stateMachine.WallJumpState);
 

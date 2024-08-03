@@ -13,6 +13,7 @@ public class PlayerWallJumpState : PlayerAirState
         base.Enter();
         player.Flip();
         player.playerPhysx.SetVelocity(player.wallJumpForce * -player.facingDirection, player.jumpForce);
+        player.playerPhysx.bIsJumping = true;
         //player.DisableDash();
     }
 
@@ -23,10 +24,22 @@ public class PlayerWallJumpState : PlayerAirState
         {
             stateMachine.ChangeState(stateMachine.IdleState);
         }
+        HoldAirState();
     }
+
+    private void HoldAirState()
+    {
+        if (player.playerPhysx.CurrentVelocity().y < 0)
+        {
+            player.playerPhysx.bIsJumping = false;
+            stateMachine.ChangeState(stateMachine.AirState);
+        }
+    }
+
     public override void Exit()
     {
         base.Exit();
+        player.playerPhysx.bIsJumping = false;
         //player.EnableDash();
 
     }
