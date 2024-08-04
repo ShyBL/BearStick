@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
->
-    
-</engine:UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/BaseUIStyle.uss?fileID=7433441132597879392&amp;guid=302a0e2215d761242893af0356419587&amp;type=3#BaseUIStyle" />
+    <ui:VisualElement name="Container" class="container" style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="Underneath" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 154px; margin-bottom: 75px;" />
+        <ui:Button text="Play" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Play" style="-unity-font-style: bold; font-size: 62px; width: 20%; margin-bottom: 75px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px; margin-left: 10px;" />
+        <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" style="-unity-font-style: bold; font-size: 62px; width: 20%; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px; margin-left: 10px;" />
+    </ui:VisualElement>
+</ui:UXML>
