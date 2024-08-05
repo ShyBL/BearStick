@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6512351719401476058}
   - component: {fileID: 2928547054737920378}
   - component: {fileID: 7475509982045270282}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DynamicCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,3 +154,7 @@ MonoBehaviour:
   smoothTime: {x: 0.1, y: 0.1}
   racc: {fileID: 0}
   deadZone: {x: 3, y: 1.5}
+  xMin: -4.5
+  xMax: 4.5
+  yMin: -4
+  yMax: 4

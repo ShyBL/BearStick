@@ -65,7 +65,7 @@ MonoBehaviour:
   Inventory: {fileID: 0}
   wJumpTime: 1
   wJumpDur: 1
-  wJumpForce: {x: 3.5, y: 4.5}
+  wJumpForce: {x: 3.5, y: 6}
   wSlideSpeed: 0.2
   wCheck: {fileID: 4491651498954828533}
   gCheck: {fileID: 2263400483321052581}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.04
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: fe391001b25b8b542a6f129f4a69bd52, type: 2}
   m_IncludeLayers:
@@ -349,6 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteComponent: {fileID: 4561311522582680487}
+  racc: {fileID: 3878882947387569265}
   idleBoolParameter: IsIdle
   runBoolParameter: IsRunning
   climbingBoolParameter: IsClimbing
@@ -418,8 +419,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1519769909
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 451886154, guid: f23660cb7d1776a4681a8f3f37c216c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -574,6 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 9154314289465190505}
+  racc: {fileID: 3878882947387569265}
   rb: {fileID: 7365951421248579780}
   whatIsGround:
     serializedVersion: 2
