@@ -5,3 +5,9 @@
     margin-left: 5%;
     flex-grow: 1;
 }
+
+.element-background {
+    background-image: url("project://database/Assets/Stephen/Underneath_UI_BG_Rough.png?fileID=21300000&guid=a87ef6a5d9dd08746bd40277ff09071e&type=3#Underneath_UI_BG_Rough");
+    -unity-background-scale-mode: scale-and-crop;
+    color: rgb(222, 222, 222);
+}
