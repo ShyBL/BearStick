@@ -56,10 +56,14 @@ public class Inventory : MonoBehaviour
 
     private void OnEnable()
     {
-        Player.Instance.playerInput.onBagOpened += onToggleInventory;
+       
     }
 
-    private void Start() => StartCoroutine(LoadInventory());
+    private void Start()
+    {
+        Player.Instance.playerInput.onBagOpened += onToggleInventory;
+        StartCoroutine(LoadInventory());
+    }
 
     // Initializes the inventory. Should only need to be called in Awake.
     private void Configure()

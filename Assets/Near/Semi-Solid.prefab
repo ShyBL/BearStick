@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2574167260069411880}
   - component: {fileID: 8533325432024762258}
   - component: {fileID: 3553262443260236448}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Semi-Solid
   m_TagString: SemiS
   m_Icon: {fileID: 0}

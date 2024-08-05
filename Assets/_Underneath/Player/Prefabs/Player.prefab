@@ -56,9 +56,9 @@ MonoBehaviour:
   playerInput: {fileID: 2377715578227744541}
   playerPhysx: {fileID: 4908028099460965068}
   playerVisualizer: {fileID: 3673152010868026515}
-  moveSpeed: 2
+  moveSpeed: 3.5
   airVelocity: 2
-  jumpForce: 2
+  jumpForce: 7
   wallJumpForce: 15
   wallSlideSpeed: 8
   canMove: 1
@@ -125,8 +125,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: 0}
-  m_Size: {x: 0.3, y: 0.64}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1.75}
   m_Direction: 0
 --- !u!114 &2310153849885307640
 MonoBehaviour:
@@ -205,7 +205,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
+  m_Offset: {x: 0.26219082, y: -0.48068166}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -216,7 +216,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.1}
+  m_Size: {x: 2.2650604, y: 0.80151224}
   m_EdgeRadius: 0
 --- !u!114 &1975358574211375795
 MonoBehaviour:
@@ -335,7 +335,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9154314289465190505}
@@ -373,7 +373,7 @@ Animator:
   m_GameObject: {fileID: 5770873039062288574}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a79b09349f67d4911ae4f5a833c43344, type: 2}
+  m_Controller: {fileID: 9100000, guid: 24a5d5857008fd34bb5bc46a62848a77, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -425,15 +425,15 @@ SpriteRenderer:
   m_SortingLayerID: 1519769909
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 451886154, guid: f23660cb7d1776a4681a8f3f37c216c3, type: 3}
+  m_Sprite: {fileID: -437292834, guid: 5e97f00c368e211458da5c67b4af18de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.28, y: 14.04}
+  m_Size: {x: 6.44, y: 7.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6341521705249812588
@@ -703,13 +703,13 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  groundCheckBoxSize: {x: 0, y: 0}
-  groundCastDistance: 0
+  groundCheckBoxSize: {x: 0.33, y: 0.33}
+  groundCastDistance: 0.91
   whatIsWall:
     serializedVersion: 2
-    m_Bits: 0
-  wallCheckBoxSize: {x: 0, y: 0}
-  wallCastDistance: 0
+    m_Bits: 64
+  wallCheckBoxSize: {x: 0.33, y: 0.33}
+  wallCastDistance: 0.91
   ledgeRaysDistance: 0
   ledgeRaysSpacing: 0
   ledgeRaysPositionOffset: {x: 0, y: 0, z: 0}
@@ -773,32 +773,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6735010715584319073, guid: c9663e08bec24e84696440020c13e2d7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5932096960608501051}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9663e08bec24e84696440020c13e2d7, type: 3}
---- !u!1 &3590872595966528077 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6735010715584319073, guid: c9663e08bec24e84696440020c13e2d7, type: 3}
-  m_PrefabInstance: {fileID: 7828038000173859884}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5932096960608501051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3590872595966528077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d860679b09423614395b1c1a0b6cb643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
-  smoothTime: {x: 0, y: 0}
-  racc: {fileID: 9154314289465190505}
-  deadZone: {x: 0, y: 0}
 --- !u!4 &6216234076784301245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4244282984275333265, guid: c9663e08bec24e84696440020c13e2d7, type: 3}
