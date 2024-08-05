@@ -10,4 +10,7 @@
     background-image: url("project://database/Assets/Stephen/Underneath_UI_BG_Rough.png?fileID=21300000&guid=a87ef6a5d9dd08746bd40277ff09071e&type=3#Underneath_UI_BG_Rough");
     -unity-background-scale-mode: scale-and-crop;
     color: rgb(222, 222, 222);
+    -unity-font: url("project://database/Assets/Stephen/eraser.dust.ttf?fileID=12800000&guid=b3dc55facd0a279468a8b82953b055a9&type=3#eraser.dust");
+    -unity-font-definition: initial;
+    -unity-font-style: normal;
 }
