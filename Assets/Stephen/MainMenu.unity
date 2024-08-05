@@ -312,6 +312,10 @@ PrefabInstance:
       value: MainMenuUI
       objectReference: {fileID: 0}
     - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: d842fc94430435a489b83ba74fa9f6a0, type: 3}
+    - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
