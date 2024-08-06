@@ -41,9 +41,9 @@ public class PlayerStateMachine
         AirState = new PlayerAirState(_player, this, States.AIR);
         JumpState = new PlayerJumpState(_player,this, States.JUMP);
         
-        LedgeGrabState = new PlayerLedgeGrabState(_player,this, States.JUMP);
-        WallJumpState = new PlayerWallJumpState(_player,this, States.JUMP);
-        WallSlideState = new PlayerWallSlideState(_player,this, States.JUMP);
+        LedgeGrabState = new PlayerLedgeGrabState(_player,this, States.CLIMB);
+        WallJumpState = new PlayerWallJumpState(_player,this, States.CLIMB);
+        WallSlideState = new PlayerWallSlideState(_player,this, States.CLIMB);
 
         //PickUpState = new PlayerPickUpState(_player, this, States.PICKUP);
 
