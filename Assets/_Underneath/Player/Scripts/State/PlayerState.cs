@@ -47,7 +47,7 @@ public class PlayerState
         stateDuration -= Time.deltaTime;
         if (player.canMove)
             SetMovementVector();
-        player.playerVisualizer.SetYBlend(rbVelocity.y);
+        //player.playerVisualizer.SetYBlend(rbVelocity.y);
 
     }
 

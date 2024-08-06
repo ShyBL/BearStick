@@ -76,6 +76,5 @@ public class PlayerData : MonoBehaviour
             IncreaseMoney(storedItem.Details.SellPrice);
             Player.Instance.inventory.StoredItems.Remove(storedItem);
         }
-        EndOfDay.Instance.EndDay();
     }
 }

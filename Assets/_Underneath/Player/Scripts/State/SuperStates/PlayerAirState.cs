@@ -20,7 +20,7 @@ public class PlayerAirState : PlayerState
     public override void Update()
     {
         base.Update();
-        SetYBlendAnimation();
+        //SetYBlendAnimation();
         CheckIfIdle();
     }
 
