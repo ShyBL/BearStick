@@ -54,11 +54,6 @@ public class Inventory : MonoBehaviour
         Player.Instance.playerInput.onBagOpened -= onToggleInventory;
     }
 
-    private void OnEnable()
-    {
-       
-    }
-
     private void Start()
     {
         Player.Instance.playerInput.onBagOpened += onToggleInventory;

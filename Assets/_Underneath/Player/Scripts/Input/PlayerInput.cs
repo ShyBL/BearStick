@@ -37,6 +37,11 @@ public class PlayerInput : MonoBehaviour
     {
         actionAsset.Player.Move.performed -= OnMovePerformed;
         actionAsset.Player.Move.canceled -= OnMoveCanceled;
+        actionAsset.Player.Jump.performed -= OnJumpPerformed;
+        actionAsset.Player.Interact.performed -= OnInteractPerformed;
+        actionAsset.Player.OpenBag.performed -= OnBagOpenedPerformed;
+        actionAsset.Player.EndDialogue.performed -= OnDialogueEnded;
+        actionAsset.Player.PauseMenu.performed -= OnPauseMenu;
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)
