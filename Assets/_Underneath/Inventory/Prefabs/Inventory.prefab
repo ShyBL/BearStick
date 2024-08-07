@@ -48,7 +48,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 67f85cec73d8a2b4ab70d7939df7a031, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 1396a3d677d9fe840863e1b4729fa2c4, type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!114 &2799984485898357896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,3 +66,4 @@ MonoBehaviour:
     Height: 6
     Width: 4
   m_MaxWeight: 0
+  m_Hud: {fileID: 0}
