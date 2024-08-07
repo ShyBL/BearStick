@@ -13,7 +13,7 @@ public class Dialogue : MonoBehaviour
     Label m_Text;
     VisualElement m_Image;
 
-    private void Start()
+    private void Awake()
     {
         m_Document = GetComponent<UIDocument>();
         m_Root = m_Document.rootVisualElement;

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum StashType { Dumpster, Trashcan }
 public class Stash : MonoBehaviour
@@ -49,10 +50,14 @@ public class Stash : MonoBehaviour
     }
 
     [SerializeField] private Transform OutPoint;
-    
+    [SerializeField] private bool tutorialOpeningDoOnce;
+    [SerializeField] private bool tutorialCarryingDoOnce;
+
     // Allows the input action to spawn collectibles from the list as long as the player is within range.
     private void Interact()
     {
+
+        
         if (inRange && opened == false)
         {
             _animator.Play("Open");
@@ -70,8 +75,20 @@ public class Stash : MonoBehaviour
             opened = true;
             textGameObject.SetActive(false);
             
+            if (tutorialOpeningDoOnce)
+            {
+                TutorialManager.Instance.opening = true;
+                tutorialOpeningDoOnce = false;
+                
+            }
+        
+            if (tutorialCarryingDoOnce)
+            {
+                TutorialManager.Instance.carrying = true;
+                tutorialCarryingDoOnce = false;
+            }
+            
             Player.Instance.EnableMovement();
-
         }
     }
 

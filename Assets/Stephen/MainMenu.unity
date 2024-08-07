@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 32900000, guid: d842fc94430435a489b83ba74fa9f6a0, type: 3}
     - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
       propertyPath: m_DataSource
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
       propertyPath: m_RenderMode
@@ -331,6 +331,14 @@ PrefabInstance:
       propertyPath: m_TargetCamera
       value: 
       objectReference: {fileID: 441823876}
+    - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
+      propertyPath: m_TargetAudioSources.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
