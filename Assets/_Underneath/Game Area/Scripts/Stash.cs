@@ -56,8 +56,6 @@ public class Stash : MonoBehaviour
     // Allows the input action to spawn collectibles from the list as long as the player is within range.
     private void Interact()
     {
-
-        
         if (inRange && opened == false)
         {
             _animator.Play("Open");

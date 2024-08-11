@@ -1,31 +1,34 @@
+using System;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-
-    [SerializeField] 
-    private GameObject textGameObject;
-
+    [SerializeField] private Animator _animator;
     private bool inRange = false;
-    private bool doOnce = true;
-
+    private bool tutorialDoOnce = true;
+    
+    private void Start()
+    {
+        _animator.Play("Idle");
+        Player.Instance.playerInput.onInteract += Interact;
+    }
+    
     // The player needs a "Player" tag. When the player collides with this object, a boolean is set to signal that the player is in range.
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             inRange = true;
-            //textGameObject.SetActive(true);
+            _animator.Play("Talking");
         }
         
-        if (inRange && doOnce)
+        if (inRange && tutorialDoOnce)
         {
-            Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
+            Player.Instance.DisableMovement(); 
 
             TutorialManager.Instance.startLevel = true;
-            doOnce = false;
+            tutorialDoOnce = false;
             
             Player.Instance.EnableMovement();
         }
@@ -37,27 +40,19 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
-            //textGameObject.SetActive(false);
+            _animator.Play("Idle");
         }
     }
-
-    // Subscribes this object to the player's input action.
-    private void Start()
-    {
-        //Player.Instance.playerInput.onInteract += Interact;
-    }
     
-    // Allows the input action to spawn collectibles from the list as long as the player is within range.
+    [SerializeField] private Dialogue dialogue;
+    [SerializeField] private List<String> dialogueLines;
+    [SerializeField] private Sprite talkingSprite;
+
     private void Interact()
     {
-        if (inRange && doOnce)
+        if (inRange && !tutorialDoOnce && dialogueLines.Count != 0)
         {
-            Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
-
-            TutorialManager.Instance.startLevel = true;
-            doOnce = false;
-            
-            Player.Instance.EnableMovement();
+            dialogue.StartDialogue(dialogueLines[0],talkingSprite);
         }
     }
 }
