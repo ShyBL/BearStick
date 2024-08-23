@@ -70,12 +70,11 @@ public class PlayerData : MonoBehaviour
 
     public void DoCache()
     {
-        for (var index = 0; index < Player.Instance.inventory.StoredItems.Count; index++)
+        for (var index = 0; index < Inventory.Instance.StoredItems.Count; index++)
         {
-            var storedItem = Player.Instance.inventory.StoredItems[index];
+            var storedItem = Inventory.Instance.StoredItems[index];
             IncreaseMoney(storedItem.Details.SellPrice);
-            Player.Instance.inventory.StoredItems.Remove(storedItem);
         }
-        EndOfDay.Instance.EndDay();
+        Inventory.Instance.ClearInventory();
     }
 }

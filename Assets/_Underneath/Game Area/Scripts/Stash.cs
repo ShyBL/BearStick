@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum StashType { Dumpster, Trashcan }
 public class Stash : MonoBehaviour
@@ -18,12 +19,14 @@ public class Stash : MonoBehaviour
     public StashType type;
 
     // This boolean determines if this goal area has been used or not.
+    public bool opened = false;
     private bool inRange = false;
+    
 
     // The player needs a "Player" tag. When the player collides with this object, a boolean is set to signal that the player is in range.
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && opened == false)
         {
             inRange = true;
             textGameObject.SetActive(true);
@@ -47,11 +50,13 @@ public class Stash : MonoBehaviour
     }
 
     [SerializeField] private Transform OutPoint;
-    
+    [SerializeField] private bool tutorialOpeningDoOnce;
+    [SerializeField] private bool tutorialCarryingDoOnce;
+
     // Allows the input action to spawn collectibles from the list as long as the player is within range.
     private void Interact()
     {
-        if (inRange)
+        if (inRange && opened == false)
         {
             _animator.Play("Open");
 
@@ -65,6 +70,22 @@ public class Stash : MonoBehaviour
                 newCollectable.SetCollectable(collectable);
             }
 
+            opened = true;
+            textGameObject.SetActive(false);
+            
+            if (tutorialOpeningDoOnce)
+            {
+                TutorialManager.Instance.opening = true;
+                tutorialOpeningDoOnce = false;
+                
+            }
+        
+            if (tutorialCarryingDoOnce)
+            {
+                TutorialManager.Instance.carrying = true;
+                tutorialCarryingDoOnce = false;
+            }
+            
             Player.Instance.EnableMovement();
         }
     }

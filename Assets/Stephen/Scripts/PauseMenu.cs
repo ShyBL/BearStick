@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
         m_MenuButton = Hud.rootVisualElement.Q<Button>("Menu");
 
         Player.Instance.playerInput.onPauseMenu += PauseToggle;
+        
         m_Continue.RegisterCallback<ClickEvent>(ContinueButton);
         m_Exit.RegisterCallback<ClickEvent>(ExitButton);
         m_MenuButton.RegisterCallback<ClickEvent>(MenuButton);

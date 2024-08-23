@@ -18,6 +18,6 @@ MonoBehaviour:
   SellPrice: 3
   Icon: {fileID: 198488723, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:
-    Height: 2
-    Width: 5
+    Height: 1
+    Width: 1
   Weight: 5

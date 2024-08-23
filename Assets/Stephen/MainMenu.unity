@@ -312,9 +312,17 @@ PrefabInstance:
       value: MainMenuUI
       objectReference: {fileID: 0}
     - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
+      propertyPath: m_Url
+      value: https://live.staticflickr.com/video/53905979529/eb47bfee0e/360p.mp4?s=eyJpIjo1MzkwNTk3OTUyOSwiZSI6MTcyMjk0ODIzNiwicyI6IjQ1YTAwYjAwMTUwNDAyNmI5OTJjZTEwMjk4OTE0YTU5ODczMzhiZmUiLCJ2IjoxfQ
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
       propertyPath: m_VideoClip
       value: 
       objectReference: {fileID: 32900000, guid: d842fc94430435a489b83ba74fa9f6a0, type: 3}
+    - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
+      propertyPath: m_DataSource
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
       propertyPath: m_RenderMode
       value: 1
@@ -323,6 +331,14 @@ PrefabInstance:
       propertyPath: m_TargetCamera
       value: 
       objectReference: {fileID: 441823876}
+    - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127426516588797839, guid: 731e41c554d06664b858428455b7da70, type: 3}
+      propertyPath: m_TargetAudioSources.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

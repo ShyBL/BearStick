@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Cache : MonoBehaviour
@@ -51,7 +52,13 @@ public class Cache : MonoBehaviour
 
             PlayerData.Instance.DoCache();
             
-            Player.Instance.EnableMovement();
+            Invoke(nameof(EndDay),_animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
         }
+    }
+
+    private void EndDay()
+    {
+        EndOfDay.Instance.EndDay();
+        Player.Instance.EnableMovement();
     }
 }

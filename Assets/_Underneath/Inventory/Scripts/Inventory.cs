@@ -54,11 +54,6 @@ public class Inventory : MonoBehaviour
         Player.Instance.playerInput.onBagOpened -= onToggleInventory;
     }
 
-    private void OnEnable()
-    {
-       
-    }
-
     private void Start()
     {
         Player.Instance.playerInput.onBagOpened += onToggleInventory;
@@ -188,9 +183,8 @@ public class Inventory : MonoBehaviour
         ConfigureInventoryItem(item);
 
         // Add to the invevntory value the value of the item that was just added
-        m_InventoryValue += item.Details.SellPrice;
-        m_CurrentWeight += item.Details.Weight;
-        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
+        RecalculateValue();
+        RecalculateWeight();
 
         return true;
     }
@@ -204,9 +198,8 @@ public class Inventory : MonoBehaviour
         // Then remove it from the stored item list
         StoredItems.Remove(item);
         // Remove from the inventory value the price of the item that was just removed
-        m_InventoryValue -= item.Details.SellPrice;
-        m_CurrentWeight -= item.Details.Weight;
-        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
+        RecalculateValue();
+        RecalculateWeight();
     }
 
     // Clears all items from the inventory, removing them from the list and their visual elements
@@ -218,9 +211,8 @@ public class Inventory : MonoBehaviour
         // Once we finish clearing out the visual elements we can clear the list
         StoredItems.Clear();
         // Reset the inventory value
-        m_InventoryValue = 0;
-        m_CurrentWeight = 0;
-        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
+        RecalculateValue();
+        RecalculateWeight();
     }
 
     // Returns the pre-calculated value of the inventory
@@ -314,5 +306,31 @@ public class Inventory : MonoBehaviour
     {
         // Since item starts out as invisible when we create it now that's it's confirmed in a good spot make it visible.
         item.RootVisual.style.visibility = Visibility.Visible;
+    }
+
+    private void RecalculateWeight()
+    {
+        float weight = 0f;
+
+        foreach(StoredItem item in StoredItems)
+        {
+            weight += item.Details.Weight;
+        }
+
+        m_CurrentWeight = weight;
+
+        m_CurrentWeightElement.text = m_CurrentWeight.ToString();
+    }
+
+    private void RecalculateValue()
+    {
+        int value = 0;
+
+        foreach (StoredItem item in StoredItems)
+        {
+            value += item.Details.SellPrice;
+        }
+
+        m_InventoryValue = value;
     }
 }

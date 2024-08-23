@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour
 
     void VideoEnded(VideoPlayer play)
     {
-        SceneManager.LoadScene("FullTestScene");
+        SceneManager.LoadScene(1);
     }
 
     void ExitPressed(ClickEvent evt)

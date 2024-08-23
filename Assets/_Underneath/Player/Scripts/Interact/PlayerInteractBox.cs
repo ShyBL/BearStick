@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerInteractBox : MonoBehaviour
 {
-    //[SerializeField] private Inventory Inventory; // have to insert in the inspector
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Collectable"))

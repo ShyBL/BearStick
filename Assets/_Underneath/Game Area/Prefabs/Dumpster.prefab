@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.2055, y: 0.9056}
+  m_AnchoredPosition: {x: 0.2055, y: 1.08}
   m_SizeDelta: {x: 3.8449, y: 0.8178}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &5851082870616823297
@@ -275,6 +275,7 @@ MonoBehaviour:
   physicsCollectable: {fileID: 2485555635434482877, guid: 4460af2fd4760ec419f4ff424cf9383a, type: 3}
   textGameObject: {fileID: 4674307631821704468}
   _animator: {fileID: 6210097590442356060}
+  type: 0
   OutPoint: {fileID: 325444331773366692}
 --- !u!1 &6473964830178671762
 GameObject:

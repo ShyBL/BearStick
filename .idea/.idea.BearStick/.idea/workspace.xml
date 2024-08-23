@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="" />
+    <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Josh/newLevelJoshChanges.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Josh/newLevelJoshChanges.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/NPC_Georgie.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/NPC_Georgie.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/NPC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/NPC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Stash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Stash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Interact/PlayerInteractBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Interact/PlayerInteractBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +41,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Development&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Web-Build&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -109,6 +118,11 @@
       <workItem from="1722096438087" duration="1509000" />
       <workItem from="1722205563684" duration="7527000" />
       <workItem from="1722627132879" duration="4745000" />
+      <workItem from="1722936470302" duration="774000" />
+      <workItem from="1722937307384" duration="2903000" />
+      <workItem from="1722943543774" duration="5000" />
+      <workItem from="1723027006353" duration="5317000" />
+      <workItem from="1723395395810" duration="1517000" />
     </task>
     <servers />
   </component>
