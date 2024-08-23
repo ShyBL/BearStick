@@ -3,8 +3,8 @@
     <ui:VisualElement name="Container" class="container" style="flex-grow: 1;">
         <ui:Label tabindex="-1" text="Underneath" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 154px; color: rgb(161, 161, 161); height: 33%;" />
         <ui:VisualElement name="VisualElement" style="height: 35%; justify-content: space-between;">
-            <ui:Button text="Play" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Play" class="element-background" style="-unity-font-style: bold; font-size: 62px; width: 20%; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px;" />
-            <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" class="element-background" style="-unity-font-style: bold; font-size: 62px; width: 20%; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px;" />
+            <CustomButton Text="Play" name="Play" class="element-background button" style="width: 20%; -unity-font-style: bold; font-size: 62px;" />
+            <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" class="element-background button" style="-unity-font-style: bold; font-size: 62px; width: 20%; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
