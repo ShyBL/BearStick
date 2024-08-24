@@ -3,6 +3,18 @@ using UnityEngine.UIElements;
 
 public partial class CustomButton : Button
 {
+    float m_MinRandomRotation;
+    float m_MaxRandomRotation;
+    float m_MinHoverRotation;
+    float m_MaxHoverRotation;
+    int m_Direction;
+
+    public CustomButton()
+    {
+        RegisterCallback<MouseEnterEvent>(OnHover);
+        RegisterCallback<MouseLeaveEvent>(EndHover);
+    }
+
     public new class UxmlFactory : UxmlFactory<CustomButton, UxmlTraits> { }
     public new class UxmlTraits : BindableElement.UxmlTraits
     {
@@ -26,56 +38,46 @@ public partial class CustomButton : Button
             name = "Min-Random-Rotation",
             defaultValue = 0.0f
         };
-
+        UxmlIntAttributeDescription m_StartingDir = new UxmlIntAttributeDescription
+        {
+            name = "Starting-Direction",
+            defaultValue = 1
+        };
         UxmlStringAttributeDescription m_Text = new UxmlStringAttributeDescription
         {
             name = "Text",
             defaultValue = "Test"
         };
 
-        Button m_Button;
-        float m_MinRandomRotation;
-        float m_MaxRandomRotation;
-        float m_MinHoverRotation;
-        float m_MaxHoverRotation;
-        int m_Direction;
-
-
         public override void Init(VisualElement button, IUxmlAttributes bag, CreationContext cc)
         {
             base.Init(button, bag, cc);
-            Button but = button as Button;
-            but.RegisterCallback<MouseEnterEvent>(OnHover);
-            but.RegisterCallback<MouseLeaveEvent>(EndHover);
+            CustomButton but = button as CustomButton;
             but.text = m_Text.GetValueFromBag(bag, cc);
 
-            m_Button = but;
-            m_MinRandomRotation = m_MinRandomRotationAtt.GetValueFromBag(bag, cc);
-            m_MaxRandomRotation = m_MaxRandomRotationAtt.GetValueFromBag(bag, cc);
-            m_MinHoverRotation = m_MinHoverRotationAtt.GetValueFromBag(bag, cc);
-            m_MaxHoverRotation = m_MaxHoverRotationAtt.GetValueFromBag(bag, cc);
-            if (Random.Range(0f, 2f) >= 1f)
-                m_Direction = -1;
-            else
-                m_Direction = 1;
+            but.m_MinRandomRotation = m_MinRandomRotationAtt.GetValueFromBag(bag, cc);
+            but.m_MaxRandomRotation = m_MaxRandomRotationAtt.GetValueFromBag(bag, cc);
+            but.m_MinHoverRotation = m_MinHoverRotationAtt.GetValueFromBag(bag, cc);
+            but.m_MaxHoverRotation = m_MaxHoverRotationAtt.GetValueFromBag(bag, cc);
+            but.m_Direction = m_StartingDir.GetValueFromBag(bag, cc);
 
-            EndHover();
+            but.EndHover();
         }
+    }
 
-        void OnHover(MouseEnterEvent e)
-        {
-            float angle = Random.Range(m_MinHoverRotation, m_MaxHoverRotation) * m_Direction;
+    void OnHover(MouseEnterEvent e)
+    {
+        float angle = Random.Range(m_MinHoverRotation, m_MaxHoverRotation) * m_Direction;
 
-            m_Direction *= -1;
+        m_Direction *= -1;
 
-            m_Button.style.rotate = new Rotate(angle);
-        }
+        style.rotate = new Rotate(angle);
+    }
 
-        void EndHover(MouseLeaveEvent e = null)
-        {
-            float angle = Random.Range(m_MinRandomRotation, m_MaxRandomRotation) * m_Direction;
+    void EndHover(MouseLeaveEvent e = null)
+    {
+        float angle = Random.Range(m_MinRandomRotation, m_MaxRandomRotation) * m_Direction;
 
-            m_Button.style.rotate = new Rotate(angle);
-        }
+        style.rotate = new Rotate(angle);
     }
 }
