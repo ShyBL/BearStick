@@ -28,6 +28,10 @@
     border-right-color: rgb(0, 0, 0);
     border-top-color: rgb(0, 0, 0);
     border-bottom-color: rgb(0, 0, 0);
-    transition-property: rotate;
-    transition-duration: 0.15s;
+    transition-property: rotate, scale;
+    transition-duration: 0.15s, 0.15s;
+}
+
+.button:hover {
+    scale: 1.15 1.15;
 }
