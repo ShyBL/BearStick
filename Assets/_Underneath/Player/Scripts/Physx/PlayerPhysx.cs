@@ -11,6 +11,7 @@ public class PlayerPhysx : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Vector2 groundCheckBoxSize;
     [SerializeField] private float groundCastDistance;
+
     
     public bool IsGrounded => 
         Physics2D.BoxCast(

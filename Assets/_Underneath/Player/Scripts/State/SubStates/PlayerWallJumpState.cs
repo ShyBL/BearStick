@@ -11,9 +11,11 @@ public class PlayerWallJumpState : PlayerAirState
     public override void Enter()
     {
         base.Enter();
-        player.Flip();
-        player.playerPhysx.SetVelocity(player.wallJumpForce * -player.facingDirection, player.jumpForce);
+        player.DisableMovement();
+        player.wallJumpCounter++;
         player.playerPhysx.bIsJumping = true;
+        player.playerPhysx.SetVelocity(player.wallJumpForce.x * -player.facingDirection, player.wallJumpForce.y);
+        player.playerVisualizer.spriteComponent.flipX = !player.playerVisualizer.spriteComponent.flipX;
         //player.DisableDash();
     }
 
@@ -32,6 +34,7 @@ public class PlayerWallJumpState : PlayerAirState
         if (player.playerPhysx.CurrentVelocity().y < 0)
         {
             player.playerPhysx.bIsJumping = false;
+            player.EnableMovement();
             stateMachine.ChangeState(stateMachine.AirState);
         }
     }
@@ -39,6 +42,7 @@ public class PlayerWallJumpState : PlayerAirState
     public override void Exit()
     {
         base.Exit();
+        player.EnableMovement(); 
         player.playerPhysx.bIsJumping = false;
         //player.EnableDash();
 
