@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ItemVisual : VisualElement
+public partial class ItemVisual : VisualElement
 {
     private StoredItem m_Item;
     private Inventory m_InventoryComp;
