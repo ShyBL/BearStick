@@ -14,6 +14,8 @@ public class Stash : MonoBehaviour
     [SerializeField] 
     private GameObject textGameObject;
     [SerializeField]
+    private GameObject artGameObject;
+    [SerializeField]
     private Animator _animator;
 
     public StashType type;
@@ -30,6 +32,9 @@ public class Stash : MonoBehaviour
         {
             inRange = true;
             textGameObject.SetActive(true);
+
+            //Call Begin Focus
+            BeginFocus();
         }
     }
 
@@ -40,6 +45,9 @@ public class Stash : MonoBehaviour
         {
             inRange = false;
             textGameObject.SetActive(false);
+
+            //Call End Focus
+            EndFocus();
         }
     }
 
@@ -47,6 +55,8 @@ public class Stash : MonoBehaviour
     private void Start()
     {
         Player.Instance.playerInput.onInteract += Interact;
+
+        DrawLineRenderer();
     }
 
     [SerializeField] private Transform OutPoint;
@@ -87,6 +97,57 @@ public class Stash : MonoBehaviour
             }
             
             Player.Instance.EnableMovement();
+        }
+    }
+
+    private void BeginFocus()
+    {
+        //Set the LineRenderer to be enabled
+        LineRenderer lineRenderer = artGameObject.GetComponent<LineRenderer>();
+        if(lineRenderer != null )
+        {
+            lineRenderer.enabled = true;
+        }
+    }
+
+    private void EndFocus()
+    {
+        //Set the LineRenderer to be disabled
+        LineRenderer lineRenderer = artGameObject.GetComponent<LineRenderer>();
+        if(lineRenderer != null )
+        {
+            lineRenderer.enabled = false;
+        }
+    }
+
+    private void DrawLineRenderer()
+    {
+        //Get a reference to the LineRenderer and PolygonCollider Components
+        LineRenderer lineRenderer = artGameObject.GetComponent<LineRenderer>();
+        PolygonCollider2D polygonCollider2D = artGameObject.GetComponent<PolygonCollider2D>();
+        polygonCollider2D.isTrigger = true; //So that the player cannot collide with it.
+
+        //Check to make sure they are valid
+        if (lineRenderer != null && polygonCollider2D != null)
+        {
+            //Set number of points in LineRenderer
+            lineRenderer.positionCount = polygonCollider2D.points.Length + 1;
+
+            //Set positions for line renderer points
+            for (int i = 0; i < polygonCollider2D.points.Length; i++)
+            {
+                lineRenderer.SetPosition(i, polygonCollider2D.points[i]);
+            }
+
+            //Close loop
+            lineRenderer.SetPosition(polygonCollider2D.points.Length, polygonCollider2D.points[0]);
+            //So that the line renderer follows the sprite transformations 
+            lineRenderer.useWorldSpace = false;
+            //Can make this width a variable, for testing purposes keeping this amount
+            lineRenderer.startWidth = 0.1f;
+            lineRenderer.endWidth = 0.1f;
+
+            lineRenderer.enabled = false;
         }
     }
 

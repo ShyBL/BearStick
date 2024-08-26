@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float airVelocity = 8f;
     [SerializeField] public float jumpForce = 15;
-    [SerializeField] public float wallJumpForce = 15;
+    [SerializeField] public Vector2 wallJumpForce = new Vector2(3.5f, 6);
+    [SerializeField] public int wallJumpCounter = 0; //use in the future, not sure how to handle that yet
     [SerializeField] public float wallSlideSpeed = 8f;
 
     [SerializeField] public bool canMove = true;
