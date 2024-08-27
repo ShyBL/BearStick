@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StoredItems: []
   InventoryDimensions:
-    Height: 6
+    Height: 5
     Width: 4
   m_MaxWeight: 0
   m_Hud: {fileID: 0}

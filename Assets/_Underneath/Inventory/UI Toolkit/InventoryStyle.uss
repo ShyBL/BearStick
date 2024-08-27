@@ -7,9 +7,9 @@
     border-right-color: rgb(0, 0, 0);
     border-top-color: rgb(0, 0, 0);
     border-bottom-color: rgb(0, 0, 0);
-    width: 22%;
-    height: 15%;
     background-image: url("project://database/Assets/Stephen/Final-InventorySlot.png?fileID=21300000&guid=5020bb5febb973b4ba7f18eab6f9f2a5&type=3#Final-InventorySlot");
+    width: 21%;
+    height: 20%;
 }
 
 .visual-icon-container {
@@ -95,4 +95,23 @@
 
 .tooltip-horizontal {
     flex-direction: row;
+}
+
+.pocket-item {
+    background-color: rgb(255, 255, 255);
+    height: 30%;
+    align-self: center;
+    flex-direction: column;
+    width: 25%;
+    justify-content: flex-start;
+    bottom: 25%;
+}
+
+.pocket {
+    bottom: -135%;
+    width: 125%;
+    height: 180%;
+    background-color: rgb(159, 159, 159);
+    position: absolute;
+    align-self: center;
 }
