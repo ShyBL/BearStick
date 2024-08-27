@@ -8,14 +8,8 @@ public partial class ItemVisual : VisualElement
     private VisualElement m_Root;
     private VisualElement m_Inventory;
     private VisualElement m_Icon;
-    private VisualElement m_Tooltip;
-    private bool m_TooltipShown = false;
+    private ItemTooltip m_Tooltip;
     private bool m_Dragging = false;
-
-    private Label m_TooltipTitle;
-    private Label m_TooltipWeight;
-    private Label m_TooltipValue;
-    private Label m_TooltipDesc;
 
     public ItemVisual(StoredItem item, VisualElement root, Inventory inventoryComp)
     {
@@ -43,33 +37,13 @@ public partial class ItemVisual : VisualElement
         Add(m_Icon);
 
         // Create the tool tip but don't add it for now, only add it when the mouse hovers over the icon.
-        m_Tooltip = new VisualElement();
-        m_TooltipTitle = new Label("Title");
-        m_TooltipValue = new Label("Value");
-        m_TooltipWeight = new Label("Weight");
-        m_TooltipDesc = new Label("Description");
-        VisualElement bar = new VisualElement();
-        
-        // Add all the sub parts of the tool tip component to the tooltip
-        m_Tooltip.Add(m_TooltipTitle);
-        m_Tooltip.Add(bar);
-        bar.Add(m_TooltipWeight);
-        bar.Add(m_TooltipValue);
-        m_Tooltip.Add(m_TooltipDesc);
+        m_Tooltip = new ItemTooltip(m_Item, m_Root, m_Icon);
 
         // Add the selectors to the elements created so the correct styles are applied
         m_Icon.AddToClassList("visual-icon");
-        m_Tooltip.AddToClassList("tooltip");
-        bar.AddToClassList("tooltip-horizontal");
-        m_TooltipTitle.AddToClassList("tooltip-title");
-        m_TooltipValue.AddToClassList("tooltip-text");
-        m_TooltipWeight.AddToClassList("tooltip-text");
-        m_TooltipDesc.AddToClassList("tooltip-desc");
         AddToClassList("visual-icon-container");
 
         // Register events for pointer to handle tooltip and dragging items.
-        RegisterCallback<PointerOverEvent>(OnPointerOver);
-        RegisterCallback<PointerOutEvent>(OnPointerOut);
         RegisterCallback<PointerDownEvent>(OnPointerDown);
         m_InventoryComp = inventoryComp;
     }
@@ -77,9 +51,6 @@ public partial class ItemVisual : VisualElement
     // When the mouse is pressed on a slot we need to start dragging that item
     void OnPointerDown(PointerDownEvent data)
     {
-        // Hides the tool tip while we are dragging
-        HideTooltip();
-
         // Set the icon's position to the current position of the mouse
         MoveItem(data.localPosition);
 
@@ -90,6 +61,8 @@ public partial class ItemVisual : VisualElement
 
         // Set dragging to true
         m_Dragging = true;
+        // Hides the tool tip while we are dragging
+        m_Tooltip.StopShowingTooltip();
     }
 
     void OnPointerUp(PointerUpEvent data) 
@@ -132,76 +105,8 @@ public partial class ItemVisual : VisualElement
 
         // Set dragging back to false
         m_Dragging = false;
-    }
-
-    // When the mouse goes over the inventory slot start showing the tooltip
-    void OnPointerOver(PointerOverEvent data)
-    {
-        ShowTooltip(data.position);
-    }
-
-    // When the mouse leaves the inventory slot hide the tooltip
-    void OnPointerOut(PointerOutEvent data)
-    {
-        HideTooltip();
-    }
-
-    // Shows the tooltip and handles registering the mouse movement event for moving it with the mouse
-    void ShowTooltip(UnityEngine.Vector2 pos)
-    {
-        // Check to make sure we aren't already showing the tooltip and that we aren't dragging the item
-        if (m_TooltipShown == false && m_Dragging == false)
-        {
-            // Convert moust position from world space to local space of root element, then assign that as the position
-            MoveTooltip(m_Root.WorldToLocal(pos));
-            // Add the tooltip to the root element so it will render
-            m_Root.Add(m_Tooltip);
-
-            // Add item information here so that if it changes while the game is running it will update
-            m_TooltipValue.text = "$" + m_Item.Details.SellPrice.ToString();
-            m_TooltipWeight.text = m_Item.Details.Weight.ToString() + " kg";
-            m_TooltipDesc.text = m_Item.Details.Description;
-            m_TooltipTitle.text = m_Item.Details.FriendlyName;
-
-            // Register the mouse movment event so the tooltip will move with the mouse
-            RegisterCallback<PointerMoveEvent>(TooltipMouseMovement);
-
-            // Set tooltip to shown locally
-            m_TooltipShown = true;
-        }
-    }
-
-    // Function that actually removes the tooltip and gets rid of the mouse movement callback event
-    void HideTooltip()
-    {
-        // Check to make sure the tool tip is actually be shown
-        if (m_TooltipShown == true)
-        {
-            // Deregister the move event as we no longer need it since tooltip will be hidden
-            UnregisterCallback<PointerMoveEvent>(TooltipMouseMovement);
-
-            // Remove the tooltip from the root element so it no longer renders
-            m_Root.Remove(m_Tooltip);
-
-            // Set tooltip to hidden locally
-            m_TooltipShown = false;
-        }
-    }
-
-    // When the mouse moves this is called to move the tooltip, only registered when the mouse 
-    // is hovering over the inventory slot and when the player isn't dragging an item.
-    void TooltipMouseMovement(PointerMoveEvent data)
-    {
-        // Convert moust position from world space to local space of root element, then assign that as the position
-        MoveTooltip(m_Root.WorldToLocal(data.position));
-    }
-
-    // Function for moving the tooltip to the passed position, use this instead of move element for moving tooltip
-    void MoveTooltip(UnityEngine.Vector2 pos)
-    {
-        // Have to have + 1 here so that the tooltip doesn't steal the mouse cursor and cause
-        // the pointer out function above to be called too early
-        MoveElement(m_Tooltip, pos + new UnityEngine.Vector2(1, 1));
+        // Start showing the tooltip again after being done dragging
+        m_Tooltip.StartShowingTooltip();
     }
 
     // Function for moving the item icons, use this instead of move element for moving an item icon
