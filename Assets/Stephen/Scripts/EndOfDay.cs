@@ -53,9 +53,6 @@ public class EndOfDay : MonoBehaviour
         m_PrevMoneyLabel.text = "$" + PlayerData.Instance.GetMoney().ToString();
         m_EarnedMoneyLabel.text = "$" + PlayerData.Instance.GetMoneyEarned().ToString();
 
-        if (PlayerData.Instance.GetDayCount() % IncreaseFrequency == 0)
-            PlayerData.Instance.IncreaseExpenses(ExpensesIncrease);
-
         PlayerData.Instance.DecreaseMoney(PlayerData.Instance.GetExpenses());
         PlayerData.Instance.ApplyMoneyChange();
 
@@ -63,5 +60,8 @@ public class EndOfDay : MonoBehaviour
         m_TotalMoneyLabel.text = "$" + PlayerData.Instance.GetMoney().ToString();
 
         PlayerData.Instance.IncrementDayCount();
+
+        if (PlayerData.Instance.GetDayCount() % IncreaseFrequency == 0)
+            PlayerData.Instance.IncreaseExpenses(ExpensesIncrease);
     }
 }

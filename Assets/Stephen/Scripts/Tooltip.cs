@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEditor.Progress;
 
 public abstract class Tooltip : VisualElement
 {
@@ -18,6 +17,8 @@ public abstract class Tooltip : VisualElement
 
         m_HoverElement.RegisterCallback<PointerOverEvent>(OnPointerOver);
         m_HoverElement.RegisterCallback<PointerOutEvent>(OnPointerOut);
+
+        AddToClassList("tooltip");
     }
 
     public void StopShowingTooltip()
@@ -136,35 +137,47 @@ public class ItemTooltip : Tooltip
         m_TooltipValue.AddToClassList("tooltip-text");
         m_TooltipWeight.AddToClassList("tooltip-text");
         m_TooltipDesc.AddToClassList("tooltip-desc");
-        AddToClassList("tooltip");
-    }
-
-    void SetValue(int price)
-    {
-        m_TooltipValue.text = "$" + price.ToString();
-    }
-
-    void SetWeight(float weight)
-    {
-        m_TooltipWeight.text = weight.ToString() + " kg";
-    }
-
-    void SetDescription(string description) 
-    {
-        m_TooltipDesc.text = description;
-    }
-
-    void SetTitle(string title)
-    {
-        m_TooltipTitle.text = title;
     }
 
     protected override void UpdateData()
     {
-        SetValue(m_Item.Details.SellPrice);
-        SetWeight(m_Item.Details.Weight);
-        SetDescription(m_Item.Details.Description);
-        SetTitle(m_Item.Details.FriendlyName);
+        m_TooltipValue.text = "$" + m_Item.Details.SellPrice.ToString();
+        m_TooltipWeight.text = m_Item.Details.Weight.ToString() + " kg";
+        m_TooltipDesc.text = m_Item.Details.Description;
+        m_TooltipTitle.text = m_Item.Details.FriendlyName;
     }
 }
 
+public class WalletTooltip : Tooltip
+{
+    private Label m_PrevMoneyLabel;
+    private Label m_TotalMoneyLabel;
+    private Label m_EarnedMoneyLabel;
+    private Label m_ExpensesLabel;
+
+    public WalletTooltip(VisualElement root, VisualElement hover) : base(root, hover)
+    {
+        m_PrevMoneyLabel = new Label("PrevMoneyPrediction");
+        m_EarnedMoneyLabel = new Label("EarnedMoneyPrediction");
+        m_ExpensesLabel = new Label("ExpensesPrediction");
+        m_TotalMoneyLabel = new Label("TotalMoneyPrediction");
+
+        Add(m_PrevMoneyLabel);
+        Add(m_EarnedMoneyLabel);
+        Add(m_ExpensesLabel);
+        Add(m_TotalMoneyLabel);
+
+        m_PrevMoneyLabel.AddToClassList("tooltip-text");
+        m_TotalMoneyLabel.AddToClassList("tooltip-text");
+        m_EarnedMoneyLabel.AddToClassList("tooltip-text");
+        m_ExpensesLabel.AddToClassList("tooltip-text");
+    }
+
+    protected override void UpdateData()
+    {
+        m_PrevMoneyLabel.text = "Current Money: $" + PlayerData.Instance.GetMoney().ToString();
+        m_EarnedMoneyLabel.text = "Inventory Value: $" + Inventory.Instance.GetInventoryvalue().ToString();
+        m_ExpensesLabel.text = "Upcoming Expenses: $" + PlayerData.Instance.GetExpenses().ToString();
+        m_TotalMoneyLabel.text = "Money Leftover: $" + ((PlayerData.Instance.GetMoney() + Inventory.Instance.GetInventoryvalue()) - PlayerData.Instance.GetExpenses()).ToString();
+    }
+}
