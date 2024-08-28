@@ -35,7 +35,7 @@
                         <ui:VisualElement name="EmptyPocket" class="pocket" />
                     </ui:VisualElement>
                     <ui:VisualElement name="Wallet" class="pocket-item">
-                        <ui:Label tabindex="-1" text="$20" parse-escape-sequences="true" display-tooltip-when-elided="true" class="element-background" style="background-image: none; color: rgb(0, 0, 0); font-size: 24px; -unity-text-align: upper-center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                        <ui:Label tabindex="-1" text="$20" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WalletCounter" class="element-background" style="background-image: none; color: rgb(0, 0, 0); font-size: 24px; -unity-text-align: upper-center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
                         <ui:VisualElement name="WalletPocket" class="pocket" />
                     </ui:VisualElement>
                 </ui:VisualElement>

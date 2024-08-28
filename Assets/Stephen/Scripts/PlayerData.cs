@@ -46,6 +46,7 @@ public class PlayerData : MonoBehaviour
     {
         m_Money += m_NewMoney;
         m_NewMoney = 0;
+        WalletCounter.Instance.RefreshWalletCounter(m_Money);
     }
 
     public int GetMoney()
