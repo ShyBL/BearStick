@@ -97,6 +97,7 @@ public class Stash : MonoBehaviour
             }
             
             Player.Instance.EnableMovement();
+            EndFocus();
         }
     }
 
