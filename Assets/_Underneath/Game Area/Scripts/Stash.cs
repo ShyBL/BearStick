@@ -105,7 +105,7 @@ public class Stash : MonoBehaviour
     {
         //Set the LineRenderer to be enabled
         LineRenderer lineRenderer = artGameObject.GetComponent<LineRenderer>();
-        if(lineRenderer != null )
+        if(lineRenderer != null && opened == false)
         {
             lineRenderer.enabled = true;
         }

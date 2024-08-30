@@ -3924,6 +3924,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1748626019}
   - component: {fileID: 1748626018}
+  - component: {fileID: 1748626020}
+  - component: {fileID: 1748626021}
   m_Layer: 0
   m_Name: TutorialLevelManager
   m_TagString: Untagged
@@ -3958,6 +3960,7 @@ MonoBehaviour:
     the E key to open them up.\u201D "
   - "\u201CBe careful, though. You can only carry so much at once, so be sure to
     drop off what ya got at the cache to clear up some space.\u201D"
+  levelTimer: 10000000
   startLevel: 0
   startLevelDOONCE: 1
   jumping: 0
@@ -3968,6 +3971,8 @@ MonoBehaviour:
   openingDOONCE: 1
   carrying: 0
   carryingDOONCE: 1
+  bIsSavingGame: 0
+  bIsLoadingGame: 0
 --- !u!4 &1748626019
 Transform:
   m_ObjectHideFlags: 0
@@ -3984,6 +3989,33 @@ Transform:
   - {fileID: 909720996}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1748626020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748626017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3e5699a9eea104ba95820815ddce6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1748626021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748626017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e3817b90794bf47bb5559bb32033be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CountdownText: {fileID: 0}
+  Countdowntimer: 0
+  bResetScene: 0
 --- !u!1001 &1773016788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5407,6 +5439,14 @@ PrefabInstance:
     - target: {fileID: 4561311522582680487, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: wallCheckBoxSize.x
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908028099460965068, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: wallCheckBoxSize.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6341521705249812588, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_Name

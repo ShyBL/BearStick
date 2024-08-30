@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class EndOfDay : MonoBehaviour
@@ -27,6 +28,7 @@ public class EndOfDay : MonoBehaviour
     private Label m_ExpensesLabel;
     private Label m_Title;
 
+
     void Start()
     {
         m_Document = GetComponent<UIDocument>();
@@ -38,6 +40,8 @@ public class EndOfDay : MonoBehaviour
         m_Document.rootVisualElement.Q<Button>("Exit").RegisterCallback<ClickEvent>(ExitPressed);
         PlayerData.Instance.IncreaseExpenses(BaseExpenses);
         m_Document.rootVisualElement.style.display = DisplayStyle.None;
+
+        
     }
 
     void ExitPressed(ClickEvent evt)
@@ -63,5 +67,14 @@ public class EndOfDay : MonoBehaviour
         m_TotalMoneyLabel.text = "$" + PlayerData.Instance.GetMoney().ToString();
 
         PlayerData.Instance.IncrementDayCount();
+
+        //Save Game
+        SavingAndLoading.Instance.SavePlayerInformation();
+        Debug.Log("EndDay function called");
+
+        //This is how you would reset the scene, but you would need some form of button or something 
+        //So that the scene does not instantly reset
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }
