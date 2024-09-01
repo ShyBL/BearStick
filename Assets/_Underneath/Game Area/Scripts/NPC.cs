@@ -41,6 +41,7 @@ public class NPC : MonoBehaviour
         {
             inRange = false;
             _animator.Play("Idle");
+            CurfewTimer.Instance.ResumeTimer();
         }
     }
     
@@ -53,6 +54,7 @@ public class NPC : MonoBehaviour
         if (inRange && !tutorialDoOnce && dialogueLines.Count != 0)
         {
             dialogue.StartDialogue(dialogueLines[0],talkingSprite);
+            CurfewTimer.Instance.PauseTimer();
         }
     }
 }

@@ -3960,7 +3960,7 @@ MonoBehaviour:
     the E key to open them up.\u201D "
   - "\u201CBe careful, though. You can only carry so much at once, so be sure to
     drop off what ya got at the cache to clear up some space.\u201D"
-  levelTimer: 10000000
+  levelTimer: 20
   startLevel: 0
   startLevelDOONCE: 1
   jumping: 0
@@ -3973,6 +3973,8 @@ MonoBehaviour:
   carryingDOONCE: 1
   bIsSavingGame: 0
   bIsLoadingGame: 0
+  bPauseGame: 0
+  bResumeGame: 0
 --- !u!4 &1748626019
 Transform:
   m_ObjectHideFlags: 0
@@ -4015,6 +4017,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CountdownText: {fileID: 0}
   Countdowntimer: 0
+  timeChangeLight: 0
+  timeChangeMusic: 0
+  percentToChangeLights: 0.5
+  percentToChangeMusic: 0.2
+  threshold: 0.5
   bResetScene: 0
 --- !u!1001 &1773016788
 PrefabInstance:

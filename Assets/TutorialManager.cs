@@ -30,6 +30,9 @@ public class TutorialManager : MonoBehaviour
     //TESTING
     public bool bIsSavingGame = false;
     public bool bIsLoadingGame = false;
+
+    public bool bPauseGame = false;
+    public bool bResumeGame = false;
     private void Awake()
     {
         if (Instance == null)
@@ -96,6 +99,18 @@ public class TutorialManager : MonoBehaviour
             SavingAndLoading.Instance.SavePlayerInformation();
             bIsSavingGame = false;
 
+        }
+
+        if(bPauseGame)
+        {
+            CurfewTimer.Instance.PauseTimer();
+            bPauseGame = false;
+        }
+
+        if (bResumeGame)
+        {
+            CurfewTimer.Instance.ResumeTimer();
+            bResumeGame = false;
         }
     }
 }
