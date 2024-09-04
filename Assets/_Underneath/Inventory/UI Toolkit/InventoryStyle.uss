@@ -111,7 +111,7 @@
     bottom: -135%;
     width: 125%;
     height: 180%;
-    background-color: rgb(159, 159, 159);
     position: absolute;
     align-self: center;
+    background-image: url("project://database/Assets/Stephen/pocketFlat.png?fileID=21300000&guid=750918a3ef329374680c3884bc9b94e2&type=3#pocketFlat");
 }
