@@ -35,6 +35,7 @@ public class Inventory : MonoBehaviour
     private Label m_CurrentWeightElement;
     private Label m_MaxWeightElement;
     private Button m_InventoryButton;
+    private WalletTooltip m_WalletTip;
 
     private void Awake()
     {
@@ -82,6 +83,8 @@ public class Inventory : MonoBehaviour
         ConfigureSlotMap();
         // Mark inventory as ready and initialized
         m_IsInventoryReady = true;
+
+        m_WalletTip = new WalletTooltip(m_Root, m_Root.Q<VisualElement>("Wallet"));
     }
 
 
@@ -182,8 +185,6 @@ public class Inventory : MonoBehaviour
         // Call this to make the item ready to be shown after we know it's in a valid place
         ConfigureInventoryItem(item);
 
-        // Add to the invevntory value the value of the item that was just added
-        RecalculateValue();
         RecalculateWeight();
 
         return true;
@@ -197,8 +198,6 @@ public class Inventory : MonoBehaviour
         item.RootVisual.parent.Clear();
         // Then remove it from the stored item list
         StoredItems.Remove(item);
-        // Remove from the inventory value the price of the item that was just removed
-        RecalculateValue();
         RecalculateWeight();
     }
 
@@ -210,14 +209,13 @@ public class Inventory : MonoBehaviour
             item.RootVisual.parent.Clear();
         // Once we finish clearing out the visual elements we can clear the list
         StoredItems.Clear();
-        // Reset the inventory value
-        RecalculateValue();
         RecalculateWeight();
     }
 
     // Returns the pre-calculated value of the inventory
     public int GetInventoryvalue()
     {
+        RecalculateValue();
         return m_InventoryValue;
     }
 

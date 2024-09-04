@@ -12,10 +12,6 @@
                 <ui:Label tabindex="-1" text="/" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Slash" class="title-text text" style="margin-left: 0; margin-right: 0; padding-right: 0; margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; padding-left: 0;" />
                 <ui:Label tabindex="-1" text="10" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MaxWeight" class="title-text text" style="margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
             </ui:VisualElement>
-            <ui:VisualElement name="Currency" class="element-background" style="width: 8%; justify-content: center; align-items: center; flex-direction: row; background-color: rgb(190, 190, 190); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-                <ui:Label tabindex="-1" text="$" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CurrentWeight" class="title-text text" style="-unity-text-align: upper-right; margin-right: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-bottom: 0; margin-left: 0; margin-top: 0;" />
-                <ui:Label tabindex="-1" text="50" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MaxWeight" class="title-text text" style="margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
-            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
