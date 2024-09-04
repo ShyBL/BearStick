@@ -56,6 +56,7 @@ public class PlayerData : MonoBehaviour
     {
         m_Money += m_NewMoney;
         m_NewMoney = 0;
+        WalletCounter.Instance.RefreshWalletCounter(m_Money);
     }
 
     public void SetMoney(int amount){m_Money = amount;}
@@ -85,11 +86,7 @@ public class PlayerData : MonoBehaviour
 
     public void DoCache()
     {
-        for (var index = 0; index < Inventory.Instance.StoredItems.Count; index++)
-        {
-            var storedItem = Inventory.Instance.StoredItems[index];
-            IncreaseMoney(storedItem.Details.SellPrice);
-        }
+        IncreaseMoney(Inventory.Instance.GetInventoryvalue());
         Inventory.Instance.ClearInventory();
     }
 

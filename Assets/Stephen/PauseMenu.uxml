@@ -2,9 +2,9 @@
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/BaseUIStyle.uss?fileID=7433441132597879392&amp;guid=302a0e2215d761242893af0356419587&amp;type=3#BaseUIStyle" />
     <Style src="project://database/Assets/Stephen/PauseMenuStyle.uss?fileID=7433441132597879392&amp;guid=d3f8d1ff5b19fca4197922220735e503&amp;type=3#PauseMenuStyle" />
     <ui:VisualElement name="Container" class="container" style="flex-grow: 1; align-items: center; justify-content: center;">
-        <ui:VisualElement name="Menu" style="width: 15%; height: 35%; background-color: rgb(0, 0, 0); border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; padding-top: 30px; padding-right: 20px; padding-bottom: 30px; padding-left: 20px; justify-content: space-around; align-items: center;">
-            <ui:Button text="Continue" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Continue" class="button element-background" />
-            <ui:Button text="Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" class="button element-background" />
+        <ui:VisualElement name="Menu" style="width: 15%; height: 35%; background-color: rgb(0, 0, 0); border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; padding-top: 25px; padding-right: 15px; padding-bottom: 25px; padding-left: 15px; justify-content: space-around; align-items: center;">
+            <CustomButton Starting-Direction="1" Text="Continue" name="Continue" class="element-background button" />
+            <CustomButton Starting-Direction="-1" Text="Menu" name="Exit" class="button element-background" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
