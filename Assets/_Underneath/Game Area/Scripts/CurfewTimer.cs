@@ -75,6 +75,8 @@ public class CurfewTimer : MonoBehaviour
         Countdowntimer = timerAmountInSeconds;
         timeChangeLight = Countdowntimer * percentToChangeLights;
         timeChangeMusic = Countdowntimer * percentToChangeMusic;
+        //Add inventory Timer stuff
+
         //Everything That TimerEnded turns off needs to be turned back on.
         bIsTimerDone = false;
         Time.timeScale = 1.0f;

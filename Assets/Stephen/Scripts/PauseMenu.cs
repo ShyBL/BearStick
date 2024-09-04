@@ -27,7 +27,11 @@ public class PauseMenu : MonoBehaviour
         m_MenuButton.RegisterCallback<ClickEvent>(MenuButton);
 
         m_Root.style.display = DisplayStyle.None;
+
     }
+    
+    
+
 
     void ExitButton(ClickEvent evt)
     {
@@ -50,9 +54,11 @@ public class PauseMenu : MonoBehaviour
         {
             case DisplayStyle.Flex:
                 m_Root.style.display = DisplayStyle.None;
+                CurfewTimer.Instance.ResumeTimer();
                 break;
             case DisplayStyle.None:
                 m_Root.style.display = DisplayStyle.Flex;
+                CurfewTimer.Instance.PauseTimer();
                 break;
         }
     }
