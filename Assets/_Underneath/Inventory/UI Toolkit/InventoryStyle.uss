@@ -96,3 +96,21 @@
 .tooltip-horizontal {
     flex-direction: row;
 }
+
+.shop-slots {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    width: 22%;
+    height: 15%;
+    background-image: url("project://database/Assets/Stephen/Final-InventorySlot.png?fileID=21300000&guid=5020bb5febb973b4ba7f18eab6f9f2a5&type=3#Final-InventorySlot");
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
