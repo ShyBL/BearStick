@@ -4,8 +4,13 @@
     <ui:VisualElement name="Conatiner" class="container" style="justify-content: center; flex-direction: column; margin-top: 7%; margin-bottom: 7%; margin-left: 7%;">
         <ui:VisualElement name="Inventory" style="width: 44%; flex-direction: row; align-items: stretch; height: 100%; justify-content: space-around;">
             <ui:VisualElement name="BagArea" style="width: 68%; align-items: center; justify-content: center;">
-                <ui:VisualElement style="position: absolute; height: 184%; background-image: url(&quot;project://database/Assets/Stephen/Final-InventoryBackgroundStrappedBag.png?fileID=21300000&amp;guid=6bf1fb5dedeead642ae573f285289948&amp;type=3#Final-InventoryBackgroundStrappedBag&quot;); width: 168%;" />
-                <ui:VisualElement name="Grid" style="flex-direction: row; flex-wrap: wrap; height: 66%; width: 100%; justify-content: center;">
+                <ui:VisualElement style="position: absolute; height: 124%; background-image: url(&quot;project://database/Assets/Stephen/bagFlat.png?fileID=21300000&amp;guid=265e39fca38f84342935e90c1d8d0ec8&amp;type=3#bagFlat&quot;); width: 168%;" />
+                <ui:VisualElement name="Grid" style="flex-direction: row; flex-wrap: wrap; height: 66%; width: 592px; justify-content: center; padding-bottom: 5%;">
+                    <ui:VisualElement name="Slot" class="slots" />
+                    <ui:VisualElement name="Slot" class="slots" />
+                    <ui:VisualElement name="Slot" class="slots" />
+                    <ui:VisualElement name="Slot" class="slots" />
+                    <ui:VisualElement name="Slot" class="slots" />
                     <ui:VisualElement name="Slot" class="slots" />
                     <ui:VisualElement name="Slot" class="slots" />
                     <ui:VisualElement name="Slot" class="slots" />
@@ -27,7 +32,7 @@
                     <ui:VisualElement name="Slot" class="slots" />
                     <ui:VisualElement name="Slot" class="slots" />
                 </ui:VisualElement>
-                <ui:VisualElement name="Pockets" style="width: 100%; height: 33%; flex-direction: row; padding-right: 5%; padding-left: 5%; justify-content: space-between; padding-bottom: 10%;">
+                <ui:VisualElement name="Pockets" style="width: 100%; height: 33%; flex-direction: row; justify-content: space-between; padding-top: 5%;">
                     <ui:VisualElement name="Empty1" class="pocket-item">
                         <ui:VisualElement name="EmptyPocket" class="pocket" />
                     </ui:VisualElement>
@@ -40,8 +45,8 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="WatchArea" style="justify-content: center; width: 19%;">
-                <ui:VisualElement style="background-color: rgb(171, 171, 171); -unity-background-image-tint-color: rgb(159, 159, 159); height: 17.5%; border-top-left-radius: 100%; border-top-right-radius: 100%; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%;">
+            <ui:VisualElement name="WatchArea" style="justify-content: flex-end; width: 19%;">
+                <ui:VisualElement style="background-color: rgb(171, 171, 171); -unity-background-image-tint-color: rgb(159, 159, 159); height: 17.5%; border-top-left-radius: 100%; border-top-right-radius: 100%; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%; margin-bottom: 90%;">
                     <ui:VisualElement name="ClockHand" style="background-image: url(&quot;project://database/Assets/Stephen/TempClockHand.png?fileID=21300000&amp;guid=1ba2786174acf36459970e0a8ed976b6&amp;type=3#TempClockHand&quot;); flex-grow: 1;" />
                 </ui:VisualElement>
             </ui:VisualElement>
