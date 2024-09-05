@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Stephen/EndDayStyle.uss?fileID=7433441132597879392&amp;guid=e6f185c8a553f0947bc33406172bc40b&amp;type=3#EndDayStyle" />
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/BaseUIStyle.uss?fileID=7433441132597879392&amp;guid=302a0e2215d761242893af0356419587&amp;type=3#BaseUIStyle" />
-    <ui:VisualElement name="Container" class="text-spacing" style="margin-top: 10%; margin-right: 20%; margin-bottom: 10%; margin-left: 20%; flex-grow: 1;">
-        <ui:VisualElement name="Window" style="flex-grow: 1; background-color: rgb(0, 0, 0); border-top-left-radius: 3%; border-top-right-radius: 3%; border-bottom-right-radius: 3%; border-bottom-left-radius: 3%; flex-direction: column; padding-top: 5%; padding-right: 5%; padding-bottom: 5%; padding-left: 5%;">
+    <ui:VisualElement name="Container" class="text-spacing" style="flex-grow: 1; background-color: rgb(0, 0, 0); display: flex; padding-right: 5%; padding-bottom: 2%; padding-left: 5%; padding-top: 2%;">
+        <ui:VisualElement name="Window" style="flex-grow: 1; background-color: rgb(118, 73, 44); border-top-left-radius: 3%; border-top-right-radius: 3%; border-bottom-right-radius: 3%; border-bottom-left-radius: 3%; flex-direction: column; padding-top: 5%; padding-right: 5%; padding-bottom: 5%; padding-left: 5%; display: none;">
             <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: center; height: 10px;">
                 <ui:Label tabindex="-1" text="Day 1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" style="color: rgb(224, 224, 224); font-size: 75px; -unity-font-style: bold;" />
             </ui:VisualElement>
@@ -30,6 +30,35 @@
             <ui:VisualElement style="justify-content: center; align-items: center; height: 20%;">
                 <CustomButton name="Exit" Text="Continue" class="button element-background" style="width: 28%; height: 85%; font-size: 52px; -unity-font-style: bold;" />
             </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; align-items: center; justify-content: center; height: auto; flex-shrink: 0;">
+            <ui:Label tabindex="-1" text="Day 1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="text" style="color: rgb(224, 224, 224); font-size: 130px; -unity-font-style: bold;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; flex-shrink: 0; margin-right: 0;">
+            <ui:VisualElement name="TextList" style="flex-grow: 1; width: 15%; justify-content: center;">
+                <ui:VisualElement name="PrevMoneyParent" class="text">
+                    <ui:Label tabindex="-1" text="Previous Money:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-spacing label-description" />
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PrevMoney" />
+                </ui:VisualElement>
+                <ui:VisualElement name="EarnedMoneyParent" class="text" style="flex-direction: row;">
+                    <ui:Label tabindex="-1" text="Money Earned:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label-description" />
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EarnedMoney" />
+                </ui:VisualElement>
+                <ui:VisualElement name="ExpensesParent" class="text" style="flex-direction: row;">
+                    <ui:Label tabindex="-1" text="Expenses:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label-description" />
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Expenses" />
+                </ui:VisualElement>
+                <ui:VisualElement name="TotalMoneyParent" class="text" style="flex-direction: row;">
+                    <ui:Label tabindex="-1" text="Total Money:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-spacing label-description" />
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalMoney" class="text-spacing" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Circle" style="background-image: none; -unity-background-scale-mode: scale-and-crop; flex-grow: 1; display: flex; flex-shrink: 0; width: -338px; scale: -1 1; background-color: rgba(255, 255, 255, 0.23); border-top-left-radius: 100%; border-top-right-radius: 100%; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; overflow: hidden;">
+                <ui:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Josh/Protag_concept_03.png?fileID=2800000&amp;guid=e2c2f1322ad6913499bb2bb95202f1ee&amp;type=3#Protag_concept_03&quot;); -unity-background-scale-mode: scale-to-fit; overflow: visible; flex-shrink: 0; position: relative; visibility: visible; height: 153%; left: 92px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="justify-content: center; align-items: center; height: 20%; flex-shrink: 0;">
+            <CustomButton name="Exit" Text="Continue" class="button element-background" style="width: 28%; height: 85%; font-size: 52px; -unity-font-style: bold;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
