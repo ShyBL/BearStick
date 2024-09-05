@@ -1,9 +1,9 @@
 .container {
-    margin-top: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;
-    margin-left: 5%;
     flex-grow: 1;
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
 }
 
 .element-background {
@@ -30,6 +30,7 @@
     border-bottom-color: rgb(0, 0, 0);
     transition-property: rotate, scale;
     transition-duration: 0.15s, 0.15s;
+    -unity-font-style: bold;
 }
 
 .button:hover {

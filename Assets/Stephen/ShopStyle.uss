@@ -1,0 +1,26 @@
+.slot-shelf {
+    height: 14.8%;
+    margin-top: 6.8%;
+    margin-left: 1px;
+    width: 20.5%;
+}
+
+.slot-counter {
+    height: 46%;
+    width: 18%;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.slot {
+    background-image: url("project://database/Assets/Stephen/Final-InventorySlot.png?fileID=21300000&guid=5020bb5febb973b4ba7f18eab6f9f2a5&type=3#Final-InventorySlot");
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0.57);
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+}
