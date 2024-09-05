@@ -1,15 +1,15 @@
 .slot-shelf {
-    height: 14.8%;
-    margin-top: 6.8%;
+    height: 90px;
+    margin-top: 8.8%;
     margin-left: 1px;
-    width: 20.5%;
+    width: 90px;
 }
 
 .slot-counter {
-    height: 46%;
-    width: 18%;
-    margin-left: 2%;
-    margin-top: 1%;
+    height: 90px;
+    width: 90px;
+    margin-top: 2%;
+    margin-left: 1%;
 }
 
 .slot {
