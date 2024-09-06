@@ -3,6 +3,7 @@
     <ui:Template name="DialogueBase" src="project://database/Assets/Stephen/DialogueBase.uxml?fileID=9197481963319205126&amp;guid=116b75c2cd7d1f242af2499502cf7ef4&amp;type=3#DialogueBase" />
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/BaseUIStyle.uss?fileID=7433441132597879392&amp;guid=302a0e2215d761242893af0356419587&amp;type=3#BaseUIStyle" />
     <Style src="project://database/Assets/Stephen/ShopStyle.uss?fileID=7433441132597879392&amp;guid=056545fcb0595e34bb968712eb1cd4ad&amp;type=3#ShopStyle" />
+    <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/InventoryStyle.uss?fileID=7433441132597879392&amp;guid=d73c7c6713ca5fb48aa9f2e6da70bb4e&amp;type=3#InventoryStyle" />
     <ui:VisualElement name="Container" class="container" style="flex-grow: 1; flex-direction: row; background-image: url(&quot;project://database/Assets/Stephen/Shop_interior_wip_03.png?fileID=21300000&amp;guid=6abd6b7b206a0b445af2239cbc7711df&amp;type=3#Shop_interior_wip_03&quot;); padding-left: 1.5%; padding-top: 5%; padding-right: 3%; padding-bottom: 0; justify-content: space-between;">
         <ui:VisualElement style="width: 33%; flex-direction: column; margin-bottom: 2%;">
             <ui:Instance template="InventoryBase" name="InventoryBase" style="height: 75%; align-self: center; width: 100%; flex-direction: column; margin-top: 8%;" />
@@ -33,31 +34,31 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Shelf" style="flex-grow: 0; width: 30.5%; height: 100%; padding-top: 5.7%; padding-bottom: 8%; flex-wrap: wrap; flex-direction: row; padding-left: 1.2%; padding-right: 1.2%; justify-content: space-around; align-items: flex-end;">
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
-            <ui:VisualElement name="Slot" class="slots slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
+            <ui:VisualElement name="Slot" class="slot slot-shelf" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

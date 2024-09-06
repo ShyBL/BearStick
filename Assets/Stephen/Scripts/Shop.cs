@@ -45,4 +45,11 @@ public class Shop : MonoBehaviour
     {
         m_Root.style.display = DisplayStyle.Flex;
     }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.N))
+            m_Root.style.display = DisplayStyle.Flex;
+    }
 }
+
