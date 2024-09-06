@@ -1109,6 +1109,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &524920281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 524920283}
+  - component: {fileID: 524920282}
+  m_Layer: 0
+  m_Name: ShopUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &524920282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524920281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 67f85cec73d8a2b4ab70d7939df7a031, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 0ec460fc5155d2747a1881d49074af8a, type: 3}
+  m_SortingOrder: 8
+--- !u!4 &524920283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524920281}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.0546813, y: 6.1195626, z: -0.18930265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &555422722
 GameObject:
   m_ObjectHideFlags: 0
@@ -5526,6 +5574,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2878538267470483452}
     - target: {fileID: 2799984485898357896, guid: ad31fdacfa97a1546a062b80da6ec6ab, type: 3}
+      propertyPath: m_Shop
+      value: 
+      objectReference: {fileID: 524920282}
+    - target: {fileID: 2799984485898357896, guid: ad31fdacfa97a1546a062b80da6ec6ab, type: 3}
       propertyPath: m_MaxWeight
       value: 20
       objectReference: {fileID: 0}
@@ -5573,6 +5625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory
       objectReference: {fileID: 0}
+    - target: {fileID: 8676924488168376591, guid: ad31fdacfa97a1546a062b80da6ec6ab, type: 3}
+      propertyPath: m_Hud
+      value: 
+      objectReference: {fileID: 2878538267470483452}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5841,3 +5897,4 @@ SceneRoots:
   - {fileID: 79730951968821309}
   - {fileID: 1412433929976700783}
   - {fileID: 1748626019}
+  - {fileID: 524920283}

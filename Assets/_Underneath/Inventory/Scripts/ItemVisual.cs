@@ -11,12 +11,12 @@ public partial class ItemVisual : VisualElement
     private ItemTooltip m_Tooltip;
     private bool m_Dragging = false;
 
-    public ItemVisual(StoredItem item, VisualElement root, Inventory inventoryComp)
+    public ItemVisual(StoredItem item, VisualElement root)
     {
         m_Item = item;
         m_Root = root;
         m_Inventory = m_Root.Q<VisualElement>("Inventory");
-        m_InventoryComp = inventoryComp;
+        m_InventoryComp = Inventory.Instance;
 
         // Name it based on the user friendly name of the item.
         name = $"{m_Item.Details.FriendlyName}";
@@ -45,7 +45,6 @@ public partial class ItemVisual : VisualElement
 
         // Register events for pointer to handle tooltip and dragging items.
         RegisterCallback<PointerDownEvent>(OnPointerDown);
-        m_InventoryComp = inventoryComp;
     }
 
     // When the mouse is pressed on a slot we need to start dragging that item
