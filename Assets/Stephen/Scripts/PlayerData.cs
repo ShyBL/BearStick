@@ -88,6 +88,7 @@ public class PlayerData : MonoBehaviour
     {
         IncreaseMoney(Inventory.Instance.GetInventoryvalue());
         Inventory.Instance.ClearInventory();
+        ApplyMoneyChange();
     }
 
 }
