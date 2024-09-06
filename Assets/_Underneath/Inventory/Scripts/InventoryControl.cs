@@ -21,7 +21,7 @@ public class InventoryControl : MonoBehaviour
 
         Player.Instance.playerInput.onBagOpened += onToggleInventory;
 
-        m_Root.visible = false;
+        m_Root.style.display = DisplayStyle.None;
     }
 
     private void OnDisable()
@@ -33,7 +33,15 @@ public class InventoryControl : MonoBehaviour
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.OpenBag, Player.Instance.gameObject.transform.position);
 
-        m_Root.visible = !m_Root.visible;
+        switch(m_Root.resolvedStyle.display)
+        {
+            case DisplayStyle.Flex:
+                m_Root.style.display = DisplayStyle.None;
+                break;
+            case DisplayStyle.None:
+                m_Root.style.display = DisplayStyle.Flex;
+                break;
+        }
     }
 
     private void onToggleInventory()
