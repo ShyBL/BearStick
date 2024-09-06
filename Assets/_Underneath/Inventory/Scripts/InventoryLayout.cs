@@ -16,7 +16,7 @@ public class InventoryLayout : MonoBehaviour
     {
         // Get the document and visual elements we will need
         UIDocument doc = GetComponentInChildren<UIDocument>();
-        m_Root = doc.rootVisualElement;
+        m_Root = doc.rootVisualElement.Q<VisualElement>("InventoryBase");
         m_InventoryGrid = m_Root.Q<VisualElement>("Grid");
         m_WalletTip = new WalletTooltip(m_Root, m_Root.Q<VisualElement>("Wallet"));
 

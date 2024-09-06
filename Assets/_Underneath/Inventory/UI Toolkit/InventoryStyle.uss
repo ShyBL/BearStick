@@ -39,7 +39,6 @@
 
 .tooltip {
     position: absolute;
-    width: 15%;
     height: auto;
     flex-grow: 1;
     background-color: rgb(0, 0, 0);
