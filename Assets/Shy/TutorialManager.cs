@@ -9,7 +9,6 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private Sprite talkingSprite;
     [SerializeField] private List<String> dialogueLines;
 
-    [SerializeField] private float levelTimer;
     public static TutorialManager Instance;
     
     public bool startLevel;
@@ -27,12 +26,6 @@ public class TutorialManager : MonoBehaviour
     public bool carrying;
     public bool carryingDOONCE = true;
 
-    //TESTING
-    public bool bIsSavingGame = false;
-    public bool bIsLoadingGame = false;
-
-    public bool bPauseGame = false;
-    public bool bResumeGame = false;
     private void Awake()
     {
         if (Instance == null)
@@ -46,15 +39,7 @@ public class TutorialManager : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-       SavingAndLoading.Instance.CheckIfFileExistsOnStart();
-
-        //Start the timer with whatever the level's timer will be
-        CurfewTimer.Instance.StartTimer(levelTimer);
-
-    }
-
+    
     void Update()
     {
         if (startLevel && startLevelDOONCE)
@@ -87,30 +72,5 @@ public class TutorialManager : MonoBehaviour
             carryingDOONCE = false;
         }
         
-        //Testing Stuff
-        if(bIsLoadingGame)
-        {
-            SavingAndLoading.Instance.LoadPlayerInformation();
-            bIsLoadingGame = false;
-        }
-
-        if(bIsSavingGame)
-        {
-            SavingAndLoading.Instance.SavePlayerInformation();
-            bIsSavingGame = false;
-
-        }
-
-        if(bPauseGame)
-        {
-            CurfewTimer.Instance.PauseTimer();
-            bPauseGame = false;
-        }
-
-        if (bResumeGame)
-        {
-            CurfewTimer.Instance.ResumeTimer();
-            bResumeGame = false;
-        }
     }
 }

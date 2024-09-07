@@ -47,6 +47,8 @@ public class EndOfDay : MonoBehaviour
     void ExitPressed(ClickEvent evt)
     {
         m_Document.rootVisualElement.style.display = DisplayStyle.None;
+        //when this is clicked, need to load a new day
+        StartOfDay.Instance.StartNewDay();
     }
 
     public void EndDay()
