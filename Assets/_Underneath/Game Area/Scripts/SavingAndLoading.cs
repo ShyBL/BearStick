@@ -91,7 +91,7 @@ public class SavingAndLoading : MonoBehaviour
             //Error occurs here
             loadedPlayerData = new PlayerInformation();
         }
-        loadedPlayerData.SendPlayerInfo();
+        //loadedPlayerData.SendPlayerInfo();
         return loadedPlayerData;
     }
 
@@ -119,6 +119,7 @@ public class PlayerInformation
     public int m_CurrentExpenses;
     public Vector2 playerLocation;
     public Inventory inventoryRef;
+    public List<StoredItem> inventoryItemRef;
 
     public PlayerInformation()
     {
@@ -128,15 +129,16 @@ public class PlayerInformation
         m_CurrentExpenses = PlayerData.Instance.GetExpenses();
         playerLocation = PlayerData.Instance.v_SpawnLocation;
         inventoryRef = Player.Instance.inventory;
+        inventoryItemRef = Inventory.Instance.StoredItems;
     }
 
-    public void SendPlayerInfo()
-    {
-        PlayerData.Instance.SetMoney(m_Money);
-        PlayerData.Instance.SetNewMoney(m_NewMoney);
-        PlayerData.Instance.SetDayCount(m_DayCount);
-        PlayerData.Instance.SetExpenses(m_CurrentExpenses);
-        PlayerData.Instance.v_SpawnLocation = playerLocation;
-        Player.Instance.inventory = inventoryRef;
-    }
+    //public void SendPlayerInfo()
+    //{
+    //    PlayerData.Instance.SetMoney(m_Money);
+    //    PlayerData.Instance.SetNewMoney(m_NewMoney);
+    //    PlayerData.Instance.SetDayCount(m_DayCount);
+    //    PlayerData.Instance.SetExpenses(m_CurrentExpenses);
+    //    PlayerData.Instance.v_SpawnLocation = playerLocation;
+    //    //Inventory LoadInventory()
+    //}
 }
