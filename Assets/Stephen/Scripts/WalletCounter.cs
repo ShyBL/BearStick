@@ -5,32 +5,19 @@ using UnityEngine.UIElements;
 
 public class WalletCounter : MonoBehaviour
 {
-    public static WalletCounter Instance;
-
     Label m_WalletCounter;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            Destroy(this);
-        }
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         m_WalletCounter = GetComponent<UIDocument>().rootVisualElement.Q<Label>("WalletCounter");
 
-        RefreshWalletCounter(PlayerData.Instance.GetMoney());
+        RefreshWalletCounter();
+        PlayerData.Instance.m_RefreshMoney += RefreshWalletCounter;
     }
 
-    public void RefreshWalletCounter(int money)
+    public void RefreshWalletCounter()
     {
-        m_WalletCounter.text = "$" + money.ToString();
+        m_WalletCounter.text = "$" + PlayerData.Instance.GetMoney().ToString();
     }
 }

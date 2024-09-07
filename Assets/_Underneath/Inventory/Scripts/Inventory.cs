@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEditor.Progress;
 
 // The conversion class that matches the data of the items with their VisualElements.
 [Serializable]
 public class StoredItem
 {
     public Item Details; // The actual data for the item.
-    public ItemVisual RootVisual; // The visual element for displaying the item in the inventory. Icon-Container -> Icon.
+    [HideInInspector]
+    public List<ItemVisual> RootVisual = new List<ItemVisual>(); // The visual element for displaying the item in the inventory. Icon-Container -> Icon.
     [HideInInspector]
     public Rect OverlapRectangle; // The slots this item takes up in the inventory. Top left slot is (0,0) and so on. Used for checking for open slots.
 }
@@ -20,12 +23,9 @@ public class Inventory : MonoBehaviour
 
     public List<StoredItem> StoredItems = new List<StoredItem>(); // All the items currently stored in the inventory. Only the Details variables are set in editor, rest are created in LoadInventory.
     public Dimensions InventoryDimensions; // Dimensions of the inventory, set in the editor to a static number based on layout.
+    public List<InventoryLayout> InventoryLayouts = new List<InventoryLayout>();
 
-    private List<List<VisualElement>> m_SlotMap = new List<List<VisualElement>>();
-    private VisualElement m_Root; // Root visual element of the inventory, all elements in the UXML file are children of this.
-    private VisualElement m_InventoryGrid; // Grid that contains the slot, "Grid" in the UXML file.
     private bool m_IsInventoryReady; // Bool for signaling that inventory has finished initializing and is ready to load.
-    private bool m_LayoutReady; // Bool for signaling that the layout engine has finished it's work and VisualElements are setup.
     private int m_InventoryValue = 0; // The total value of the inventory, is calculated as items are added and removed.
     [SerializeField]
     private float m_MaxWeight;
@@ -34,8 +34,6 @@ public class Inventory : MonoBehaviour
     private UIDocument m_Hud;
     private Label m_CurrentWeightElement;
     private Label m_MaxWeightElement;
-    private Button m_InventoryButton;
-    private WalletTooltip m_WalletTip;
 
     private void Awake()
     {
@@ -50,77 +48,44 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void OnDisable()
-    {
-        Player.Instance.playerInput.onBagOpened -= onToggleInventory;
-    }
-
     private void Start()
     {
-        Player.Instance.playerInput.onBagOpened += onToggleInventory;
         StartCoroutine(LoadInventory());
     }
 
     // Initializes the inventory. Should only need to be called in Awake.
     private void Configure()
     {
-        // Get the document and visual elements we will need
-        UIDocument doc = GetComponentInChildren<UIDocument>();
-        m_Root = doc.rootVisualElement;
-        m_InventoryGrid = m_Root.Q<VisualElement>("Grid");
         m_CurrentWeightElement = m_Hud.rootVisualElement.Q<Label>("CurrentWeight");
         m_MaxWeightElement = m_Hud.rootVisualElement.Q<Label>("MaxWeight");
         m_MaxWeightElement.text = m_MaxWeight.ToString();
         m_CurrentWeightElement.text = m_CurrentWeight.ToString();
-        m_InventoryButton = m_Hud.rootVisualElement.Q<Button>("Inventory");
-        m_InventoryButton.RegisterCallback<ClickEvent>(ToggleInventory);
+        // Makes it so HuD doesn't steal click events, mainly so tooltips will work
+        m_Hud.rootVisualElement.Q<VisualElement>("Container").pickingMode = PickingMode.Ignore;
         //m_Root.RegisterCallback<GeometryChangedEvent>(OnLayoutFinished);
 
         // Give the UI toolkit time to initialize the layout
         //yield return new WaitUntil(() => m_LayoutReady);
 
-        // Create a map of all the slots
-        ConfigureSlotMap();
         // Mark inventory as ready and initialized
         m_IsInventoryReady = true;
-
-        m_WalletTip = new WalletTooltip(m_Root, m_Root.Q<VisualElement>("Wallet"));
     }
 
 
-    private void ToggleInventory(ClickEvent evt = null)
-    {
-      
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.OpenBag, Player.Instance.gameObject.transform.position);
-       
-        switch (m_Root.resolvedStyle.display)
-        {
-            case DisplayStyle.Flex:
-                m_Root.style.display = DisplayStyle.None;
-                break;
-            case DisplayStyle.None:
-                m_Root.style.display = DisplayStyle.Flex;
-                break;
-        }
-    }
 
-    private void onToggleInventory()
-    {
-        ToggleInventory();
-    }
 
     // Commented out related code for this function as this is no longer needed for now
     // and it seems to not be consistent, as when I switched computers it stopped working.
     // Function that is called when the root element of the inventory document changes.
     // Is used for determining when the layout is finished being created during Configuration.
     // Will be useful to use if we handle changing resolutions.
-    private void OnLayoutFinished(GeometryChangedEvent evt)
+    /*private void OnLayoutFinished(GeometryChangedEvent evt)
     {
         // Multiple of these are called after registering above, have to wait for the
         // event that matches the current window size otherwise slot size will be off.
         if (Screen.width == evt.newRect.width && Screen.height == evt.newRect.height)
             m_LayoutReady = true;
-    }
+    }*/
 
     // Loads the inventory, going through the StoredItems and placing them in the inventory
     // in the first available open slot. Might be useful to call again outside of start if
@@ -135,9 +100,6 @@ public class Inventory : MonoBehaviour
         {
             CreateItem(loadedItem);
         }
-
-        // Now that inventory is setup time to hide it by default.
-        m_Root.style.display = DisplayStyle.None;
     }
 
     // Public function for adding an item to the inventory,
@@ -166,24 +128,15 @@ public class Inventory : MonoBehaviour
         if (item.Details.Weight + m_CurrentWeight > m_MaxWeight)
             return false;
 
-        // Create the new item visual, which is the visual element that appears in the inventory
-        item.RootVisual = new ItemVisual(item, m_Root, this);
-
-        AddItemToInventoryGrid(item.RootVisual);
-
         bool inventoryHasSpace = GetPositionForItem(item);
 
         // If we don't have space remove the item from the grid and continue on
         if (!inventoryHasSpace)
         {
-            Debug.Log("No space - Cannot pick up the item");
-            RemoveItemFromInventoryGrid(item.RootVisual);
-            item.RootVisual = null;
+            Debug.LogWarning("No space - Cannot pick up the item");
+            item.RootVisual.Clear();
             return false;
         }
-
-        // Call this to make the item ready to be shown after we know it's in a valid place
-        ConfigureInventoryItem(item);
 
         RecalculateWeight();
 
@@ -194,8 +147,9 @@ public class Inventory : MonoBehaviour
     // and removing it from the stored items list
     public void DeleteItem(StoredItem item)
     {
-        // Remove the visual element from it's parent to get rid of it from the document
-        item.RootVisual.parent.Clear();
+        foreach(VisualElement visual in item.RootVisual)
+            // Remove the visual element from it's parent to get rid of it from the document
+            visual.parent.Clear();
         // Then remove it from the stored item list
         StoredItems.Remove(item);
         RecalculateWeight();
@@ -206,7 +160,9 @@ public class Inventory : MonoBehaviour
     {
         // For each item in the list remove its visual element from it's parent
         foreach (StoredItem item in StoredItems)
-            item.RootVisual.parent.Clear();
+            foreach (VisualElement visual in item.RootVisual)
+                // Remove the visual element from it's parent to get rid of it from the document
+                visual.parent.Clear();
         // Once we finish clearing out the visual elements we can clear the list
         StoredItems.Clear();
         RecalculateWeight();
@@ -241,7 +197,7 @@ public class Inventory : MonoBehaviour
                 {
                     // First check to see if the item has been placed by checking if it has a root visual component.
                     // Second check if this new item overlaps with the item.
-                    if (item.RootVisual != null && item.OverlapRectangle.Overlaps(itemRect))
+                    if (item.RootVisual.Count > 0 && item.OverlapRectangle.Overlaps(itemRect))
                     {
                         free = false;
                         break;
@@ -253,8 +209,16 @@ public class Inventory : MonoBehaviour
                     continue;
 
                 // If no conflict was found this position is valid and will be used for the item.
-                // Add item as child of the correct slot and it's rectangle for overlap checking in the future.
-                m_SlotMap[y][x].Add(newItem.RootVisual);
+                // Add a visual for each inventory layout we have, for now this is shop and inventory
+                foreach (InventoryLayout layout in InventoryLayouts)
+                {
+                    ItemVisual newVisual = new ItemVisual(newItem, layout.GetRoot());
+                    // Create the new item visual, which is the visual element that appears in the inventory
+                    newItem.RootVisual.Add(newVisual);
+                    layout.AddItem(newVisual, x, y);
+                }
+                
+                // Add rectangle for future checking for collisions
                 newItem.OverlapRectangle = itemRect;
 
                 return true;
@@ -262,48 +226,6 @@ public class Inventory : MonoBehaviour
         }
         // No space was found for the item
         return false;
-    }
-
-    // Gets all slots from the grid and adds them to a 2D list to map all the slots
-    private void ConfigureSlotMap()
-    {
-        // For keeping track of the current coordinate we're on in the loop
-        int x = 0; int y = 0;
-
-        // Start by adding the first list to the 2d list
-        m_SlotMap.Add(new List<VisualElement>());
-
-        // Slots are already in order due to how they were created in the UI builder
-        foreach (VisualElement slot in m_InventoryGrid.Children())
-        {
-            // If we go over the edge of the inventory width wise
-            if(x >= InventoryDimensions.Width)
-            {
-                // Add a new row
-                m_SlotMap.Add(new List<VisualElement>());
-                // Wrap around to the first slot on the next row
-                x = 0;
-                y++;
-            }
-
-            // Add the slot visual element to it's position in the 2d list
-            m_SlotMap[y].Add(slot);
-
-            // Move on to the next slot
-            x++;
-        }
-    }
-
-    // Adds the passed in visual element to the inventory grid by adding it as a child of the grid
-    private void AddItemToInventoryGrid(VisualElement item) => m_InventoryGrid.Add(item);
-    // Removes the passed in visual element from the inventory grid by removing it as a child of the grid
-    private void RemoveItemFromInventoryGrid(VisualElement item) => m_InventoryGrid.Remove(item);
-
-    // Configures an item to be ready to be shown in the inventory
-    private static void ConfigureInventoryItem(StoredItem item)
-    {
-        // Since item starts out as invisible when we create it now that's it's confirmed in a good spot make it visible.
-        item.RootVisual.style.visibility = Visibility.Visible;
     }
 
     private void RecalculateWeight()

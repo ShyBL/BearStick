@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using static PlayerData;
 
 [System.Serializable]
 public class PlayerData : MonoBehaviour
@@ -12,6 +13,9 @@ public class PlayerData : MonoBehaviour
     public int m_NewMoney = 0;
     public int m_DayCount = 1;
     public int m_CurrentExpenses = 0;
+
+    public delegate void RefreshMoney();
+    public RefreshMoney m_RefreshMoney;
 
     public PlayerData()
     {
@@ -56,7 +60,7 @@ public class PlayerData : MonoBehaviour
     {
         m_Money += m_NewMoney;
         m_NewMoney = 0;
-        WalletCounter.Instance.RefreshWalletCounter(m_Money);
+        m_RefreshMoney.Invoke();
     }
 
     public void SetMoney(int amount){m_Money = amount;}
@@ -88,6 +92,7 @@ public class PlayerData : MonoBehaviour
     {
         IncreaseMoney(Inventory.Instance.GetInventoryvalue());
         Inventory.Instance.ClearInventory();
+        ApplyMoneyChange();
     }
 
 }

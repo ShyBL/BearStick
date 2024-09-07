@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -19,12 +20,12 @@ public class Dialogue : MonoBehaviour
         m_Root = m_Document.rootVisualElement;
         m_Text = m_Root.Q<Label>("Dialogue");
         m_Image = m_Root.Q<VisualElement>("Image");
-        m_Root.style.display = DisplayStyle.None;
+        m_Image.parent.style.display = DisplayStyle.None;
     }
 
     public void StartDialogue(string line, Sprite sprite)
     {
-        m_Root.style.display = DisplayStyle.Flex;
+        m_Image.parent.style.display = DisplayStyle.Flex;
         m_Image.style.backgroundImage = new StyleBackground(sprite);
         StartCoroutine(TypeText(line));
     }
@@ -32,7 +33,7 @@ public class Dialogue : MonoBehaviour
     void EndDialogue()
     {
         Player.Instance.playerInput.onDialogueEnd -= EndDialogue;
-        m_Root.style.display = DisplayStyle.None;
+        m_Image.parent.style.display = DisplayStyle.None;
     }
 
     IEnumerator TypeText(string line)

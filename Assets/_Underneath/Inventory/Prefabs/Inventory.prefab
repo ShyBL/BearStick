@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2799984485898357896}
   - component: {fileID: -8370302149847160561}
   - component: {fileID: 6892942924519211612}
+  - component: {fileID: 673858611976983996}
+  - component: {fileID: 8676924488168376591}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -50,7 +52,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 67f85cec73d8a2b4ab70d7939df7a031, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 1396a3d677d9fe840863e1b4729fa2c4, type: 3}
-  m_SortingOrder: 1
+  m_SortingOrder: 3
 --- !u!114 &2799984485898357896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +69,8 @@ MonoBehaviour:
   InventoryDimensions:
     Height: 5
     Width: 5
+  InventoryLayouts:
+  - {fileID: 673858611976983996}
   m_MaxWeight: 0
   m_Hud: {fileID: 0}
 --- !u!114 &-8370302149847160561
@@ -93,3 +97,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84ac4c88adca4b4283c3a65a4f2f03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &673858611976983996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156960812586909745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a7494ad708f77428982243307c40d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8676924488168376591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156960812586909745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7073ef04ee109c42a6494358a516090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Hud: {fileID: 0}
