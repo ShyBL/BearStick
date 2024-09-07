@@ -59,12 +59,12 @@ MonoBehaviour:
   moveSpeed: 3.5
   airVelocity: 2
   jumpForce: 7
-  wallJumpForce: 15
+  wallJumpForce: {x: 3.5, y: 6}
+  wallJumpCounter: 0
   wallSlideSpeed: 8
   canMove: 1
   moveInputVector: {x: 0, y: 0, z: 0}
   inventory: {fileID: 0}
-  footstepsGameObject: {fileID: 0}
   facingDirection: 0
 --- !u!50 &7365951421248579780
 Rigidbody2D:
@@ -140,6 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a684c009caa5945a1055245e6591bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Money: 0
+  m_NewMoney: 0
+  m_DayCount: 1
+  m_CurrentExpenses: 0
 --- !u!1 &3654763751334551890
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +209,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.26219082, y: -0.48068166}
+  m_Offset: {x: 0, y: -0.63640404}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -216,7 +220,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2650604, y: 0.80151224}
+  m_Size: {x: 2.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &1975358574211375795
 MonoBehaviour:
@@ -423,7 +427,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1519769909
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -437292834, guid: 5e97f00c368e211458da5c67b4af18de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

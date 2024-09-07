@@ -1855,7 +1855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &827750629
 Transform:
   m_ObjectHideFlags: 0
@@ -1940,7 +1940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &882787179
 Transform:
   m_ObjectHideFlags: 0
@@ -2513,7 +2513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1025100741
 Transform:
   m_ObjectHideFlags: 0
@@ -2737,7 +2737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1083904640
 Transform:
   m_ObjectHideFlags: 0
@@ -3045,7 +3045,7 @@ Transform:
   m_GameObject: {fileID: 1321230107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.89999896, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3401,7 +3401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1558483459
 Transform:
   m_ObjectHideFlags: 0
@@ -3737,7 +3737,7 @@ Transform:
   m_GameObject: {fileID: 1653344064}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.66, y: 0, z: 0}
+  m_LocalPosition: {x: -27.56, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3959,9 +3959,9 @@ MonoBehaviour:
   dialogue: {fileID: 1354427191}
   talkingSprite: {fileID: 21300000, guid: d50a10c6ce1dd634fa5c783424413c20, type: 3}
   dialogueLines:
-  - "\u201CLet\u2019s start with the basics. Use the Left and Right arrow keys to
-    move around, and Spacebar to jump. A lot of folks like to live higher up\u2013
-    more people means more trash.\u201D  "
+  - "\u201CLet\u2019s start with the basics. Use the A and D keys to move around,
+    and Spacebar to jump. A lot of folks like to live higher up\u2013 more people
+    means more trash.\u201D  "
   - "\u201CDon\u2019t forget to use those claws! You can slide down or even stick
     to walls, depending on what the wall is made out of. You can even jump off of
     walls using Spacebar!\u201D "
@@ -4108,7 +4108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826502489603344534, guid: 128a23707e8cba8429af03e6643b3d97, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: 5826502489603344534, guid: 128a23707e8cba8429af03e6643b3d97, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4764,7 +4764,7 @@ Transform:
   m_GameObject: {fileID: 2116287827}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.590002, y: 0, z: 2.5}
+  m_LocalPosition: {x: -25.95, y: 0, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4813,7 +4813,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 41e8aaf5377479941aaebeef64073808, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 26.756603, y: 18.16}
@@ -5414,22 +5414,6 @@ PrefabInstance:
       propertyPath: Inventory
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2102144721591381050, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: m_Size.x
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2102144721591381050, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: m_Size.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2102144721591381050, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 2102144721591381050, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.68
-      objectReference: {fileID: 0}
     - target: {fileID: 2942129072151311213, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5480,7 +5464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9154314289465190505, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.93
+      value: -12.41
       objectReference: {fileID: 0}
     - target: {fileID: 9154314289465190505, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5763,7 +5747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8015295622652954481, guid: c225bedfbd8d766439028567395c5102, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.89
+      value: -10.62
       objectReference: {fileID: 0}
     - target: {fileID: 8015295622652954481, guid: c225bedfbd8d766439028567395c5102, type: 3}
       propertyPath: m_LocalPosition.y

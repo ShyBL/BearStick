@@ -39,7 +39,6 @@ public class PlayerAirState : PlayerState
     {
         if (player.IsGrounded() && player.playerPhysx.CurrentVelocity().y < LANDING_THRESHOLD)
         {
-            
             stateMachine.ChangeState(stateMachine.IdleState);
             player.playerPhysx.bIsJumping = false;
         }
@@ -51,7 +50,6 @@ public class PlayerAirState : PlayerState
         if(player.playerPhysx.IsWallDetected() & !player.playerPhysx.bIsJumping)
         {
             stateMachine.ChangeState(stateMachine.WallJumpState);
-
         }
     }
 }

@@ -11,7 +11,7 @@ public static class States
     public static string MOVE = "player_move";
     public static string AIR = "air_state";
     public static string JUMP = "jump_state";
-    public static string CLIMB = "climb_state";
+    public static string SLIDE = "slide_state";
     
     public static string ATTACK = "attack_state";
     public static string PICKUP = "pickup";
