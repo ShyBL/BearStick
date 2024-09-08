@@ -78,6 +78,11 @@ public class Player : MonoBehaviour
         }
     }
     
+    public void SetPlayerSpawn(Vector2 spawn)
+    {
+        this.gameObject.transform.position = spawn;
+    }
+
     public int facingDirection;
     
     public void Flip() 

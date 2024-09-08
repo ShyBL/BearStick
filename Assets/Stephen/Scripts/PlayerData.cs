@@ -13,6 +13,7 @@ public class PlayerData : MonoBehaviour
     public int m_NewMoney = 0;
     public int m_DayCount = 1;
     public int m_CurrentExpenses = 0;
+    public Vector2 v_SpawnLocation;
 
     public delegate void RefreshMoney();
     public RefreshMoney m_RefreshMoney;
@@ -23,6 +24,7 @@ public class PlayerData : MonoBehaviour
         m_NewMoney = 0;
         m_DayCount = 1;
         m_CurrentExpenses = 0;
+        v_SpawnLocation = Vector2.zero;
     }
 
     private void Awake()
@@ -35,6 +37,13 @@ public class PlayerData : MonoBehaviour
         {
             Destroy(this);
         }
+
+    }
+
+    private void Start()
+    {
+        GameObject spawnLocation = GameObject.Find("PlayerRespawnPoint");
+        v_SpawnLocation = spawnLocation.gameObject.transform.position;
     }
 
     public void IncreaseMoney(int amount)

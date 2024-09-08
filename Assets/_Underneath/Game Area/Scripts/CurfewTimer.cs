@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class CurfewTimer : MonoBehaviour
 {
     public static CurfewTimer Instance;
-
     [SerializeField] TMP_Text m_CountdownText;
-    [SerializeField] private float Countdowntimer, timeChangeLight, timeChangeMusic;
+    [SerializeField] private float Countdowntimer, StartingTimer;
+    private float timeChangeLight, timeChangeMusic;
     [SerializeField, Range(0, 1)] private float percentToChangeLights;
     [SerializeField, Range(0, 1)] private float percentToChangeMusic;
     public float threshold = 0.5f;
@@ -27,10 +27,18 @@ public class CurfewTimer : MonoBehaviour
             Destroy(this);
         }
 
-        bIsTimerDone = false;
+        bIsTimerDone = true;
         bLightsChanged = false;
         bMusicChanged = false;
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
+        StartTimer();
+        Debug.Log("Timer Started");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -70,9 +78,9 @@ public class CurfewTimer : MonoBehaviour
         return Countdowntimer;
     }
 
-    public void StartTimer(float timerAmountInSeconds)
+    public void StartTimer()
     {
-        Countdowntimer = timerAmountInSeconds;
+        Countdowntimer = StartingTimer;
         timeChangeLight = Countdowntimer * percentToChangeLights;
         timeChangeMusic = Countdowntimer * percentToChangeMusic;
         //Add inventory Timer stuff

@@ -24,11 +24,13 @@ public class SavingAndLoading : MonoBehaviour
         }
         playerDataDirPath = Application.persistentDataPath;
 
-}
+    }
 
     public void SavePlayerInformation()
     {
         Debug.Log("SavePlayerInfo Called");
+        //Get all the information
+        PlayerInformation playerInfo = new PlayerInformation();
         //Save data to a file 
         //use Path.Combine to account for different OS's having different path seperators
         string fullPath = Path.Combine(playerDataDirPath, playerDataFileName);
@@ -38,7 +40,7 @@ public class SavingAndLoading : MonoBehaviour
             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
 
             //Serialize the Player Data into JSON
-            string dataToStore = JsonUtility.ToJson(PlayerData.Instance, true);
+            string dataToStore = JsonUtility.ToJson(playerInfo, true);
 
             //Write the serialized data to the file
             using (FileStream stream = new FileStream(fullPath, FileMode.Create))
@@ -56,11 +58,11 @@ public class SavingAndLoading : MonoBehaviour
         }
     }
 
-    public PlayerData LoadPlayerInformation()
+    public PlayerInformation LoadPlayerInformation()
     {
         Debug.Log("LoadPlayerInfo Called");
         string fullPath = Path.Combine(playerDataDirPath, playerDataFileName);
-        PlayerData loadedPlayerData = null;
+        PlayerInformation loadedPlayerData = null;
 
         if (File.Exists(fullPath)) 
         {
@@ -77,7 +79,7 @@ public class SavingAndLoading : MonoBehaviour
                 }
 
                 //Deserialize the file from Json back to the Object
-               loadedPlayerData = JsonUtility.FromJson<PlayerData> (DataToLoad);
+               loadedPlayerData = JsonUtility.FromJson<PlayerInformation> (DataToLoad);
             }
             catch (Exception e)
             {
@@ -87,9 +89,9 @@ public class SavingAndLoading : MonoBehaviour
         else
         {
             //Error occurs here
-            loadedPlayerData = new PlayerData();
+            loadedPlayerData = new PlayerInformation();
         }
-
+        loadedPlayerData.SendPlayerInfo();
         return loadedPlayerData;
     }
 
@@ -115,6 +117,9 @@ public class PlayerInformation
     public int m_NewMoney;
     public int m_DayCount;
     public int m_CurrentExpenses;
+    public Vector2 playerLocation;
+    public Inventory inventoryRef;
+    public List<StoredItem> inventoryItemRef;
 
     public PlayerInformation()
     {
@@ -122,5 +127,19 @@ public class PlayerInformation
         m_NewMoney = PlayerData.Instance.GetMoneyEarned();
         m_DayCount = PlayerData.Instance.GetDayCount();
         m_CurrentExpenses = PlayerData.Instance.GetExpenses();
+        playerLocation = PlayerData.Instance.v_SpawnLocation;
+        inventoryRef = Player.Instance.inventory;
+        inventoryItemRef = Inventory.Instance.StoredItems;
+    }
+
+    public void SendPlayerInfo()
+    {
+        PlayerData.Instance.SetMoney(m_Money);
+        PlayerData.Instance.SetNewMoney(m_NewMoney);
+        PlayerData.Instance.SetDayCount(m_DayCount);
+        PlayerData.Instance.SetExpenses(m_CurrentExpenses);
+        PlayerData.Instance.v_SpawnLocation = playerLocation;
+        Player.Instance.inventory = inventoryRef;
+        Inventory.Instance.StoredItems = inventoryItemRef;
     }
 }
