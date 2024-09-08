@@ -5668,6 +5668,10 @@ PrefabInstance:
       propertyPath: m_Money
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2310153849885307640, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: m_DayCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2942129072151311213, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_Name
       value: Player

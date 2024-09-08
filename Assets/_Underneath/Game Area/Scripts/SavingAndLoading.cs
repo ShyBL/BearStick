@@ -91,7 +91,7 @@ public class SavingAndLoading : MonoBehaviour
             //Error occurs here
             loadedPlayerData = new PlayerInformation();
         }
-        //loadedPlayerData.SendPlayerInfo();
+        loadedPlayerData.SendPlayerInfo();
         return loadedPlayerData;
     }
 
@@ -132,13 +132,14 @@ public class PlayerInformation
         inventoryItemRef = Inventory.Instance.StoredItems;
     }
 
-    //public void SendPlayerInfo()
-    //{
-    //    PlayerData.Instance.SetMoney(m_Money);
-    //    PlayerData.Instance.SetNewMoney(m_NewMoney);
-    //    PlayerData.Instance.SetDayCount(m_DayCount);
-    //    PlayerData.Instance.SetExpenses(m_CurrentExpenses);
-    //    PlayerData.Instance.v_SpawnLocation = playerLocation;
-    //    //Inventory LoadInventory()
-    //}
+    public void SendPlayerInfo()
+    {
+        PlayerData.Instance.SetMoney(m_Money);
+        PlayerData.Instance.SetNewMoney(m_NewMoney);
+        PlayerData.Instance.SetDayCount(m_DayCount);
+        PlayerData.Instance.SetExpenses(m_CurrentExpenses);
+        PlayerData.Instance.v_SpawnLocation = playerLocation;
+        Player.Instance.inventory = inventoryRef;
+        Inventory.Instance.StoredItems = inventoryItemRef;
+    }
 }

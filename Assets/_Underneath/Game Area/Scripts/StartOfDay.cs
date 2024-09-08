@@ -65,12 +65,13 @@ public class StartOfDay : MonoBehaviour
     public void StartNewDay()
     {
         Debug.Log("Starting a New Day...");
-        //Load the scene again *For Now*
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //Load Player Information
         SavingAndLoading.Instance.LoadPlayerInformation();
-        //Sets the player location to a point in the world, we can set that to whereever we need
-        Player.Instance.SetPlayerSpawn(PlayerData.Instance.v_SpawnLocation);
+        if(PlayerData.Instance.GetDayCount() > 1)
+        {
+            //Set the player's spawn location for the next day
+            Player.Instance.SetPlayerSpawn(PlayerData.Instance.v_SpawnLocation);
+        }
         //Fade out from black
         ResetFadeAnimation();
         //Start Timer

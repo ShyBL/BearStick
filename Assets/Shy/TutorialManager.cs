@@ -39,7 +39,11 @@ public class TutorialManager : MonoBehaviour
 
     }
 
-    
+    private void Start()
+    {
+        StartOfDay.Instance.StartNewDay();
+    }
+
     void Update()
     {
         if (startLevel && startLevelDOONCE)

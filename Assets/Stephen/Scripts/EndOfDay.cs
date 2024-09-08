@@ -48,7 +48,11 @@ public class EndOfDay : MonoBehaviour
     {
         m_Document.rootVisualElement.style.display = DisplayStyle.None;
         //when this is clicked, need to load a new day
-        StartOfDay.Instance.StartNewDay();
+        //StartOfDay.Instance.StartNewDay();
+
+        //This is how you would reset the scene, but you would need some form of button or something 
+        //So that the scene does not instantly reset
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void EndDay()
@@ -70,13 +74,11 @@ public class EndOfDay : MonoBehaviour
         if (PlayerData.Instance.GetDayCount() % IncreaseFrequency == 0)
             PlayerData.Instance.IncreaseExpenses(ExpensesIncrease);
 
+        //Set the player's spawn location for the next day
+        Player.Instance.SetPlayerSpawn(PlayerData.Instance.v_SpawnLocation);
         //Save Game
         SavingAndLoading.Instance.SavePlayerInformation();
-        Debug.Log("EndDay function called");
-
-        //This is how you would reset the scene, but you would need some form of button or something 
-        //So that the scene does not instantly reset
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+;
     }
 
 }
