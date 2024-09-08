@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Josh/newLevelJoshChanges.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Josh/newLevelJoshChanges.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Dumpster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Dumpster.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Trashcan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Trashcan.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Animation/Climb.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Animation/Climb.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Animation/EmmaAnimController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Animation/EmmaAnimController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/States.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/States.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SuperStates/PlayerAirState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SuperStates/PlayerAirState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stephen/EndDayStyle.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stephen/EndDayStyle.uss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stephen/EndDayUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stephen/EndDayUI.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stephen/EndOfDayUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stephen/EndOfDayUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stephen/Scripts/EndOfDay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stephen/Scripts/EndOfDay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
