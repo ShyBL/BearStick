@@ -39,7 +39,7 @@
                     <ui:VisualElement name="EmptyPocket" class="pocket" />
                 </ui:VisualElement>
                 <ui:VisualElement name="Wallet" class="pocket-item" style="background-image: url(&quot;project://database/Assets/_Underneath/UI/Sprites/Underneath_UI_BG_Rough.png?fileID=21300000&amp;guid=a87ef6a5d9dd08746bd40277ff09071e&amp;type=3#Underneath_UI_BG_Rough&quot;);">
-                    <ui:Label tabindex="-1" text="$20" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WalletCounter" class="element-background" style="color: rgb(255, 255, 255); font-size: 30px; -unity-text-align: upper-center; padding-top: 0; padding-right: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-left: 0; padding-bottom: 0; margin-bottom: 0; background-image: none;" />
+                    <ui:Label tabindex="-1" text="$20" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WalletCounter" class="element-background" style="color: rgb(255, 255, 255); font-size: 30px; -unity-text-align: middle-center; padding-top: 0; padding-right: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-left: 0; padding-bottom: 0; margin-bottom: 25%; background-image: none; flex-grow: 1;" />
                     <ui:VisualElement name="WalletPocket" class="pocket" />
                 </ui:VisualElement>
             </ui:VisualElement>
