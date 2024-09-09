@@ -15,6 +15,7 @@ public class CurfewTimer : MonoBehaviour
     public float threshold = 0.5f;
     private bool bIsTimerDone, bLightsChanged, bMusicChanged;
     [SerializeField] private bool bResetScene = false;
+    [SerializeField] TimerComponent m_UITimer;
 
     private void Awake()
     {
@@ -47,6 +48,7 @@ public class CurfewTimer : MonoBehaviour
             if(Countdowntimer > 0)
             {
                 Countdowntimer -= Time.deltaTime;
+                m_UITimer.TimeRemaining = Countdowntimer;
             }
             else if (Countdowntimer <= 0)
             {
@@ -81,6 +83,7 @@ public class CurfewTimer : MonoBehaviour
     public void StartTimer()
     {
         Countdowntimer = StartingTimer;
+        m_UITimer.TimeLimit = StartingTimer;
         timeChangeLight = Countdowntimer * percentToChangeLights;
         timeChangeMusic = Countdowntimer * percentToChangeMusic;
         //Add inventory Timer stuff

@@ -1,12 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="InventoryBase" src="project://database/Assets/_Underneath/UI/Elements/InventoryBase.uxml?fileID=9197481963319205126&amp;guid=9357aec782f13dc4f81ac7437a02adb6&amp;type=3#InventoryBase" />
+    <ui:Template name="InventoryBase" src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/InventoryBase.uxml?fileID=9197481963319205126&amp;guid=9357aec782f13dc4f81ac7437a02adb6&amp;type=3#InventoryBase" />
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/InventoryStyle.uss?fileID=7433441132597879392&amp;guid=d73c7c6713ca5fb48aa9f2e6da70bb4e&amp;type=3#InventoryStyle" />
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/BaseUIStyle.uss?fileID=7433441132597879392&amp;guid=302a0e2215d761242893af0356419587&amp;type=3#BaseUIStyle" />
     <ui:VisualElement name="Conatiner" class="container" style="justify-content: flex-start; flex-direction: row; padding-right: 0; padding-top: 6%; padding-bottom: 6%; padding-left: 2%;">
         <ui:Instance template="InventoryBase" name="InventoryBase" style="width: 35%; height: 100%;" />
         <ui:VisualElement name="WatchArea" style="justify-content: flex-end; width: 8%;">
             <ui:VisualElement name="VisualElement" style="height: 23%; border-top-left-radius: 100%; border-top-right-radius: 100%; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%; margin-bottom: 30%; background-image: url(&quot;project://database/Assets/_Underneath/UI/Sprites/pocketWatch.png?fileID=21300000&amp;guid=55d383a437eb0674989dede92739a22d&amp;type=3#pocketWatch&quot;); -unity-background-scale-mode: scale-to-fit; justify-content: center;">
-                <ui:VisualElement name="ClockHand" style="background-image: url(&quot;project://database/Assets/_Underneath/UI/Sprites/TempClockHand.png?fileID=21300000&amp;guid=1ba2786174acf36459970e0a8ed976b6&amp;type=3#TempClockHand&quot;); align-self: center; height: 55%; width: 115px; top: 11%; right: 3%;" />
+                <ui:VisualElement name="ClockHand" style="background-image: url(&quot;project://database/Assets/_Underneath/UI/Sprites/TempClockHand.png?fileID=21300000&amp;guid=1ba2786174acf36459970e0a8ed976b6&amp;type=3#TempClockHand&quot;); align-self: center; height: 55%; width: 115px; top: 11%; right: 3%; -unity-background-image-tint-color: rgb(172, 163, 119);" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

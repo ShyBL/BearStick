@@ -35,7 +35,7 @@ public partial class TimerComponent : MonoBehaviour
 
     void UpdateClock()
     {
-        float rot = (m_Time / m_TimeLimit) * 360f;
+        float rot = ((m_TimeLimit - m_Time) / m_TimeLimit) * 360f;
 
         m_ClockHand.style.rotate = new Rotate(rot);
     }
