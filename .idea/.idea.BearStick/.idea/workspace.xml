@@ -693,6 +693,12 @@
       <change beforePath="$PROJECT_DIR$/Assets/Stephen/eraser.dust.ttf.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stephen/pocketFlat.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stephen/pocketFlat.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/CurfewTimer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/CurfewTimer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/SavingAndLoading.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/SavingAndLoading.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/StartOfDay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/StartOfDay.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
