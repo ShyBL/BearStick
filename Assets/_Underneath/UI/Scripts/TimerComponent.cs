@@ -28,7 +28,7 @@ public partial class TimerComponent : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         m_ClockHand = GetComponent<UIDocument>().rootVisualElement.Q<VisualElement>("ClockHand");
     }
