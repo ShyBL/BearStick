@@ -713,6 +713,7 @@ MonoBehaviour:
   percentToChangeMusic: 0
   threshold: 0.5
   bResetScene: 0
+  m_UITimer: {fileID: 2775950387315669779}
 --- !u!4 &137921644
 Transform:
   m_ObjectHideFlags: 0
@@ -6812,6 +6813,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d67af9c815dd1824fa15a8587897982b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2775950387315669779 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8370302149847160561, guid: ad31fdacfa97a1546a062b80da6ec6ab, type: 3}
+  m_PrefabInstance: {fileID: 2775950387315669774}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a7947436b7c944ea3b2712f0a1531d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2878538267470483451

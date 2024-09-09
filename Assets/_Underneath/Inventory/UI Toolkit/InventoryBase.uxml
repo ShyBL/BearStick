@@ -3,7 +3,7 @@
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/InventoryStyle.uss?fileID=7433441132597879392&amp;guid=d73c7c6713ca5fb48aa9f2e6da70bb4e&amp;type=3#InventoryStyle" />
     <ui:VisualElement name="Inventory" style="flex-direction: row; align-items: stretch; justify-content: center; flex-grow: 1;">
         <ui:VisualElement name="BagArea" style="align-items: center; justify-content: center; width: 75%; height: 95%; align-self: center;">
-            <ui:VisualElement style="position: absolute; height: 124%; background-image: url(&quot;project://database/Assets/Stephen/bagFlat.png?fileID=21300000&amp;guid=265e39fca38f84342935e90c1d8d0ec8&amp;type=3#bagFlat&quot;); width: 168%;" />
+            <ui:VisualElement style="position: absolute; height: 124%; background-image: url(&quot;project://database/Assets/_Underneath/UI/Sprites/bagFlat.png?fileID=21300000&amp;guid=265e39fca38f84342935e90c1d8d0ec8&amp;type=3#bagFlat&quot;); width: 168%;" />
             <ui:VisualElement name="Grid" style="flex-direction: row; flex-wrap: wrap; height: 66%; justify-content: center; padding-bottom: 5%; width: 115%;">
                 <ui:VisualElement name="Slot" class="slots" />
                 <ui:VisualElement name="Slot" class="slots" />
@@ -38,8 +38,8 @@
                 <ui:VisualElement name="Empty2" class="pocket-item">
                     <ui:VisualElement name="EmptyPocket" class="pocket" />
                 </ui:VisualElement>
-                <ui:VisualElement name="Wallet" class="pocket-item">
-                    <ui:Label tabindex="-1" text="$20" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WalletCounter" class="element-background" style="background-image: none; color: rgb(0, 0, 0); font-size: 24px; -unity-text-align: upper-center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:VisualElement name="Wallet" class="pocket-item" style="background-image: url(&quot;project://database/Assets/_Underneath/UI/Sprites/Underneath_UI_BG_Rough.png?fileID=21300000&amp;guid=a87ef6a5d9dd08746bd40277ff09071e&amp;type=3#Underneath_UI_BG_Rough&quot;);">
+                    <ui:Label tabindex="-1" text="$20" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WalletCounter" class="element-background" style="color: rgb(255, 255, 255); font-size: 30px; -unity-text-align: middle-center; padding-top: 0; padding-right: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-left: 0; padding-bottom: 0; margin-bottom: 25%; background-image: none; flex-grow: 1;" />
                     <ui:VisualElement name="WalletPocket" class="pocket" />
                 </ui:VisualElement>
             </ui:VisualElement>

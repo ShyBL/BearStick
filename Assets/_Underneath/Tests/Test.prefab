@@ -550,6 +550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory
       objectReference: {fileID: 0}
+    - target: {fileID: 8676924488168376591, guid: ad31fdacfa97a1546a062b80da6ec6ab, type: 3}
+      propertyPath: m_Hud
+      value: 
+      objectReference: {fileID: 1113734202436374359}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

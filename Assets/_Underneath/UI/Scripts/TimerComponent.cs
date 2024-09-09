@@ -28,14 +28,14 @@ public partial class TimerComponent : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         m_ClockHand = GetComponent<UIDocument>().rootVisualElement.Q<VisualElement>("ClockHand");
     }
 
     void UpdateClock()
     {
-        float rot = (m_Time / m_TimeLimit) * 360f;
+        float rot = ((m_TimeLimit - m_Time) / m_TimeLimit) * 360f;
 
         m_ClockHand.style.rotate = new Rotate(rot);
     }
