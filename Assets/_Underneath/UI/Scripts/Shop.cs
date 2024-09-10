@@ -5,11 +5,15 @@ using UnityEngine.UIElements;
 
 public class Shop : MonoBehaviour
 {
+    [SerializeField]
+    List<string> m_DialogueLines = new List<string>();
+
     UIDocument doc;
     VisualElement m_Root;
     Button m_SellAllButton;
     Button m_TalkButton;
     Button m_ExitButton;
+    Dialogue m_Dialogue;
 
     void Start()
     {
@@ -18,6 +22,7 @@ public class Shop : MonoBehaviour
         m_SellAllButton = m_Root.Q<Button>("SellAll");
         m_TalkButton = m_Root.Q<Button>("Talk");
         m_ExitButton = m_Root.Q<Button>("Exit");
+        m_Dialogue = GetComponent<Dialogue>();
 
         m_SellAllButton.RegisterCallback<ClickEvent>(OnSellAllPressed);
         m_TalkButton.RegisterCallback<ClickEvent>(OnTalkButtonPressed);
@@ -33,7 +38,7 @@ public class Shop : MonoBehaviour
 
     void OnTalkButtonPressed(ClickEvent evt) 
     {
-        // Do dialogue here
+        m_Dialogue.StartDialogue(m_DialogueLines[Random.Range(0, m_DialogueLines.Count)]);
     }
 
     void OnExitButtonPressed(ClickEvent evt)

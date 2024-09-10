@@ -76,6 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc5dfc1f5b993247aee48ea69a6f3a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_DialogueLines:
+  - Test
+  - asfgsdg afg sdgdsf gsdfg fgdfgadfga fgd adfgadf gadfgadfgadfg sdfghs
 --- !u!114 &4686960607774496970
 MonoBehaviour:
   m_ObjectHideFlags: 0
