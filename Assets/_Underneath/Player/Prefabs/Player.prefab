@@ -144,6 +144,7 @@ MonoBehaviour:
   m_NewMoney: 0
   m_DayCount: 1
   m_CurrentExpenses: 0
+  v_SpawnLocation: {x: 0, y: 0}
 --- !u!1 &3654763751334551890
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,10 +505,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Music>k__BackingField:
     Guid:
-      Data1: -183087993
-      Data2: 1267859473
-      Data3: -162963839
-      Data4: -1186688770
+      Data1: -598945407
+      Data2: 1202994049
+      Data3: -1015934547
+      Data4: -14214234
     Path: event:/Music/Music
   <Footsteps>k__BackingField:
     Guid:
@@ -546,11 +547,11 @@ MonoBehaviour:
     Path: event:/CHARACTER/CollectItem
   <CrateDrag>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1303724033
+      Data2: 1288385270
+      Data3: 1629272214
+      Data4: -944831975
+    Path: event:/Crate
   <Dumpster>k__BackingField:
     Guid:
       Data1: -1357412773
@@ -581,18 +582,18 @@ MonoBehaviour:
     Path: event:/UI/Click
   <Pause>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 482298072
+      Data2: 1248832726
+      Data3: -1850413143
+      Data4: -68100204
+    Path: event:/UI/Bubble2
   <UnPause>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 124733730
+      Data2: 1296942420
+      Data3: -338796116
+      Data4: -1117349467
+    Path: event:/UI/Bubble
 --- !u!1 &8271848796004542132
 GameObject:
   m_ObjectHideFlags: 0
