@@ -23,10 +23,16 @@ public class Dialogue : MonoBehaviour
         m_Image.parent.style.display = DisplayStyle.None;
     }
 
-    public void StartDialogue(string line, Sprite sprite)
+    public void StartDialogue(string line, Sprite sprite = null)
     {
         m_Image.parent.style.display = DisplayStyle.Flex;
-        m_Image.style.backgroundImage = new StyleBackground(sprite);
+        if (sprite == null)
+            m_Image.style.display = DisplayStyle.None;
+        else
+        {
+            m_Image.style.display = DisplayStyle.Flex;
+            m_Image.style.backgroundImage = new StyleBackground(sprite);
+        }
         StartCoroutine(TypeText(line));
     }
 
