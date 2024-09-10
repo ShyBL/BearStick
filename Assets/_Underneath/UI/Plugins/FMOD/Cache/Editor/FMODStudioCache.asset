@@ -54,6 +54,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6928338929810501217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Bank A.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/_Underneath/Sound/Assets/FMOD_Build/Bank A.bank
+  Name: Bank A
+  StudioPath: 
+  lastModified: 638577894700000000
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5989388012103069495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,9 +116,9 @@ MonoBehaviour:
   Path: Assets/_Underneath/Sound/Assets/FMOD_Build/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638600114992612307
+  lastModified: 638584818245118692
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4810271171302167807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +279,7 @@ MonoBehaviour:
   Path: Assets/_Underneath/Sound/Assets/FMOD_Build/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638600114992637545
+  lastModified: 638584818245138903
   FileSizes:
   - Name: 
     Value: 1536
@@ -338,9 +356,9 @@ MonoBehaviour:
   Path: Assets/_Underneath/Sound/Assets/FMOD_Build/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638600114992793266
+  lastModified: 638584818245547799
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1657653708000047880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +436,7 @@ MonoBehaviour:
   - {fileID: -4851982375685668756}
   - {fileID: -1716154444976733242}
   - {fileID: 6699566495401401184}
+  - {fileID: -6928338929810501217}
   EditorEvents:
   - {fileID: 1820136361053962544}
   - {fileID: -3014952427964398714}
@@ -436,7 +455,7 @@ MonoBehaviour:
   - {fileID: -4851982375685668756}
   StringsBanks:
   - {fileID: -2139307098434846098}
-  cacheTime: 638600114992833047
+  cacheTime: 638615289800000000
   cacheVersion: 131618
 --- !u!114 &877575367501093494
 MonoBehaviour:
@@ -528,9 +547,9 @@ MonoBehaviour:
   Path: Assets/_Underneath/Sound/Assets/FMOD_Build/Character.bank
   Name: Character
   StudioPath: bank:/Character
-  lastModified: 638600114992426622
+  lastModified: 638584818244470456
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &3616133389809359516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,9 +669,9 @@ MonoBehaviour:
   Path: Assets/_Underneath/Sound/Assets/FMOD_Build/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638600114992833047
+  lastModified: 638584818245667214
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &8501891922631666330
 MonoBehaviour:
   m_ObjectHideFlags: 0
