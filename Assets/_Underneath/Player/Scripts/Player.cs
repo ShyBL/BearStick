@@ -19,6 +19,10 @@ public class Player : MonoBehaviour
 
     [SerializeField] public bool canMove = true;
     [SerializeField] public Vector3 moveInputVector;
+    [SerializeField] private Rigidbody2D rb;
+    private bool isWallSliding = false;
+    [SerializeField] private Transform wCheck;
+    [SerializeField] private LayerMask wLayer;
     
     [Header(" Inventory ")]
     [SerializeField] public Inventory inventory;
@@ -57,7 +61,25 @@ public class Player : MonoBehaviour
     private void Update()
     {
         playerStateMachine.currentState.Update();
+        //Debug.Log(playerStateMachine.currentState);
+        //Debug.Log("rb x vel: " + rb.velocity.x.ToString());
+        //Debug.Log("movementVectorX: " + moveInputVector.x.ToString());
+        /*if (playerStateMachine.currentState == playerStateMachine.IdleState)
+        {
+            Debug.Log("match");
+        }*/
         MovementHandler();
+
+        if (rb.velocity.x > 0)
+        {
+            wCheck.localPosition = new Vector3(1.5f, 0f, 0f);
+        }
+        else if (rb.velocity.x < 0)
+        {
+            wCheck.localPosition = new Vector3(-1.5f, 0f, 0f);
+        }
+
+        wallSlide();
     }
 
     private void MovementHandler()
@@ -103,6 +125,32 @@ public class Player : MonoBehaviour
     public void Jump() => playerPhysx.Jump(moveInputVector, airVelocity, jumpForce);
     public Vector3 Velocity() => playerPhysx.CurrentVelocity();
     public bool IsGrounded() => playerPhysx.IsGrounded;
+
+    public void wallSlide()
+    {
+        if (playerStateMachine.currentState == playerStateMachine.AirState && (isWalled() && moveInputVector.x != 0))
+        {
+            Debug.Log("yes air");
+            isWallSliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
+        }
+        else if (playerStateMachine.currentState == playerStateMachine.JumpState && (isWalled() && moveInputVector.x != 0))
+        {
+            Debug.Log("yes jump");
+            isWallSliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
+        }
+        else
+        {
+            Debug.Log("no");
+            isWallSliding = false;
+        }
+    }
+
+    private bool isWalled()
+    {
+        return Physics2D.OverlapCircle(wCheck.position, 0.05f, wLayer);
+    }
     
     // Rect rect = new Rect(0, 0, 300, 100);
     // Vector3 offset = new Vector3(0f, 0f, 0.5f);
