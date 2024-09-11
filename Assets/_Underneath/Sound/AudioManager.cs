@@ -61,10 +61,10 @@ public class AudioManager : MonoBehaviour
         switch (themeType)
         {
             case ShopType.Theme1:
-                ShopThemeEvent = CreateInstance(FMODEvents.Instance.GameplayTheme);
+                ShopThemeEvent = CreateInstance(FMODEvents.Instance.ShopTheme);
                 break;
             case ShopType.Theme2:
-                TempShopThemeEvent = CreateInstance(FMODEvents.Instance.GameplayTheme);
+                TempShopThemeEvent = CreateInstance(FMODEvents.Instance.TempShopTheme);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
