@@ -75,9 +75,10 @@ public class StartOfDay : MonoBehaviour
         //Fade out from black
         ResetFadeAnimation();
         //Start Timer
-        CurfewTimer.Instance.StartTimer();
-
-
+        if(PlayerData.Instance.GetDayCount() >= 1)
+        {
+            CurfewTimer.Instance.StartTimer();
+        }
     }
 
     public void OnGUI()

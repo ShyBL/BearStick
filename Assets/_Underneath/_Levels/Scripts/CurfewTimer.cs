@@ -11,10 +11,12 @@ public class CurfewTimer : MonoBehaviour
     [SerializeField, Range(0, 1)] private float percentToChangeLights;
     [SerializeField, Range(0, 1)] private float percentToChangeMusic;
     public float threshold = 0.5f;
-    private bool bPlayerHasLeftBase = false;
-    private bool bIsTimerDone, bLightsChanged, bMusicChanged;
+    public bool bPlayerHasLeftBase = false;
+    private bool bLightsChanged, bMusicChanged;
+    private bool bIsTimerDone = true;
     [SerializeField] private bool bResetScene = false;
     [SerializeField] TimerComponent m_UITimer;
+
     
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class CurfewTimer : MonoBehaviour
             Destroy(this);
         }
 
-        bIsTimerDone = true;
+        //bIsTimerDone = true;
         bLightsChanged = false;
         bMusicChanged = false;
     }
@@ -41,46 +43,42 @@ public class CurfewTimer : MonoBehaviour
             "Speed", "Normal");
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
-        ResumeTimer();
-        bPlayerHasLeftBase = true;
-        Debug.Log("Timer Started");
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
-        if (!bIsTimerDone)
-        {
-            if(Countdowntimer > 0)
+      
+            if (!bIsTimerDone)
             {
-                Countdowntimer -= Time.deltaTime;
-                m_UITimer.TimeRemaining = Countdowntimer;
-            }
-            else if (Countdowntimer <= 0)
-            {
-                bIsTimerDone = true;
-                Debug.Log("Timer Ended");
-                //Can comment this part out if we want to not go to EndDay
-                TimerEnded();
-                //Start EndOfDay stuff
-            }
+                if(Countdowntimer > 0)
+                {
+                    Countdowntimer -= Time.deltaTime;
+                    m_UITimer.TimeRemaining = Countdowntimer;
+                }
+                else if (Countdowntimer <= 0)
+                {
+                    bIsTimerDone = true;
+                    Debug.Log("Timer Ended");
+                    //Can comment this part out if we want to not go to EndDay
+                    TimerEnded();
+                    //Start EndOfDay stuff
+                }
 
-            if(Countdowntimer <= timeChangeLight + threshold && !bLightsChanged)
-            {
-                ChangeLights();
+                if(Countdowntimer <= timeChangeLight + threshold && !bLightsChanged)
+                {
+                    ChangeLights();
+                }
+                if (Countdowntimer <= timeChangeMusic + threshold && !bMusicChanged)
+                {
+                    ChangeMusic();
+                }
+                //Can use this when you need it to visually represent how much time is left in the day
+                int mins = Mathf.FloorToInt(Countdowntimer / 60);
+                int sec = Mathf.FloorToInt(Countdowntimer % 60);
+                //m_CountdownText.text = string.Format("{0:00}:{1:00}", mins, sec);
             }
-            if (Countdowntimer <= timeChangeMusic + threshold && !bMusicChanged)
-            {
-                ChangeMusic();
-            }
-            //Can use this when you need it to visually represent how much time is left in the day
-            int mins = Mathf.FloorToInt(Countdowntimer / 60);
-            int sec = Mathf.FloorToInt(Countdowntimer % 60);
-            //m_CountdownText.text = string.Format("{0:00}:{1:00}", mins, sec);
-        }
+    
     }
 
     public float GetTimeRemaining()
@@ -101,6 +99,7 @@ public class CurfewTimer : MonoBehaviour
         bIsTimerDone = false;
         Time.timeScale = 1.0f;
         Player.Instance.EnableMovement();
+
     }
 
     public void PauseTimer()
@@ -115,14 +114,27 @@ public class CurfewTimer : MonoBehaviour
         Player.Instance.EnableMovement();
     }
 
-    private void ChangeMusic()
+    public void ChangeMusic()
     {
-        bMusicChanged = true;
-        var gameplayTheme = AudioManager.Instance.GameplayThemeEvent;
-        AudioManager.Instance.ChangeEventParametersWithString(gameplayTheme, "Speed",
+        if(bMusicChanged == false)
+        {
+            bMusicChanged = true;
+            var gameplayTheme = AudioManager.Instance.GameplayThemeEvent;
+            AudioManager.Instance.ChangeEventParametersWithString(gameplayTheme, "Speed",
             "Fast");
         
-        Debug.Log("Change Music Called");
+            Debug.Log("Change Music Called: Fast");
+        }
+        else
+        {
+             bMusicChanged = false;
+            var gameplayTheme = AudioManager.Instance.GameplayThemeEvent;
+            AudioManager.Instance.ChangeEventParametersWithString(gameplayTheme, "Speed",
+            "Normal");
+        
+            Debug.Log("Change Music Called: Normal");
+        }
+       
     }
 
     private void ChangeLights()
@@ -143,7 +155,8 @@ public class CurfewTimer : MonoBehaviour
         //Maybe the EndDay function should handle all the pausing of stuff? just a thought
         //For Testing
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
+        Countdowntimer = StartingTimer;
+        ChangeMusic();
     }
     
     /*
