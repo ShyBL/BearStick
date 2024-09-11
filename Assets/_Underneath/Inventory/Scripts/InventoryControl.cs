@@ -31,7 +31,7 @@ public class InventoryControl : MonoBehaviour
 
     private void ToggleInventory(ClickEvent evt = null)
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.OpenBag, Player.Instance.gameObject.transform.position);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.OpenBag, Player.Instance.gameObject.transform.position);
 
         switch(m_Root.resolvedStyle.display)
         {

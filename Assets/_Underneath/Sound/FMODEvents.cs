@@ -1,14 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using FMOD.Studio;
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 
 public class FMODEvents : MonoBehaviour
 {
     [field: Header("Music")]
-    [field: SerializeField] public EventReference Music { get; private set; }
+    [field: SerializeField] public EventReference GameplayTheme { get; private set; }
+    [field: SerializeField] public EventReference ShopTheme { get; private set; } 
 
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference Footsteps { get; private set; }
@@ -30,26 +28,18 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Click { get; private set; }
     [field: SerializeField] public EventReference Pause { get; private set; }
     [field: SerializeField] public EventReference UnPause { get; private set; }
-
-    public EventInstance FootstepsEvent { get; private set; }
-    public EventInstance JumpEvent { get; private set; }
-    public EventInstance LandEvent { get; private set; }
-
-    public static FMODEvents instance { get; private set; }
-
+    [field: SerializeField] public EventReference Dialogue { get; private set; }
+    
+    public static FMODEvents Instance { get; private set; }
+    
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Debug.LogError("Found more than one FMOD Events instance in the scene.");
         }
-        instance = this;
+        Instance = this;
     }
+    
 
-    private void Start()
-    {
-        FootstepsEvent = AudioManager.instance.CreateInstance(Footsteps);
-        JumpEvent = AudioManager.instance.CreateInstance(Jump);
-        LandEvent = AudioManager.instance.CreateInstance(Land);
-    }
 }

@@ -157,11 +157,11 @@ public class Stash : MonoBehaviour
         switch (type)
         {
             case StashType.Dumpster:
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.Dumpster, transform.position);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Dumpster, transform.position);
                 break;
 
             case StashType.Trashcan:
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.Trashcan, transform.position);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Trashcan, transform.position);
                 break;
         }
     }

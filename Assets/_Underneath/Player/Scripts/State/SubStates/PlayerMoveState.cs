@@ -24,8 +24,8 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Update()
     {
         base.Update();
-        AudioManager.instance.PlayEvent
-        (FMODEvents.instance.FootstepsEvent, player.gameObject.transform.position,
+        AudioManager.Instance.PlayEventWithValueParameters
+        (AudioManager.Instance.FootstepsEvent, player.gameObject.transform.position,
             "Material", 0);
         CheckIfStopped();
         CheckIfFalling();

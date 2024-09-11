@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class CurfewTimer : MonoBehaviour
     [SerializeField] private bool bResetScene = false;
     [SerializeField] TimerComponent m_UITimer;
 
+    
     private void Awake()
     {
         if (Instance == null)
@@ -31,6 +33,15 @@ public class CurfewTimer : MonoBehaviour
         bIsTimerDone = true;
         bLightsChanged = false;
         bMusicChanged = false;
+    }
+
+    private void Start()
+    {
+        AudioManager.Instance.PlayEventWithStringParameters
+        (AudioManager.Instance.GameplayThemeEvent, 
+            AudioManager.Instance.gameObject.transform.position,
+            "Speed", "Normal");
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -109,6 +120,12 @@ public class CurfewTimer : MonoBehaviour
     private void ChangeMusic()
     {
         bMusicChanged = true;
+
+        AudioManager.Instance.PlayEventWithStringParameters
+        (AudioManager.Instance.GameplayThemeEvent, 
+            FindFirstObjectByType<AudioManager>().gameObject.transform.position,
+            "Speed", "Fast");
+        
         Debug.Log("Change Music Called");
     }
 

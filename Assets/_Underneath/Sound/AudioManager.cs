@@ -18,58 +18,46 @@ public class AudioManager : MonoBehaviour
     [Range(0, 1)]
     public float SFXVolume = 1;
 
-    // private Bus masterBus;
-    // private Bus musicBus;
-    // private Bus ambienceBus;
-    // private Bus sfxBus;
-
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
 
-    private EventInstance ambienceEventInstance;
-    private EventInstance musicEventInstance;
-
-    public static AudioManager instance { get; private set; }
+    public EventInstance FootstepsEvent { get; private set; }
+    public EventInstance JumpEvent { get; private set; }
+    public EventInstance LandEvent { get; private set; }
+    public EventInstance GameplayThemeEvent { get; private set; }
+    public EventInstance CrateDragEvent { get; private set; }
+    public EventInstance DialogueEvent { get; private set; }
+    
+    public static AudioManager Instance { get; private set; }
 
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Debug.LogError("Found more than one Audio Manager in the scene.");
         }
-        instance = this;
+        Instance = this;
 
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
-
-        // masterBus = RuntimeManager.GetBus("bus:/");
-        // musicBus = RuntimeManager.GetBus("bus:/Music");
-        // ambienceBus = RuntimeManager.GetBus("bus:/Ambience");
-        // sfxBus = RuntimeManager.GetBus("bus:/SFX");
+        
+        InitializeEvents();
     }
-
-    private void Start()
+    
+    private void InitializeEvents()
     {
-        InitializeMusic(FMODEvents.instance.Music);
-    }
-
-    private void Update()
-    {
-        // masterBus.setVolume(masterVolume);
-        // musicBus.setVolume(musicVolume);
-        // ambienceBus.setVolume(ambienceVolume);
-        // sfxBus.setVolume(SFXVolume);
-    }
-
-    private void InitializeMusic(EventReference musicEventReference)
-    {
-        musicEventInstance = CreateInstance(musicEventReference);
-        musicEventInstance.start();
-    }
-
-    public void SetAmbienceParameter(string parameterName, float parameterValue)
-    {
-        ambienceEventInstance.setParameterByName(parameterName, parameterValue);
+        // Music Event Instances
+        GameplayThemeEvent = CreateInstance(FMODEvents.Instance.GameplayTheme);
+        
+        // Character Event Instances
+        FootstepsEvent = CreateInstance(FMODEvents.Instance.Footsteps);
+        JumpEvent = CreateInstance(FMODEvents.Instance.Jump);
+        LandEvent = CreateInstance(FMODEvents.Instance.Land);
+        
+        // Gameplay Event Instances
+        CrateDragEvent = CreateInstance(FMODEvents.Instance.CrateDrag);
+       // DialogueEvent = CreateInstance(FMODEvents.Instance.Dialogue);
+        
     }
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
@@ -77,6 +65,26 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
+    public void PlayEventWithValueParameters(EventInstance fmodEvent, Vector3 posInWorld, string paramName, int paramValue)
+    {
+        if (PlaybackState(fmodEvent) != PLAYBACK_STATE.PLAYING)
+        {
+            fmodEvent.setParameterByName(paramName, paramValue);
+            fmodEvent.set3DAttributes(RuntimeUtils.To3DAttributes(posInWorld));
+            fmodEvent.start();
+        }
+    }
+    
+    public void PlayEventWithStringParameters(EventInstance fmodEvent, Vector3 posInWorld, string paramName, string paramValue)
+    {
+        if (PlaybackState(fmodEvent) != PLAYBACK_STATE.PLAYING)
+        {
+            fmodEvent.setParameterByNameWithLabel(paramName, paramValue);
+            fmodEvent.set3DAttributes(RuntimeUtils.To3DAttributes(posInWorld));
+            fmodEvent.start();
+        }
+    }
+    
     public EventInstance CreateInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
@@ -98,14 +106,14 @@ public class AudioManager : MonoBehaviour
         return state;
     }
     
-    public EventInstance? GetInstance(EventInstance eventInstance)
+    public EventInstance GetInstance(EventInstance eventInstance)
     {
         foreach (var getInstance in eventInstances.Where(getInstance => getInstance.ToString() == eventInstance.ToString()))
         {
             return getInstance;
         }
-
-        return null;
+        
+        return default;
     }
     
     public void PlayEvent(EventInstance fmodEvent, Vector3 posInWorld)
@@ -117,15 +125,7 @@ public class AudioManager : MonoBehaviour
         }
     }
     
-    public void PlayEvent(EventInstance fmodEvent, Vector3 posInWorld, string paramName, int paramValue)
-    {
-        if (PlaybackState(fmodEvent) != PLAYBACK_STATE.PLAYING)
-        {
-            fmodEvent.setParameterByName(paramName, paramValue);
-            fmodEvent.set3DAttributes(RuntimeUtils.To3DAttributes(posInWorld));
-            fmodEvent.start();
-        }
-    }
+
     
     public void StopEvent(EventInstance fmodEvent)
     {

@@ -503,13 +503,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b3f75949c04cc3956565fed3b905ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Music>k__BackingField:
+  <GameplayTheme>k__BackingField:
     Guid:
       Data1: -598945407
       Data2: 1202994049
       Data3: -1015934547
       Data4: -14214234
     Path: event:/Music/Music
+  <ShopTheme>k__BackingField:
+    Guid:
+      Data1: -884533237
+      Data2: 1195983002
+      Data3: -1193447029
+      Data4: -2067591319
+    Path: event:/Music/ShopMusic 1
   <Footsteps>k__BackingField:
     Guid:
       Data1: -1806913121
@@ -594,6 +601,13 @@ MonoBehaviour:
       Data3: -338796116
       Data4: -1117349467
     Path: event:/UI/Bubble
+  <Dialogue>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &8271848796004542132
 GameObject:
   m_ObjectHideFlags: 0
