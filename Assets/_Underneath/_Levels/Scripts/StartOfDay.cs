@@ -76,6 +76,7 @@ public class StartOfDay : MonoBehaviour
         ResetFadeAnimation();
         //Start Timer
         CurfewTimer.Instance.StartTimer();
+        
 
 
     }

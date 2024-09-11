@@ -14,6 +14,7 @@ public class CurfewTimer : MonoBehaviour
     [SerializeField, Range(0, 1)] private float percentToChangeMusic;
     public float threshold = 0.5f;
     private bool bIsTimerDone, bLightsChanged, bMusicChanged;
+    private bool bPlayerHasLeftBase = false;
     [SerializeField] private bool bResetScene = false;
     [SerializeField] TimerComponent m_UITimer;
 
@@ -33,10 +34,13 @@ public class CurfewTimer : MonoBehaviour
         bMusicChanged = false;
     }
 
+   
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         
-        StartTimer();
+        ResumeTimer();
+        bPlayerHasLeftBase = true;
         Debug.Log("Timer Started");
     }
 
