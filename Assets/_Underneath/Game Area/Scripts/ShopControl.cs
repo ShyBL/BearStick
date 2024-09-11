@@ -13,7 +13,7 @@ public class ShopControl : MonoBehaviour
     private bool inRange = false;
     
     // can be a cache if you want instead of ebter shop
-    private bool isCache = false;
+    public bool isCache = false;
 
     // The player needs a "Player" tag. When the player collides with this object, a boolean is set to signal that the player is in range.
     private void OnTriggerEnter(Collider other)

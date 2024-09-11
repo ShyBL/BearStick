@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,6 +6,11 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
+
+public enum ShopType
+{
+    Theme1, Theme2
+}
 
 public class AudioManager : MonoBehaviour
 {
@@ -25,11 +31,14 @@ public class AudioManager : MonoBehaviour
     public EventInstance JumpEvent { get; private set; }
     public EventInstance LandEvent { get; private set; }
     public EventInstance GameplayThemeEvent { get; private set; }
+    public EventInstance ShopThemeEvent { get; private set; }
+    public EventInstance TempShopThemeEvent { get; private set; }
+    
     public EventInstance CrateDragEvent { get; private set; }
     public EventInstance DialogueEvent { get; private set; }
     
     public static AudioManager Instance { get; private set; }
-
+    public ShopType themeType;
     private void Awake()
     {
         if (Instance != null)
@@ -48,6 +57,18 @@ public class AudioManager : MonoBehaviour
     {
         // Music Event Instances
         GameplayThemeEvent = CreateInstance(FMODEvents.Instance.GameplayTheme);
+
+        switch (themeType)
+        {
+            case ShopType.Theme1:
+                ShopThemeEvent = CreateInstance(FMODEvents.Instance.ShopTheme);
+                break;
+            case ShopType.Theme2:
+                TempShopThemeEvent = CreateInstance(FMODEvents.Instance.TempShopTheme);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
         
         // Character Event Instances
         FootstepsEvent = CreateInstance(FMODEvents.Instance.Footsteps);
