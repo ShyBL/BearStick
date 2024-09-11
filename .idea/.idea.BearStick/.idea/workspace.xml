@@ -12,6 +12,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Sound/AudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMODEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMODEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/Shop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/Shop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +131,7 @@
       <workItem from="1726053384987" duration="4740000" />
       <workItem from="1726061832257" duration="1606000" />
       <workItem from="1726079390660" duration="994000" />
-      <workItem from="1726081029176" duration="162000" />
+      <workItem from="1726081029176" duration="765000" />
     </task>
     <servers />
   </component>
