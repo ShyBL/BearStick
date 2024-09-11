@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class CurfewTimer : MonoBehaviour
 {
@@ -14,10 +11,10 @@ public class CurfewTimer : MonoBehaviour
     [SerializeField, Range(0, 1)] private float percentToChangeLights;
     [SerializeField, Range(0, 1)] private float percentToChangeMusic;
     public float threshold = 0.5f;
+    private bool bPlayerHasLeftBase = false;
     private bool bIsTimerDone, bLightsChanged, bMusicChanged;
     [SerializeField] private bool bResetScene = false;
     [SerializeField] TimerComponent m_UITimer;
-
     
     private void Awake()
     {
@@ -37,17 +34,18 @@ public class CurfewTimer : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.PlayEventWithStringParameters
-        (AudioManager.Instance.GameplayThemeEvent, 
-            AudioManager.Instance.gameObject.transform.position,
-            "Speed", "Normal");
+        var audio = AudioManager.Instance;
         
+        audio.PlayEventWithStringParameters(audio.GameplayThemeEvent,
+            audio.gameObject.transform.position,
+            "Speed", "Normal");
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         
-        StartTimer();
+        ResumeTimer();
+        bPlayerHasLeftBase = true;
         Debug.Log("Timer Started");
     }
 
@@ -120,11 +118,9 @@ public class CurfewTimer : MonoBehaviour
     private void ChangeMusic()
     {
         bMusicChanged = true;
-
-        AudioManager.Instance.PlayEventWithStringParameters
-        (AudioManager.Instance.GameplayThemeEvent, 
-            FindFirstObjectByType<AudioManager>().gameObject.transform.position,
-            "Speed", "Fast");
+        var gameplayTheme = AudioManager.Instance.GameplayThemeEvent;
+        AudioManager.Instance.ChangeEventParametersWithString(gameplayTheme, "Speed",
+            "Fast");
         
         Debug.Log("Change Music Called");
     }
@@ -134,7 +130,6 @@ public class CurfewTimer : MonoBehaviour
         bLightsChanged = true;
         Debug.Log("Change Lights Called");
     }
-
 
     public void TimerEnded()
     {
@@ -150,6 +145,7 @@ public class CurfewTimer : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
+    
     /*
      THINGS TO STOP
         Player Movement

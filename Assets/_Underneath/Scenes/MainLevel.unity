@@ -742,7 +742,7 @@ MonoBehaviour:
   Countdowntimer: 0
   StartingTimer: 20
   percentToChangeLights: 0
-  percentToChangeMusic: 0
+  percentToChangeMusic: 0.5
   threshold: 0.5
   bResetScene: 0
   m_UITimer: {fileID: 2775950387315669779}
@@ -793,7 +793,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5222759, y: 0.88665426}
+  m_Offset: {x: 27.891163, y: 1.3442032}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -804,7 +804,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.1822395, y: 2.7733085}
+  m_Size: {x: 4.772667, y: 4.2515426}
   m_EdgeRadius: 0
 --- !u!114 &137921646
 MonoBehaviour:

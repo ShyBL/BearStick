@@ -85,6 +85,12 @@ public class AudioManager : MonoBehaviour
         }
     }
     
+    public void ChangeEventParametersWithString(EventInstance eventInstance, string paramName, string paramValue)
+    {
+        var fmodEvent = GetInstance(eventInstance);
+        fmodEvent.setParameterByNameWithLabel(paramName, paramValue);
+    } 
+    
     public EventInstance CreateInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
