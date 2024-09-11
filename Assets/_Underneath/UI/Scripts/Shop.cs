@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -44,17 +45,39 @@ public class Shop : MonoBehaviour
     void OnExitButtonPressed(ClickEvent evt)
     {
         m_Root.style.display = DisplayStyle.None;
+        var audio = AudioManager.Instance;
+        
+        switch (audio.themeType)
+        {
+            case ShopType.Theme1:
+                audio.StopEvent(audio.ShopThemeEvent);
+                break;
+            case ShopType.Theme2:
+                audio.StopEvent(audio.TempShopThemeEvent);
+                break;
+        }
     }
 
     public void OpenShop()
     {
         m_Root.style.display = DisplayStyle.Flex;
+        var audio = AudioManager.Instance;
+        switch (audio.themeType)
+        {
+            case ShopType.Theme1:
+                audio.PlayEvent(audio.ShopThemeEvent,audio.gameObject.transform.position);
+                break;
+            case ShopType.Theme2:
+                audio.PlayEvent(audio.TempShopThemeEvent,audio.gameObject.transform.position);
+                break;
+        }
+
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.N))
-            m_Root.style.display = DisplayStyle.Flex;
+        if (Input.GetKeyDown(KeyCode.N))
+            OpenShop();
     }
 }
 

@@ -77,8 +77,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueLines:
-  - Test
-  - asfgsdg afg sdgdsf gsdfg fgdfgadfga fgd adfgadf gadfgadfgadfg sdfghs
+  - "\u201CWelcome to the shop. I haven\u2019t seen you around before, suppose you\u2019re
+    new around here?\u201D"
+  - "\u201CWell, I\u2019ll have you know that I don\u2019t deal in any illicit substances,
+    nor will I buy them. I like to keep my hands clean\u2013well, as clean as they
+    can be down here.\u201D"
+  - "\u201CWant some advice? Keep your hands clean too. In my professional experience,
+    people get back what they give to this world. And there\u2019s a lot of criminals
+    down here. Don\u2019t become one of them.\u201D"
+  - "\u201COh, and. Watch your back. Don\u2019t trust anybody. There may be police
+    around, but this place is lawless.\u201D"
+  - "Got any spoons? I\u2019m making a sculpture.\u201D "
+  - "What\u2019s the big deal with the surface anyway? My family and I have lived
+    below ground for generations\u2013Besides, all that sunlight would hurt my eyes.\u201D "
 --- !u!114 &4686960607774496970
 MonoBehaviour:
   m_ObjectHideFlags: 0

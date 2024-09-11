@@ -740,7 +740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CountdownText: {fileID: 0}
   Countdowntimer: 0
-  StartingTimer: 20
+  StartingTimer: 100
   percentToChangeLights: 0
   percentToChangeMusic: 0.5
   threshold: 0.5
@@ -7291,46 +7291,6 @@ PrefabInstance:
     - target: {fileID: 8271848796004542132, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059608130146819439, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: <ShopTheme>k__BackingField.Path
-      value: event:/Music/ShopMusic 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059608130146819439, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: <GameplayTheme>k__BackingField.Path
-      value: event:/Music/Music
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059608130146819439, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: <ShopTheme>k__BackingField.Guid.Data1
-      value: -884533237
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059608130146819439, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: <ShopTheme>k__BackingField.Guid.Data2
-      value: 1195983002
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059608130146819439, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: <ShopTheme>k__BackingField.Guid.Data3
-      value: -1193447029
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059608130146819439, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: <ShopTheme>k__BackingField.Guid.Data4
-      value: -2067591319
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059608130146819439, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: <GameplayTheme>k__BackingField.Guid.Data1
-      value: -598945407
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059608130146819439, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: <GameplayTheme>k__BackingField.Guid.Data2
-      value: 1202994049
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059608130146819439, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: <GameplayTheme>k__BackingField.Guid.Data3
-      value: -1015934547
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059608130146819439, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
-      propertyPath: <GameplayTheme>k__BackingField.Guid.Data4
-      value: -14214234
       objectReference: {fileID: 0}
     - target: {fileID: 9154314289465190505, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_LocalPosition.x

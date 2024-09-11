@@ -6,7 +6,9 @@ public class FMODEvents : MonoBehaviour
 {
     [field: Header("Music")]
     [field: SerializeField] public EventReference GameplayTheme { get; private set; }
-    [field: SerializeField] public EventReference ShopTheme { get; private set; } 
+    [field: SerializeField] public EventReference ShopTheme { get; private set; }
+    [field: SerializeField] public EventReference TempShopTheme { get; private set; } 
+
 
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference Footsteps { get; private set; }

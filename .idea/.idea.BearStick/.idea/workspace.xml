@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerMoveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainLevel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Sound/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Scripts/CurfewTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Scripts/CurfewTimer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMODEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMODEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Prefabs/ShopUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Prefabs/ShopUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/Shop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/Shop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +125,7 @@
       <workItem from="1725733795342" duration="2459000" />
       <workItem from="1725958045365" duration="127000" />
       <workItem from="1726053384987" duration="4740000" />
-      <workItem from="1726061832257" duration="1606000" />
+      <workItem from="1726061832257" duration="4723000" />
     </task>
     <servers />
   </component>

@@ -491,6 +491,7 @@ MonoBehaviour:
   musicVolume: 1
   ambienceVolume: 1
   SFXVolume: 1
+  themeType: 0
 --- !u!114 &9059608130146819439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +518,13 @@ MonoBehaviour:
       Data3: -1193447029
       Data4: -2067591319
     Path: event:/Music/ShopMusic 1
+  <TempShopTheme>k__BackingField:
+    Guid:
+      Data1: -703967381
+      Data2: 1097276417
+      Data3: 1253377461
+      Data4: -161100107
+    Path: event:/Music/ShopMusic 2
   <Footsteps>k__BackingField:
     Guid:
       Data1: -1806913121
