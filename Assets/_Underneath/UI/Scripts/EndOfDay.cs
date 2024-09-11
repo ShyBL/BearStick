@@ -43,6 +43,7 @@ public class EndOfDay : MonoBehaviour
     void ExitPressed(ClickEvent evt)
     {
         m_Document.rootVisualElement.style.display = DisplayStyle.None;
+        StartOfDay.Instance.StartNewDay();
     }
 
     public void EndDay()
@@ -63,5 +64,6 @@ public class EndOfDay : MonoBehaviour
         m_TotalMoneyLabel.text = "$" + PlayerData.Instance.GetMoney().ToString();
 
         PlayerData.Instance.IncrementDayCount();
+        SavingAndLoading.Instance.SavePlayerInformation();
     }
 }
