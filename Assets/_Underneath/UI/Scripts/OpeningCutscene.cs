@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;  // For async/await support
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Label = UnityEngine.UIElements.Label;
 
 public class OpeningCutscene : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class OpeningCutscene : MonoBehaviour
     private Label m_Text2;
     private Label m_Text3;
     private VisualElement m_Image;
-    private List<Label> labels;
+    private List<Label> labels = new();
     
     private void Awake()
     {
@@ -44,6 +43,7 @@ public class OpeningCutscene : MonoBehaviour
         SetLabelAlpha(m_Text3, 0f);
         
         m_Image = m_Root.Q<VisualElement>("Photograph");
+        SetVisualElementAlpha(m_Image,0f);
     }
 
     private void Start()
@@ -53,47 +53,52 @@ public class OpeningCutscene : MonoBehaviour
 
     private async void RunCutscene()
     {
-        await StartDialogue(normalDelay, extraDelay, longDelay, String.Empty,". . .",String.Empty);
+        await StartSlide(normalDelay, extraDelay, longDelay, String.Empty,". . .",String.Empty);
         
         await Task.Delay(TimeSpan.FromSeconds(normalDelay));
         
-        await StartDialogue(normalDelay, extraDelay, longDelay, 
+        await StartSlide(normalDelay, extraDelay, longDelay, 
             "To Luca, Rowan, and Asher", 
             "How is everything at Mrs. Walker’s house?", 
             "I hope you’ve made some friends with other kids there");
         
         await Task.Delay(TimeSpan.FromSeconds(normalDelay));
 
-        await StartDialogue(normalDelay, extraDelay, longDelay, 
+        await StartSlide(normalDelay, extraDelay, longDelay, 
             "I can only imagine how big you’re getting", 
             "and I know you have a lot of questions", 
             "and I’ll answer all of them when I’m back.");
         
         await Task.Delay(TimeSpan.FromSeconds(normalDelay));
 
-        await StartDialogue(normalDelay, extraDelay, longDelay, 
+        await StartSlide(normalDelay, extraDelay, longDelay, 
             "Sometimes in life, we have to make hard decisions in order to do what’s right", 
             "and nothing was harder for me then having to leave the three of you.");
         
         await Task.Delay(TimeSpan.FromSeconds(normalDelay));
 
-        await StartDialogue(normalDelay, extraDelay, longDelay, 
+        await StartSlide(normalDelay, extraDelay, longDelay, 
             "I hope you understand that this is what’s best for our family", 
             "For you three", "I need you to be brave for just a little bit longer.");
         
         await Task.Delay(TimeSpan.FromSeconds(normalDelay));
 
-        await StartDialogue(normalDelay, extraDelay, longDelay, 
+        await StartSlide(normalDelay, extraDelay, longDelay, 
             "I’ll see you soon, my loves", String.Empty, "-Mom", true);
         
         await Task.Delay(TimeSpan.FromSeconds(normalDelay));
 
     }
 
-    private async Task StartDialogue(float delay1Line, float delay2Line, float delay3Line, string line1 = null, string line2 = null, string line3 = null, bool photo = false)
+    private async Task StartSlide(float delay1Line, float delay2Line, float delay3Line, string line1 = null, string line2 = null, string line3 = null, bool photo = false)
     {
-        m_Image.style.display = photo ? DisplayStyle.Flex : DisplayStyle.None;
-
+        if (photo)
+        {
+            m_Text2.style.display = DisplayStyle.None;
+            m_Image.style.display = DisplayStyle.Flex;
+            FadeVisualElement(m_Image,0f,1f,1f);
+        }
+        
         await DisplayLines(line1, line2, line3, delay1Line, delay2Line, delay3Line);
     }
 
@@ -117,12 +122,11 @@ public class OpeningCutscene : MonoBehaviour
             await Task.Delay(TimeSpan.FromSeconds(delay3));
         }
 
-        await FadeLabels(labels, 1f, 0f, 1f);
+        await FadeLabelsAsync(labels, 1f, 0f, 1f);
     }
 
     private async Task TypeText(string line, Label label)
     {
-        //SetLabelDisplay(label, DisplayStyle.Flex);
         SetLabelAlpha(label, 1f);
 
         float timer = 0;
@@ -152,12 +156,24 @@ public class OpeningCutscene : MonoBehaviour
     {
         label.style.opacity = alpha;
     }
-
+    
     private void SetVisualElementAlpha(VisualElement visualElement, float alpha)
     {
         visualElement.style.opacity = alpha;
     }
-
+    
+    private void FadeVisualElement(VisualElement visualElement, float startAlpha, float endAlpha, float duration)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            visualElement.style.opacity = newAlpha;
+            elapsedTime += Time.deltaTime;
+        }
+        visualElement.style.opacity = endAlpha;
+    }
+    
     private void FadeLabel(Label label, float startAlpha, float endAlpha, float duration)
     {
         float elapsedTime = 0f;
@@ -169,7 +185,21 @@ public class OpeningCutscene : MonoBehaviour
         }
         label.style.opacity = endAlpha;
     }
-    private async Task FadeLabels(List<Label> labels, float startAlpha, float endAlpha, float duration)
+    
+    private async Task FadeLabelAsync(Label label, float startAlpha, float endAlpha, float duration)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            label.style.opacity = newAlpha;
+            elapsedTime += Time.deltaTime;
+            await Task.Delay(0); 
+        }
+        label.style.opacity = endAlpha; 
+    }
+    
+    private async Task FadeLabelsAsync(List<Label> labels, float startAlpha, float endAlpha, float duration, bool photo = false)
     {
         var fadeTasks = new List<Task>();
 
@@ -180,21 +210,25 @@ public class OpeningCutscene : MonoBehaviour
 
             fadeTasks.Add(FadeLabelAsync(label, startAlpha, endAlpha, duration));
         }
-
+        
+        if (photo)
+        {
+            fadeTasks.Add(FadeVisualElementAsync(m_Image,startAlpha,endAlpha,duration));
+        }
+        
         await Task.WhenAll(fadeTasks);
     }
-    
-    private async Task FadeLabelAsync(Label label, float startAlpha, float endAlpha, float duration)
+
+    private async Task FadeVisualElementAsync(VisualElement visualElement, float startAlpha, float endAlpha, float duration)
     {
         float elapsedTime = 0f;
         while (elapsedTime < duration)
         {
             float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
-            label.style.opacity = newAlpha;
+            visualElement.style.opacity = newAlpha;
             elapsedTime += Time.deltaTime;
-            await Task.Yield(); 
+            await Task.Delay(0);
         }
-        label.style.opacity = endAlpha; 
+        visualElement.style.opacity = endAlpha;
     }
-
 }

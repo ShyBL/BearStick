@@ -7,7 +7,6 @@
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/OpeningCutscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Scenes/OpeningCutscene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Elements/OpeningCutscene.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Elements/OpeningCutscene.uxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +126,7 @@
       <workItem from="1726079390660" duration="994000" />
       <workItem from="1726081029176" duration="765000" />
       <workItem from="1726576650647" duration="8233000" />
-      <workItem from="1726594126143" duration="3600000" />
+      <workItem from="1726594126143" duration="5818000" />
     </task>
     <servers />
   </component>
