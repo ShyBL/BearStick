@@ -320,10 +320,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686d9f0c74f0464fad4305b32dde0e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharactersPerSecond: 0
-  normalDelay: 0
-  extraDelay: 0
-  longDelay: 0
+  CharactersPerSecond: 10
+  normalDelay: 1
+  extraDelay: 1
+  longDelay: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
