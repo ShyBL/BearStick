@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class OpeningCutscene : MonoBehaviour
 {
+    [Header("Define Me!")]
     [SerializeField] private float CharactersPerSecond;
     [SerializeField] private float normalDelay;
     [SerializeField] private float extraDelay;

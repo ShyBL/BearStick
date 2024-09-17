@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Elements/Opening Cutscene.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Elements/OpeningCutscene.uxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Elements/Opening Cutscene.uxml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Elements/OpeningCutscene.uxml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +124,7 @@
       <workItem from="1726061832257" duration="1606000" />
       <workItem from="1726079390660" duration="994000" />
       <workItem from="1726081029176" duration="765000" />
-      <workItem from="1726576650647" duration="7580000" />
+      <workItem from="1726576650647" duration="7790000" />
     </task>
     <servers />
   </component>
