@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/win/lib/x86_64/fmodstudioL.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/win/lib/x86_64/fmodstudioL.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/OpeningCutscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Scenes/OpeningCutscene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Prefabs/MainMenuUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Prefabs/MainMenuUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/MainMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +58,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/PC/Underneath.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\UnityProjects\BearStick\Builds\PC" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Program Files\2022.3.31f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\UnityProjects\BearStick -debugCodeOptimization" />
@@ -126,7 +139,8 @@
       <workItem from="1726079390660" duration="994000" />
       <workItem from="1726081029176" duration="765000" />
       <workItem from="1726576650647" duration="8233000" />
-      <workItem from="1726594126143" duration="5818000" />
+      <workItem from="1726594126143" duration="6451000" />
+      <workItem from="1726659690247" duration="2730000" />
     </task>
     <servers />
   </component>

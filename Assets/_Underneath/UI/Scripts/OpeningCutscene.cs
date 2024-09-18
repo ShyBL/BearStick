@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class OpeningCutscene : MonoBehaviour
@@ -11,35 +12,32 @@ public class OpeningCutscene : MonoBehaviour
     [SerializeField] private float normalDelay;
     [SerializeField] private float extraDelay;
     [SerializeField] private float longDelay;
-
+    [SerializeField] private float fadeDuration;
+    
     private UIDocument m_Document;
     private VisualElement m_Root;
     private Label m_Text1;
     private Label m_Text2;
     private Label m_Text3;
     private VisualElement m_Image;
-    private List<Label> labels = new();
+
     
     private void Awake()
     {
-        if (CharactersPerSecond == 0 || normalDelay == 0 || extraDelay == 0 || longDelay == 0)
+        if (CharactersPerSecond == 0 || normalDelay == 0 || extraDelay == 0 || longDelay == 0 || fadeDuration == 0)
         {
-            Debug.LogException(new Exception($"No CharactersPerSecond and/or normalDelay and/or extraDelay and/or longDelay Has Been Assigned In The Inspector!"));
+            Debug.LogException(new Exception($"One Of The Variables Has Not Been Assigned In The Inspector!"));
         }
         
         m_Document = GetComponent<UIDocument>();
         m_Root = m_Document.rootVisualElement;
         
         m_Text1 = m_Root.Q<Label>("FirstLine");
-        labels.Add(m_Text1);
         SetLabelAlpha(m_Text1, 0f);
-        
         m_Text2 = m_Root.Q<Label>("SecondLine");
-        labels.Add(m_Text2);
-        SetLabelAlpha(m_Text2, 0f);
         
+        SetLabelAlpha(m_Text2, 0f);
         m_Text3 = m_Root.Q<Label>("LastLine");
-        labels.Add(m_Text3);
         SetLabelAlpha(m_Text3, 0f);
         
         m_Image = m_Root.Q<VisualElement>("Photograph");
@@ -51,7 +49,7 @@ public class OpeningCutscene : MonoBehaviour
         RunCutscene();
     }
 
-    private async void RunCutscene()
+    private async Task RunCutscene()
     {
         await StartSlide(normalDelay, extraDelay, longDelay, String.Empty,". . .",String.Empty);
         
@@ -88,6 +86,16 @@ public class OpeningCutscene : MonoBehaviour
         
         await Task.Delay(TimeSpan.FromSeconds(normalDelay));
 
+        LoadMainMenu();
+    }
+
+    private void LoadMainMenu()
+    {
+        var scene = SceneManager.LoadSceneAsync("MainMenu");
+        if (scene.isDone)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private async Task StartSlide(float delay1Line, float delay2Line, float delay3Line, string line1 = null, string line2 = null, string line3 = null, bool photo = false)
@@ -122,7 +130,15 @@ public class OpeningCutscene : MonoBehaviour
             await Task.Delay(TimeSpan.FromSeconds(delay3));
         }
 
-        await FadeLabelsAsync(labels, 1f, 0f, 1f);
+        List<Label> labels = new()
+        {
+            m_Text1,
+            m_Text2,
+            m_Text3
+        };
+
+        
+        await FadeLabelsAsync(labels, 1f, 0f, fadeDuration);
     }
 
     private async Task TypeText(string line, Label label)
@@ -174,17 +190,6 @@ public class OpeningCutscene : MonoBehaviour
         visualElement.style.opacity = endAlpha;
     }
     
-    private void FadeLabel(Label label, float startAlpha, float endAlpha, float duration)
-    {
-        float elapsedTime = 0f;
-        while (elapsedTime < duration)
-        {
-            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
-            label.style.opacity = newAlpha;
-            elapsedTime += Time.deltaTime;
-        }
-        label.style.opacity = endAlpha;
-    }
     
     private async Task FadeLabelAsync(Label label, float startAlpha, float endAlpha, float duration)
     {
