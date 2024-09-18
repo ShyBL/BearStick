@@ -80,6 +80,15 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Value"",
+                    ""id"": ""2b261cb6-2472-45c0-921a-64a071fcd9ab"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -192,6 +201,17 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
                     ""action"": ""PauseMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""943a9882-d3c6-4712-8c66-01d7235dd092"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -206,6 +226,7 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
         m_Player_OpenBag = m_Player.FindAction("OpenBag", throwIfNotFound: true);
         m_Player_EndDialogue = m_Player.FindAction("EndDialogue", throwIfNotFound: true);
         m_Player_PauseMenu = m_Player.FindAction("PauseMenu", throwIfNotFound: true);
+        m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,6 +294,7 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_OpenBag;
     private readonly InputAction m_Player_EndDialogue;
     private readonly InputAction m_Player_PauseMenu;
+    private readonly InputAction m_Player_Sprint;
     public struct PlayerActions
     {
         private @PlayerActionsAsset m_Wrapper;
@@ -283,6 +305,7 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
         public InputAction @OpenBag => m_Wrapper.m_Player_OpenBag;
         public InputAction @EndDialogue => m_Wrapper.m_Player_EndDialogue;
         public InputAction @PauseMenu => m_Wrapper.m_Player_PauseMenu;
+        public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -310,6 +333,9 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
             @PauseMenu.started += instance.OnPauseMenu;
             @PauseMenu.performed += instance.OnPauseMenu;
             @PauseMenu.canceled += instance.OnPauseMenu;
+            @Sprint.started += instance.OnSprint;
+            @Sprint.performed += instance.OnSprint;
+            @Sprint.canceled += instance.OnSprint;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -332,6 +358,9 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
             @PauseMenu.started -= instance.OnPauseMenu;
             @PauseMenu.performed -= instance.OnPauseMenu;
             @PauseMenu.canceled -= instance.OnPauseMenu;
+            @Sprint.started -= instance.OnSprint;
+            @Sprint.performed -= instance.OnSprint;
+            @Sprint.canceled -= instance.OnSprint;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -357,5 +386,6 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
         void OnOpenBag(InputAction.CallbackContext context);
         void OnEndDialogue(InputAction.CallbackContext context);
         void OnPauseMenu(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
     }
 }

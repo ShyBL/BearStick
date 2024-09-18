@@ -12,25 +12,27 @@ public class ShopControl : MonoBehaviour
     // This boolean determines if this goal area has been used or not.
     private bool inRange = false;
     
-    // can be a cache if you want instead of ebter shop
+    // can be a cache if you want instead of enter shop
     public bool isCache = false;
 
     // The player needs a "Player" tag. When the player collides with this object, a boolean is set to signal that the player is in range.
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             inRange = true;
+            Debug.Log("in range");
             textGameObject.SetActive(true);
         }
     }
     
     // When the player no longer is in contact with the object, the bool is unset.
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             inRange = false;
+            Debug.Log("out of range");
             textGameObject.SetActive(false);
         }
     }

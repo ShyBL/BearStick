@@ -77,7 +77,7 @@ public class Shop : MonoBehaviour
     private void Update()
     {
         // if (Input.GetKeyDown(KeyCode.N))
-        //     OpenShop();
+        //    OpenShop();
     }
 }
 

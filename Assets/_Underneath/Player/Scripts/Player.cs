@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     
     [Header(" Movement ")]
     [SerializeField] private float moveSpeed = 8f;
+    [SerializeField] private float sprintMultiplier = .5f;
     [SerializeField] private float airVelocity = 8f;
     [SerializeField] public float jumpForce = 15;
     [SerializeField] public Vector2 wallJumpForce = new Vector2(3.5f, 6);
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] public float wallSlideSpeed = 8f;
 
     [SerializeField] public bool canMove = true;
+    [SerializeField] public bool isSprinting = false;
     [SerializeField] public Vector3 moveInputVector;
     
     [Header(" Inventory ")]
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour
         playerInput.onMove += MovementHandler;
         playerInput.onMoveStopped += MovementHandler;
         playerInput.onJump += JumpingHandler;
+         playerInput.onSprint += ToggleSprint(true);
     }
 
     private void OnDisable()
@@ -52,6 +55,7 @@ public class Player : MonoBehaviour
         playerInput.onMove -= MovementHandler;
         playerInput.onMoveStopped -= MovementHandler;
         playerInput.onJump -= JumpingHandler;
+        playerInput.onSprint -= ToggleSprint(false);
     }
 
     private void Update()
@@ -66,8 +70,21 @@ public class Player : MonoBehaviour
         {
             moveInputVector = playerInput.moveVector;
             Flip();
-            playerPhysx.HandleMovement(moveInputVector, moveSpeed);
+
+            if(isSprinting)
+            {
+                playerPhysx.HandleMovement(moveInputVector, (moveSpeed * sprintMultiplier));
+            }
+            else
+            {
+                playerPhysx.HandleMovement(moveInputVector, moveSpeed);
+            }
         }
+    }
+
+    private void ToggleSprint(bool toggle)
+    {
+        isSprinting = toggle;
     }
  
     private void JumpingHandler()

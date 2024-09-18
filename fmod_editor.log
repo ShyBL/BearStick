@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001C9C9D6D3D8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001DA207AC068 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -25,24 +25,81 @@
 [LOG] SystemI::createSound                     : filename = Assets/_Underneath/Sound/FMOD/Music.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001C9C779D0F8, queue head = 000001C9D4C071E8, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C9C779D0F8
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001D9D70DE5B8, queue head = 000001D9532F9728, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001D9D70DE5B8
 [LOG] SystemI::createSoundInternal             :     Create name='Assets/_Underneath/Sound/FMOD/Music.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3885472
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4928
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C9DBDD3DB0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001D9D7411EC0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1622
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Music Bear Stick Shop HH', format=5, channels=2, frequency=48000, lengthbytes=503840, lengthpcm=1923448, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.991577.
 [LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C9C779D0F8
-[LOG] SoundI::release                          : Music Bear Stick Shop HH (000001C9C779D0F8)
-[LOG] SoundI::release                          :     Music Bear Stick Shop HH (000001C9DBFE66A8)
-[LOG] SoundI::release                          :     Music Bear Stick Shop HH (000001C9C779D458)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001D9D70DE5B8
+[LOG] SystemI::createSound                     : filename = Assets/_Underneath/Sound/FMOD/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001DA20B56088, queue head = 000001D9532F9728, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DA20B56088
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/_Underneath/Sound/FMOD/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3885472
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4928
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DA2140D570
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1622
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Music Bear Stick Shop HH', format=5, channels=2, frequency=48000, lengthbytes=503840, lengthpcm=1923448, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.991577.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DA20B56088
+[LOG] SoundI::release                          : Music Bear Stick Shop HH (000001D9D70DE5B8)
+[LOG] SoundI::release                          :     Music Bear Stick Shop HH (000001D8CD6585C8)
+[LOG] SoundI::release                          :     Music Bear Stick Shop HH (000001D87DF84708)
+[LOG] SoundI::release                          : Music Bear Stick Shop HH (000001DA20B56088)
+[LOG] SoundI::release                          :     Music Bear Stick Shop HH (000001D87F145A18)
+[LOG] SoundI::release                          :     Music Bear Stick Shop HH (000001D87DF84A68)
+[LOG] SystemI::createSound                     : filename = Assets/_Underneath/Sound/FMOD/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001DA20B56088, queue head = 000001D9532F9728, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DA20B56088
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/_Underneath/Sound/FMOD/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3885472
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4928
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DA2140D6B0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1357
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Music Underneath Shop', format=5, channels=2, frequency=48000, lengthbytes=1435584, lengthpcm=6339604, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.566071.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DA20B56088
+[LOG] SystemI::createSound                     : filename = Assets/_Underneath/Sound/FMOD/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001DA20B563E8, queue head = 000001D9532F9728, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DA20B563E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/_Underneath/Sound/FMOD/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3885472
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4928
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DA2140DE30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1357
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Music Underneath Shop', format=5, channels=2, frequency=48000, lengthbytes=1435584, lengthpcm=6339604, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.566071.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DA20B563E8
+[LOG] SoundI::release                          : Music Underneath Shop (000001DA20B56088)
+[LOG] SoundI::release                          :     Music Underneath Shop (000001D8CD658288)
+[LOG] SoundI::release                          :     Music Underneath Shop (000001D87DF843A8)
+[LOG] SoundI::release                          : Music Underneath Shop (000001DA20B563E8)
+[LOG] SoundI::release                          :     Music Underneath Shop (000001D8CD658768)
+[LOG] SoundI::release                          :     Music Underneath Shop (000001D87DF84DC8)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 

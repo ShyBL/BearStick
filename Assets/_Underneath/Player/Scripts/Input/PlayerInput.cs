@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
     public Action onMove;
     public Action onMoveStopped;
     public Action onJump;
+    public Action onSprint;
     public Action onInteract;
 
     public Action onBagOpened;
@@ -25,6 +26,7 @@ public class PlayerInput : MonoBehaviour
         actionAsset.Player.Move.performed += OnMovePerformed;
         actionAsset.Player.Move.canceled += OnMoveCanceled;
         actionAsset.Player.Jump.performed += OnJumpPerformed;
+        actionAsset.Player.Sprint.performed += OnSprintPerformed;
         actionAsset.Player.Interact.performed += OnInteractPerformed;
         actionAsset.Player.OpenBag.performed += OnBagOpenedPerformed;
         actionAsset.Player.EndDialogue.performed += OnDialogueEnded;
@@ -38,6 +40,7 @@ public class PlayerInput : MonoBehaviour
         actionAsset.Player.Move.performed -= OnMovePerformed;
         actionAsset.Player.Move.canceled -= OnMoveCanceled;
         actionAsset.Player.Jump.performed -= OnJumpPerformed;
+        actionAsset.Player.Sprint.performed -= OnSprintPerformed;
         actionAsset.Player.Interact.performed -= OnInteractPerformed;
         actionAsset.Player.OpenBag.performed -= OnBagOpenedPerformed;
         actionAsset.Player.EndDialogue.performed -= OnDialogueEnded;
@@ -63,6 +66,11 @@ public class PlayerInput : MonoBehaviour
     private void OnJumpPerformed(InputAction.CallbackContext context)
     {
         onJump?.Invoke();
+    }
+
+    private void OnSprintPerformed(InputAction.CallbackContext context)
+    {
+        onSprint?.Invoke();
     }
 
     private void OnInteractPerformed(InputAction.CallbackContext context)

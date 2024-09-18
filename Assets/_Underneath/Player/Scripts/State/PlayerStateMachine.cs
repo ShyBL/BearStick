@@ -10,6 +10,7 @@ public class PlayerStateMachine
     #region [--- States ---]
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
+    public PlayerSprintState SprintState {get; private set; }
     public PlayerAirState AirState { get; private set; }
     public PlayerJumpState JumpState { get; private set; }
     public PlayerLedgeGrabState LedgeGrabState { get; private set; }
@@ -38,6 +39,7 @@ public class PlayerStateMachine
     {
         IdleState = new PlayerIdleState(_player, this, States.IDLE);
         MoveState = new PlayerMoveState(_player, this, States.MOVE);
+        MoveState = new PlayerSprintState(_player, this, States.SPRINT);
         AirState = new PlayerAirState(_player, this, States.AIR);
         JumpState = new PlayerJumpState(_player,this, States.JUMP);
         

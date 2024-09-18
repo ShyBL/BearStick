@@ -2983,10 +2983,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4345488421361799024, guid: 752a5a634c8df2e41916e3b5cafec832, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5462005258243188991, guid: 752a5a634c8df2e41916e3b5cafec832, type: 3}
       propertyPath: m_Name
       value: Shop_Ext
@@ -7559,6 +7555,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6341521705249812588, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824439447339157606, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: themeType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8271848796004542132, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}

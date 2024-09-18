@@ -47,4 +47,12 @@ public class PlayerMoveState : PlayerGroundedState
             stateMachine.ChangeState(stateMachine.AirState);
         }
     }
+
+    private void CheckIfSprinting()
+    {
+        if(player.IsSprinting())
+        {
+             stateMachine.ChangeState(stateMachine.SprintState);
+        }
+    }
 }
