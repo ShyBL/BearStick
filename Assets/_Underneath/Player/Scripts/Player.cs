@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player :  OurMonoBehaviour
 {
     public static Player Instance;
     [Header(" Components ")]
@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] public PlayerPhysx playerPhysx;
     [SerializeField] public PlayerVisualizer playerVisualizer;
     public PlayerStateMachine playerStateMachine;
+    public AudioManager AudioManager => GameManager.AudioManager;
     
     [Header(" Movement ")]
     [SerializeField] private float moveSpeed = 8f;

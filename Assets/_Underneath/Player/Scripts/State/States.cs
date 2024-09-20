@@ -9,6 +9,8 @@ public static class States
     /// </summary>
     public static string IDLE = "player_idle";
     public static string MOVE = "player_move";
+    public static string SPRINT = "player_sprint";
+    
     public static string AIR = "air_state";
     public static string JUMP = "jump_state";
     public static string SLIDE = "slide_state";

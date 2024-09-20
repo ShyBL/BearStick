@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Managers/Audio Manager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Managers/Audio Manager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Managers/OurGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Managers/OurGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Managers/OurMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Managers/OurMonoBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/OpeningCutscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Scenes/OpeningCutscene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/States.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/States.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerMoveState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +38,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Refactoring",
+    "git-widget-placeholder": "Development",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
