@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/States.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/States.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerMoveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Tools.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Tools.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
