@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Player : MonoBehaviour
+public class Player : OurMonoBehaviour
 {
     public static Player Instance;
     [Header(" Components ")]
@@ -8,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] public PlayerPhysx playerPhysx;
     [SerializeField] public PlayerVisualizer playerVisualizer;
     public PlayerStateMachine playerStateMachine;
-    
+    public AudioManager AudioManager => GameManager.AudioManager;
     [Header(" Movement ")]
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float sprintMultiplier = .5f;
@@ -19,7 +20,6 @@ public class Player : MonoBehaviour
     [SerializeField] public float wallSlideSpeed = 8f;
 
     [SerializeField] public bool canMove = true;
-    [SerializeField] public bool isSprinting = false;
     [SerializeField] public Vector3 moveInputVector;
     
     [Header(" Inventory ")]
@@ -47,7 +47,6 @@ public class Player : MonoBehaviour
         playerInput.onMove += MovementHandler;
         playerInput.onMoveStopped += MovementHandler;
         playerInput.onJump += JumpingHandler;
-         playerInput.onSprint += ToggleSprint(true);
     }
 
     private void OnDisable()
@@ -55,7 +54,6 @@ public class Player : MonoBehaviour
         playerInput.onMove -= MovementHandler;
         playerInput.onMoveStopped -= MovementHandler;
         playerInput.onJump -= JumpingHandler;
-        playerInput.onSprint -= ToggleSprint(false);
     }
 
     private void Update()
@@ -70,21 +68,8 @@ public class Player : MonoBehaviour
         {
             moveInputVector = playerInput.moveVector;
             Flip();
-
-            if(isSprinting)
-            {
-                playerPhysx.HandleMovement(moveInputVector, (moveSpeed * sprintMultiplier));
-            }
-            else
-            {
-                playerPhysx.HandleMovement(moveInputVector, moveSpeed);
-            }
+            playerPhysx.HandleMovement(moveInputVector, moveSpeed);
         }
-    }
-
-    private void ToggleSprint(bool toggle)
-    {
-        isSprinting = toggle;
     }
  
     private void JumpingHandler()

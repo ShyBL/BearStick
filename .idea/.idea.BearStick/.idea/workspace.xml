@@ -6,13 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/win/lib/x86_64/fmodstudioL.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/win/lib/x86_64/fmodstudioL.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Tools.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Tools.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialLevelTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Scripts/TutorialLevelTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialLevelTrigger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Scripts/TutorialLevelTrigger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Cache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Cache.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/ShopControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/ShopControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Stash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Stash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Scripts/InventoryControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Scripts/InventoryControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerJumpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerJumpState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerMoveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerSprintState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerSprintState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/OpeningCutscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Scenes/OpeningCutscene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Prefabs/MainMenuUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Prefabs/MainMenuUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Sound/AudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/Shop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/Shop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Scripts/Crate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Scripts/Crate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Scripts/CurfewTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Scripts/CurfewTimer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +71,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/PC/Underneath.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/PC\Underneath.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\UnityProjects\BearStick\Builds\PC" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -141,6 +153,8 @@
       <workItem from="1726576650647" duration="8233000" />
       <workItem from="1726594126143" duration="6451000" />
       <workItem from="1726659690247" duration="2730000" />
+      <workItem from="1726754558397" duration="3314000" />
+      <workItem from="1726826693727" duration="2648000" />
     </task>
     <servers />
   </component>

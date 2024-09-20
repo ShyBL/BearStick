@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-    public class Crate : MonoBehaviour
+    public class Crate : OurMonoBehaviour
     {
         private Rigidbody2D rb;
 
@@ -14,15 +14,15 @@ using UnityEngine;
         {
             if (rb.velocity.x != 0)
             {
-                AudioManager.Instance.PlayEventWithValueParameters
-                (AudioManager.Instance.CrateDragEvent, 
+                GameManager.AudioManager.PlayEventWithValueParameters
+                ( GameManager.AudioManager.CrateDragEvent, 
                     gameObject.transform.position,
                     "End", 0);
             }
             else if (rb.velocity.x == 0)
             {
-                AudioManager.Instance.PlayEventWithValueParameters
-                (AudioManager.Instance.CrateDragEvent, 
+                GameManager.AudioManager.PlayEventWithValueParameters
+                ( GameManager.AudioManager.CrateDragEvent, 
                     gameObject.transform.position,
                     "End", 1);
             }

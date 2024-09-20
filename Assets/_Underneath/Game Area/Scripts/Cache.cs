@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Cache : MonoBehaviour
+public class Cache : OurMonoBehaviour
 {
     [SerializeField] 
     private GameObject textGameObject;
@@ -46,7 +46,7 @@ public class Cache : MonoBehaviour
         {
             _animator.Play("Open");
             
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Stash,transform.position);
+            GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.Stash,transform.position);
             
             Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
 

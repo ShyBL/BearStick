@@ -37,23 +37,23 @@ public class AudioManager : MonoBehaviour
     public EventInstance CrateDragEvent { get; private set; }
     public EventInstance DialogueEvent { get; private set; }
     
-    public static AudioManager Instance { get; private set; }
+    //public static AudioManager Instance { get; private set; }
     public ShopType themeType;
     private void Awake()
     {
-        if (Instance != null)
-        {
-            Debug.LogError("Found more than one Audio Manager in the scene.");
-        }
-        Instance = this;
+        // if (Instance != null)
+        // {
+        //     Debug.LogError("Found more than one Audio Manager in the scene.");
+        // }
+        // Instance = this;
 
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
         
-        InitializeEvents();
+        InitEventInstances();
     }
     
-    private void InitializeEvents()
+    private void InitEventInstances()
     {
         // Music Event Instances
         GameplayThemeEvent = CreateInstance(FMODEvents.Instance.GameplayTheme);

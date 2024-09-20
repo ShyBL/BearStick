@@ -8,8 +8,8 @@ public class PlayerJumpState : PlayerAirState
     public override void Enter()
     {
         base.Enter();
-        AudioManager.Instance.PlayEventWithValueParameters
-        (AudioManager.Instance.JumpEvent, player.gameObject.transform.position,
+        player.AudioManager.PlayEventWithValueParameters
+        ( player.AudioManager.JumpEvent, player.gameObject.transform.position,
             "Material", 0);
     }
 

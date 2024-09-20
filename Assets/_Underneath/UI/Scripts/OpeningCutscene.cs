@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class OpeningCutscene : MonoBehaviour
+public class OpeningCutscene : OurMonoBehaviour
 {
     [Header("Define Me!")]
     [SerializeField] private float CharactersPerSecond;
@@ -20,9 +20,8 @@ public class OpeningCutscene : MonoBehaviour
     private Label m_Text2;
     private Label m_Text3;
     private VisualElement m_Image;
-
     
-    private void Awake()
+    private void Start()
     {
         if (CharactersPerSecond == 0 || normalDelay == 0 || extraDelay == 0 || longDelay == 0 || fadeDuration == 0)
         {
@@ -42,14 +41,12 @@ public class OpeningCutscene : MonoBehaviour
         
         m_Image = m_Root.Q<VisualElement>("Photograph");
         SetVisualElementAlpha(m_Image,0f);
+        
+        // Temporary music !!!
+        //GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.ShopTheme, transform.position);
     }
 
-    private void Start()
-    {
-        RunCutscene();
-    }
-
-    private async Task RunCutscene()
+    public async Task RunCutscene()
     {
         await StartSlide(normalDelay, extraDelay, longDelay, String.Empty,". . .",String.Empty);
         

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShopControl : MonoBehaviour
+public class ShopControl : OurMonoBehaviour
 {
     private Shop shop;
     
@@ -51,7 +51,7 @@ public class ShopControl : MonoBehaviour
         {
             if (isCache)
             {
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Stash,transform.position);
+                GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.Stash,transform.position);
                 
                 Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
                 

@@ -24,8 +24,8 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Update()
     {
         base.Update();
-        AudioManager.Instance.PlayEventWithValueParameters
-        (AudioManager.Instance.FootstepsEvent, player.gameObject.transform.position,
+        player.AudioManager.PlayEventWithValueParameters
+        (player.AudioManager.FootstepsEvent, player.gameObject.transform.position,
             "Material", 0);
         CheckIfStopped();
         CheckIfFalling();
@@ -45,14 +45,6 @@ public class PlayerMoveState : PlayerGroundedState
         if (!player.IsGrounded())
         {
             stateMachine.ChangeState(stateMachine.AirState);
-        }
-    }
-
-    private void CheckIfSprinting()
-    {
-        if(player.IsSprinting())
-        {
-             stateMachine.ChangeState(stateMachine.SprintState);
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 public enum StashType { Dumpster, Trashcan }
-public class Stash : MonoBehaviour
+public class Stash : OurMonoBehaviour
 {
     // Here is a list of pickups, serialized so level designers can add pickups to the list for the goal area.
     [SerializeField] 
@@ -157,11 +157,11 @@ public class Stash : MonoBehaviour
         switch (type)
         {
             case StashType.Dumpster:
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Dumpster, transform.position);
+                GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.Dumpster, transform.position);
                 break;
 
             case StashType.Trashcan:
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Trashcan, transform.position);
+                GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.Trashcan, transform.position);
                 break;
         }
     }
