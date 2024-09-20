@@ -43,7 +43,7 @@ public class OpeningCutscene : OurMonoBehaviour
         SetVisualElementAlpha(m_Image,0f);
         
         // Temporary music !!!
-        //GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.ShopTheme, transform.position);
+        GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.ShopTheme, transform.position);
     }
 
     public async Task RunCutscene()
