@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     
     [Header(" Movement ")]
     [SerializeField] private float moveSpeed = 8f;
-    [SerializeField] private float sprintMultiplier = .5f;
+    [SerializeField] private float sprintMultiplier = 1.5f;
     [SerializeField] private float airVelocity = 8f;
     [SerializeField] public float jumpForce = 15;
     [SerializeField] public Vector2 wallJumpForce = new Vector2(3.5f, 6);
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         playerInput.onMove += MovementHandler;
         playerInput.onMoveStopped += MovementHandler;
         playerInput.onJump += JumpingHandler;
-         playerInput.onSprint += ToggleSprint(true);
+        playerInput.onSprint += ToggleSprint;
     }
 
     private void OnDisable()
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         playerInput.onMove -= MovementHandler;
         playerInput.onMoveStopped -= MovementHandler;
         playerInput.onJump -= JumpingHandler;
-        playerInput.onSprint -= ToggleSprint(false);
+        playerInput.onSprint -= ToggleSprint;
     }
 
     private void Update()
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
 
             if(isSprinting)
             {
-                playerPhysx.HandleMovement(moveInputVector, (moveSpeed * sprintMultiplier));
+                playerPhysx.HandleMovement(moveInputVector, moveSpeed * sprintMultiplier);
             }
             else
             {
@@ -82,9 +82,16 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void ToggleSprint(bool toggle)
+    private void ToggleSprint()
     {
-        isSprinting = toggle;
+        if(!isSprinting)
+        {
+            isSprinting = true;
+        }
+        else
+        {
+            isSprinting = false;
+        }
     }
  
     private void JumpingHandler()

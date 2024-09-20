@@ -29,6 +29,7 @@ public class PlayerMoveState : PlayerGroundedState
             "Material", 0);
         CheckIfStopped();
         CheckIfFalling();
+        CheckIfSprinting();
     }
 
     private void CheckIfStopped()
@@ -50,7 +51,7 @@ public class PlayerMoveState : PlayerGroundedState
 
     private void CheckIfSprinting()
     {
-        if(player.IsSprinting())
+        if(player.isSprinting == true)
         {
              stateMachine.ChangeState(stateMachine.SprintState);
         }

@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     public Action onMoveStopped;
     public Action onJump;
     public Action onSprint;
+    public Action onSprintStopped;
     public Action onInteract;
 
     public Action onBagOpened;
@@ -27,6 +28,7 @@ public class PlayerInput : MonoBehaviour
         actionAsset.Player.Move.canceled += OnMoveCanceled;
         actionAsset.Player.Jump.performed += OnJumpPerformed;
         actionAsset.Player.Sprint.performed += OnSprintPerformed;
+        actionAsset.Player.Sprint.performed += OnSprintCanceled;
         actionAsset.Player.Interact.performed += OnInteractPerformed;
         actionAsset.Player.OpenBag.performed += OnBagOpenedPerformed;
         actionAsset.Player.EndDialogue.performed += OnDialogueEnded;
@@ -41,6 +43,7 @@ public class PlayerInput : MonoBehaviour
         actionAsset.Player.Move.canceled -= OnMoveCanceled;
         actionAsset.Player.Jump.performed -= OnJumpPerformed;
         actionAsset.Player.Sprint.performed -= OnSprintPerformed;
+        actionAsset.Player.Sprint.canceled -= OnSprintCanceled;
         actionAsset.Player.Interact.performed -= OnInteractPerformed;
         actionAsset.Player.OpenBag.performed -= OnBagOpenedPerformed;
         actionAsset.Player.EndDialogue.performed -= OnDialogueEnded;
@@ -73,6 +76,11 @@ public class PlayerInput : MonoBehaviour
         onSprint?.Invoke();
     }
 
+    private void OnSprintCanceled(InputAction.CallbackContext context)
+    {
+        moveVector = Vector3.zero;
+        onSprintStopped?.Invoke();
+    }
     private void OnInteractPerformed(InputAction.CallbackContext context)
     {
         onInteract?.Invoke();

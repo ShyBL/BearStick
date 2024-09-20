@@ -39,7 +39,7 @@ public class PlayerStateMachine
     {
         IdleState = new PlayerIdleState(_player, this, States.IDLE);
         MoveState = new PlayerMoveState(_player, this, States.MOVE);
-        MoveState = new PlayerSprintState(_player, this, States.SPRINT);
+        SprintState = new PlayerSprintState(_player, this, States.SPRINT);
         AirState = new PlayerAirState(_player, this, States.AIR);
         JumpState = new PlayerJumpState(_player,this, States.JUMP);
         

@@ -7529,6 +7529,10 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 2775950387315669775}
+    - target: {fileID: 3878882947387569265, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
+      propertyPath: sprintMultiplier
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3929157553990026719, guid: a3edcd461b79c2e4bbb4d9297393b860, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
