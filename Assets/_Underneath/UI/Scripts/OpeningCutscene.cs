@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -44,6 +45,7 @@ public class OpeningCutscene : OurMonoBehaviour
         
         // Temporary music !!!
         GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.ShopTheme, transform.position);
+        RunCutscene();
     }
 
     public async Task RunCutscene()
@@ -86,13 +88,16 @@ public class OpeningCutscene : OurMonoBehaviour
         LoadMainMenu();
     }
 
-    private void LoadMainMenu()
+    private async Task LoadMainMenu()
     {
-        var scene = SceneManager.LoadSceneAsync("MainMenu");
-        if (scene.isDone)
+        var asyncLoad  = SceneManager.LoadSceneAsync("MainMenu",LoadSceneMode.Additive);
+        
+        while (!asyncLoad.isDone)
         {
-            Destroy(gameObject);
+            await Task.Yield();
         }
+        
+        SceneManager.UnloadSceneAsync(1);
     }
 
     private async Task StartSlide(float delay1Line, float delay2Line, float delay3Line, string line1 = null, string line2 = null, string line3 = null, bool photo = false)

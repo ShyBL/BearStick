@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686d9f0c74f0464fad4305b32dde0e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharactersPerSecond: 15
+  CharactersPerSecond: 12
   normalDelay: 0.2
   extraDelay: 0.5
   longDelay: 1

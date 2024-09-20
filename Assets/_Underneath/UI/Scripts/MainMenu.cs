@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -22,13 +23,22 @@ public class MainMenu : MonoBehaviour
 
     void PlayPressed(ClickEvent evt)
     {
-        var scene = SceneManager.LoadSceneAsync("MainLevel");
-        if (scene.isDone)
-        {
-            Destroy(gameObject);
-        }
+        LoadMainLevel();
     }
 
+    private async Task LoadMainLevel()
+    {
+        
+        var asyncLoad  = SceneManager.LoadSceneAsync("MainLevel",LoadSceneMode.Additive);
+        
+        while (!asyncLoad.isDone)
+        {
+            // run loading animation
+            await Task.Yield();
+        }
+        SceneManager.UnloadSceneAsync(2);
+    }
+    
     void ExitPressed(ClickEvent evt)
     {
         Application.Quit();
