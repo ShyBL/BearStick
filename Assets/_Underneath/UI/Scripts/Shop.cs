@@ -4,7 +4,7 @@ using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Shop : MonoBehaviour
+public class Shop : OurMonoBehaviour
 {
     [SerializeField]
     List<string> m_DialogueLines = new List<string>();
@@ -45,7 +45,7 @@ public class Shop : MonoBehaviour
     void OnExitButtonPressed(ClickEvent evt)
     {
         m_Root.style.display = DisplayStyle.None;
-        var audio = AudioManager.Instance;
+        var audio = GameManager.AudioManager;
         
         switch (audio.themeType)
         {
@@ -61,7 +61,7 @@ public class Shop : MonoBehaviour
     public void OpenShop()
     {
         m_Root.style.display = DisplayStyle.Flex;
-        var audio = AudioManager.Instance;
+        var audio = GameManager.AudioManager;
         switch (audio.themeType)
         {
             case ShopType.Theme1:

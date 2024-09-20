@@ -2,7 +2,7 @@ using FMOD.Studio;
 using UnityEngine;
 using TMPro;
 
-public class CurfewTimer : MonoBehaviour
+public class CurfewTimer : OurMonoBehaviour
 {
     public static CurfewTimer Instance;
     [SerializeField] TMP_Text m_CountdownText;
@@ -36,7 +36,7 @@ public class CurfewTimer : MonoBehaviour
 
     private void Start()
     {
-        var audio = AudioManager.Instance;
+        var audio =  GameManager.AudioManager;
         
         audio.PlayEventWithStringParameters(audio.GameplayThemeEvent,
             audio.gameObject.transform.position,
@@ -119,8 +119,8 @@ public class CurfewTimer : MonoBehaviour
         if(bMusicChanged == false)
         {
             bMusicChanged = true;
-            var gameplayTheme = AudioManager.Instance.GameplayThemeEvent;
-            AudioManager.Instance.ChangeEventParametersWithString(gameplayTheme, "Speed",
+            var gameplayTheme =  GameManager.AudioManager.GameplayThemeEvent;
+            GameManager.AudioManager.ChangeEventParametersWithString(gameplayTheme, "Speed",
             "Fast");
         
             Debug.Log("Change Music Called: Fast");
@@ -128,8 +128,8 @@ public class CurfewTimer : MonoBehaviour
         else
         {
              bMusicChanged = false;
-            var gameplayTheme = AudioManager.Instance.GameplayThemeEvent;
-            AudioManager.Instance.ChangeEventParametersWithString(gameplayTheme, "Speed",
+            var gameplayTheme = GameManager.AudioManager.GameplayThemeEvent;
+            GameManager.AudioManager.ChangeEventParametersWithString(gameplayTheme, "Speed",
             "Normal");
         
             Debug.Log("Change Music Called: Normal");

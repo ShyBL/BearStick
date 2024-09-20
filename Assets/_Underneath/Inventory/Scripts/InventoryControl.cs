@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class InventoryControl : MonoBehaviour
+public class InventoryControl : OurMonoBehaviour
 {
     private VisualElement m_Root; // Root visual element of the inventory, all elements in the UXML file are children of this.
     [SerializeField]
@@ -31,7 +31,7 @@ public class InventoryControl : MonoBehaviour
 
     private void ToggleInventory(ClickEvent evt = null)
     {
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.OpenBag, Player.Instance.gameObject.transform.position);
+        GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.OpenBag, Player.Instance.gameObject.transform.position);
 
         switch(m_Root.resolvedStyle.display)
         {
