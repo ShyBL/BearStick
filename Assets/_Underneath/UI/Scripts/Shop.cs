@@ -56,6 +56,8 @@ public class Shop : OurMonoBehaviour
                 audio.StopEvent(audio.TempShopThemeEvent);
                 break;
         }
+
+        Player.Instance.EnableMovement();
     }
 
     public void OpenShop()

@@ -78,7 +78,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnSprintCanceled(InputAction.CallbackContext context)
     {
-        moveVector = Vector3.zero;
+        
         onSprintStopped?.Invoke();
     }
     private void OnInteractPerformed(InputAction.CallbackContext context)

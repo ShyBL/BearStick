@@ -11,7 +11,7 @@ public class Player :  OurMonoBehaviour
     public AudioManager AudioManager => GameManager.AudioManager;
     
     [Header(" Movement ")]
-    [SerializeField] private float moveSpeed = 8f;
+    [SerializeField] private float moveSpeed = 4.5f;
     [SerializeField] private float sprintMultiplier = 1.5f;
     [SerializeField] private float airVelocity = 8f;
     [SerializeField] public float jumpForce = 15;
@@ -97,6 +97,7 @@ public class Player :  OurMonoBehaviour
             if(isSprinting)
             {
                 playerPhysx.HandleMovement(moveInputVector, moveSpeed * sprintMultiplier);
+                
             }
             else
             {
@@ -115,6 +116,7 @@ public class Player :  OurMonoBehaviour
         {
             isSprinting = false;
         }
+
     }
  
     private void JumpingHandler()

@@ -19,7 +19,7 @@ public class PlayerState
 
 
     [Header(" State ")]
-    protected bool canAttack = true;
+    protected bool canAttack = true;//POSSIBLE CUT, LEAVE FOR NOW
     protected bool isBusy = false;
     protected bool triggerCalled;
 

@@ -55,9 +55,9 @@ MonoBehaviour:
   playerInput: {fileID: 2377715578227744541}
   playerPhysx: {fileID: 4908028099460965068}
   playerVisualizer: {fileID: 3673152010868026515}
-  moveSpeed: 3.5
+  moveSpeed: 4.5
   sprintMultiplier: 0.5
-  airVelocity: 2
+  airVelocity: 1
   jumpForce: 7
   wallJumpForce: {x: 3.5, y: 6}
   wallJumpCounter: 0

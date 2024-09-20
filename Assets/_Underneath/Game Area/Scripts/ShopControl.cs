@@ -21,7 +21,6 @@ public class ShopControl : OurMonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = true;
-            Debug.Log("in range");
             textGameObject.SetActive(true);
         }
     }
@@ -32,7 +31,6 @@ public class ShopControl : OurMonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
-            Debug.Log("out of range");
             textGameObject.SetActive(false);
         }
     }
@@ -49,28 +47,9 @@ public class ShopControl : OurMonoBehaviour
     {
         if (inRange)
         {
-            if (isCache)
-            {
-                GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.Stash,transform.position);
-                
-                Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
-                
-                PlayerData.Instance.DoCache();
-                
-                Invoke(nameof(EndDay),_animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
-            }
-            else
-            {
-                Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
-    
-                shop.OpenShop();
-            }
+            Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
+            Player.Instance.StopInPlace();
+            shop.OpenShop();
         }
-    }
-    
-    private void EndDay()
-    {
-        EndOfDay.Instance.EndDay();
-        Player.Instance.EnableMovement();
     }
 }
