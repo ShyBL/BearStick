@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Hud: {fileID: 0}
+  m_OffscreenPos: -45

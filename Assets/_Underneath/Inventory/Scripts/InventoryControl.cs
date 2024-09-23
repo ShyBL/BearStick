@@ -8,7 +8,11 @@ public class InventoryControl : OurMonoBehaviour
     private VisualElement m_Root; // Root visual element of the inventory, all elements in the UXML file are children of this.
     [SerializeField]
     private UIDocument m_Hud;
+    private VisualElement m_Container;
     private Button m_InventoryButton;
+    [SerializeField]
+    private float m_OffscreenPos;
+    private bool m_Hidden = true;
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +20,13 @@ public class InventoryControl : OurMonoBehaviour
         // Get the document and visual elements we will need
         UIDocument doc = GetComponentInChildren<UIDocument>();
         m_Root = doc.rootVisualElement;
+        m_Container = m_Root.Q<VisualElement>("Container");
         m_InventoryButton = m_Hud.rootVisualElement.Q<Button>("Inventory");
         m_InventoryButton.RegisterCallback<ClickEvent>(ToggleInventory);
 
         Player.Instance.playerInput.onBagOpened += onToggleInventory;
 
-        m_Root.style.display = DisplayStyle.None;
+        m_Container.style.left = Length.Percent(m_OffscreenPos);
     }
 
     private void OnDisable()
@@ -33,13 +38,15 @@ public class InventoryControl : OurMonoBehaviour
     {
         GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.OpenBag, Player.Instance.gameObject.transform.position);
 
-        switch(m_Root.resolvedStyle.display)
+        switch(m_Hidden)
         {
-            case DisplayStyle.Flex:
-                m_Root.style.display = DisplayStyle.None;
+            case true:
+                m_Container.style.left = 0f;
+                m_Hidden = false;
                 break;
-            case DisplayStyle.None:
-                m_Root.style.display = DisplayStyle.Flex;
+            case false:
+                m_Container.style.left = Length.Percent(m_OffscreenPos);
+                m_Hidden = true;
                 break;
         }
     }
