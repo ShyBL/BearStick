@@ -28,7 +28,7 @@ public class Stash : OurMonoBehaviour
     // The player needs a "Player" tag. When the player collides with this object, a boolean is set to signal that the player is in range.
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && opened == false)
+        if (other.TryGetComponent(out Player player) && opened == false)
         {
             inRange = true;
             textGameObject.SetActive(true);
@@ -41,7 +41,7 @@ public class Stash : OurMonoBehaviour
     // When the player no longer is in contact with the object, the bool is unset.
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.TryGetComponent(out Player player))
         {
             inRange = false;
             textGameObject.SetActive(false);

@@ -6,11 +6,9 @@ public class PlayerInteractBox : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Collectable"))
+        if (other.TryGetComponent(out PhysicsCollectible collectible))
         {
             Debug.Log($"Picked a {other.gameObject.name}");
-            
-            var collectible = other.GetComponent<PhysicsCollectible>();
             
             if (Player.Instance.inventory.AddItem(collectible.collectable)) // if you have space
             {
