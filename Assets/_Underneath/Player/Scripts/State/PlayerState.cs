@@ -82,10 +82,10 @@ public class PlayerState
     
     protected bool isGrabbingLedge;
     
-    protected void LedgeDetection()
-    {
-        if (player.playerPhysx.IsLedgeDetected())
-            stateMachine.ChangeState(stateMachine.LedgeGrabState);
-
-    }
+    // protected void LedgeDetection()
+    // {
+    //     if (player.playerPhysx.IsLedgeDetected())
+    //         stateMachine.ChangeState(stateMachine.LedgeGrabState);
+    //
+    // }
 }

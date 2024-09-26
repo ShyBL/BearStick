@@ -165,6 +165,7 @@ public class Player :  OurMonoBehaviour
             Debug.Log("yes air");
             isWallSliding = true;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
+            playerVisualizer.PlayAnimation("slide_state");
         }
         else if (playerStateMachine.currentState == playerStateMachine.JumpState && (isWalled() && moveInputVector.x != 0))
         {

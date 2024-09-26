@@ -43,7 +43,17 @@ public class PlayerData : MonoBehaviour
     private void Start()
     {
         GameObject spawnLocation = GameObject.Find("PlayerRespawnPoint");
-        v_SpawnLocation = spawnLocation.gameObject.transform.position;
+    
+        if (spawnLocation != null)
+        {
+            v_SpawnLocation = spawnLocation.transform.position;
+        }
+        else
+        {
+            GameObject newSpawnLocation = new GameObject("PlayerRespawnPoint");
+            newSpawnLocation.transform.position = this.transform.position;
+            v_SpawnLocation = newSpawnLocation.transform.position;
+        }
     }
 
     public void IncreaseMoney(int amount)

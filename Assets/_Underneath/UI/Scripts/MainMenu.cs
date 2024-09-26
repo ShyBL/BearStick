@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
     private async Task LoadMainLevel()
     {
         
-        var asyncLoad  = SceneManager.LoadSceneAsync("MainLevel",LoadSceneMode.Additive);
+        var asyncLoad  = SceneManager.LoadSceneAsync(3,LoadSceneMode.Additive);
         
         while (!asyncLoad.isDone)
         {
