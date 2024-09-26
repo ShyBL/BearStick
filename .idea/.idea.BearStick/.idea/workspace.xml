@@ -6,28 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.lastScene" beforeDir="false" afterPath="$PROJECT_DIR$/.lastScene" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/PlayerStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerWallSlideState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Player/Scripts/State/SubStates/PlayerWallSlideState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Prefabs/platIndicator.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Prefabs/platIndicator.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/7.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/7back.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/7back.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingInPiece.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingInPiece.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingLeft 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingLeft 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingRight 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingRight 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/crate 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/crate 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/i.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/i.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/iflat.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/iflat.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/platInd.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/platInd.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/trapaz.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/trapaz.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/newLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/newLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +137,7 @@
       <workItem from="1726754558397" duration="3314000" />
       <workItem from="1726826693727" duration="3734000" />
       <workItem from="1726871559172" duration="1000000" />
+      <workItem from="1727354542381" duration="4367000" />
     </task>
     <servers />
   </component>
