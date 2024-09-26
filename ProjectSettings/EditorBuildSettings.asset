@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/_Underneath/Scenes/MainLevel.unity
     guid: 746f9e956e51281499491cc868f8c8e4
   - enabled: 0
-    path: Assets/_Underneath/Tests/FullTestScene.unity
+    path: Assets/_Underneath/Tests/LevelTests/FullTestScene.unity
     guid: 4ac8465c0c0675945b4aab024dc215d7
   - enabled: 1
     path: Assets/_Underneath/_Levels/newLevel.unity
