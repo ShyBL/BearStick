@@ -67,7 +67,7 @@ public class PlayerMovementStats : ScriptableObject
         CalculateValues();
     }
 
-    private void CalculateValues()
+    public void CalculateValues()
     {
         AdjustedJumpHeight = JumpHeight * JumpHeightCompensationFactor;
         Gravity = -(2F * JumpHeight) / Mathf. Pow(TimeTillJumpApex, 2f);
