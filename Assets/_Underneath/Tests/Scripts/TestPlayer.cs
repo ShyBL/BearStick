@@ -1,55 +1,73 @@
 using UnityEngine;
 
-public class PlayerTest : MonoBehaviour
+public class TestPlayer :  OurMonoBehaviour
 {
-    [Header("References")] public PlayerMovementStats MoveStats;
+    public static TestPlayer Instance;
+
+    #region Variables
+    [Header("References")] 
+    public PlayerMovementStats MoveStats;
     [SerializeField] private Collider2D _feetColl;
     [SerializeField] private Collider2D _bodyColl;
+        
+    [Header(" Components ")]
+    [SerializeField] public PlayerInput playerInput;
+    //[SerializeField] public PlayerPhysx playerPhysx;
+    [SerializeField] public PlayerVisualizer playerVisualizer;
     private Rigidbody2D _rb;
-
-    //movement vars
+    
+    [Header(" Movement Variables")]
     private Vector2 _moveVelocity;
     private bool _isFacingRight;
-
-    //collision check vars
+    
+    [Header(" Collision Check Variables")]
     private RaycastHit2D _groundHit;
     private RaycastHit2D _headHit;
     private bool _isGrounded;
     private bool bumpedHead;
 
-    //jump vars
-    public float VerticalVelocity { get; private set; }
+    [Header(" Jump Variables")] 
+    public float VerticalVelocity;
     private bool _isJumping;
     private bool _isFastFalling;
     private bool _isFalling;
     private float _fastFallTime;
     private float _fastFallReleaseSpeed;
     private int _numberOfJumpsUsed;
-
-    //apex vars
+    
     private float _apexPoint;
     private float _timePastApexThreshold;
     private bool _isPastApexThreshold;
-
-    //jump buffer vars
+    
     private float _jumpBufferTimer;
     private bool _jumpReleasedDuringBuffer;
-
-    //coyote time vars
+    
     private float _coyoteTimer;
     private bool _bumpedHead;
-
+    #endregion
+    
+    [Header(" Inventory ")]
+    [SerializeField] public Inventory inventory;
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
         _isFacingRight = true;
         _rb = GetComponent<Rigidbody2D>();
     }
-
+    
     private void Update()
     {
         JumpChecks();
     }
-
+    
     private void FixedUpdate()
     {
         CollisionChecks();
@@ -57,17 +75,15 @@ public class PlayerTest : MonoBehaviour
 
         if (_isGrounded)
         {
-            Move(MoveStats.GroundAcceleration, MoveStats.GroundDeceleration, InputManager.Movement);
-            Move(MoveStats.GroundAcceleration, MoveStats.GroundDeceleration, InputManager.Movement);
-
+            Move(MoveStats.GroundAcceleration, MoveStats.GroundDeceleration, playerInput.moveVector);
         }
         else
         {
-            Move(MoveStats.AirAcceleration, MoveStats.AirDeceleration, InputManager.Movement);
+            Move(MoveStats.AirAcceleration, MoveStats.AirDeceleration, playerInput.moveVector);
         }
 
     }
-
+    
     private void Move(float acceleration, float deceleration, Vector2 moveInput)
     {
         if (moveInput != Vector2.zero)
@@ -76,7 +92,7 @@ public class PlayerTest : MonoBehaviour
 
             Vector2 targetVelocity = Vector2.zero;
 
-            if (InputManager.RunIsHeld)
+            if (playerInput.RunIsHeld)
             {
                 targetVelocity = new Vector2(moveInput.x, 0f) * MoveStats.MaxRunSpeed;
             }
@@ -166,16 +182,18 @@ public class PlayerTest : MonoBehaviour
         IsGrounded();
         BumpedHead();
     }
+    
+    #region Jumping
 
     private void JumpChecks()
     {
-        if (InputManager.JumpWasPressed)
+        if (playerInput.JumpWasPressed)
         {
             _jumpBufferTimer = MoveStats.JumpBufferTime;
             _jumpReleasedDuringBuffer = false;
         }
 
-        if (InputManager.JumpWasReleased)
+        if (playerInput.JumpWasReleased)
         {
             if (_jumpBufferTimer > 0f)
             {
@@ -237,8 +255,19 @@ public class PlayerTest : MonoBehaviour
         }
 
     }
+    
+    private void InitiateJump(int numberOfJumpsUsed)
+    {
+        if (!_isJumping)
+        {
+            _isJumping = true;
+        }
 
-    // Applies gravity to jumping
+        _jumpBufferTimer = 0f;
+        _numberOfJumpsUsed += numberOfJumpsUsed;
+        VerticalVelocity = MoveStats.InitialJumpVelocity;
+    }
+    
     private void Jump()
     {
         if (_isJumping)
@@ -333,7 +362,7 @@ public class PlayerTest : MonoBehaviour
         _rb.velocity = new Vector2(_rb.velocity.x, VerticalVelocity);
 
     }
-
+    
     private void BumpedHead()
     {
         Vector2 boxCastOrigin = new Vector2(_feetColl.bounds.center.x, _bodyColl.bounds.max.y);
@@ -379,106 +408,11 @@ public class PlayerTest : MonoBehaviour
 
         }
     }
+    #endregion
 
-    private void InitiateJump(int numberOfJumpsUsed)
+    public void SetPlayerSpawn(Vector2 spawn)
     {
-        if (!_isJumping)
-        {
-            _isJumping = true;
-        }
-
-        _jumpBufferTimer = 0f;
-        _numberOfJumpsUsed += numberOfJumpsUsed;
-        VerticalVelocity = MoveStats.InitialJumpVelocity;
+        this.gameObject.transform.position = spawn;
     }
 
-
-    private void OnDrawGizmos ()
-    {
-        if (MoveStats.ShowWalkJumpArc)
-        {
-            DrawJumpArc(MoveStats.MaxWalkSpeed, Color.white);
-        }
-        
-        if (MoveStats.ShowRunJumpArc)
-        {
-            DrawJumpArc(MoveStats.MaxRunSpeed, Color.red);
-        }
-    }
-
-
-    private void DrawJumpArc(float moveSpeed, Color gizmoColor)
-    {
-        Vector2 startPosition = new Vector2(_feetColl.bounds.center.x, _feetColl.bounds.min.y);
-        Vector2 previousPosition = startPosition;
-        float speed = 0f;
-
-        if (MoveStats.DrawRight)
-        {
-            speed = moveSpeed;
-        }
-        else
-        {
-            speed = -moveSpeed;
-        }
-
-        Vector2 velocity = new Vector2(speed, MoveStats.InitialJumpVelocity);
-        
-        Gizmos.color = gizmoColor;
-        
-        float timeStep = 2 * MoveStats.TimeTillJumpApex / MoveStats.ArcResolution; // time step for the simulation
-        
-        //float totalTime = (2 * MoveStats.TimeTillJumpApex) + MoveStats.ApexHangTime; // total time of the arc including hang time
-
-        for (int i = 0; i < MoveStats.VisualizationSteps; i++)
-        {
-            float simulationTime = i * timeStep;
-            Vector2 displacement;
-            Vector2 drawPoint;
-
-            if (simulationTime < MoveStats.TimeTillJumpApex) // Ascending
-            {
-                displacement = velocity * simulationTime +
-                               0.5f * new Vector2(0, MoveStats.Gravity) * simulationTime * simulationTime;
-            }
-            
-            else if (simulationTime < MoveStats.TimeTillJumpApex + MoveStats.ApexHangTime) // Apex hang time
-            {
-                float apexTime = simulationTime - MoveStats.TimeTillJumpApex;
-                displacement = velocity * MoveStats.TimeTillJumpApex + 0.5f * new Vector2(0, MoveStats.Gravity) *
-                    MoveStats.TimeTillJumpApex * MoveStats.TimeTillJumpApex;
-                displacement += new Vector2(speed, 0) * apexTime; // No vertical movement during hang time
-
-            }
-            
-            else // Descending
-            {
-
-                float descendTime = simulationTime - (MoveStats.TimeTillJumpApex + MoveStats.ApexHangTime);
-                displacement = velocity * MoveStats.TimeTillJumpApex + 0.5f * new Vector2(0, MoveStats.Gravity) *
-                    MoveStats.TimeTillJumpApex * MoveStats.TimeTillJumpApex;
-                displacement += new Vector2(speed, 0) * MoveStats.ApexHangTime; // Horizontal movement during hang time
-                displacement += new Vector2(speed, 0) * descendTime + 0.5f * new Vector2(0, MoveStats.Gravity) * descendTime * descendTime;
-            }
-
-            drawPoint = startPosition + displacement;
-
-            if (MoveStats.StopOnCollision)
-            {
-                RaycastHit2D hit = Physics2D.Raycast(previousPosition, drawPoint - previousPosition,
-                    Vector2.Distance(previousPosition, drawPoint), MoveStats.GroundLayer);
-                if (hit.collider != null)
-                {
-                    // If a hit is detected, stop drawing the arc at the hit point
-                    Gizmos.DrawLine(previousPosition, hit.point);
-                    break;
-
-                }
-            }
-            
-            Gizmos.DrawLine(previousPosition, drawPoint);
-            previousPosition = drawPoint;
-        }
-    }
-    
 }

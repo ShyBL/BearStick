@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InputManager
+public class TestInputManager 
 {
     public static bool RunIsHeld { get; set; }
     public static Vector2 Movement { get; set; }
