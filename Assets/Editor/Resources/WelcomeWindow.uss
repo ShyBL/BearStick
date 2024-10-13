@@ -1,0 +1,42 @@
+/* WelcomeScreen.uss */
+
+.logo-section {
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+}
+
+.centered-label {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.announcement-section {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.announcement-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.announcement-text {
+    font-size: 12px;
+    color: #333;
+}
+
+.button-section {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
