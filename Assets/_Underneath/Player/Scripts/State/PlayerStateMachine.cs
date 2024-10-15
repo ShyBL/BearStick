@@ -13,9 +13,9 @@ public class PlayerStateMachine
     public PlayerSprintState SprintState {get; private set; }
     public PlayerAirState AirState { get; private set; }
     public PlayerJumpState JumpState { get; private set; }
-    public PlayerLedgeGrabState LedgeGrabState { get; private set; }
+    //public PlayerLedgeGrabState LedgeGrabState { get; private set; }
     public PlayerWallJumpState WallJumpState { get; private set; }
-    public PlayerWallSlideState WallSlideState { get; private set; }
+    //public PlayerWallSlideState WallSlideState { get; private set; }
 
     //public PlayerPickUpState PickUpState { get; private set; }
     
@@ -43,9 +43,9 @@ public class PlayerStateMachine
         AirState = new PlayerAirState(_player, this, States.AIR);
         JumpState = new PlayerJumpState(_player,this, States.JUMP);
         
-        LedgeGrabState = new PlayerLedgeGrabState(_player,this, States.SLIDE);
+        //LedgeGrabState = new PlayerLedgeGrabState(_player,this, States.SLIDE);
         WallJumpState = new PlayerWallJumpState(_player,this, States.JUMP);
-        WallSlideState = new PlayerWallSlideState(_player,this, States.SLIDE);
+        //WallSlideState = new PlayerWallSlideState(_player,this, States.SLIDE);
 
         //PickUpState = new PlayerPickUpState(_player, this, States.PICKUP);
 

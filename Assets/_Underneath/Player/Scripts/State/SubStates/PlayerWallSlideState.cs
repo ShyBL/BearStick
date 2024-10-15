@@ -25,7 +25,7 @@ public class PlayerWallSlideState : PlayerState
         base.Update();
         Slide();
         IsOnWall();
-        LedgeDetection();
+        //LedgeDetection();
     }
 
 
