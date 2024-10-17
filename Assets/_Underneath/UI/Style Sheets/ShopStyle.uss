@@ -13,7 +13,7 @@
 }
 
 .slot {
-    background-image: url("project://database/Assets/Stephen/Final-InventorySlot.png?fileID=21300000&guid=5020bb5febb973b4ba7f18eab6f9f2a5&type=3#Final-InventorySlot");
+    background-image: url("project://database/Assets/_Underneath/UI/Sprites/Final-InventorySlot.png?fileID=21300000&guid=5020bb5febb973b4ba7f18eab6f9f2a5&type=3#Final-InventorySlot");
     -unity-background-image-tint-color: rgba(255, 255, 255, 0.35);
     border-left-color: rgb(0, 0, 0);
     border-right-color: rgb(0, 0, 0);
@@ -23,4 +23,8 @@
     border-right-width: 0;
     border-bottom-width: 0;
     border-left-width: 0;
+}
+
+.button {
+    width: 30%;
 }
