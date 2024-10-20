@@ -3,15 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Collectable
+  - SemiS
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Wall
   - 
   - 
   - 
@@ -40,4 +42,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3476714515
+    locked: 0
+  - name: Back Layer
+    uniqueID: 1041005661
+    locked: 0
+  - name: Main Layer
+    uniqueID: 3213506103
+    locked: 0
+  - name: Player
+    uniqueID: 1519769909
+    locked: 0
+  - name: Front Layer
+    uniqueID: 1604884155
     locked: 0

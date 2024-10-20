@@ -1,0 +1,1 @@
+${m_Money},{m_NewMoney},{m_DayCount},{m_CurrentExpenses}

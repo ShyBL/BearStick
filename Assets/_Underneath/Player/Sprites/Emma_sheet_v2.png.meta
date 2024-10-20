@@ -1,0 +1,690 @@
+fileFormatVersion: 2
+guid: 5e97f00c368e211458da5c67b4af18de
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Emma_sheet_v2_0
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 3208
+        width: 644
+        height: 732
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e59a27c075bea945bf142c48f78ad91
+      internalID: -437292834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_1
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 3208
+        width: 636
+        height: 736
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a17aca4e9e38ab48acf88c66c604e1b
+      internalID: 2107332495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_2
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 3208
+        width: 636
+        height: 740
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adfe8f28a7868664880617615ec95c73
+      internalID: 897959717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_3
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 3208
+        width: 632
+        height: 740
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa45104b08c15d488e06cf775e58559
+      internalID: -1718491174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_4
+      rect:
+        serializedVersion: 2
+        x: 4228
+        y: 3204
+        width: 640
+        height: 740
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77369d1a4247514686c8829a80917bc
+      internalID: 375873272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_5
+      rect:
+        serializedVersion: 2
+        x: 5176
+        y: 3212
+        width: 716
+        height: 716
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0a746915737544abff9ac9d6084ca0
+      internalID: -1615702995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_6
+      rect:
+        serializedVersion: 2
+        x: 6172
+        y: 3212
+        width: 728
+        height: 720
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d35e6703a209d9489a4fe0f9d6e212e
+      internalID: -2037751767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_7
+      rect:
+        serializedVersion: 2
+        x: 7172
+        y: 3212
+        width: 732
+        height: 720
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb1cf4c53a518a4088a6117f87ccf33
+      internalID: -1082129406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_8
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 2208
+        width: 728
+        height: 720
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a62f9815281e7742b10420c17ccbc8b
+      internalID: 1508915676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_9
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 2204
+        width: 716
+        height: 728
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff25c6ced4abf5045a3f7485cd4af1ee
+      internalID: -488734725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_10
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 2204
+        width: 728
+        height: 728
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbb0fc5d6ee56d44b42e7438f4ef461
+      internalID: -2129543406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_11
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 2204
+        width: 728
+        height: 728
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97291a98bf7b62049aa3c0c720187a78
+      internalID: 1489008673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_12
+      rect:
+        serializedVersion: 2
+        x: 4176
+        y: 2204
+        width: 728
+        height: 724
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13520a11733e24445b7beada60ee2644
+      internalID: -669753331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_13
+      rect:
+        serializedVersion: 2
+        x: 5252
+        y: 2128
+        width: 588
+        height: 804
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9bf54f358ba6b42bdfcb687f9efc31
+      internalID: 671909984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_14
+      rect:
+        serializedVersion: 2
+        x: 6244
+        y: 2136
+        width: 620
+        height: 784
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32b15fcd2377ff42967d5c53dbb0382
+      internalID: 567812589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_15
+      rect:
+        serializedVersion: 2
+        x: 7228
+        y: 2112
+        width: 584
+        height: 816
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393a420d31f06de4b8c3542560c66f7e
+      internalID: -1694565867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_16
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1256
+        width: 632
+        height: 684
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9215e7227c14508458361c976469c173
+      internalID: 265156645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_17
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 1260
+        width: 632
+        height: 680
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255c091c4340e774087b1f523796618e
+      internalID: -930663619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_18
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 1272
+        width: 592
+        height: 668
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18cead26b0727e4bb079c7723fefd19
+      internalID: 812758055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_19
+      rect:
+        serializedVersion: 2
+        x: 3212
+        y: 1272
+        width: 596
+        height: 668
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dd4f8e758d1dda449957ca7a165babf
+      internalID: -688357604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_20
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 1224
+        width: 644
+        height: 684
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ecf5ae8cc7af6448a7c60a18a687db
+      internalID: -61054042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_21
+      rect:
+        serializedVersion: 2
+        x: 5156
+        y: 1176
+        width: 544
+        height: 676
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2ad0ce7a835e843a2af6488274c62e
+      internalID: -1089155413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_22
+      rect:
+        serializedVersion: 2
+        x: 6156
+        y: 1224
+        width: 620
+        height: 652
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99356bab3ae34f548aa2f6b097177002
+      internalID: -1992555465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_23
+      rect:
+        serializedVersion: 2
+        x: 7156
+        y: 1196
+        width: 640
+        height: 664
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cabc7ee60e548bb4fb19a646da94e8d0
+      internalID: 1527301594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emma_sheet_v2_24
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 184
+        width: 652
+        height: 680
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b7fe24e71b3474e96554b9cfa2ddb2
+      internalID: 717294438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Emma_sheet_v2_0: -437292834
+      Emma_sheet_v2_1: 2107332495
+      Emma_sheet_v2_10: -2129543406
+      Emma_sheet_v2_11: 1489008673
+      Emma_sheet_v2_12: -669753331
+      Emma_sheet_v2_13: 671909984
+      Emma_sheet_v2_14: 567812589
+      Emma_sheet_v2_15: -1694565867
+      Emma_sheet_v2_16: 265156645
+      Emma_sheet_v2_17: -930663619
+      Emma_sheet_v2_18: 812758055
+      Emma_sheet_v2_19: -688357604
+      Emma_sheet_v2_2: 897959717
+      Emma_sheet_v2_20: -61054042
+      Emma_sheet_v2_21: -1089155413
+      Emma_sheet_v2_22: -1992555465
+      Emma_sheet_v2_23: 1527301594
+      Emma_sheet_v2_24: 717294438
+      Emma_sheet_v2_3: -1718491174
+      Emma_sheet_v2_4: 375873272
+      Emma_sheet_v2_5: -1615702995
+      Emma_sheet_v2_6: -2037751767
+      Emma_sheet_v2_7: -1082129406
+      Emma_sheet_v2_8: 1508915676
+      Emma_sheet_v2_9: -488734725
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

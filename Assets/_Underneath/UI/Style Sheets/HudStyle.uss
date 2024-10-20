@@ -1,0 +1,4 @@
+.text {
+    font-size: 42px;
+    -unity-font-style: bold;
+}
