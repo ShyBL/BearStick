@@ -21,7 +21,7 @@ public class ShopControl : OurMonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = true;
-            textGameObject.SetActive(true);
+        
         }
     }
     
@@ -31,7 +31,7 @@ public class ShopControl : OurMonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
-            textGameObject.SetActive(false);
+        
         }
     }
     
