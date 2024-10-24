@@ -1,26 +1,29 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Npc : InteractiveObject
+public class NPCDialogue : OurMonoBehaviour
 {
     [SerializeField] private Dialogue dialogue;
     [SerializeField] protected List<String> dialogueLines;
     [SerializeField] private Sprite talkingSprite;
 
-    protected void DoInteraction()
+    public void DoDialogue()
     {
-        foreach (var line in dialogueLines)
+        if (dialogueLines.Count == 0) return;
+
+        foreach (var line in dialogueLines.Where(line => line != string.Empty))
         {
             dialogue.StartDialogue(line,talkingSprite);
         }
     }
     
-    protected void DoGossip()
+    public void DoGossip()
     {
         foreach (var line in dialogueLines)
         {
-            dialogue.StartGossip(line, transform.position);
+            //dialogue.StartGossip(line, transform.position);
         }
     }
 }
