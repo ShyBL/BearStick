@@ -32,6 +32,6 @@ public class PhysicsCollectible : MonoBehaviour
     {
         collectable = inputCollectable;
 
-        GetComponent<SpriteRenderer>().sprite = collectable.Icon;
+        GetComponent<SpriteRenderer>().sprite = collectable.Collectable;
     }
 }

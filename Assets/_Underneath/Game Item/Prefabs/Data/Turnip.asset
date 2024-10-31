@@ -16,7 +16,8 @@ MonoBehaviour:
   FriendlyName: Turnip
   Description: "You\u2019d eat it, if not for how moldy it is."
   SellPrice: 1
-  Icon: {fileID: 32037936, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
+  Icon: {fileID: 21300000, guid: f97c4591b8c924b4ba14a92e12f6dbb0, type: 3}
+  Collectable: {fileID: 32037936, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:
     Height: 1
     Width: 1

@@ -16,7 +16,8 @@ MonoBehaviour:
   FriendlyName: Spoon
   Description: Looks like someone is missing their spoon.
   SellPrice: 8
-  Icon: {fileID: 1885251302, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
+  Icon: {fileID: 21300000, guid: f7263595f6a92ab4490ade24df8add3d, type: 3}
+  Collectable: {fileID: 1885251302, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:
     Height: 1
     Width: 1

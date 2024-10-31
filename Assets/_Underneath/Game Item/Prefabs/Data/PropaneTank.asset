@@ -16,7 +16,8 @@ MonoBehaviour:
   FriendlyName: Propane Tank
   Description: An empty metal tank. A rare find!
   SellPrice: 15
-  Icon: {fileID: 1067937131, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
+  Icon: {fileID: 21300000, guid: 0da43b9ef293bcb42b296a5c452f4c97, type: 3}
+  Collectable: {fileID: 1067937131, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:
     Height: 1
     Width: 1

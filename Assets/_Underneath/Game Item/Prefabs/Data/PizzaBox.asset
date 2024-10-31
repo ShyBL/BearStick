@@ -16,7 +16,8 @@ MonoBehaviour:
   FriendlyName: Nearly Empty Pizza Box
   Description: "The cardboard has to be useful for something\u2026"
   SellPrice: 2
-  Icon: {fileID: 1743088626, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
+  Icon: {fileID: 21300000, guid: 023da5638ab117f42bb3585b200f4d79, type: 3}
+  Collectable: {fileID: 1743088626, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:
     Height: 1
     Width: 1
