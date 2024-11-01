@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class NPCDialogue : OurMonoBehaviour
 {
-    [SerializeField] private Dialogue dialogue;
+    private Dialogue dialogue;
     [SerializeField] protected List<String> dialogueLines;
     [SerializeField] private Sprite talkingSprite;
+
+    private void Awake()
+    {
+        dialogue = FindFirstObjectByType<Dialogue>();
+    }
 
     public void DoDialogue()
     {

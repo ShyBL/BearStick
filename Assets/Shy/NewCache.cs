@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NewCache : OurMonoBehaviour
 {
-    private void DoCache()
+    public void DoCache()
     {
        // Player.Instance.DisableMovement();
 
