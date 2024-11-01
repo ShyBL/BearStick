@@ -6,7 +6,7 @@ public class InteractiveObject : OurMonoBehaviour
     // This boolean determines if this interaction can happen or not.
     private bool _inRange;
     public Player Player;
-    
+
     [SerializeField]
     public UnityEvent OnTriggerEnter;
     [SerializeField]
@@ -21,6 +21,7 @@ public class InteractiveObject : OurMonoBehaviour
         if (other.TryGetComponent(out Player player))
         {
             Player = player;
+            
             player.playerInput.onInteract += Interact;
             _inRange = true;
             

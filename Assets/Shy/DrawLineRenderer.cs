@@ -42,7 +42,7 @@ public class DrawLineRenderer : OurMonoBehaviour
         }
     }
 
-    public void DrawLine()
+    private void DrawLine()
     {
         if (_lineRenderer != null && _polygonCollider2D != null)
         {
