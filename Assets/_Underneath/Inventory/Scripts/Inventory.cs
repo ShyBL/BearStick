@@ -10,7 +10,7 @@ public class StoredItem
 {
     public Item Details; // The actual data for the item.
     [HideInInspector]
-    public List<ItemVisual> RootVisual = new List<ItemVisual>(); // The visual element for displaying the item in the inventory. Icon-Container -> Icon.
+    public Dictionary<InventoryLayout, ItemVisual> RootVisual = new Dictionary<InventoryLayout, ItemVisual>(); // The visual elements mapped to the layout they are in, either the inventory or shop
     [HideInInspector]
     public Rect OverlapRectangle; // The slots this item takes up in the inventory. Top left slot is (0,0) and so on. Used for checking for open slots.
 }
@@ -145,9 +145,9 @@ public class Inventory : MonoBehaviour
     // and removing it from the stored items list
     public void DeleteItem(StoredItem item)
     {
-        foreach(VisualElement visual in item.RootVisual)
+        foreach(KeyValuePair<InventoryLayout, ItemVisual> visual in item.RootVisual)
             // Remove the visual element from it's parent to get rid of it from the document
-            visual.parent.Clear();
+            visual.Value.parent.Clear();
         // Then remove it from the stored item list
         StoredItems.Remove(item);
         RecalculateWeight();
@@ -158,9 +158,9 @@ public class Inventory : MonoBehaviour
     {
         // For each item in the list remove its visual element from it's parent
         foreach (StoredItem item in StoredItems)
-            foreach (VisualElement visual in item.RootVisual)
+            foreach (KeyValuePair<InventoryLayout, ItemVisual> visual in item.RootVisual)
                 // Remove the visual element from it's parent to get rid of it from the document
-                visual.parent.Clear();
+                visual.Value.parent.Clear();
         // Once we finish clearing out the visual elements we can clear the list
         StoredItems.Clear();
         RecalculateWeight();
@@ -212,7 +212,7 @@ public class Inventory : MonoBehaviour
                 {
                     ItemVisual newVisual = new ItemVisual(newItem, layout.GetRoot());
                     // Create the new item visual, which is the visual element that appears in the inventory
-                    newItem.RootVisual.Add(newVisual);
+                    newItem.RootVisual.Add(layout, newVisual);
                     layout.AddItem(newVisual, x, y);
                 }
                 

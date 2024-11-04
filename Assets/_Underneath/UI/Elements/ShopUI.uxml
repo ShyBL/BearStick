@@ -1,36 +1,27 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="InventoryBase" src="project://database/Assets/Stephen/InventoryBase.uxml?fileID=9197481963319205126&amp;guid=9357aec782f13dc4f81ac7437a02adb6&amp;type=3#InventoryBase" />
-    <ui:Template name="DialogueBase" src="project://database/Assets/Stephen/DialogueBase.uxml?fileID=9197481963319205126&amp;guid=116b75c2cd7d1f242af2499502cf7ef4&amp;type=3#DialogueBase" />
+    <ui:Template name="InventoryBase" src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/InventoryBase.uxml?fileID=9197481963319205126&amp;guid=9357aec782f13dc4f81ac7437a02adb6&amp;type=3#InventoryBase" />
+    <ui:Template name="DialogueBase" src="project://database/Assets/_Underneath/UI/Elements/DialogueBase.uxml?fileID=9197481963319205126&amp;guid=116b75c2cd7d1f242af2499502cf7ef4&amp;type=3#DialogueBase" />
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/BaseUIStyle.uss?fileID=7433441132597879392&amp;guid=302a0e2215d761242893af0356419587&amp;type=3#BaseUIStyle" />
-    <Style src="project://database/Assets/Stephen/ShopStyle.uss?fileID=7433441132597879392&amp;guid=056545fcb0595e34bb968712eb1cd4ad&amp;type=3#ShopStyle" />
+    <Style src="project://database/Assets/_Underneath/UI/Style%20Sheets/ShopStyle.uss?fileID=7433441132597879392&amp;guid=056545fcb0595e34bb968712eb1cd4ad&amp;type=3#ShopStyle" />
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/InventoryStyle.uss?fileID=7433441132597879392&amp;guid=d73c7c6713ca5fb48aa9f2e6da70bb4e&amp;type=3#InventoryStyle" />
-    <ui:VisualElement name="Container" class="container" style="flex-grow: 1; flex-direction: row; background-image: url(&quot;project://database/Assets/Stephen/Shop_interior_wip_03.png?fileID=21300000&amp;guid=6abd6b7b206a0b445af2239cbc7711df&amp;type=3#Shop_interior_wip_03&quot;); padding-left: 1.5%; padding-top: 5%; padding-right: 3%; padding-bottom: 0; justify-content: space-between;">
+    <ui:VisualElement name="Container" class="container" style="flex-grow: 1; flex-direction: row; background-image: url(&quot;project://database/Assets/_Underneath/UI/Sprites/Shop_interior_wip_03.png?fileID=21300000&amp;guid=6abd6b7b206a0b445af2239cbc7711df&amp;type=3#Shop_interior_wip_03&quot;); padding-left: 1.5%; padding-top: 5%; padding-right: 3%; padding-bottom: 0; justify-content: space-between;">
         <ui:VisualElement style="width: 33%; flex-direction: column; margin-bottom: 2%;">
             <ui:Instance template="InventoryBase" name="InventoryBase" style="height: 75%; align-self: center; width: 100%; flex-direction: column; margin-top: 8%;" />
         </ui:VisualElement>
         <ui:VisualElement style="width: 40%;">
             <ui:Instance template="DialogueBase" name="DialogueBase" style="height: 19.5%; font-size: 28px; justify-content: flex-end; padding-top: 40px; padding-bottom: 10px; width: 100%; padding-right: 15px; padding-left: 10px;" />
             <ui:VisualElement name="VisualElement" style="overflow: hidden; height: 38.7%;">
-                <ui:VisualElement name="Shopkeeper" style="background-image: url(&quot;project://database/Assets/Stephen/Artyom.png?fileID=21300000&amp;guid=f874b0f984ee586499d9096f9675327a&amp;type=3#Artyom&quot;); -unity-background-scale-mode: scale-to-fit; flex-grow: 1; scale: 2 2; top: 50%;" />
+                <ui:VisualElement name="Shopkeeper" style="background-image: url(&quot;project://database/Assets/_Underneath/UI/Sprites/Artyom.png?fileID=21300000&amp;guid=f874b0f984ee586499d9096f9675327a&amp;type=3#Artyom&quot;); -unity-background-scale-mode: scale-to-fit; flex-grow: 1; scale: 2 2; top: 50%;" />
             </ui:VisualElement>
             <ui:VisualElement name="Counter" style="height: 22%; align-self: flex-end; flex-wrap: wrap; padding-left: 8.5%; flex-direction: row; justify-content: space-between; width: 100%; align-items: stretch; padding-right: 2.5%;">
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
-                <ui:VisualElement name="Slot" class="slot-counter slot" />
+                <ui:VisualElement name="DragArea" style="flex-grow: 1; background-color: rgba(149, 84, 0, 0.47); margin-top: 15px; margin-right: 15px; margin-bottom: 15px; margin-left: 15px; justify-content: center; align-items: center; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; visibility: hidden;">
+                    <ui:Label tabindex="-1" text="Drag Here" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="text" style="font-size: 50px; -unity-font-style: normal; -unity-font: url(&quot;project://database/Assets/_Underneath/UI/eraser.dust.ttf?fileID=12800000&amp;guid=b3dc55facd0a279468a8b82953b055a9&amp;type=3#eraser.dust&quot;);" />
+                </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Buttons" style="height: 20%; flex-direction: row; justify-content: space-around; width: 100%; align-self: center; padding-top: 10%; padding-bottom: 5%; padding-left: 6%;">
-                <CustomButton Min-Random-Rotation="1" Max-Random-Rotation="3" Text="Sell All" name="SellAll" class="button element-background" style="width: 30%; font-size: 28px;" />
-                <CustomButton Min-Random-Rotation="1" Max-Random-Rotation="3" Text="Talk" name="Talk" Starting-Direction="-1" class="button element-background" style="width: 30%; font-size: 28px;" />
-                <CustomButton Min-Random-Rotation="1" Max-Random-Rotation="3" Text="Exit" name="Exit" Starting-Direction="1" class="button element-background" style="width: 30%; font-size: 28px;" />
+                <CustomButton Min-Random-Rotation="1" Max-Random-Rotation="3" Text="Sell All" name="SellAll" class="button element-background text" style="font-size: 28px;" />
+                <CustomButton Min-Random-Rotation="1" Max-Random-Rotation="3" Text="Talk" name="Talk" Starting-Direction="-1" class="button element-background text" style="font-size: 28px;" />
+                <CustomButton Min-Random-Rotation="1" Max-Random-Rotation="3" Text="Exit" name="Exit" Starting-Direction="1" class="button element-background text" style="font-size: 28px;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Shelf" style="flex-grow: 0; width: 30.5%; height: 100%; padding-top: 5.7%; padding-bottom: 8%; flex-wrap: wrap; flex-direction: row; padding-left: 1.2%; padding-right: 1.2%; justify-content: space-around; align-items: flex-end;">

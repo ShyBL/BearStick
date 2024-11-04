@@ -35,6 +35,9 @@
     -unity-background-scale-mode: scale-to-fit;
     position: absolute;
     background-color: rgb(202, 202, 202);
+    transition-property: translate;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
 }
 
 .tooltip {

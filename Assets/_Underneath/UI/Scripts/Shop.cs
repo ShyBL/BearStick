@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using FMOD.Studio;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.Layouts;
 using UnityEngine.UIElements;
 
 public class Shop : OurMonoBehaviour
@@ -15,6 +18,8 @@ public class Shop : OurMonoBehaviour
     Button m_TalkButton;
     Button m_ExitButton;
     Dialogue m_Dialogue;
+    VisualElement m_DragArea;
+    InventoryLayout m_Layout;
 
     void Start()
     {
@@ -23,7 +28,9 @@ public class Shop : OurMonoBehaviour
         m_SellAllButton = m_Root.Q<Button>("SellAll");
         m_TalkButton = m_Root.Q<Button>("Talk");
         m_ExitButton = m_Root.Q<Button>("Exit");
+        m_DragArea = m_Root.Q<VisualElement>("DragArea");
         m_Dialogue = GetComponent<Dialogue>();
+        m_Layout = GetComponent<InventoryLayout>();
 
         m_SellAllButton.RegisterCallback<ClickEvent>(OnSellAllPressed);
         m_TalkButton.RegisterCallback<ClickEvent>(OnTalkButtonPressed);
@@ -34,6 +41,43 @@ public class Shop : OurMonoBehaviour
 
     void OnSellAllPressed(ClickEvent evt)
     {
+        //PlayerData.Instance.DoCache();
+
+        StartCoroutine(SellAnimation());
+    }
+
+    IEnumerator SellAnimation()
+    {
+        for (int i = 0; i < Inventory.Instance.StoredItems.Count; i++)
+        {
+            VisualElement icon = Inventory.Instance.StoredItems[i].RootVisual[m_Layout].Icon;
+            VisualElement slot = Inventory.Instance.StoredItems[i].RootVisual[m_Layout];
+            icon.parent.Clear();
+            m_Root.Add(icon);
+            icon.style.width = slot.resolvedStyle.width;
+            icon.style.height = slot.resolvedStyle.height;
+            icon.transform.position = slot.LocalToWorld(slot.transform.position);
+        }
+
+        yield return 0;
+
+        for (int i = 0; i < Inventory.Instance.StoredItems.Count; i++)
+        {
+            VisualElement icon = Inventory.Instance.StoredItems[i].RootVisual[m_Layout].Icon;
+
+            Vector2 pos = new Vector2(Random.Range(0f, m_DragArea.contentRect.width - icon.contentRect.width), Random.Range(0f, m_DragArea.contentRect.height - icon.contentRect.height));
+            icon.transform.position = m_DragArea.LocalToWorld(pos);
+        }
+
+        yield return new WaitForSeconds(0.7f);
+
+        for (int i = 0; i < Inventory.Instance.StoredItems.Count; i++)
+        {
+            VisualElement icon = Inventory.Instance.StoredItems[i].RootVisual[m_Layout].Icon;
+
+            icon.parent.Remove(icon);
+        }
+
         PlayerData.Instance.DoCache();
     }
 
@@ -78,8 +122,8 @@ public class Shop : OurMonoBehaviour
 
     private void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.N))
-        //    OpenShop();
+        if (Input.GetKeyDown(KeyCode.N))
+            OpenShop();
     }
 }
 

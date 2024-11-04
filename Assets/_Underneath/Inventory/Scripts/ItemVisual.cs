@@ -5,17 +5,17 @@ public partial class ItemVisual : VisualElement
 {
     private StoredItem m_Item;
     private Inventory m_InventoryComp;
-    private VisualElement m_Root;
+    public VisualElement Root;
     private VisualElement m_Inventory;
-    private VisualElement m_Icon;
+    public VisualElement Icon;
     private ItemTooltip m_Tooltip;
     private bool m_Dragging = false;
 
     public ItemVisual(StoredItem item, VisualElement root)
     {
         m_Item = item;
-        m_Root = root;
-        m_Inventory = m_Root.Q<VisualElement>("Inventory");
+        Root = root;
+        m_Inventory = Root.Q<VisualElement>("Inventory");
         m_InventoryComp = Inventory.Instance;
 
         // Name it based on the user friendly name of the item.
@@ -24,7 +24,7 @@ public partial class ItemVisual : VisualElement
         style.visibility = Visibility.Hidden;
 
         // Create the actual icon image child element
-        m_Icon = new VisualElement
+        Icon = new VisualElement
         {
             style = {
                 backgroundImage = m_Item.Details.Icon.texture,
@@ -34,13 +34,13 @@ public partial class ItemVisual : VisualElement
                 height = Length.Percent(100 * item.Details.SlotDimension.Height)
             }
         };
-        Add(m_Icon);
+        Add(Icon);
 
         // Create the tool tip but don't add it for now, only add it when the mouse hovers over the icon.
-        m_Tooltip = new ItemTooltip(m_Item, m_Root, m_Icon);
+        m_Tooltip = new ItemTooltip(m_Item, Root, Icon);
 
         // Add the selectors to the elements created so the correct styles are applied
-        m_Icon.AddToClassList("visual-icon");
+        Icon.AddToClassList("visual-icon");
         AddToClassList("visual-icon-container");
 
         // Register events for pointer to handle tooltip and dragging items.
@@ -55,8 +55,8 @@ public partial class ItemVisual : VisualElement
 
         // Register the mouse move event for dragging, use m_Root so it keeps tracking
         // movement even if cursor manages to get outside the icon.
-        m_Root.RegisterCallback<PointerMoveEvent>(DragItem);
-        m_Root.RegisterCallback<PointerUpEvent>(OnPointerUp);
+        Root.RegisterCallback<PointerMoveEvent>(DragItem);
+        Root.RegisterCallback<PointerUpEvent>(OnPointerUp);
 
         // Set dragging to true
         m_Dragging = true;
@@ -86,15 +86,15 @@ public partial class ItemVisual : VisualElement
     void EndDragging(UnityEngine.Vector2 pos)
     {
         // Unregister the drag event
-        m_Root.UnregisterCallback<PointerMoveEvent>(DragItem);
-        m_Root.UnregisterCallback<PointerUpEvent>(OnPointerUp);
+        Root.UnregisterCallback<PointerMoveEvent>(DragItem);
+        Root.UnregisterCallback<PointerUpEvent>(OnPointerUp);
 
         // Check if the mouse is currently inside the inventory box
         if (m_Inventory.localBound.Contains(m_Inventory.WorldToLocal(pos)))
         {
             // If it is reset the item back to its slot
-            m_Icon.style.left = 0;
-            m_Icon.style.top = 0;
+            Icon.style.left = 0;
+            Icon.style.top = 0;
         }
         // If it's not inside the inventory
         else
@@ -111,7 +111,7 @@ public partial class ItemVisual : VisualElement
     // Function for moving the item icons, use this instead of move element for moving an item icon
     void MoveItem(UnityEngine.Vector2 pos)
     {
-        MoveElement(m_Icon, pos);
+        MoveElement(Icon, pos);
     }
 
     // Moves the tooltip based on the provided position, assumed position is in local space of the root element
