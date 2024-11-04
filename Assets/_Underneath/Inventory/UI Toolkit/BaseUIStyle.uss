@@ -1,0 +1,38 @@
+.container {
+    flex-grow: 1;
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+}
+
+.element-background {
+    background-image: url("project://database/Assets/Stephen/Underneath_UI_BG_Rough.png?fileID=21300000&guid=a87ef6a5d9dd08746bd40277ff09071e&type=3#Underneath_UI_BG_Rough");
+    -unity-background-scale-mode: scale-and-crop;
+    color: rgb(222, 222, 222);
+    -unity-font: url("project://database/Assets/Stephen/eraser.dust.ttf?fileID=12800000&guid=b3dc55facd0a279468a8b82953b055a9&type=3#eraser.dust");
+    -unity-font-definition: initial;
+    -unity-font-style: normal;
+}
+
+.button {
+    border-top-width: 7px;
+    border-right-width: 7px;
+    border-bottom-width: 7px;
+    border-left-width: 7px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    transition-property: rotate, scale;
+    transition-duration: 0.15s, 0.15s;
+    -unity-font-style: bold;
+}
+
+.button:hover {
+    scale: 1.15 1.15;
+}

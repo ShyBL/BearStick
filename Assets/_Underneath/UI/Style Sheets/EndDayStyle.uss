@@ -1,0 +1,11 @@
+.text {
+    flex-direction: row;
+    font-size: 88px;
+    color: rgb(224, 224, 224);
+    -unity-font: url("project://database/Assets/Stephen/eraser.dust.ttf?fileID=12800000&guid=b3dc55facd0a279468a8b82953b055a9&type=3#eraser.dust");
+    -unity-font-definition: initial;
+}
+
+.label-description {
+    width: 68%;
+}

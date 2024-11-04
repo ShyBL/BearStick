@@ -1,0 +1,115 @@
+.slots {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    background-image: url("project://database/Assets/_Underneath/UI/Sprites/Final-InventorySlot.png?fileID=21300000&guid=5020bb5febb973b4ba7f18eab6f9f2a5&type=3#Final-InventorySlot");
+    width: 18%;
+    height: 20%;
+}
+
+.visual-icon-container {
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(183, 183, 183, 0);
+    border-width: 1px;
+    border-color: rgb(75, 75, 75);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.visual-icon {
+    height: 100%;
+    width: 100%;
+    -unity-background-scale-mode: scale-to-fit;
+    position: absolute;
+    background-color: rgb(202, 202, 202);
+}
+
+.tooltip {
+    position: absolute;
+    height: auto;
+    flex-grow: 1;
+    background-color: rgb(0, 0, 0);
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    justify-content: center;
+}
+
+.tooltip-title {
+    color: rgb(255, 255, 255);
+    font-size: 46px;
+    -unity-font-style: bold;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
+    -unity-text-align: upper-left;
+    margin-top: -10px;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: -1px;
+}
+
+.tooltip-text {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    flex-grow: 1;
+}
+
+.tooltip-desc {
+    margin-top: 4px;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    white-space: normal;
+}
+
+.tooltip-horizontal {
+    flex-direction: row;
+}
+
+.pocket-item {
+    height: 35%;
+    align-self: center;
+    flex-direction: column;
+    width: 25%;
+    justify-content: flex-start;
+    bottom: 25%;
+}
+
+.pocket {
+    bottom: -135%;
+    width: 125%;
+    height: 180%;
+    position: absolute;
+    align-self: center;
+    background-image: url("project://database/Assets/_Underneath/UI/Sprites/pocketFlat.png?fileID=21300000&guid=750918a3ef329374680c3884bc9b94e2&type=3#pocketFlat");
+}
