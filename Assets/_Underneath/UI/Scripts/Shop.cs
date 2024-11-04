@@ -20,6 +20,7 @@ public class Shop : OurMonoBehaviour
     Dialogue m_Dialogue;
     VisualElement m_DragArea;
     InventoryLayout m_Layout;
+    bool m_SellingAll = false;
 
     void Start()
     {
@@ -41,13 +42,14 @@ public class Shop : OurMonoBehaviour
 
     void OnSellAllPressed(ClickEvent evt)
     {
-        //PlayerData.Instance.DoCache();
-
-        StartCoroutine(SellAnimation());
+        if(!m_SellingAll)
+            StartCoroutine(SellAnimation());
     }
 
     IEnumerator SellAnimation()
     {
+        m_SellingAll = true;
+
         for (int i = 0; i < Inventory.Instance.StoredItems.Count; i++)
         {
             VisualElement icon = Inventory.Instance.StoredItems[i].RootVisual[m_Layout].Icon;
@@ -79,6 +81,7 @@ public class Shop : OurMonoBehaviour
         }
 
         PlayerData.Instance.DoCache();
+        m_SellingAll = false;
     }
 
     void OnTalkButtonPressed(ClickEvent evt) 
@@ -122,8 +125,8 @@ public class Shop : OurMonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N))
-            OpenShop();
+        //if (Input.GetKeyDown(KeyCode.N))
+        //    OpenShop();
     }
 }
 
