@@ -75,11 +75,11 @@ public class Player :  OurMonoBehaviour
         }*/
         MovementHandler();
 
-        if (rb.linearVelocity.x > 0)
+        if (rb.velocity.x > 0)
         {
             wCheck.localPosition = new Vector3(1.5f, 0f, 0f);
         }
-        else if (rb.linearVelocity.x < 0)
+        else if (rb.velocity.x < 0)
         {
             wCheck.localPosition = new Vector3(-1.5f, 0f, 0f);
         }
@@ -164,14 +164,14 @@ public class Player :  OurMonoBehaviour
         {
             Debug.Log("yes air");
             isWallSliding = true;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlideSpeed, float.MaxValue));
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
             playerVisualizer.PlayAnimation("slide_state");
         }
         else if (playerStateMachine.currentState == playerStateMachine.JumpState && (isWalled() && moveInputVector.x != 0))
         {
             Debug.Log("yes jump");
             isWallSliding = true;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlideSpeed, float.MaxValue));
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
         }
         else
         {
