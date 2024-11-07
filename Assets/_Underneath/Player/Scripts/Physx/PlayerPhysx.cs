@@ -37,7 +37,7 @@ public class PlayerPhysx : MonoBehaviour
     }
     public void HandleMovement(Vector3 movement, float speed)
     {
-        rb.velocity = new Vector3(movement.x * speed, rb.velocity.y,movement.z * speed);
+        rb.linearVelocity = new Vector3(movement.x * speed, rb.linearVelocity.y,movement.z * speed);
     }
     
     public void EnableGravity()
@@ -47,16 +47,16 @@ public class PlayerPhysx : MonoBehaviour
     
     public void DisableGravity()
     {
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 0f;
     }
     
-    public Vector3 CurrentVelocity() => new Vector3(rb.velocity.x, rb.velocity.y);
-    public void SetVelocity(float vX, float vY) => rb.velocity = new Vector2(vX, vY);
+    public Vector3 CurrentVelocity() => new Vector3(rb.linearVelocity.x, rb.linearVelocity.y);
+    public void SetVelocity(float vX, float vY) => rb.linearVelocity = new Vector2(vX, vY);
     
     public void Jump(Vector3 jumpVector, float airVelocity, float jumpForce)
     {
-        rb.velocity = new Vector3(jumpVector.x * airVelocity, jumpForce,jumpVector.z * airVelocity);
+        rb.linearVelocity = new Vector3(jumpVector.x * airVelocity, jumpForce,jumpVector.z * airVelocity);
         bIsJumping = true;
     }
     
