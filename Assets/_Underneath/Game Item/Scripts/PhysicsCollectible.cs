@@ -25,7 +25,7 @@ public class PhysicsCollectible : MonoBehaviour
         
         Vector2 launchDirection = new Vector2(randomX, randomY).normalized;
         
-        rigidBody.velocity = launchDirection * launchForce;
+        rigidBody.linearVelocity = launchDirection * launchForce;
     }
 
     public void SetCollectable(Item inputCollectable)
