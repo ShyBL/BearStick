@@ -20,8 +20,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Underneath/Tests/LevelTests/FullTestScene.unity
     guid: 4ac8465c0c0675945b4aab024dc215d7
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Underneath/_Levels/newLevel.unity
     guid: b8620a87f57cf4940b422434f99d6931
+  - enabled: 1
+    path: Assets/_Underneath/Tests/Behavior Tests/newLevel 1.unity
+    guid: 5e4f2bfb6ddfa6c46bbec710bf895b76
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3221eda8f3ca5a44da23c02a082a4a72, type: 2}
