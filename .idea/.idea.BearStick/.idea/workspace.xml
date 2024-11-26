@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.lastScene" beforeDir="false" afterPath="$PROJECT_DIR$/.lastScene" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NPCDialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shy/Scripts/NPCDialogue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NewStash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shy/Scripts/NewStash.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/newLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/newLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +148,7 @@
       <workItem from="1731279315053" duration="1134000" />
       <workItem from="1731753445021" duration="2168000" />
       <workItem from="1732210287195" duration="693000" />
+      <workItem from="1732543435545" duration="3101000" />
     </task>
     <servers />
   </component>
