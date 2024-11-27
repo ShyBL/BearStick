@@ -11,7 +11,7 @@ public class NewStash : OurMonoBehaviour
     [SerializeField] private Transform OutPoint;
     public bool opened = false;
     
-    private void DoStash()
+    public void DoStash()
     {
         if (opened) return;
         

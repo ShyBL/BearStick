@@ -14,15 +14,25 @@ public class NPCDialogue : OurMonoBehaviour
         dialogue = FindFirstObjectByType<Dialogue>();
     }
 
+    // TODO Temp for tutorial demo
     public void DoDialogue()
     {
-        if (dialogueLines.Count == 0) return;
-
-        foreach (var line in dialogueLines.Where(line => line != string.Empty))
+        if (TutorialManager.Instance.startLevel == false)
         {
-            dialogue.StartDialogue(line,talkingSprite);
+            TutorialManager.Instance.startLevel = true; 
         }
+        
     }
+    
+    // public void DoDialogue()
+    // {
+    //     if (dialogueLines.Count == 0) return;
+    //
+    //     foreach (var line in dialogueLines.Where(line => line != string.Empty))
+    //     {
+    //         dialogue.StartDialogue(line,talkingSprite);
+    //     }
+    // }
     
     public void DoGossip()
     {

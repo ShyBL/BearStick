@@ -13,6 +13,8 @@ public class OpeningCutscene : OurMonoBehaviour
     [SerializeField] private float normalDelay;
     [SerializeField] private float extraDelay;
     [SerializeField] private float longDelay;
+    [SerializeField] private float musicDelay;
+
     [SerializeField] private float fadeDuration;
     
     private UIDocument m_Document;
@@ -44,47 +46,49 @@ public class OpeningCutscene : OurMonoBehaviour
         SetVisualElementAlpha(m_Image,0f);
         
         // Temporary music !!!
-        GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.ShopTheme, transform.position);
+        //GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.ShopTheme, transform.position);
         RunCutscene();
     }
 
     public async Task RunCutscene()
     {
+        await Task.Delay(TimeSpan.FromSeconds(musicDelay));
+        
         await StartSlide(normalDelay, extraDelay, longDelay, String.Empty,". . .",String.Empty);
         
-        await Task.Delay(TimeSpan.FromSeconds(normalDelay));
+        await Task.Delay(TimeSpan.FromSeconds(longDelay));
         
         await StartSlide(normalDelay, extraDelay, longDelay, 
             "To Luca, Rowan, and Asher", 
             "How is everything at Mrs. Walker’s house?", 
             "I hope you’ve made some friends with other kids there");
         
-        await Task.Delay(TimeSpan.FromSeconds(normalDelay));
+        await Task.Delay(TimeSpan.FromSeconds(longDelay));
 
         await StartSlide(normalDelay, extraDelay, longDelay, 
             "I can only imagine how big you’re getting", 
             "and I know you have a lot of questions", 
             "and I’ll answer all of them when I’m back.");
         
-        await Task.Delay(TimeSpan.FromSeconds(normalDelay));
+        await Task.Delay(TimeSpan.FromSeconds(longDelay));
 
         await StartSlide(normalDelay, extraDelay, longDelay, 
             "Sometimes in life, we have to make hard decisions in order to do what’s right", 
             "and nothing was harder for me then having to leave the three of you.");
         
-        await Task.Delay(TimeSpan.FromSeconds(normalDelay));
+        await Task.Delay(TimeSpan.FromSeconds(longDelay));
 
         await StartSlide(normalDelay, extraDelay, longDelay, 
             "I hope you understand that this is what’s best for our family", 
             "For you three", "I need you to be brave for just a little bit longer.");
         
-        await Task.Delay(TimeSpan.FromSeconds(normalDelay));
+        await Task.Delay(TimeSpan.FromSeconds(longDelay));
 
         await StartSlide(normalDelay, extraDelay, longDelay, 
             "I’ll see you soon, my loves", String.Empty, "-Mom", true);
         
-        await Task.Delay(TimeSpan.FromSeconds(normalDelay));
-
+       // await Task.Delay(TimeSpan.FromSeconds(longDelay));
+        
         LoadMainMenu();
     }
 
@@ -201,7 +205,7 @@ public class OpeningCutscene : OurMonoBehaviour
             float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
             label.style.opacity = newAlpha;
             elapsedTime += Time.deltaTime;
-            await Task.Delay(0); 
+            await Task.Delay(TimeSpan.FromSeconds(0.1f)); 
         }
         label.style.opacity = endAlpha; 
     }
