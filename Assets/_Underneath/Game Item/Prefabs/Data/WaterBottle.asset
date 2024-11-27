@@ -16,7 +16,8 @@ MonoBehaviour:
   FriendlyName: Water Bottle
   Description: Perhaps the shop would have some use for this?
   SellPrice: 1
-  Icon: {fileID: 1351142319, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
+  Icon: {fileID: 21300000, guid: 682240ebaca8fbf47a773cf910b951fa, type: 3}
+  Collectable: {fileID: 1351142319, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:
     Height: 1
     Width: 1

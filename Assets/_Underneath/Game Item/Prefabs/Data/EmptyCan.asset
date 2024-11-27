@@ -16,7 +16,8 @@ MonoBehaviour:
   FriendlyName: Empty Can
   Description: '"Sly Dog" Soup! Delicious, if only it wasn''''t empty...'
   SellPrice: 2
-  Icon: {fileID: 919286881, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
+  Icon: {fileID: 21300000, guid: 75bd75e89df8b0e4f96bb6ae105194dd, type: 3}
+  Collectable: {fileID: 919286881, guid: 8fd98b518847b3543b5479a30b470387, type: 3}
   SlotDimension:
     Height: 1
     Width: 1

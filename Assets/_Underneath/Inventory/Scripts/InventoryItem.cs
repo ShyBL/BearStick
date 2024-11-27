@@ -10,6 +10,7 @@ public class Item : ScriptableObject
     public string Description;
     public int SellPrice;
     public Sprite Icon;
+    public Sprite Collectable;
     public Dimensions SlotDimension;
     public float Weight;
 }
