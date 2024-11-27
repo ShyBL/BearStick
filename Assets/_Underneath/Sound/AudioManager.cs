@@ -6,6 +6,7 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
+using System.Threading.Tasks;
 
 public enum ShopType
 {
@@ -39,7 +40,8 @@ public class AudioManager : MonoBehaviour
     
     //public static AudioManager Instance { get; private set; }
     public ShopType themeType;
-    private void Awake()
+    
+    private async void Awake()
     {
         // if (Instance != null)
         // {
@@ -50,7 +52,15 @@ public class AudioManager : MonoBehaviour
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
         
-        InitEventInstances();
+        
+        await Task.Run(async () =>
+        {
+            while (!RuntimeManager.HaveAllBanksLoaded)
+            {
+                await Task.Yield();
+            } 
+            InitEventInstances();
+        });
     }
     
     private void InitEventInstances()
