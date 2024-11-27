@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NPCDialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shy/Scripts/NPCDialogue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NewStash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shy/Scripts/NewStash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/OpeningCutscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Scenes/OpeningCutscene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/UI/Scripts/OpeningCutscene.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/newLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/newLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +152,8 @@
       <workItem from="1731753445021" duration="2168000" />
       <workItem from="1732210287195" duration="693000" />
       <workItem from="1732543435545" duration="3101000" />
+      <workItem from="1732680108526" duration="3373000" />
+      <workItem from="1732687356614" duration="339000" />
     </task>
     <servers />
   </component>
