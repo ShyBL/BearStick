@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
-using System.Threading.Tasks;
 
 public enum ShopType
 {
@@ -39,20 +39,34 @@ public class AudioManager : MonoBehaviour
     public EventInstance DialogueEvent { get; private set; }
     
     //public static AudioManager Instance { get; private set; }
-    public ShopType themeType;
     
-    private async void Awake()
+    private void Awake()
     {
-        // if (Instance != null)
-        // {
-        //     Debug.LogError("Found more than one Audio Manager in the scene.");
-        // }
-        // Instance = this;
-
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
-        
-        
+
+#if UNITY_EDITOR
+        InitEventInstances();
+#else
+#if UNITY_WEBGL
+        StartCoroutine(WaitForBanksToLoadCoroutine());
+#else
+        InitEventInstancesAsync();
+#endif
+#endif
+    }
+
+    private IEnumerator WaitForBanksToLoadCoroutine()
+    {
+        while (!RuntimeManager.HaveAllBanksLoaded)
+        {
+            yield return null;
+        }
+        InitEventInstances();
+    }
+    
+    private async void InitEventInstancesAsync()
+    {
         await Task.Run(async () =>
         {
             while (!RuntimeManager.HaveAllBanksLoaded)
@@ -67,18 +81,7 @@ public class AudioManager : MonoBehaviour
     {
         // Music Event Instances
         GameplayThemeEvent = CreateInstance(FMODEvents.Instance.GameplayTheme);
-
-        switch (themeType)
-        {
-            case ShopType.Theme1:
-                ShopThemeEvent = CreateInstance(FMODEvents.Instance.ShopTheme);
-                break;
-            case ShopType.Theme2:
-                TempShopThemeEvent = CreateInstance(FMODEvents.Instance.TempShopTheme);
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
+        ShopThemeEvent = CreateInstance(FMODEvents.Instance.ShopTheme);
         
         // Character Event Instances
         FootstepsEvent = CreateInstance(FMODEvents.Instance.Footsteps);
@@ -161,15 +164,12 @@ public class AudioManager : MonoBehaviour
             fmodEvent.start();
         }
     }
-    
 
-    
     public void StopEvent(EventInstance fmodEvent)
     {
         fmodEvent.stop(STOP_MODE.ALLOWFADEOUT);
         fmodEvent.release();
     }
-    
     
     private void CleanUp()
     {
