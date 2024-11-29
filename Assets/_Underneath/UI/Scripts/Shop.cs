@@ -21,7 +21,9 @@ public class Shop : OurMonoBehaviour
     VisualElement m_DragArea;
     InventoryLayout m_Layout;
     bool m_SellingAll = false;
-
+    private AudioManager audio;
+    private GameObject playerObj;
+    
     void Start()
     {
         doc = GetComponent<UIDocument>();
@@ -38,6 +40,9 @@ public class Shop : OurMonoBehaviour
         m_ExitButton.RegisterCallback<ClickEvent>(OnExitButtonPressed);
 
         m_Root.style.display = DisplayStyle.None;
+        
+        audio = GameManager.AudioManager;
+        playerObj = FindFirstObjectByType<Player>().gameObject;
     }
 
     void OnSellAllPressed(ClickEvent evt)
@@ -92,35 +97,18 @@ public class Shop : OurMonoBehaviour
     void OnExitButtonPressed(ClickEvent evt)
     {
         m_Root.style.display = DisplayStyle.None;
-        var audio = GameManager.AudioManager;
         
-        switch (audio.themeType)
-        {
-            case ShopType.Theme1:
-                audio.StopEvent(audio.ShopThemeEvent);
-                break;
-            case ShopType.Theme2:
-                audio.StopEvent(audio.TempShopThemeEvent);
-                break;
-        }
-
+        audio.StopEvent(audio.ShopThemeEvent);
+        
+        audio.PlayEvent(audio.GameplayThemeEvent,playerObj.transform.position);
+        
         Player.Instance.EnableMovement();
     }
 
     public void OpenShop()
     {
         m_Root.style.display = DisplayStyle.Flex;
-        var audio = GameManager.AudioManager;
-        switch (audio.themeType)
-        {
-            case ShopType.Theme1:
-                audio.PlayEvent(audio.ShopThemeEvent,audio.gameObject.transform.position);
-                break;
-            case ShopType.Theme2:
-                audio.PlayEvent(audio.TempShopThemeEvent,audio.gameObject.transform.position);
-                break;
-        }
-
+        audio.PlayEvent(audio.ShopThemeEvent,playerObj.transform.position);
     }
 
     private void Update()

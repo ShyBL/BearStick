@@ -38,17 +38,9 @@ public class AudioManager : MonoBehaviour
     public EventInstance CrateDragEvent { get; private set; }
     public EventInstance DialogueEvent { get; private set; }
     
-    //public static AudioManager Instance { get; private set; }
-    public ShopType themeType;
     
     private async void Awake()
     {
-        // if (Instance != null)
-        // {
-        //     Debug.LogError("Found more than one Audio Manager in the scene.");
-        // }
-        // Instance = this;
-
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
         
@@ -67,18 +59,7 @@ public class AudioManager : MonoBehaviour
     {
         // Music Event Instances
         GameplayThemeEvent = CreateInstance(FMODEvents.Instance.GameplayTheme);
-
-        switch (themeType)
-        {
-            case ShopType.Theme1:
-                ShopThemeEvent = CreateInstance(FMODEvents.Instance.ShopTheme);
-                break;
-            case ShopType.Theme2:
-                TempShopThemeEvent = CreateInstance(FMODEvents.Instance.TempShopTheme);
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
+        ShopThemeEvent = CreateInstance(FMODEvents.Instance.ShopTheme);
         
         // Character Event Instances
         FootstepsEvent = CreateInstance(FMODEvents.Instance.Footsteps);

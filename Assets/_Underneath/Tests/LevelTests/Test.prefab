@@ -586,6 +586,10 @@ PrefabInstance:
       propertyPath: m_MaxWeight
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2799984485898357896, guid: ad31fdacfa97a1546a062b80da6ec6ab, type: 3}
+      propertyPath: InventoryLayouts.Array.data[1]
+      value: 
+      objectReference: {fileID: 1933547120605027202}
     - target: {fileID: 4129611152797826994, guid: ad31fdacfa97a1546a062b80da6ec6ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.7986388
@@ -796,6 +800,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfad793321158bc45a3d955017b7c45f, type: 3}
+--- !u!114 &1933547120605027202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3738472845685172864, guid: dfad793321158bc45a3d955017b7c45f, type: 3}
+  m_PrefabInstance: {fileID: 2969261809655509250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a7494ad708f77428982243307c40d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3709631961414210789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1895924729557149159, guid: dfad793321158bc45a3d955017b7c45f, type: 3}

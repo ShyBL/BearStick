@@ -128,7 +128,7 @@ public class PlayerInformation
         m_DayCount = PlayerData.Instance.GetDayCount();
         m_CurrentExpenses = PlayerData.Instance.GetExpenses();
         playerLocation = PlayerData.Instance.v_SpawnLocation;
-        inventoryRef = Player.Instance.inventory;
+        inventoryRef = Inventory.Instance;
         inventoryItemRef = Inventory.Instance.StoredItems;
     }
 
@@ -139,7 +139,7 @@ public class PlayerInformation
         PlayerData.Instance.SetDayCount(m_DayCount);
         PlayerData.Instance.SetExpenses(m_CurrentExpenses);
         PlayerData.Instance.v_SpawnLocation = playerLocation;
-        Player.Instance.inventory = inventoryRef;
+        Inventory.Instance = inventoryRef;
         Inventory.Instance.StoredItems = inventoryItemRef;
     }
 }

@@ -4,19 +4,8 @@ using UnityEngine;
 
 public class TutorialLevelTrigger : MonoBehaviour
 {
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {   
-    //     if (collision.TryGetComponent(out Player player))
-    //     {
-    //         if (PlayerData.Instance.GetDayCount() != 0)
-    //         {
-    //             CurfewTimer.Instance.bPlayerHasLeftBase = false;
-    //             EndOfDay.Instance.EndDay();
-    //             Debug.Log("Inside safe zone, auto end of day ");
-    //         }
-    //         
-    //     }
-    // }
+    [SerializeField] private GameObject EndDayTrigger;
+    
      private void OnTriggerExit2D(Collider2D collision)
     {   
         if (collision.TryGetComponent(out Player player))
@@ -27,6 +16,9 @@ public class TutorialLevelTrigger : MonoBehaviour
             CurfewTimer.Instance.StartTimer();
 
             Debug.Log("Timer Started");
+            
+            EndDayTrigger.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 }
