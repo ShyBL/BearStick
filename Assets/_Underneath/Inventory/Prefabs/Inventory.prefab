@@ -71,6 +71,7 @@ MonoBehaviour:
     Width: 5
   InventoryLayouts:
   - {fileID: 673858611976983996}
+  - {fileID: 0}
   m_MaxWeight: 0
   m_Hud: {fileID: 0}
 --- !u!114 &-8370302149847160561

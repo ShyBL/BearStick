@@ -61,10 +61,15 @@ MonoBehaviour:
   jumpForce: 7
   wallJumpForce: {x: 3.5, y: 6}
   wallJumpCounter: 0
-  wallSlideSpeed: 8
+  wallSlideSpeed: 0.6
   canMove: 1
   isSprinting: 0
   moveInputVector: {x: 0, y: 0, z: 0}
+  rb: {fileID: 7365951421248579780}
+  wCheck: {fileID: 0}
+  wLayer:
+    serializedVersion: 2
+    m_Bits: 64
   inventory: {fileID: 0}
   facingDirection: 0
 --- !u!50 &7365951421248579780

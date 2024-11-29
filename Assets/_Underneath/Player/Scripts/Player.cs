@@ -7,8 +7,8 @@ public class Player :  OurMonoBehaviour
     [SerializeField] public PlayerInput playerInput;
     [SerializeField] public PlayerPhysx playerPhysx;
     [SerializeField] public PlayerVisualizer playerVisualizer;
-    public PlayerStateMachine playerStateMachine;
-    public AudioManager AudioManager => GameManager.AudioManager;
+    
+
     
     [Header(" Movement ")]
     [SerializeField] private float moveSpeed = 4.5f;
@@ -26,9 +26,8 @@ public class Player :  OurMonoBehaviour
     private bool isWallSliding = false;
     [SerializeField] private Transform wCheck;
     [SerializeField] private LayerMask wLayer;
-    
-    [Header(" Inventory ")]
-    [SerializeField] public Inventory inventory;
+    public AudioManager AudioManager => GameManager.AudioManager;
+    [HideInInspector] public PlayerStateMachine playerStateMachine;
     private void Awake()
     {
         if (Instance == null)
