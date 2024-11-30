@@ -10,7 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6370102076151195315, guid: 0faf938c34cd05d44959f003cc576d12, type: 3}
       propertyPath: m_Name
-      value: NPC Variant
+      value: BackgroundNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6413120630356141933, guid: 0faf938c34cd05d44959f003cc576d12, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6413120630356141933, guid: 0faf938c34cd05d44959f003cc576d12, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6413120630356141933, guid: 0faf938c34cd05d44959f003cc576d12, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1041005661
       objectReference: {fileID: 0}
     - target: {fileID: 8249758781626556114, guid: 0faf938c34cd05d44959f003cc576d12, type: 3}
       propertyPath: m_LocalPosition.x
@@ -369,6 +381,14 @@ PrefabInstance:
     - target: {fileID: 8472958353733776408, guid: 0faf938c34cd05d44959f003cc576d12, type: 3}
       propertyPath: managedReferences[8093067684943233034].m_Value.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949880488323805225, guid: 0faf938c34cd05d44959f003cc576d12, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949880488323805225, guid: 0faf938c34cd05d44959f003cc576d12, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
