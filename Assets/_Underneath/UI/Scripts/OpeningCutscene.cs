@@ -83,12 +83,19 @@ public class OpeningCutscene : OurMonoBehaviour
         yield return StartSlideCoroutine(normalDelay, extraDelay, longDelay, 
             "I’ll see you soon, my loves", String.Empty, "-Mom", true); 
         
-        LoadMainMenu();
+        StartCoroutine(LoadMainMenu());
     } 
     
-    private void LoadMainMenu()
+    private IEnumerator LoadMainMenu()
     { 
-        SceneManager.LoadScene(2);
+        var asyncLoad = SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
+        
+        while (!asyncLoad.isDone)
+        {
+            // run loading animation
+            yield return null;
+        }
+        SceneManager.UnloadSceneAsync(1);
     }
 
     private IEnumerator StartSlideCoroutine(float delay1Line, float delay2Line, float delay3Line, string line1 = null, string line2 = null, string line3 = null, bool photo = false)
