@@ -252,6 +252,19 @@ MonoBehaviour:
           m_StringArgument: Open
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2306680534107263921}
+        m_TargetAssemblyTypeName: DrawLineRenderer, Assembly-CSharp
+        m_MethodName: EndFocus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionTriggered: 0
 --- !u!114 &3441067364495566839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +287,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d71f6cfef09cadb4cbbd8bcf141b98e8, type: 2}
   physicsCollectable: {fileID: 2485555635434482877, guid: 4460af2fd4760ec419f4ff424cf9383a, type: 3}
   OutPoint: {fileID: 325444331773366692}
-  opened: 0
 --- !u!1 &6473964830178671762
 GameObject:
   m_ObjectHideFlags: 0
