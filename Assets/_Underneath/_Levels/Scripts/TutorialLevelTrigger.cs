@@ -11,8 +11,6 @@ public class TutorialLevelTrigger : MonoBehaviour
         if (collision.TryGetComponent(out Player player))
         {
             CurfewTimer.Instance.bPlayerHasLeftBase = true;
-            
-            PlayerData.Instance.IncrementDayCount();
             CurfewTimer.Instance.StartTimer();
 
             Debug.Log("Timer Started");
