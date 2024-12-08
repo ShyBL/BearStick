@@ -107,11 +107,12 @@ public class PlayerData : MonoBehaviour
         return m_NewMoney;
     }
 
-    public void DoCache()
+    public void ShopPayoff()
     {
         IncreaseMoney(Inventory.Instance.GetInventoryvalue());
         Inventory.Instance.ClearInventory();
         ApplyMoneyChange();
+        SavingAndLoading.Instance.SavePlayerInformation();
     }
 
 }
