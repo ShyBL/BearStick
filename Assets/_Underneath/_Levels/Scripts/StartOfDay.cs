@@ -31,26 +31,26 @@ public class StartOfDay : MonoBehaviour
     private void Start()
     {
         SavingAndLoading.Instance.CheckIfFileExistsOnStart();
-        ResetFadeAnimation();
+        //ResetFadeAnimation();
     }
 
     private void Update()
     {
-        if(direction == 0)
-        {
-            if(alpha >= 1f) //Fully faded out 
-            {
-                alpha = 1f;
-                time = 0f;
-                direction = 1;
-            }
-            else    //Fully faded in
-            {
-                alpha = 0f;
-                time = 1f;
-                direction = 1;
-            }
-        }
+        // if(direction == 0)
+        // {
+        //     if(alpha >= 1f) //Fully faded out 
+        //     {
+        //         alpha = 1f;
+        //         time = 0f;
+        //         direction = 1;
+        //     }
+        //     else    //Fully faded in
+        //     {
+        //         alpha = 0f;
+        //         time = 1f;
+        //         direction = 1;
+        //     }
+        // }
     }
 
     private void ResetFadeAnimation()
@@ -81,22 +81,22 @@ public class StartOfDay : MonoBehaviour
         }
     }
 
-    public void OnGUI()
-    {
-        if (alpha > 0f)
-        {
-            GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), texture);
-        }
-        if (direction != 0) 
-        {
-            time += direction * Time.deltaTime * speedScale;
-            alpha = fadeCurve.Evaluate(time);
-            texture.SetPixel(0, 0, new Color(fadeColor.r, fadeColor.g, fadeColor.b, alpha));
-            texture.Apply();
-            if(alpha <= 0f || alpha >= 1f) 
-            {
-                direction = 0;
-            }
-        }
-    }
+    // public void OnGUI()
+    // {
+    //     if (alpha > 0f)
+    //     {
+    //         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), texture);
+    //     }
+    //     if (direction != 0) 
+    //     {
+    //         time += direction * Time.deltaTime * speedScale;
+    //         alpha = fadeCurve.Evaluate(time);
+    //         texture.SetPixel(0, 0, new Color(fadeColor.r, fadeColor.g, fadeColor.b, alpha));
+    //         texture.Apply();
+    //         if(alpha <= 0f || alpha >= 1f) 
+    //         {
+    //             direction = 0;
+    //         }
+    //     }
+    // }
 }
