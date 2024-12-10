@@ -31,7 +31,13 @@ public class PauseMenu : MonoBehaviour
 
     void ExitButton(ClickEvent evt)
     {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        
         SceneManager.LoadScene("MainMenu");
+       
     }
 
     void ContinueButton(ClickEvent evt)
@@ -51,10 +57,14 @@ public class PauseMenu : MonoBehaviour
             case DisplayStyle.Flex:
                 m_Root.style.display = DisplayStyle.None;
                 CurfewTimer.Instance.ResumeTimer();
+                Time.timeScale = 1;
+                
                 break;
             case DisplayStyle.None:
                 m_Root.style.display = DisplayStyle.Flex;
                 CurfewTimer.Instance.PauseTimer();
+                Time.timeScale = 0;
+                
                 break;
         }
     }

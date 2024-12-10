@@ -39,22 +39,23 @@ public class AudioManager : MonoBehaviour
     public EventInstance DialogueEvent { get; private set; }
     
     
-    private async void Awake()
+    private void Awake()
     {
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
         
-        
-        await Task.Run(async () =>
-        {
-            while (!RuntimeManager.HaveAllBanksLoaded)
-            {
-                await Task.Yield();
-            } 
-            InitEventInstances();
-        });
+        StartCoroutine(WaitForBanksToLoadCoroutine());
     }
-    
+
+    private IEnumerator WaitForBanksToLoadCoroutine()
+    {
+        while (!RuntimeManager.HaveAllBanksLoaded)
+        {
+            yield return null;
+        }
+        InitEventInstances();
+    }
+
     private void InitEventInstances()
     {
         // Music Event Instances
@@ -145,19 +146,33 @@ public class AudioManager : MonoBehaviour
     
 
     
-    public void StopEvent(EventInstance fmodEvent)
+    public void StopAndReleaseEvent(EventInstance fmodEvent)
     {
         fmodEvent.stop(STOP_MODE.ALLOWFADEOUT);
         fmodEvent.release();
     }
+
+    public void StopAndDontReleaseEvent(EventInstance fmodEvent)
+    {
+        fmodEvent.stop(STOP_MODE.ALLOWFADEOUT);
+    }
     
+    public void PauseEvent(EventInstance fmodEvent)
+    {
+        fmodEvent.setPaused(true);
+    }
+    
+    public void UnPauseEvent(EventInstance fmodEvent)
+    {
+        fmodEvent.setPaused(false);
+    }
     
     private void CleanUp()
     {
         // stop and release any created instances
         foreach (EventInstance eventInstance in eventInstances)
         {
-            eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            eventInstance.stop(STOP_MODE.IMMEDIATE);
             eventInstance.release();
         }
         // stop all of the event emitters, because if we don't they may hang around in other scenes

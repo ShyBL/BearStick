@@ -50,7 +50,7 @@ public class Cache : OurMonoBehaviour
             
             Player.Instance.DisableMovement(); // Example of using Player capabilities, make sure the player is not moving while interacting
 
-            PlayerData.Instance.DoCache();
+            PlayerData.Instance.ShopPayoff();
             
             Invoke(nameof(EndDay),_animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
         }

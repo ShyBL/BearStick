@@ -85,7 +85,7 @@ public class Shop : OurMonoBehaviour
             icon.parent.Remove(icon);
         }
 
-        PlayerData.Instance.DoCache();
+        PlayerData.Instance.ShopPayoff();
         m_SellingAll = false;
     }
 
@@ -98,9 +98,9 @@ public class Shop : OurMonoBehaviour
     {
         m_Root.style.display = DisplayStyle.None;
         
-        audio.StopEvent(audio.ShopThemeEvent);
+        audio.StopAndDontReleaseEvent(audio.ShopThemeEvent);
         
-        audio.PlayEvent(audio.GameplayThemeEvent,playerObj.transform.position);
+        audio.UnPauseEvent(audio.GameplayThemeEvent);
         
         Player.Instance.EnableMovement();
     }
@@ -110,11 +110,6 @@ public class Shop : OurMonoBehaviour
         m_Root.style.display = DisplayStyle.Flex;
         audio.PlayEvent(audio.ShopThemeEvent,playerObj.transform.position);
     }
-
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.N))
-        //    OpenShop();
-    }
+    
 }
 
