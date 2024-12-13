@@ -45,8 +45,6 @@ public class OpeningCutscene : OurMonoBehaviour
         m_Image = m_Root.Q<VisualElement>("Photograph");
         SetVisualElementAlpha(m_Image,0f);
         
-        // Temporary music !!!
-        //GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.ShopTheme, transform.position);
         RunCutscene();
     }
 

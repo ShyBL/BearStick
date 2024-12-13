@@ -7,7 +7,6 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Music")]
     [field: SerializeField] public EventReference GameplayTheme { get; private set; }
     [field: SerializeField] public EventReference ShopTheme { get; private set; }
-    [field: SerializeField] public EventReference TempShopTheme { get; private set; } 
 
 
     [field: Header("Player SFX")]
@@ -30,7 +29,6 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Click { get; private set; }
     [field: SerializeField] public EventReference Pause { get; private set; }
     [field: SerializeField] public EventReference UnPause { get; private set; }
-    [field: SerializeField] public EventReference Dialogue { get; private set; }
     
     public static FMODEvents Instance { get; private set; }
     

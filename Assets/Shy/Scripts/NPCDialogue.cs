@@ -21,7 +21,6 @@ public class NPCDialogue : OurMonoBehaviour
         {
             TutorialManager.Instance.startLevel = true; 
         }
-        
     }
     
     // public void DoDialogue()

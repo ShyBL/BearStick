@@ -10,9 +10,11 @@ public class NewStash : OurMonoBehaviour
     [SerializeField] 
     private GameObject physicsCollectable;
     [SerializeField] private Transform OutPoint;
-
+    public bool Opened;
     public void DoStash()
     {
+        if (Opened) return;
+        
         Player.Instance.DisableMovement(); 
 
         foreach (Item collectable in collectableList)
@@ -22,6 +24,7 @@ public class NewStash : OurMonoBehaviour
         }
         
         GetComponentInChildren<LineRenderer>().enabled = false;
+        Opened = true;
         Player.Instance.EnableMovement();
 
     }

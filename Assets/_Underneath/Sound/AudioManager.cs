@@ -43,7 +43,10 @@ public class AudioManager : MonoBehaviour
     {
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
-        
+    }
+
+    private void Start()
+    {
         StartCoroutine(WaitForBanksToLoadCoroutine());
     }
 
