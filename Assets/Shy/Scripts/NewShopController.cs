@@ -3,6 +3,8 @@ public class NewShopController : OurMonoBehaviour
     private Shop shop;
     private AudioManager audio;
 
+    
+    
     private void Start()
     {
         shop = FindFirstObjectByType<Shop>();

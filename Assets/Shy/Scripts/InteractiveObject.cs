@@ -13,15 +13,11 @@ public class InteractiveObject : OurMonoBehaviour
     public UnityEvent OnTriggerExit;
     [SerializeField]
     public UnityEvent OnInteract;
-
-    public bool interactionTriggered;
-
+    
 
     // When the player collides with this object, a boolean is set to signal that the player is in range.
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (interactionTriggered) return;
-        
         if (other.TryGetComponent(out Player player))
         {
             Player = player;
@@ -36,8 +32,6 @@ public class InteractiveObject : OurMonoBehaviour
     // When the player is no longer in contact with the object, the bool is unset.
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (interactionTriggered) return;
-
         if (other.TryGetComponent(out Player player))
         {
             player.playerInput.onInteract -= Interact;
@@ -51,9 +45,6 @@ public class InteractiveObject : OurMonoBehaviour
     private void Interact()
     {
         if(!_inRange) return;
-        if (interactionTriggered) return;
-        
-        interactionTriggered = true;
         OnInteract.Invoke();
     }
     
