@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,34 +22,48 @@ public class OurGameManager : MonoBehaviour
 
     private void Start()
     {
-        var task = InitGameManager();
-        if (task.IsCompleted)
-        {
-            SceneManager.LoadSceneAsync("OpeningCutscene", LoadSceneMode.Additive);
-        }
+#if UNITY_WEBGL
+        StartCoroutine(InitGameManagerCoroutine());
+#else
+            var task = InitGameManagerAsync();
+            if (task.IsCompleted)
+            {
+                SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+            }
+#endif
     }
 
-    private async Task InitGameManager()
-    { 
-        await InitManagers();
+#if UNITY_WEBGL
+    private IEnumerator InitGameManagerCoroutine()
+    {
+        yield return StartCoroutine(InitManagersCoroutine());
+        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
     }
 
-    private Task InitManagers()
+    private IEnumerator InitManagersCoroutine()
     {
         AudioManager = FindFirstObjectByType<AudioManager>();
-        
+        yield return null; // Ensure the coroutine yields at least once
+    }
+#else
+    private async Task InitGameManagerAsync()
+    { 
+        await InitManagersAsync();
+        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+    }
+
+    private Task InitManagersAsync()
+    {
+        AudioManager = FindFirstObjectByType<AudioManager>();
         return Task.CompletedTask;
     }
+#endif
 
     private OpeningCutscene _openingCutscene;
     public AudioManager AudioManager;
     
-    
-    
     public PlayerData PlayerData;
     public SavingAndLoading SavingAndLoading;
-    
-    
     
     public EndOfDay EndOfDay;
     public CurfewTimer CurfewTimer;
