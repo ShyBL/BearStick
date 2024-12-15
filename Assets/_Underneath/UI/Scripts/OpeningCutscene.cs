@@ -48,6 +48,11 @@ public class OpeningCutscene : OurMonoBehaviour
         RunCutscene();
     }
 
+    private void OnEndDialogue()
+    { 
+        LoadMainMenu();
+    }
+
     public async Task RunCutscene()
     {
         await Task.Delay(TimeSpan.FromSeconds(musicDelay));
