@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -47,7 +48,27 @@ public class OpeningCutscene : OurMonoBehaviour
 
         RunCutscene();
     }
+    private PlayerActionsAsset actionAsset;
 
+    private void OnEnable()
+    {
+        actionAsset = new PlayerActionsAsset();
+        actionAsset.Enable();
+        actionAsset.Player.EndDialogue.performed += LoadMainMenu;
+    }
+
+    private void OnDisable()
+    {
+        actionAsset.Player.EndDialogue.performed -= LoadMainMenu;
+        actionAsset.Disable();
+    }
+
+    private void LoadMainMenu(InputAction.CallbackContext obj)
+    {
+        //StopAllCoroutines();
+        StartCoroutine(LoadMainMenu());
+    }
+    
     private void RunCutscene()
     {
 #if UNITY_WEBGL 
