@@ -57,6 +57,7 @@ public class InteractiveObject : OurMonoBehaviour
     {
         if(!_inRange) return;
         OnInteract.Invoke();
+        Player.playerInput.onInteract -= Interact;
     }
     
 }
