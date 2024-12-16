@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : OurMonoBehaviour
 {
     private UIDocument m_Doc;
     private VisualElement m_Root;
@@ -86,12 +86,14 @@ public class PauseMenu : MonoBehaviour
             case DisplayStyle.Flex:
                 m_Root.style.display = DisplayStyle.None;
                 CurfewTimer.Instance.ResumeTimer();
+                GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.UnPause,transform.position);
                 Time.timeScale = 1;
                 
                 break;
             case DisplayStyle.None:
                 m_Root.style.display = DisplayStyle.Flex;
                 CurfewTimer.Instance.PauseTimer();
+                GameManager.AudioManager.PlayOneShot(FMODEvents.Instance.Pause,transform.position);
                 Time.timeScale = 0;
                 
                 break;
