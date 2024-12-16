@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,13 +24,29 @@ public class MainMenu : MonoBehaviour
 
     void PlayPressed(ClickEvent evt)
     {
-        LoadMainLevel();
+#if UNITY_WEBGL
+        StartCoroutine(LoadMainLevelCoroutine());
+#else
+            LoadMainLevelAsync();
+#endif
     }
 
-    private async Task LoadMainLevel()
+#if UNITY_WEBGL
+    private IEnumerator LoadMainLevelCoroutine()
     {
+        var asyncLoad = SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
         
-        var asyncLoad  = SceneManager.LoadSceneAsync(3,LoadSceneMode.Additive);
+        while (!asyncLoad.isDone)
+        {
+            // run loading animation
+            yield return null;
+        }
+        SceneManager.UnloadSceneAsync(2);
+    }
+#else
+    private async Task LoadMainLevelAsync()
+    {
+        var asyncLoad = SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
         
         while (!asyncLoad.isDone)
         {
@@ -38,7 +55,8 @@ public class MainMenu : MonoBehaviour
         }
         SceneManager.UnloadSceneAsync(2);
     }
-    
+#endif
+
     void ExitPressed(ClickEvent evt)
     {
         Application.Quit();
