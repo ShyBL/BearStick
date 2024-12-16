@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -35,9 +37,36 @@ public class PauseMenu : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+#if UNITY_WEBGL
+        StartCoroutine(LoadMainLevelCoroutine());
+#else
+        LoadMainLevelAsync();
+#endif
+    }
+    
+
+    private IEnumerator LoadMainLevelCoroutine()
+    {
+        var asyncLoad = SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
         
-        SceneManager.LoadScene("MainMenu");
-       
+        while (!asyncLoad.isDone)
+        {
+            // run loading animation
+            yield return null;
+        }
+        SceneManager.UnloadSceneAsync(3);
+    }
+
+    private async Task LoadMainLevelAsync()
+    {
+        var asyncLoad = SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
+        
+        while (!asyncLoad.isDone)
+        {
+            // run loading animation
+            await Task.Yield();
+        }
+        SceneManager.UnloadSceneAsync(3);
     }
 
     void ContinueButton(ClickEvent evt)
