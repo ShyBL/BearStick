@@ -24,6 +24,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Dumpster { get; private set; }
     [field: SerializeField] public EventReference Trashcan { get; private set; }
     [field: SerializeField] public EventReference Stash { get; private set; }
+    [field: SerializeField] public EventReference Dialogue { get; private set; }
+
     
     [field: Header("UI SFX")]
     [field: SerializeField] public EventReference Click { get; private set; }

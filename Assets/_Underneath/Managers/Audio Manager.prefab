@@ -49,7 +49,6 @@ MonoBehaviour:
   musicVolume: 1
   ambienceVolume: 1
   SFXVolume: 1
-  themeType: 0
 --- !u!114 &2939571756100103421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,13 +75,6 @@ MonoBehaviour:
       Data3: -1193447029
       Data4: -2067591319
     Path: event:/Music/ShopMusic 1
-  <TempShopTheme>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
   <Footsteps>k__BackingField:
     Guid:
       Data1: -1806913121
@@ -146,6 +138,13 @@ MonoBehaviour:
       Data3: -316780640
       Data4: -1769853662
     Path: event:/CHARACTER/Stash
+  <Dialogue>k__BackingField:
+    Guid:
+      Data1: 2093656213
+      Data2: 1324512605
+      Data3: -85042002
+      Data4: -1568755736
+    Path: event:/CHARACTER/Dialogue
   <Click>k__BackingField:
     Guid:
       Data1: 1437840984
@@ -167,10 +166,3 @@ MonoBehaviour:
       Data3: -338796116
       Data4: -1117349467
     Path: event:/UI/Bubble
-  <Dialogue>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 

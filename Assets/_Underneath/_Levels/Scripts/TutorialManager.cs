@@ -48,31 +48,31 @@ public class TutorialManager : MonoBehaviour
     {
         if (startLevel && startLevelDOONCE)
         {
-            dialogue.StartDialogue(dialogueLines[0],talkingSprite);
+            dialogue.StartDialogue(dialogueLines[0],"Georgie", talkingSprite);
             startLevelDOONCE = false;
         }
 
         if (jumping && jumpingDOONCE)
         {
-            dialogue.StartDialogue(dialogueLines[1],talkingSprite);
+            dialogue.StartDialogue(dialogueLines[1],"Georgie", talkingSprite);
             jumpingDOONCE = false;
         }
         
         if (pushing && pushingDOONCE)
         {
-            dialogue.StartDialogue(dialogueLines[2],talkingSprite);
+            dialogue.StartDialogue(dialogueLines[2],"Georgie", talkingSprite);
             pushingDOONCE = false;
         }
         
         if (opening && openingDOONCE)
         {
-            dialogue.StartDialogue(dialogueLines[3],talkingSprite);
+            dialogue.StartDialogue(dialogueLines[3],"Georgie", talkingSprite);
             openingDOONCE = false;
         }
         
         if (carrying && carryingDOONCE)
         {
-            dialogue.StartDialogue(dialogueLines[4],talkingSprite);
+            dialogue.StartDialogue(dialogueLines[4],"Georgie", talkingSprite);
             carryingDOONCE = false;
         }
         

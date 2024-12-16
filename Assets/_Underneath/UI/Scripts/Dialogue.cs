@@ -5,7 +5,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Dialogue : MonoBehaviour
+public class Dialogue : OurMonoBehaviour
 {
     public float CharactersPerSecond;
 
@@ -23,7 +23,7 @@ public class Dialogue : MonoBehaviour
         m_Image.parent.style.display = DisplayStyle.None;
     }
 
-    public void StartDialogue(string line, Sprite sprite = null)
+    public void StartDialogue(string line, string speaker, Sprite sprite = null)
     {
         m_Image.parent.style.display = DisplayStyle.Flex;
         if (sprite == null)
@@ -33,7 +33,7 @@ public class Dialogue : MonoBehaviour
             m_Image.style.display = DisplayStyle.Flex;
             m_Image.style.backgroundImage = new StyleBackground(sprite);
         }
-        StartCoroutine(TypeText(line));
+        StartCoroutine(TypeText(line,speaker));
     }
 
     void EndDialogue()
@@ -42,8 +42,10 @@ public class Dialogue : MonoBehaviour
         m_Image.parent.style.display = DisplayStyle.None;
     }
 
-    IEnumerator TypeText(string line)
+    IEnumerator TypeText(string line, string speaker)
     {
+        GameManager.AudioManager.PlayEventWithStringParameters(GameManager.AudioManager.DialogueEvent,transform.position,"Character",speaker);
+        
         float timer = 0;
         float interval = 1 / CharactersPerSecond;
         string textBuffer = null;
@@ -65,6 +67,7 @@ public class Dialogue : MonoBehaviour
                 yield return null;
             }
         }
+        GameManager.AudioManager.StopAndDontReleaseEvent(GameManager.AudioManager.DialogueEvent);
 
         Player.Instance.playerInput.onDialogueEnd += EndDialogue;
     }

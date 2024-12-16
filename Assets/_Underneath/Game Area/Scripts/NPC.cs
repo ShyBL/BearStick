@@ -48,12 +48,13 @@ public class NPC : MonoBehaviour
     [SerializeField] private Dialogue dialogue;
     [SerializeField] private List<String> dialogueLines;
     [SerializeField] private Sprite talkingSprite;
+    [SerializeField] private string speakerName;
 
     private void Interact()
     {
         if (inRange && !tutorialDoOnce && dialogueLines.Count != 0)
         {
-            dialogue.StartDialogue(dialogueLines[0],talkingSprite);
+            dialogue.StartDialogue(dialogueLines[0], speakerName, talkingSprite);
             CurfewTimer.Instance.PauseTimer();
         }
     }

@@ -33,7 +33,6 @@ public class AudioManager : MonoBehaviour
     public EventInstance LandEvent { get; private set; }
     public EventInstance GameplayThemeEvent { get; private set; }
     public EventInstance ShopThemeEvent { get; private set; }
-    public EventInstance TempShopThemeEvent { get; private set; }
     
     public EventInstance CrateDragEvent { get; private set; }
     public EventInstance DialogueEvent { get; private set; }
@@ -72,7 +71,7 @@ public class AudioManager : MonoBehaviour
         
         // Gameplay Event Instances
         CrateDragEvent = CreateInstance(FMODEvents.Instance.CrateDrag);
-       // DialogueEvent = CreateInstance(FMODEvents.Instance.Dialogue);
+        DialogueEvent = CreateInstance(FMODEvents.Instance.Dialogue);
         
     }
 

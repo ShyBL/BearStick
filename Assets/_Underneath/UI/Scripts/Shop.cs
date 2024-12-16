@@ -91,7 +91,7 @@ public class Shop : OurMonoBehaviour
 
     void OnTalkButtonPressed(ClickEvent evt) 
     {
-        m_Dialogue.StartDialogue(m_DialogueLines[Random.Range(0, m_DialogueLines.Count)]);
+        m_Dialogue.StartDialogue(m_DialogueLines[Random.Range(0, m_DialogueLines.Count)],"Artyom");
     }
 
     void OnExitButtonPressed(ClickEvent evt)
