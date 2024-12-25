@@ -123,22 +123,22 @@ public class PlayerInformation
 
     public PlayerInformation()
     {
-        m_Money = PlayerData.Instance.GetMoney();
-        m_NewMoney = PlayerData.Instance.GetMoneyEarned();
-        m_DayCount = PlayerData.Instance.GetDayCount();
-        m_CurrentExpenses = PlayerData.Instance.GetExpenses();
-        playerLocation = PlayerData.Instance.v_SpawnLocation;
+        // m_Money = GameplayManager.Instance.GetMoney();
+        // m_NewMoney = GameplayManager.Instance.GetMoneyEarned();
+        // m_DayCount = GameplayManager.Instance.GetDayCount();
+        // m_CurrentExpenses = GameplayManager.Instance.GetExpenses();
+        playerLocation = GameplayManager.Instance.v_SpawnLocation;
         inventoryRef = Inventory.Instance;
         inventoryItemRef = Inventory.Instance.StoredItems;
     }
 
     public void SendPlayerInfo()
     {
-        PlayerData.Instance.SetMoney(m_Money);
-        PlayerData.Instance.SetNewMoney(m_NewMoney);
-        PlayerData.Instance.SetDayCount(m_DayCount);
-        PlayerData.Instance.SetExpenses(m_CurrentExpenses);
-        PlayerData.Instance.v_SpawnLocation = playerLocation;
+        // GameplayManager.Instance.SetMoney(m_Money);
+        // GameplayManager.Instance.SetNewMoney(m_NewMoney);
+        // GameplayManager.Instance.SetDayCount(m_DayCount);
+        // GameplayManager.Instance.SetExpenses(m_CurrentExpenses);
+        GameplayManager.Instance.v_SpawnLocation = playerLocation;
         Inventory.Instance = inventoryRef;
         Inventory.Instance.StoredItems = inventoryItemRef;
     }

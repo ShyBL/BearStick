@@ -8,8 +8,10 @@ public class EndDayTrigger : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            if (PlayerData.Instance.GetDayCount() != 0)
+            if (GameplayManager.Instance.GetDayCount() != 0)
             {
+                player.StopInPlace();
+                player.DisableMovement();
                 CurfewTimer.Instance.bPlayerHasLeftBase = false;
                 EndOfDay.Instance.EndDay();
                 Debug.Log("Inside safe zone, auto end of day ");

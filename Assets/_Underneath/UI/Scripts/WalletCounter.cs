@@ -13,11 +13,11 @@ public class WalletCounter : MonoBehaviour
         m_WalletCounter = GetComponent<UIDocument>().rootVisualElement.Q<Label>("WalletCounter");
 
         RefreshWalletCounter();
-        PlayerData.Instance.m_RefreshMoney += RefreshWalletCounter;
+        GameplayManager.Instance.m_RefreshMoney += RefreshWalletCounter;
     }
 
     public void RefreshWalletCounter()
     {
-        m_WalletCounter.text = "$" + PlayerData.Instance.GetMoney().ToString();
+        m_WalletCounter.text = "$" + GameplayManager.Instance.GetMoney().ToString();
     }
 }

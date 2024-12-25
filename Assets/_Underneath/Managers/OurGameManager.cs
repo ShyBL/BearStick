@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,7 +5,18 @@ using UnityEngine.SceneManagement;
 public class OurGameManager : MonoBehaviour
 {
     public static OurGameManager Instance;
+    private OpeningCutscene _openingCutscene;
+    public AudioManager AudioManager;
+    
+    public GameplayManager gameplayManager;
+    public SaveManager SaveManager;
+    
+    public EndOfDay EndOfDay;
+    public CurfewTimer CurfewTimer;
+    public StartOfDay StartOfDay;
 
+    public TutorialManager TutorialManager;
+    public Inventory Inventory;
     private void Awake()
     {
         if (Instance == null)
@@ -49,26 +59,13 @@ public class OurGameManager : MonoBehaviour
     private async Task InitGameManagerAsync()
     { 
         await InitManagersAsync();
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
     }
 
     private Task InitManagersAsync()
     {
         AudioManager = FindFirstObjectByType<AudioManager>();
+        SaveManager = FindFirstObjectByType<SaveManager>();
         return Task.CompletedTask;
     }
 #endif
-
-    private OpeningCutscene _openingCutscene;
-    public AudioManager AudioManager;
-    
-    public PlayerData PlayerData;
-    public SavingAndLoading SavingAndLoading;
-    
-    public EndOfDay EndOfDay;
-    public CurfewTimer CurfewTimer;
-    public StartOfDay StartOfDay;
-
-    public TutorialManager TutorialManager;
-    public Inventory Inventory;
 }

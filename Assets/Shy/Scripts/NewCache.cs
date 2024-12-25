@@ -6,7 +6,7 @@ public class NewCache : OurMonoBehaviour
     {
        // Player.Instance.DisableMovement();
 
-        PlayerData.Instance.ShopPayoff();
+        GameplayManager.Instance.ShopPayoff();
             
        // Invoke(nameof(EndDay),GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.5f);
             

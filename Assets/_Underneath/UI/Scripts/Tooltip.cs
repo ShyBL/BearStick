@@ -175,9 +175,9 @@ public class WalletTooltip : Tooltip
 
     protected override void UpdateData()
     {
-        m_PrevMoneyLabel.text = "Current Money: $" + PlayerData.Instance.GetMoney().ToString();
+        m_PrevMoneyLabel.text = "Current Money: $" + GameplayManager.Instance.GetMoney().ToString();
         m_EarnedMoneyLabel.text = "Inventory Value: $" + Inventory.Instance.GetInventoryvalue().ToString();
-        m_ExpensesLabel.text = "Upcoming Expenses: $" + PlayerData.Instance.GetExpenses().ToString();
-        m_TotalMoneyLabel.text = "Money Leftover: $" + ((PlayerData.Instance.GetMoney() + Inventory.Instance.GetInventoryvalue()) - PlayerData.Instance.GetExpenses()).ToString();
+        m_ExpensesLabel.text = "Upcoming Expenses: $" + GameplayManager.Instance.GetExpenses().ToString();
+        m_TotalMoneyLabel.text = "Money Leftover: $" + ((GameplayManager.Instance.GetMoney() + Inventory.Instance.GetInventoryvalue()) - GameplayManager.Instance.GetExpenses()).ToString();
     }
 }

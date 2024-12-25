@@ -30,7 +30,7 @@ public class StartOfDay : MonoBehaviour
 
     private void Start()
     {
-        SavingAndLoading.Instance.CheckIfFileExistsOnStart();
+        //SavingAndLoading.Instance.CheckIfFileExistsOnStart();
         //ResetFadeAnimation();
     }
 
@@ -66,16 +66,19 @@ public class StartOfDay : MonoBehaviour
     {
         Debug.Log("Starting a New Day...");
         //Load Player Information
-        SavingAndLoading.Instance.LoadPlayerInformation();
-        if(PlayerData.Instance.GetDayCount() > 1)
+        //SavingAndLoading.Instance.LoadPlayerInformation();
+        
+        Player.Instance.EnableMovement();
+        
+        if(GameplayManager.Instance.GetDayCount() > 1)
         {
             //Set the player's spawn location for the next day
-            Player.Instance.SetPlayerSpawn(PlayerData.Instance.v_SpawnLocation);
+            Player.Instance.SetPlayerSpawn(GameplayManager.Instance.v_SpawnLocation);
         }
         //Fade out from black
         ResetFadeAnimation();
         //Start Timer
-        if(PlayerData.Instance.GetDayCount() >= 1)
+        if(GameplayManager.Instance.GetDayCount() >= 1)
         {
             CurfewTimer.Instance.StartTimer();
         }
