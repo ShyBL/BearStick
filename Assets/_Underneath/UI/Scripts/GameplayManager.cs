@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameplayManager : OurMonoBehaviour
 {
@@ -22,25 +22,27 @@ public class GameplayManager : OurMonoBehaviour
     {
         if (Instance == null)
         {
-            InitializeFromSave();
             Instance = this;
         }
         else if (Instance != this)
         {
             Destroy(this);
         }
+
+        SceneManager.sceneLoaded += InitializeRespawnPoint;
         
+        InitializeFromSave();
     }
 
     private void InitializeFromSave()
     {
-        PlayerData = Resources.Load<SavePlayerData>("SavePlayerData");
+        PlayerData = Resources.Load<SavePlayerData>("SavedPlayerData");
         
-        PlayerData.Money = Money;
-        PlayerData.Expenses = Expenses;
-        PlayerData.DayCount = DayCount;
-        PlayerData.TempMoneyValue = TempMoneyValue;
-        PlayerData.v_SpawnLocation = v_SpawnLocation;
+        Money = PlayerData.Money ;
+        Expenses = PlayerData.Expenses;
+        DayCount = PlayerData.DayCount;
+        TempMoneyValue = PlayerData.TempMoneyValue;
+        v_SpawnLocation = PlayerData.v_SpawnLocation;
         
         // PlayerData = GameManager.SaveManager.LoadDataAndCreateIfNull<SavedPlayerData>();
         //
@@ -60,24 +62,26 @@ public class GameplayManager : OurMonoBehaviour
         //     }
         // }
     }
-
-    private void Start()
-    {
-        GameObject spawnLocation = GameObject.Find("PlayerRespawnPoint");
     
+    private void InitializeRespawnPoint(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "newLevel") return;
+        
+        GameObject spawnLocation = GameObject.Find("PlayerRespawnPoint");
+
         if (spawnLocation != null)
         {
-           // v_SpawnLocation = spawnLocation.transform.position;
-           PlayerData.v_SpawnLocation = spawnLocation.transform.position;
+            // v_SpawnLocation = spawnLocation.transform.position;
+            PlayerData.v_SpawnLocation = spawnLocation.transform.position;
 
         }
         else
         {
             GameObject newSpawnLocation = new GameObject("PlayerRespawnPoint");
             newSpawnLocation.transform.position = this.transform.position;
-          //  v_SpawnLocation = newSpawnLocation.transform.position;
+            //  v_SpawnLocation = newSpawnLocation.transform.position;
 
-          PlayerData.v_SpawnLocation = newSpawnLocation.transform.position;
+            PlayerData.v_SpawnLocation = newSpawnLocation.transform.position;
         }
     }
 
@@ -170,13 +174,4 @@ public class SavedPlayerData : ISaveData
     {
         {"Money",0}, {"DayCount",1}, {"Expenses",20}
     };
-}
-[CreateAssetMenu(fileName = "SavedPlayerData", menuName = "SavedPlayerData")]
-public class SavePlayerData : ScriptableObject
-{
-    public int Money;
-    public int TempMoneyValue;
-    public int DayCount;
-    public int Expenses;
-    public Vector2 v_SpawnLocation;
 }

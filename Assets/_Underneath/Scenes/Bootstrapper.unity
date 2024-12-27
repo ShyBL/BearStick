@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 195641279}
-  - component: {fileID: 195641278}
+  - component: {fileID: 195641280}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -140,26 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &195641278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195641277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad1f8c2f3ea84d83b1720d9e977f7158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioManager: {fileID: 0}
-  gameplayManager: {fileID: 0}
-  SaveManager: {fileID: 0}
-  EndOfDay: {fileID: 0}
-  CurfewTimer: {fileID: 0}
-  StartOfDay: {fileID: 0}
-  TutorialManager: {fileID: 0}
-  Inventory: {fileID: 0}
 --- !u!4 &195641279
 Transform:
   m_ObjectHideFlags: 0
@@ -175,6 +155,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &195641280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195641277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a684c009caa5945a1055245e6591bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Money: 0
+  TempMoneyValue: 0
+  DayCount: 0
+  Expenses: 0
+  v_SpawnLocation: {x: 0, y: 0}
+  PlayerData: {fileID: 0}
 --- !u!1001 &334108762
 PrefabInstance:
   m_ObjectHideFlags: 0

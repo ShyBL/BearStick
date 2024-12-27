@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class OurGameManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class OurGameManager : MonoBehaviour
     private OpeningCutscene _openingCutscene;
     public AudioManager AudioManager;
     
-    public GameplayManager gameplayManager;
+    [FormerlySerializedAs("myGameplayManager")] public GameplayManager gameplayManager;
     public SaveManager SaveManager;
     
     public EndOfDay EndOfDay;
