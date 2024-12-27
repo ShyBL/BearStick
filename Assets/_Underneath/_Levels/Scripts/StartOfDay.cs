@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartOfDay : MonoBehaviour
+public class StartOfDay : OurMonoBehaviour
 {
     public static StartOfDay Instance;
     [SerializeField] float speedScale = 1f;
@@ -70,15 +70,15 @@ public class StartOfDay : MonoBehaviour
         
         Player.Instance.EnableMovement();
         
-        if(GameplayManager.Instance.GetDayCount() > 1)
+        if(GameManager.GameplayManager.GetDayCount() > 1)
         {
             //Set the player's spawn location for the next day
-            Player.Instance.SetPlayerSpawn(GameplayManager.Instance.v_SpawnLocation);
+            Player.Instance.SetPlayerSpawn(GameManager.GameplayManager.v_SpawnLocation);
         }
         //Fade out from black
         ResetFadeAnimation();
         //Start Timer
-        if(GameplayManager.Instance.GetDayCount() >= 1)
+        if(GameManager.GameplayManager.GetDayCount() >= 1)
         {
             CurfewTimer.Instance.StartTimer();
         }

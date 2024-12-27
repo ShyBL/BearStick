@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class WalletCounter : MonoBehaviour
+public class WalletCounter : OurMonoBehaviour
 {
     Label m_WalletCounter;
 
@@ -13,11 +13,11 @@ public class WalletCounter : MonoBehaviour
         m_WalletCounter = GetComponent<UIDocument>().rootVisualElement.Q<Label>("WalletCounter");
 
         RefreshWalletCounter();
-        GameplayManager.Instance.m_RefreshMoney += RefreshWalletCounter;
+        GameManager.GameplayManager.m_RefreshMoney += RefreshWalletCounter;
     }
 
     public void RefreshWalletCounter()
     {
-        m_WalletCounter.text = "$" + GameplayManager.Instance.GetMoney().ToString();
+        m_WalletCounter.text = "$" + GameManager.GameplayManager.GetMoney().ToString();
     }
 }

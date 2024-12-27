@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EndDayTrigger : MonoBehaviour
+public class EndDayTrigger : OurMonoBehaviour
 {
     [SerializeField] private GameObject StartDayTrigger;
     
@@ -8,7 +8,7 @@ public class EndDayTrigger : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            if (GameplayManager.Instance.GetDayCount() != 0)
+            if (GameManager.GameplayManager.GetDayCount() != 0)
             {
                 player.StopInPlace();
                 player.DisableMovement();

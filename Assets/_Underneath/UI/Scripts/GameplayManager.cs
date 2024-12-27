@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameplayManager : OurMonoBehaviour
 {
-    public static GameplayManager Instance; // Since this class is static you can use this instance to access it following the singleton pattern.
+   // public static GameplayManager Instance; // Since this class is static you can use this instance to access it following the singleton pattern.
 
     public int Money;
     public int TempMoneyValue;
@@ -20,14 +20,14 @@ public class GameplayManager : OurMonoBehaviour
     public SavePlayerData PlayerData;
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            Destroy(this);
-        }
+        // if (Instance == null)
+        // {
+        //     Instance = this;
+        // }
+        // else if (Instance != this)
+        // {
+        //     Destroy(this);
+        // }
 
         SceneManager.sceneLoaded += InitializeRespawnPoint;
         

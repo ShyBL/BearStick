@@ -85,7 +85,7 @@ public class Shop : OurMonoBehaviour
             icon.parent.Remove(icon);
         }
 
-        GameplayManager.Instance.ShopPayoff();
+        GameManager.GameplayManager.ShopPayoff();
         m_SellingAll = false;
     }
 

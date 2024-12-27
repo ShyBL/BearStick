@@ -9,8 +9,7 @@ public class OurGameManager : MonoBehaviour
     private OpeningCutscene _openingCutscene;
     public AudioManager AudioManager;
     
-    [FormerlySerializedAs("myGameplayManager")] public GameplayManager gameplayManager;
-    public SaveManager SaveManager;
+    public GameplayManager GameplayManager;
     
     public EndOfDay EndOfDay;
     public CurfewTimer CurfewTimer;
@@ -65,7 +64,7 @@ public class OurGameManager : MonoBehaviour
     private Task InitManagersAsync()
     {
         AudioManager = FindFirstObjectByType<AudioManager>();
-        SaveManager = FindFirstObjectByType<SaveManager>();
+        GameplayManager = FindFirstObjectByType<GameplayManager>();
         return Task.CompletedTask;
     }
 #endif

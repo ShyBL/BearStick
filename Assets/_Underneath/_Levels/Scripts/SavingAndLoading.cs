@@ -107,39 +107,114 @@ public class SavingAndLoading : MonoBehaviour
             SavePlayerInformation();
        }
     }
+    
+    // public void DeleteDataFileByName<T>() where T : ISaveData
+    // {
+    //     var typeName = typeof(T).FullName;
+    //     var path = $"{Application.persistentDataPath}/{typeName}.Save";
+    //
+    //     if (HasData(path))
+    //     {
+    //         File.Delete(path);
+    //     }
+    // }
+    //
+    // public void ClearAllDataInAppPath()
+    // {
+    //     var path = Application.persistentDataPath;
+    //     var files = Directory.GetFiles(path);
+    //
+    //     foreach (var fileName in files)
+    //     {
+    //         if (fileName.Contains(""))
+    //         {
+    //             File.Delete(fileName);
+    //         }
+    //     }
+    // }
+    //     
+    // public void SaveData(ISaveData saveData)
+    // {
+    //     var typeName = saveData.GetType().FullName;
+    //     var savePath = $"{Application.persistentDataPath}/{typeName}.Save";
+    //     var dataText = JsonConvert.SerializeObject(saveData);
+    //     File.WriteAllText(savePath, dataText);
+    // }
+    //     
+    // public T LoadData<T>() where T : ISaveData
+    // {
+    //     var typeName = typeof(T).FullName;
+    //     var loadPath = $"{Application.persistentDataPath}/{typeName}.Save";
+    //     if (HasData(loadPath))
+    //     {
+    //         var dataLoaded = File.ReadAllText(loadPath);
+    //         return JsonConvert.DeserializeObject<T>(dataLoaded);
+    //     }
+    //     return default;
+    // }
+    //
+    // /// <summary>
+    // /// Load Data, if null will create new instance
+    // /// Also Save the new created data
+    // /// using reflection, should be used only when game is loaded
+    // /// </summary>
+    // /// <typeparam name="T"></typeparam>
+    // /// <returns></returns>
+    // public T LoadDataAndCreateIfNull<T>() where T : ISaveData
+    // {
+    //     var data = LoadData<T>();
+    //
+    //     if (data == null)
+    //     {
+    //         data = Activator.CreateInstance<T>();
+    //         data.SaveData();
+    //     }
+    //
+    //     return data;
+    // }
+    //
+    // public bool HasData<T>() where T : ISaveData
+    // {
+    //     var typeName = typeof(T).FullName;
+    //     var loadPath = $"{Application.persistentDataPath}/{typeName}.Save";
+    //     return HasData(loadPath);
+    // }
+    //     
+    // public bool HasData(string path)
+    // {
+    //     return File.Exists(path);
+    // }
 }
 
 //This class is needed because the information that loads from the JSON seems to struggle with using PlayerData
 [System.Serializable]
 public class PlayerInformation
 {
-    public int m_Money;
-    public int m_NewMoney;
-    public int m_DayCount;
-    public int m_CurrentExpenses;
-    public Vector2 playerLocation;
     public Inventory inventoryRef;
     public List<StoredItem> inventoryItemRef;
 
     public PlayerInformation()
     {
-        // m_Money = GameplayManager.Instance.GetMoney();
-        // m_NewMoney = GameplayManager.Instance.GetMoneyEarned();
-        // m_DayCount = GameplayManager.Instance.GetDayCount();
-        // m_CurrentExpenses = GameplayManager.Instance.GetExpenses();
-        playerLocation = GameplayManager.Instance.v_SpawnLocation;
         inventoryRef = Inventory.Instance;
         inventoryItemRef = Inventory.Instance.StoredItems;
     }
 
     public void SendPlayerInfo()
     {
-        // GameplayManager.Instance.SetMoney(m_Money);
-        // GameplayManager.Instance.SetNewMoney(m_NewMoney);
-        // GameplayManager.Instance.SetDayCount(m_DayCount);
-        // GameplayManager.Instance.SetExpenses(m_CurrentExpenses);
-        GameplayManager.Instance.v_SpawnLocation = playerLocation;
         Inventory.Instance = inventoryRef;
         Inventory.Instance.StoredItems = inventoryItemRef;
+    }
+}
+
+public interface ISaveData
+{
+        
+}
+
+public static class SaveExtensions
+{
+    public static void SaveData(this ISaveData saveData)
+    {
+       // SavingAndLoading.Instance.SaveData(saveData);
     }
 }

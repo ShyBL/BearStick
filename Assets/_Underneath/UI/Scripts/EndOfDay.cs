@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EndOfDay : MonoBehaviour
+public class EndOfDay : OurMonoBehaviour
 {
     public static EndOfDay Instance;
     private void Awake()
@@ -36,7 +36,7 @@ public class EndOfDay : MonoBehaviour
         m_ExpensesLabel = m_Document.rootVisualElement.Q<Label>("Expenses");
         m_Title = m_Document.rootVisualElement.Q<Label>("Title");
         m_Document.rootVisualElement.Q<Button>("Exit").RegisterCallback<ClickEvent>(ExitPressed);
-        GameplayManager.Instance.IncreaseExpenses(BaseExpenses);
+        GameManager.GameplayManager.IncreaseExpenses(BaseExpenses);
         m_Document.rootVisualElement.style.display = DisplayStyle.None;
     }
 
@@ -50,20 +50,20 @@ public class EndOfDay : MonoBehaviour
     {
         m_Document.rootVisualElement.style.display = DisplayStyle.Flex;
 
-        m_Title.text = "Day " + GameplayManager.Instance.GetDayCount();
-        m_PrevMoneyLabel.text = "$" + GameplayManager.Instance.GetMoney().ToString();
-        m_EarnedMoneyLabel.text = "$" + GameplayManager.Instance.GetMoneyEarned().ToString();
+        m_Title.text = "Day " + GameManager.GameplayManager.GetDayCount();
+        m_PrevMoneyLabel.text = "$" + GameManager.GameplayManager.GetMoney().ToString();
+        m_EarnedMoneyLabel.text = "$" + GameManager.GameplayManager.GetMoneyEarned().ToString();
 
-        if (GameplayManager.Instance.GetDayCount() % IncreaseFrequency == 0)
-            GameplayManager.Instance.IncreaseExpenses(ExpensesIncrease);
+        if (GameManager.GameplayManager.GetDayCount() % IncreaseFrequency == 0)
+            GameManager.GameplayManager.IncreaseExpenses(ExpensesIncrease);
 
-        GameplayManager.Instance.DecreaseMoney(GameplayManager.Instance.GetExpenses());
-        GameplayManager.Instance.ApplyMoneyChange();
+        GameManager.GameplayManager.DecreaseMoney(GameManager.GameplayManager.GetExpenses());
+        GameManager.GameplayManager.ApplyMoneyChange();
 
-        m_ExpensesLabel.text = "$" + GameplayManager.Instance.GetExpenses().ToString();
-        m_TotalMoneyLabel.text = "$" + GameplayManager.Instance.GetMoney().ToString();
+        m_ExpensesLabel.text = "$" + GameManager.GameplayManager.GetExpenses().ToString();
+        m_TotalMoneyLabel.text = "$" + GameManager.GameplayManager.GetMoney().ToString();
 
-        GameplayManager.Instance.IncrementDayCount();
+        GameManager.GameplayManager.IncrementDayCount();
         //SavingAndLoading.Instance.SavePlayerInformation();
     }
 }
