@@ -5,18 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameplayManager : OurMonoBehaviour
 {
-   // public static GameplayManager Instance; // Since this class is static you can use this instance to access it following the singleton pattern.
-
-    public int Money;
-    public int TempMoneyValue;
-    public int DayCount;
-    public int Expenses;
+   
     public Vector2 v_SpawnLocation;
+    public List<StoredItem> StoredItems = new List<StoredItem>();
 
     public delegate void RefreshMoney();
     public RefreshMoney m_RefreshMoney;
     
-    //public SavedPlayerData PlayerData;
     public SavePlayerData PlayerData;
     private void Awake()
     {
@@ -30,38 +25,45 @@ public class GameplayManager : OurMonoBehaviour
         // }
 
         SceneManager.sceneLoaded += InitializeRespawnPoint;
+        SceneManager.sceneLoaded += InitializeInventory;
+
         
         InitializeFromSave();
     }
 
+    private void InitializeInventory(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "newLevel") return;
+        var inv = Inventory.Instance.StoredItems;
+        
+        foreach (var storedItem in StoredItems)
+        {
+            inv.Add(storedItem);
+        }
+
+        Inventory.Instance.InventoryChanged += SaveInventory;
+    }
+
+    private void SaveInventory(List<StoredItem> obj)
+    {
+        StoredItems.Clear();
+        StoredItems.AddRange(obj);
+        PlayerData.StoredItems.Clear();
+        PlayerData.StoredItems.AddRange(StoredItems);
+    }
+
+
     private void InitializeFromSave()
     {
         PlayerData = Resources.Load<SavePlayerData>("SavedPlayerData");
-        
-        Money = PlayerData.Money ;
-        Expenses = PlayerData.Expenses;
-        DayCount = PlayerData.DayCount;
-        TempMoneyValue = PlayerData.TempMoneyValue;
         v_SpawnLocation = PlayerData.v_SpawnLocation;
-        
-        // PlayerData = GameManager.SaveManager.LoadDataAndCreateIfNull<SavedPlayerData>();
-        //
-        // foreach (var kvp in PlayerData.SavedPlayerDateDic)
-        // {
-        //     switch (kvp.Key)
-        //     {
-        //         case "Money":
-        //             Money = kvp.Value;
-        //             break;
-        //         case "DayCount":
-        //             DayCount = kvp.Value;
-        //             break;
-        //         case "Expenses": 
-        //             Expenses = kvp.Value;
-        //             break;
-        //     }
-        // }
+
+        foreach (var storedItem in PlayerData.StoredItems)
+        {
+            StoredItems.Add(storedItem);
+        }
     }
+    
     
     private void InitializeRespawnPoint(Scene scene, LoadSceneMode mode)
     {
@@ -71,7 +73,6 @@ public class GameplayManager : OurMonoBehaviour
 
         if (spawnLocation != null)
         {
-            // v_SpawnLocation = spawnLocation.transform.position;
             PlayerData.v_SpawnLocation = spawnLocation.transform.position;
 
         }
@@ -79,7 +80,6 @@ public class GameplayManager : OurMonoBehaviour
         {
             GameObject newSpawnLocation = new GameObject("PlayerRespawnPoint");
             newSpawnLocation.transform.position = this.transform.position;
-            //  v_SpawnLocation = newSpawnLocation.transform.position;
 
             PlayerData.v_SpawnLocation = newSpawnLocation.transform.position;
         }
@@ -87,35 +87,21 @@ public class GameplayManager : OurMonoBehaviour
 
     private void IncreaseMoney(int amount)
     {
-       // TempMoneyValue += amount; 
        PlayerData.TempMoneyValue += amount;
     }
 
     public void DecreaseMoney(int amount)
     {
-      //  TempMoneyValue -= amount;
       PlayerData.TempMoneyValue -= amount;
     }
 
     public void IncrementDayCount()
     {
         PlayerData.DayCount++;
-      //  DayCount++;
-        // if (PlayerData.SavedPlayerDateDic.ContainsKey("DayCount"))
-        // {
-        //     PlayerData.SavedPlayerDateDic["DayCount"] = DayCount;
-        // }
-        //PlayerData.SaveData();
     }
     public void IncreaseExpenses(int amount)
     {
         PlayerData.Expenses += amount;
-        // Expenses += amount;
-        // if (PlayerData.SavedPlayerDateDic.ContainsKey("Expenses"))
-        // {
-        //     PlayerData.SavedPlayerDateDic["Expenses"] = Expenses;
-        // }
-        //PlayerData.SaveData();
     }
 
     public void ApplyMoneyChange()
@@ -123,38 +109,26 @@ public class GameplayManager : OurMonoBehaviour
         PlayerData.Money += PlayerData.TempMoneyValue;
         PlayerData.TempMoneyValue = 0;
         m_RefreshMoney.Invoke();
-        // Money += TempMoneyValue;
-        // TempMoneyValue = 0;
-        // m_RefreshMoney.Invoke();
-        // if (PlayerData.SavedPlayerDateDic.ContainsKey("Money"))
-        // {
-        //     PlayerData.SavedPlayerDateDic["Money"] = Money;
-        // }
-        //PlayerData.SaveData();
     }
 
     public int GetMoney()
     {
         return PlayerData.Money;
-        // return Money;
     }
 
     public int GetDayCount()
     {
         return PlayerData.DayCount;
-       // return DayCount;
     }
 
     public int GetExpenses()
     {
         return PlayerData.Expenses;
-       // return Expenses;
     }
 
     public int GetMoneyEarned()
     {
         return PlayerData.Expenses;
-       // return TempMoneyValue;
     }
 
     public void ShopPayoff()
@@ -162,16 +136,6 @@ public class GameplayManager : OurMonoBehaviour
         IncreaseMoney(Inventory.Instance.GetInventoryvalue());
         Inventory.Instance.ClearInventory();
         ApplyMoneyChange();
-        //SavingAndLoading.Instance.SavePlayerInformation();
     }
 
-}
-
-[Serializable]
-public class SavedPlayerData : ISaveData
-{
-    public Dictionary<string, int> SavedPlayerDateDic = new()
-    {
-        {"Money",0}, {"DayCount",1}, {"Expenses",20}
-    };
 }

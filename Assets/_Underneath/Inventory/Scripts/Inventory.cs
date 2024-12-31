@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -15,7 +16,7 @@ public class StoredItem
     public Rect OverlapRectangle; // The slots this item takes up in the inventory. Top left slot is (0,0) and so on. Used for checking for open slots.
 }
 
-public class Inventory : MonoBehaviour
+public class Inventory : OurMonoBehaviour
 {
     public static Inventory Instance; // Since this class is static you can use this instance to access it following the singleton pattern.
 
@@ -33,12 +34,15 @@ public class Inventory : MonoBehaviour
     private Label m_CurrentWeightElement;
     private Label m_MaxWeightElement;
 
-    private void Awake()
+    public Action<List<StoredItem>> InventoryChanged;
+    
+    
+    private async void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            Configure();
+            await Configure();
         }
         else if (Instance != this)
         {
@@ -46,53 +50,31 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        StartCoroutine(LoadInventory());
-    }
-
     // Initializes the inventory. Should only need to be called in Awake.
-    private void Configure()
+    private async Task Configure()
     {
+        // Await the task to retrieve and store items
+        await RetrieveAndStoreItemsAsync();
+    
+        // Setup the inventory UI elements
         m_CurrentWeightElement = m_Hud.rootVisualElement.Q<Label>("CurrentWeight");
         m_MaxWeightElement = m_Hud.rootVisualElement.Q<Label>("MaxWeight");
         m_MaxWeightElement.text = m_MaxWeight.ToString();
         m_CurrentWeightElement.text = m_CurrentWeight.ToString();
+    
         // Makes it so HuD doesn't steal click events, mainly so tooltips will work
         m_Hud.rootVisualElement.Q<VisualElement>("Container").pickingMode = PickingMode.Ignore;
-        //m_Root.RegisterCallback<GeometryChangedEvent>(OnLayoutFinished);
-
-        // Give the UI toolkit time to initialize the layout
-        //yield return new WaitUntil(() => m_LayoutReady);
-
-        // Mark inventory as ready and initialized
-        m_IsInventoryReady = true;
     }
-
-
-
-
-    // Commented out related code for this function as this is no longer needed for now
-    // and it seems to not be consistent, as when I switched computers it stopped working.
-    // Function that is called when the root element of the inventory document changes.
-    // Is used for determining when the layout is finished being created during Configuration.
-    // Will be useful to use if we handle changing resolutions.
-    /*private void OnLayoutFinished(GeometryChangedEvent evt)
+    
+    private async Task RetrieveAndStoreItemsAsync()
     {
-        // Multiple of these are called after registering above, have to wait for the
-        // event that matches the current window size otherwise slot size will be off.
-        if (Screen.width == evt.newRect.width && Screen.height == evt.newRect.height)
-            m_LayoutReady = true;
-    }*/
-
-    // Loads the inventory, going through the StoredItems and placing them in the inventory
-    // in the first available open slot. Might be useful to call again outside of start if
-    // we need to reload the inventory at some point from scratch.
-    private IEnumerator LoadInventory()
-    {
-        // Don't load the inventory until initialization is done
-        yield return new WaitUntil(() => m_IsInventoryReady);
-
+        // Load the items from the saved values in player data
+        var storedItems = GameManager.GameplayManager.StoredItems;
+        foreach (var item in storedItems)
+        {
+            StoredItems.Add(item);
+        }
+    
         // Create each item in the stored items
         foreach (StoredItem loadedItem in StoredItems)
         {
@@ -115,7 +97,8 @@ public class Inventory : MonoBehaviour
 
         if(result)
             StoredItems.Add(sItem);
-
+        
+        
         return result;
     }
 
@@ -137,7 +120,10 @@ public class Inventory : MonoBehaviour
         }
 
         RecalculateWeight();
-
+        
+        // Update the Gameplay Manager to save it's values
+        InventoryChanged.Invoke(StoredItems); 
+        
         return true;
     }
 
@@ -150,6 +136,9 @@ public class Inventory : MonoBehaviour
             visual.Value.parent.Clear();
         // Then remove it from the stored item list
         StoredItems.Remove(item);
+        
+        InventoryChanged.Invoke(StoredItems);
+        
         RecalculateWeight();
     }
 
@@ -163,6 +152,9 @@ public class Inventory : MonoBehaviour
                 visual.Value.parent.Clear();
         // Once we finish clearing out the visual elements we can clear the list
         StoredItems.Clear();
+        
+        InventoryChanged.Invoke(StoredItems);
+
         RecalculateWeight();
     }
 

@@ -6,9 +6,9 @@ using UnityEngine.Serialization;
 public class OurGameManager : MonoBehaviour
 {
     public static OurGameManager Instance;
+    
     private OpeningCutscene _openingCutscene;
     public AudioManager AudioManager;
-    
     public GameplayManager GameplayManager;
     
     public EndOfDay EndOfDay;
