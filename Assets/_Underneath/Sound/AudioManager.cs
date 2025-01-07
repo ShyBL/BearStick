@@ -17,14 +17,16 @@ public class AudioManager : MonoBehaviour
 {
     [Header("Volume")]
     [Range(0, 1)]
-    public float masterVolume = 1;
+    public float MasterBusVolume = 0;
     [Range(0, 1)]
-    public float musicVolume = 1;
+    public float MusicBusVolume = 0;
     [Range(0, 1)]
-    public float ambienceVolume = 1;
-    [Range(0, 1)]
-    public float SFXVolume = 1;
+    public float SfxBusVolume = 0;
 
+    public FMOD.Studio.Bus MusicMasterBus;
+    public FMOD.Studio.Bus SfxMasterBus;
+    public FMOD.Studio.Bus MasterBus;
+    
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
 
@@ -40,8 +42,18 @@ public class AudioManager : MonoBehaviour
     
     private void Awake()
     {
-        eventInstances = new List<EventInstance>();
-        eventEmitters = new List<StudioEventEmitter>();
+        InitializeBusses();
+    }
+
+    private void InitializeBusses()
+    {
+        MasterBus = RuntimeManager.GetBus("bus:/Master");
+        MusicMasterBus = RuntimeManager.GetBus("bus:/MusicMaster");
+        SfxMasterBus = RuntimeManager.GetBus("bus:/SfxMaster");
+
+        MasterBus.setVolume(MasterBusVolume);
+        MusicMasterBus.setVolume(MusicBusVolume); 
+        SfxMasterBus.setVolume(SfxBusVolume);
     }
 
     private void Start()
@@ -55,11 +67,14 @@ public class AudioManager : MonoBehaviour
         {
             yield return null;
         }
-        InitEventInstances();
+        InitializeEventInstances();
     }
 
-    private void InitEventInstances()
+    private void InitializeEventInstances()
     {
+        eventInstances = new List<EventInstance>();
+        eventEmitters = new List<StudioEventEmitter>();
+        
         // Music Event Instances
         GameplayThemeEvent = CreateInstance(FMODEvents.Instance.GameplayTheme);
         ShopThemeEvent = CreateInstance(FMODEvents.Instance.ShopTheme);
@@ -72,9 +87,13 @@ public class AudioManager : MonoBehaviour
         // Gameplay Event Instances
         CrateDragEvent = CreateInstance(FMODEvents.Instance.CrateDrag);
         DialogueEvent = CreateInstance(FMODEvents.Instance.Dialogue);
-        
     }
 
+    public void SetBusVolume(FMOD.Studio.Bus bus, float volume)
+    {
+        bus.setVolume(volume);
+    }
+    
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
