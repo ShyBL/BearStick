@@ -24,7 +24,8 @@ public class OpeningCutscene : OurMonoBehaviour
     private Label m_Text2;
     private Label m_Text3;
     private VisualElement m_Image;
-    
+
+    private AudioManager audio;
     private void Start()
     {
         if (CharactersPerSecond == 0 || normalDelay == 0 || extraDelay == 0 || longDelay == 0 || fadeDuration == 0)
@@ -46,6 +47,10 @@ public class OpeningCutscene : OurMonoBehaviour
         m_Image = m_Root.Q<VisualElement>("Photograph");
         SetVisualElementAlpha(m_Image,0f);
 
+        audio = GameManager.AudioManager;
+        
+        audio.PlayEvent(audio.MusicManagerEvent,this.transform.position);
+        
         RunCutscene();
     }
     private PlayerActionsAsset actionAsset;
@@ -80,9 +85,6 @@ public class OpeningCutscene : OurMonoBehaviour
 
     private IEnumerator RunCutsceneCoroutine()
     {
-        var audio = GameManager.AudioManager;
-        audio.PlayEvent(audio.MusicManagerEvent,this.transform.position);
-        
         yield return new WaitForSeconds(musicDelay); 
         
         yield return StartSlideCoroutine(normalDelay, extraDelay, longDelay, String.Empty, ". . .", String.Empty); 
@@ -167,7 +169,7 @@ public class OpeningCutscene : OurMonoBehaviour
         string textBuffer = null; 
         char[] chars = line.ToCharArray();
         int i = 0;
-
+        
         while (i < chars.Length)
         {
             if (timer < Time.deltaTime) 
@@ -187,9 +189,6 @@ public class OpeningCutscene : OurMonoBehaviour
     
     public async Task RunCutsceneAsync()
     {
-        var audio = GameManager.AudioManager;
-        audio.PlayEvent(audio.MusicManagerEvent,this.transform.position);
-
         await Task.Delay(TimeSpan.FromSeconds(musicDelay));
         
         await StartSlideAsync(normalDelay, extraDelay, longDelay, String.Empty,". . .",String.Empty);
@@ -295,6 +294,8 @@ public class OpeningCutscene : OurMonoBehaviour
         char[] chars = line.ToCharArray();
         int i = 0;
 
+        audio.PlayEvent(audio.HandwritingEvent,this.transform.position);
+        
         while (i < chars.Length)
         {
             if (timer < Time.deltaTime)
@@ -310,6 +311,8 @@ public class OpeningCutscene : OurMonoBehaviour
                 await Task.Yield(); 
             }
         }
+        
+        audio.StopAndDontReleaseEvent(audio.HandwritingEvent);
     }
     
     private void SetLabelAlpha(Label label, float alpha)

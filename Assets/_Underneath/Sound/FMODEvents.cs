@@ -30,7 +30,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Click { get; private set; }
     [field: SerializeField] public EventReference Pause { get; private set; }
     [field: SerializeField] public EventReference UnPause { get; private set; }
-    
+    [field: SerializeField] public EventReference Handwriting { get; private set; }
+
     public static FMODEvents Instance { get; private set; }
     
     private void Awake()

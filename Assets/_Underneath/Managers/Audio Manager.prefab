@@ -158,3 +158,10 @@ MonoBehaviour:
       Data3: -338796116
       Data4: -1117349467
     Path: event:/UI/Bubble
+  <Handwriting>k__BackingField:
+    Guid:
+      Data1: -1520782904
+      Data2: 1327154549
+      Data3: -1584962385
+      Data4: 320382700
+    Path: event:/CHARACTER/HandWriting
