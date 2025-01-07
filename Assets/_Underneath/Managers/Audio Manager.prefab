@@ -60,20 +60,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b3f75949c04cc3956565fed3b905ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <GameplayTheme>k__BackingField:
+  <MusicManager>k__BackingField:
     Guid:
-      Data1: -598945407
-      Data2: 1202994049
-      Data3: -1015934547
-      Data4: -14214234
-    Path: event:/Music/Music
-  <ShopTheme>k__BackingField:
-    Guid:
-      Data1: -884533237
-      Data2: 1195983002
-      Data3: -1193447029
-      Data4: -2067591319
-    Path: event:/Music/ShopMusic 1
+      Data1: -280030955
+      Data2: 1235703804
+      Data3: -888038253
+      Data4: 437849274
+    Path: event:/Music/MusicManager
   <Footsteps>k__BackingField:
     Guid:
       Data1: -1806913121

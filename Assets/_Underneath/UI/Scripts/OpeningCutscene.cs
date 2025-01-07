@@ -80,6 +80,9 @@ public class OpeningCutscene : OurMonoBehaviour
 
     private IEnumerator RunCutsceneCoroutine()
     {
+        var audio = GameManager.AudioManager;
+        audio.PlayEvent(audio.MusicManagerEvent,this.transform.position);
+        
         yield return new WaitForSeconds(musicDelay); 
         
         yield return StartSlideCoroutine(normalDelay, extraDelay, longDelay, String.Empty, ". . .", String.Empty); 
@@ -184,6 +187,9 @@ public class OpeningCutscene : OurMonoBehaviour
     
     public async Task RunCutsceneAsync()
     {
+        var audio = GameManager.AudioManager;
+        audio.PlayEvent(audio.MusicManagerEvent,this.transform.position);
+
         await Task.Delay(TimeSpan.FromSeconds(musicDelay));
         
         await StartSlideAsync(normalDelay, extraDelay, longDelay, String.Empty,". . .",String.Empty);

@@ -98,17 +98,17 @@ public class Shop : OurMonoBehaviour
     {
         m_Root.style.display = DisplayStyle.None;
         
-        audio.StopAndDontReleaseEvent(audio.ShopThemeEvent);
-        
-        audio.UnPauseEvent(audio.GameplayThemeEvent);
-        
+        //audio.StopAndDontReleaseEvent(audio.ShopThemeEvent);
+        //audio.UnPauseEvent(audio.GameplayThemeEvent);
+        audio.ChangeTheme("Gameplay");
         Player.Instance.EnableMovement();
     }
 
     public void OpenShop()
     {
         m_Root.style.display = DisplayStyle.Flex;
-        audio.PlayEvent(audio.ShopThemeEvent,playerObj.transform.position);
+        //audio.PlayEvent(audio.ShopThemeEvent,playerObj.transform.position);
+        audio.ChangeTheme("Shop");
     }
     
 }

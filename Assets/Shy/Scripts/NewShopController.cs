@@ -16,7 +16,7 @@ public class NewShopController : OurMonoBehaviour
         Player.Instance.DisableMovement(); 
         Player.Instance.StopInPlace();
         
-        audio.PauseEvent(audio.GameplayThemeEvent);
+       // audio.PauseEvent(audio.GameplayThemeEvent);
         
         shop.OpenShop();
     }

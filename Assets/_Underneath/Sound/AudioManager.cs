@@ -17,11 +17,11 @@ public class AudioManager : MonoBehaviour
 {
     [Header("Volume")]
     [Range(0, 1)]
-    public float MasterBusVolume = 0;
+    public float MasterBusVolume = 1;
     [Range(0, 1)]
-    public float MusicBusVolume = 0;
+    public float MusicBusVolume = 1;
     [Range(0, 1)]
-    public float SfxBusVolume = 0;
+    public float SfxBusVolume = 1;
 
     public FMOD.Studio.Bus MusicMasterBus;
     public FMOD.Studio.Bus SfxMasterBus;
@@ -30,11 +30,11 @@ public class AudioManager : MonoBehaviour
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
 
+    public EventInstance MusicManagerEvent { get; private set; }
+
     public EventInstance FootstepsEvent { get; private set; }
     public EventInstance JumpEvent { get; private set; }
     public EventInstance LandEvent { get; private set; }
-    public EventInstance GameplayThemeEvent { get; private set; }
-    public EventInstance ShopThemeEvent { get; private set; }
     
     public EventInstance CrateDragEvent { get; private set; }
     public EventInstance DialogueEvent { get; private set; }
@@ -47,11 +47,11 @@ public class AudioManager : MonoBehaviour
 
     private void InitializeBusses()
     {
-        MasterBus = RuntimeManager.GetBus("bus:/Master");
+        //MasterBus = RuntimeManager.GetBus("bus:/Master");
         MusicMasterBus = RuntimeManager.GetBus("bus:/MusicMaster");
         SfxMasterBus = RuntimeManager.GetBus("bus:/SfxMaster");
 
-        MasterBus.setVolume(MasterBusVolume);
+        //MasterBus.setVolume(MasterBusVolume);
         MusicMasterBus.setVolume(MusicBusVolume); 
         SfxMasterBus.setVolume(SfxBusVolume);
     }
@@ -76,8 +76,7 @@ public class AudioManager : MonoBehaviour
         eventEmitters = new List<StudioEventEmitter>();
         
         // Music Event Instances
-        GameplayThemeEvent = CreateInstance(FMODEvents.Instance.GameplayTheme);
-        ShopThemeEvent = CreateInstance(FMODEvents.Instance.ShopTheme);
+        MusicManagerEvent  = CreateInstance(FMODEvents.Instance.MusicManager);
         
         // Character Event Instances
         FootstepsEvent = CreateInstance(FMODEvents.Instance.Footsteps);
@@ -89,6 +88,10 @@ public class AudioManager : MonoBehaviour
         DialogueEvent = CreateInstance(FMODEvents.Instance.Dialogue);
     }
 
+    public void ChangeTheme(string themeName)
+    {
+        ChangeEventParametersWithString(MusicManagerEvent,"music",themeName);
+    }
     public void SetBusVolume(FMOD.Studio.Bus bus, float volume)
     {
         bus.setVolume(volume);
