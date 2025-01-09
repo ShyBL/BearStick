@@ -26,10 +26,6 @@ public class OurGameManager : MonoBehaviour
         StartCoroutine(InitGameManagerCoroutine());
 #else
             var task = InitGameManagerAsync();
-            if (task.IsCompleted)
-            {
-                SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
-            }
 #endif
     }
 

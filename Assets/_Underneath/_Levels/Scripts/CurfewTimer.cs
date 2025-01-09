@@ -37,10 +37,10 @@ public class CurfewTimer : OurMonoBehaviour
     private void Start()
     {
         var audio =  GameManager.AudioManager;
-        
-        audio.PlayEventWithStringParameters(audio.GameplayThemeEvent,
-            audio.gameObject.transform.position,
-            "Speed", "Normal");
+        audio.ChangeTheme("Gameplay");
+        // audio.PlayEventWithStringParameters(audio.GameplayThemeEvent,
+        //     audio.gameObject.transform.position,
+        //     "Speed", "Normal");
     }
 
    
@@ -119,18 +119,18 @@ public class CurfewTimer : OurMonoBehaviour
         if(bMusicChanged == false)
         {
             bMusicChanged = true;
-            var gameplayTheme =  GameManager.AudioManager.GameplayThemeEvent;
-            GameManager.AudioManager.ChangeEventParametersWithString(gameplayTheme, "Speed",
-            "Fast");
+            // var gameplayTheme =  GameManager.AudioManager.GameplayThemeEvent;
+            // GameManager.AudioManager.ChangeEventParametersWithString(gameplayTheme, "Speed",
+            // "Fast");
         
             Debug.Log("Change Music Called: Fast");
         }
         else
         {
              bMusicChanged = false;
-            var gameplayTheme = GameManager.AudioManager.GameplayThemeEvent;
-            GameManager.AudioManager.ChangeEventParametersWithString(gameplayTheme, "Speed",
-            "Normal");
+            // var gameplayTheme = GameManager.AudioManager.GameplayThemeEvent;
+            // GameManager.AudioManager.ChangeEventParametersWithString(gameplayTheme, "Speed",
+            // "Normal");
         
             Debug.Log("Change Music Called: Normal");
         }
