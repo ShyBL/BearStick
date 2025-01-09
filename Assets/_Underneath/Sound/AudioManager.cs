@@ -38,6 +38,7 @@ public class AudioManager : MonoBehaviour
     
     public EventInstance CrateDragEvent { get; private set; }
     public EventInstance DialogueEvent { get; private set; }
+    public EventInstance DialogueSelfEvent { get; private set; }
     public EventInstance HandwritingEvent { get; set; }
 
     
@@ -88,6 +89,8 @@ public class AudioManager : MonoBehaviour
         // Gameplay Event Instances
         CrateDragEvent = CreateInstance(FMODEvents.Instance.CrateDrag);
         DialogueEvent = CreateInstance(FMODEvents.Instance.Dialogue);
+        DialogueSelfEvent = CreateInstance(FMODEvents.Instance.Dialogue);
+        
         HandwritingEvent = CreateInstance(FMODEvents.Instance.Handwriting);
     }
 

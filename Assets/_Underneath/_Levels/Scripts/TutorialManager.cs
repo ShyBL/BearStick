@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class TutorialManager : MonoBehaviour
+public class TutorialManager : OurMonoBehaviour
 {
     [SerializeField] private Dialogue dialogue;
     [SerializeField] private Sprite talkingSprite;
@@ -48,31 +48,31 @@ public class TutorialManager : MonoBehaviour
     {
         if (startLevel && startLevelDOONCE)
         {
-            dialogue.StartDialogue(dialogueLines[0],"Georgie", talkingSprite);
+            dialogue.StartDialogue(dialogueLines[0],"Georgie",true, talkingSprite);
             startLevelDOONCE = false;
         }
 
         if (jumping && jumpingDOONCE)
         {
-            dialogue.StartDialogue(dialogueLines[1],"Georgie", talkingSprite);
+            dialogue.StartDialogue(dialogueLines[1],"Georgie", false, talkingSprite);
             jumpingDOONCE = false;
         }
         
         if (pushing && pushingDOONCE)
         {
-            dialogue.StartDialogue(dialogueLines[2],"Georgie", talkingSprite);
+            dialogue.StartDialogue(dialogueLines[2],"Georgie", false, talkingSprite);
             pushingDOONCE = false;
         }
         
         if (opening && openingDOONCE)
         {
-            dialogue.StartDialogue(dialogueLines[3],"Georgie", talkingSprite);
+            dialogue.StartDialogue(dialogueLines[3],"Georgie",false, talkingSprite);
             openingDOONCE = false;
         }
         
         if (carrying && carryingDOONCE)
         {
-            dialogue.StartDialogue(dialogueLines[4],"Georgie", talkingSprite);
+            dialogue.StartDialogue(dialogueLines[4],"Georgie", false, talkingSprite);
             carryingDOONCE = false;
         }
         

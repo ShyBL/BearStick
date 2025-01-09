@@ -23,7 +23,7 @@ public class Dialogue : OurMonoBehaviour
         m_Image.parent.style.display = DisplayStyle.None;
     }
 
-    public void StartDialogue(string line, string speaker, Sprite sprite = null)
+    public void StartDialogue(string line, string speaker,  bool withEmma, Sprite sprite = null)
     {
         m_Image.parent.style.display = DisplayStyle.Flex;
         if (sprite == null)
@@ -33,7 +33,8 @@ public class Dialogue : OurMonoBehaviour
             m_Image.style.display = DisplayStyle.Flex;
             m_Image.style.backgroundImage = new StyleBackground(sprite);
         }
-        StartCoroutine(TypeText(line,speaker));
+        
+        StartCoroutine(TypeText(line, speaker, withEmma));
     }
 
     void EndDialogue()
@@ -42,8 +43,14 @@ public class Dialogue : OurMonoBehaviour
         m_Image.parent.style.display = DisplayStyle.None;
     }
 
-    IEnumerator TypeText(string line, string speaker)
+    IEnumerator TypeText(string line, string speaker, bool withEmma)
     {
+        if (withEmma)
+        {
+            GameManager.AudioManager.PlayEventWithStringParameters(GameManager.AudioManager.DialogueSelfEvent,transform.position,"Character","Emma");
+            yield return new WaitForSeconds(0.5f);
+        }
+        
         GameManager.AudioManager.PlayEventWithStringParameters(GameManager.AudioManager.DialogueEvent,transform.position,"Character",speaker);
         
         float timer = 0;
@@ -67,7 +74,13 @@ public class Dialogue : OurMonoBehaviour
                 yield return null;
             }
         }
+        
         GameManager.AudioManager.StopAndDontReleaseEvent(GameManager.AudioManager.DialogueEvent);
+        
+        if (withEmma)
+        {
+            GameManager.AudioManager.StopAndDontReleaseEvent(GameManager.AudioManager.DialogueSelfEvent);
+        }
 
         Player.Instance.playerInput.onDialogueEnd += EndDialogue;
     }
