@@ -252,7 +252,7 @@ MonoBehaviour:
           m_StringArgument: Open
           m_BoolArgument: 0
         m_CallState: 2
-  interactionTriggered: 0
+  Interactable: 0
 --- !u!114 &3441067364495566839
 MonoBehaviour:
   m_ObjectHideFlags: 0
