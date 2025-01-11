@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.IO;
 using System.Threading.Tasks;
@@ -5,13 +6,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : OurMonoBehaviour
 {
     private UIDocument m_Doc;
     private VisualElement m_Root;
     private Button m_Play;
     private Button m_Exit;
     private Button m_Delete;
+
+    private void Awake()
+    { 
+        GameManager.AudioManager.ChangeTheme("Menu");
+    }
 
     void Start()
     {

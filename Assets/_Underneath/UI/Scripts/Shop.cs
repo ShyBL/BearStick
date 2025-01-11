@@ -91,24 +91,24 @@ public class Shop : OurMonoBehaviour
 
     void OnTalkButtonPressed(ClickEvent evt) 
     {
-        m_Dialogue.StartDialogue(m_DialogueLines[Random.Range(0, m_DialogueLines.Count)],"Artyom");
+        m_Dialogue.StartDialogue(m_DialogueLines[Random.Range(0, m_DialogueLines.Count)],"Artyom", true);
     }
 
     void OnExitButtonPressed(ClickEvent evt)
     {
         m_Root.style.display = DisplayStyle.None;
         
-        audio.StopAndDontReleaseEvent(audio.ShopThemeEvent);
-        
-        audio.UnPauseEvent(audio.GameplayThemeEvent);
-        
+        //audio.StopAndDontReleaseEvent(audio.ShopThemeEvent);
+        //audio.UnPauseEvent(audio.GameplayThemeEvent);
+        audio.ChangeTheme("Gameplay");
         Player.Instance.EnableMovement();
     }
 
     public void OpenShop()
     {
         m_Root.style.display = DisplayStyle.Flex;
-        audio.PlayEvent(audio.ShopThemeEvent,playerObj.transform.position);
+        //audio.PlayEvent(audio.ShopThemeEvent,playerObj.transform.position);
+        audio.ChangeTheme("Shop");
     }
     
 }
