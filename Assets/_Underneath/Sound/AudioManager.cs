@@ -15,6 +15,7 @@ public enum ShopType
 
 public class AudioManager : MonoBehaviour
 {
+    public bool InitializeEvent;
     [Header("Volume")]
     [Range(0, 1)]
     public float MasterBusVolume = 1;
@@ -25,7 +26,7 @@ public class AudioManager : MonoBehaviour
 
     public FMOD.Studio.Bus MusicMasterBus;
     public FMOD.Studio.Bus SfxMasterBus;
-    public FMOD.Studio.Bus MasterBus;
+   // public FMOD.Studio.Bus MasterBus;
     
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
@@ -75,6 +76,7 @@ public class AudioManager : MonoBehaviour
 
     private void InitializeEventInstances()
     {
+        InitializeEvent = true;
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
         
