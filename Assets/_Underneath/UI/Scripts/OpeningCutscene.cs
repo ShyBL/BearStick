@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class OpeningCutscene : OurMonoBehaviour
 {
@@ -26,8 +28,34 @@ public class OpeningCutscene : OurMonoBehaviour
     private VisualElement m_Image;
 
     private AudioManager audio;
+    
+    public Light2D light2D;
+    public float minIntensity = 0.5f;
+    public float maxIntensity = 1.4f;
+    public float noiseSpeed = 1.0f; 
+    private float noiseOffset;
+    private float nextOffsetUpdateTime;
+    public float offsetCooldown = 2.0f; // Cooldown duration for updating the noise offset
+    
+    void Update()
+    {
+        // Check if it's time to update the noise offset
+        if (Time.time >= nextOffsetUpdateTime)
+        {
+            noiseOffset = Random.Range(0f, 10f); // Update the noise offset
+            nextOffsetUpdateTime = Time.time + offsetCooldown; // Reset the cooldown timer
+        }
+
+        // Calculate the noise value and map it to the intensity range
+        float noiseValue = Mathf.PerlinNoise(noiseOffset, Time.time * noiseSpeed);
+        light2D.intensity = Mathf.Lerp(minIntensity, maxIntensity, noiseValue);
+    }
+
     private void Start()
     {
+        noiseOffset = Random.Range(0f, 10f); // Initialize the noise offset
+        nextOffsetUpdateTime = Time.time + offsetCooldown; // Set the initial time for the next offset update
+        
         if (CharactersPerSecond == 0 || normalDelay == 0 || extraDelay == 0 || longDelay == 0 || fadeDuration == 0)
         {
             Debug.LogException(new Exception($"One Of The Variables Has Not Been Assigned In The Inspector!"));
@@ -36,10 +64,22 @@ public class OpeningCutscene : OurMonoBehaviour
         m_Document = GetComponent<UIDocument>();
         m_Root = m_Document.rootVisualElement;
         
+#if UNITY_EDITOR 
+        
+        m_Text1 = m_Root.Q<Label>("FirstLine");
+        SetLabelAlpha(m_Text1, 0f);
+        
+        audio = GameManager.AudioManager;
+        
+        audio.PlayEvent(audio.MusicManagerEvent,this.transform.position);
+        
+        RunCutscene();
+
+#else
+        
         m_Text1 = m_Root.Q<Label>("FirstLine");
         SetLabelAlpha(m_Text1, 0f);
         m_Text2 = m_Root.Q<Label>("SecondLine");
-        
         SetLabelAlpha(m_Text2, 0f);
         m_Text3 = m_Root.Q<Label>("LastLine");
         SetLabelAlpha(m_Text3, 0f);
@@ -52,9 +92,31 @@ public class OpeningCutscene : OurMonoBehaviour
         audio.PlayEvent(audio.MusicManagerEvent,this.transform.position);
         
         RunCutscene();
+#endif
     }
-    private PlayerActionsAsset actionAsset;
+    
+    private void RunCutscene()
+    {
+#if UNITY_WEBGL 
+        StartCoroutine(RunCutsceneCoroutine());
+#endif
+#if UNITY_EDITOR 
+        RunTestCutsceneAsync();
+#else 
+        RunCutsceneAsync(); 
+#endif
+    }
 
+    [TextArea] private string CutsceneScript;
+    private void RunTestCutsceneAsync()
+    {
+        TypeTextAsync(CutsceneScript, m_Text1);
+    }
+    
+
+    #region Skip Functionalities
+
+    private PlayerActionsAsset actionAsset;
     private void OnEnable()
     {
         actionAsset = new PlayerActionsAsset();
@@ -67,21 +129,9 @@ public class OpeningCutscene : OurMonoBehaviour
         actionAsset.Player.EndDialogue.performed -= LoadMainMenu;
         actionAsset.Disable();
     }
+    #endregion
 
-    private void LoadMainMenu(InputAction.CallbackContext obj)
-    {
-        //StopAllCoroutines();
-        StartCoroutine(LoadMainMenu());
-    }
-    
-    private void RunCutscene()
-    {
-#if UNITY_WEBGL 
-        StartCoroutine(RunCutsceneCoroutine()); 
-#else 
-        RunCutsceneAsync(); 
-#endif
-    }
+    #region Run Cutscene As Coroutine
 
     private IEnumerator RunCutsceneCoroutine()
     {
@@ -111,6 +161,12 @@ public class OpeningCutscene : OurMonoBehaviour
         
         StartCoroutine(LoadMainMenu());
     } 
+
+    private void LoadMainMenu(InputAction.CallbackContext obj)
+    {
+        //StopAllCoroutines();
+        StartCoroutine(LoadMainMenu());
+    }
     
     private IEnumerator LoadMainMenu()
     { 
@@ -122,8 +178,8 @@ public class OpeningCutscene : OurMonoBehaviour
             yield return null;
         }
         SceneManager.UnloadSceneAsync(1);
-    }
-
+    }    
+    
     private IEnumerator StartSlideCoroutine(float delay1Line, float delay2Line, float delay3Line, string line1 = null, string line2 = null, string line3 = null, bool photo = false)
     {
         if (photo)
@@ -187,6 +243,59 @@ public class OpeningCutscene : OurMonoBehaviour
         } 
     }
     
+    private IEnumerator FadeLabelCoroutine(Label label, float startAlpha, float endAlpha, float duration)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            label.style.opacity = newAlpha;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        label.style.opacity = endAlpha;
+    }
+
+    private IEnumerator FadeLabelsCoroutine(List<Label> labels, float startAlpha, float endAlpha, float duration, bool photo = false)
+    {
+        var fadeCoroutines = new List<Coroutine>();
+
+        foreach (Label label in labels)
+        {
+            if (label.style.opacity == 0f)
+                continue;
+
+            fadeCoroutines.Add(StartCoroutine(FadeLabelCoroutine(label, startAlpha, endAlpha, duration)));
+        }
+
+        if (photo)
+        {
+            fadeCoroutines.Add(StartCoroutine(FadeVisualElementCoroutine(m_Image, startAlpha, endAlpha, duration)));
+        }
+
+        foreach (var coroutine in fadeCoroutines)
+        {
+            yield return coroutine;
+        }
+    }
+
+    private IEnumerator FadeVisualElementCoroutine(VisualElement visualElement, float startAlpha, float endAlpha, float duration)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            visualElement.style.opacity = newAlpha;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        visualElement.style.opacity = endAlpha;
+    }
+    
+    #endregion
+    
+    #region Run Cutscene As Async
+
     public async Task RunCutsceneAsync()
     {
         await Task.Delay(TimeSpan.FromSeconds(musicDelay));
@@ -228,7 +337,7 @@ public class OpeningCutscene : OurMonoBehaviour
         
         await LoadMainMenuAsync();
     }
-
+    
     private async Task LoadMainMenuAsync()
     {
         var asyncLoad  = SceneManager.LoadSceneAsync(2,LoadSceneMode.Additive);
@@ -240,7 +349,7 @@ public class OpeningCutscene : OurMonoBehaviour
         
         SceneManager.UnloadSceneAsync(1);
     }
-
+    
     private async Task StartSlideAsync(float delay1Line, float delay2Line, float delay3Line, string line1 = null, string line2 = null, string line3 = null, bool photo = false)
     {
         if (photo)
@@ -315,78 +424,6 @@ public class OpeningCutscene : OurMonoBehaviour
         audio.StopAndDontReleaseEvent(audio.HandwritingEvent);
     }
     
-    private void SetLabelAlpha(Label label, float alpha)
-    {
-        label.style.opacity = alpha;
-    }
-    
-    private void SetVisualElementAlpha(VisualElement visualElement, float alpha)
-    {
-        visualElement.style.opacity = alpha;
-    }
-    
-    private void FadeVisualElement(VisualElement visualElement, float startAlpha, float endAlpha, float duration)
-    {
-        float elapsedTime = 0f;
-        while (elapsedTime < duration)
-        {
-            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
-            visualElement.style.opacity = newAlpha;
-            elapsedTime += Time.deltaTime;
-        }
-        visualElement.style.opacity = endAlpha;
-    }
-    
-    private IEnumerator FadeLabelCoroutine(Label label, float startAlpha, float endAlpha, float duration)
-    {
-        float elapsedTime = 0f;
-        while (elapsedTime < duration)
-        {
-            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
-            label.style.opacity = newAlpha;
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        label.style.opacity = endAlpha;
-    }
-
-    private IEnumerator FadeLabelsCoroutine(List<Label> labels, float startAlpha, float endAlpha, float duration, bool photo = false)
-    {
-        var fadeCoroutines = new List<Coroutine>();
-
-        foreach (Label label in labels)
-        {
-            if (label.style.opacity == 0f)
-                continue;
-
-            fadeCoroutines.Add(StartCoroutine(FadeLabelCoroutine(label, startAlpha, endAlpha, duration)));
-        }
-
-        if (photo)
-        {
-            fadeCoroutines.Add(StartCoroutine(FadeVisualElementCoroutine(m_Image, startAlpha, endAlpha, duration)));
-        }
-
-        foreach (var coroutine in fadeCoroutines)
-        {
-            yield return coroutine;
-        }
-    }
-
-    private IEnumerator FadeVisualElementCoroutine(VisualElement visualElement, float startAlpha, float endAlpha, float duration)
-    {
-        float elapsedTime = 0f;
-        while (elapsedTime < duration)
-        {
-            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
-            visualElement.style.opacity = newAlpha;
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        visualElement.style.opacity = endAlpha;
-    }
-
-    
     private async Task FadeLabelAsync(Label label, float startAlpha, float endAlpha, float duration)
     {
         float elapsedTime = 0f;
@@ -432,4 +469,39 @@ public class OpeningCutscene : OurMonoBehaviour
         }
         visualElement.style.opacity = endAlpha;
     }
+    
+    #endregion
+
+
+    #region VisualElement Helper Functions
+
+    private void SetLabelAlpha(Label label, float alpha)
+    {
+        label.style.opacity = alpha;
+    }
+    
+    private void SetVisualElementAlpha(VisualElement visualElement, float alpha)
+    {
+        visualElement.style.opacity = alpha;
+    }
+    
+    private void FadeVisualElement(VisualElement visualElement, float startAlpha, float endAlpha, float duration)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            visualElement.style.opacity = newAlpha;
+            elapsedTime += Time.deltaTime;
+        }
+        visualElement.style.opacity = endAlpha;
+    }
+
+    #endregion
+    
+    
+
+
+    
+    
 }
