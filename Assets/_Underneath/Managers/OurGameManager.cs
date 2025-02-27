@@ -39,7 +39,11 @@ public class OurGameManager : MonoBehaviour
     private IEnumerator InitManagersCoroutine()
     {
         AudioManager = FindFirstObjectByType<AudioManager>();
-        yield return null; // Ensure the coroutine yields at least once
+        while (!AudioManager.InitializeEvent)
+        {
+            yield return null; // Ensure the coroutine yields at least once
+        }
+       
     }
 #else
     private async Task InitGameManagerAsync()
