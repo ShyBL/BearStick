@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Underneath/UI/Style%20Sheets/OpeningCutscene.uss?fileID=7433441132597879392&amp;guid=599bedb9f9f911b4fb845434aaa87ea7&amp;type=3#OpeningCutscene" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); padding-top: 6%; padding-right: 8%; padding-bottom: 6%; padding-left: 8%; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/_Underneath/UI/Sprites/shadow%20black%20abstract.png?fileID=2800000&amp;guid=b5311afb1ea6d604a9f1d34d886f5a79&amp;type=3#shadow black abstract&apos;); justify-content: flex-end; align-items: center;">
+        <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus " parse-escape-sequences="true" display-tooltip-when-elided="true" name="FirstLine" class="text" style="font-size: 45px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+    </ui:VisualElement>
+</ui:UXML>
