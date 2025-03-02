@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
@@ -18,15 +19,15 @@ public class AudioManager : MonoBehaviour
     public bool InitializeEvent;
     [Header("Volume")]
     [Range(0, 1)]
-    public float MasterBusVolume = 1;
+    public float MasterBusVolume = 0;
     [Range(0, 1)]
-    public float MusicBusVolume = 1;
+    public float MusicBusVolume = 0;
     [Range(0, 1)]
-    public float SfxBusVolume = 1;
+    public float SfxBusVolume = 0;
 
     public FMOD.Studio.Bus MusicMasterBus;
     public FMOD.Studio.Bus SfxMasterBus;
-   // public FMOD.Studio.Bus MasterBus;
+    public FMOD.Studio.Bus MasterBus;
     
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
@@ -45,23 +46,47 @@ public class AudioManager : MonoBehaviour
     
     private void Awake()
     {
-        InitializeBusses();
+        StartCoroutine(WaitForBanksToLoadCoroutine());
     }
 
-    private void InitializeBusses()
+    private void Update()
     {
-        //MasterBus = RuntimeManager.GetBus("bus:/Master");
-        MusicMasterBus = RuntimeManager.GetBus("bus:/MusicMaster");
-        SfxMasterBus = RuntimeManager.GetBus("bus:/SfxMaster");
-
-        //MasterBus.setVolume(MasterBusVolume);
+        MasterBus.setVolume(MasterBusVolume);
         MusicMasterBus.setVolume(MusicBusVolume); 
         SfxMasterBus.setVolume(SfxBusVolume);
     }
 
-    private void Start()
+    private void InitializeBusses()
     {
-        StartCoroutine(WaitForBanksToLoadCoroutine());
+        
+        FMODUnity.RuntimeManager.StudioSystem.getBankList(out FMOD.Studio.Bank[] loadedBanks);
+        StringBuilder logBuilder = new StringBuilder();
+
+        foreach (FMOD.Studio.Bank bank in loadedBanks)
+        {
+            bank.getPath(out string path);
+            logBuilder.AppendLine($"Bank Path: {path}");
+
+            var busListOk = bank.getBusList(out FMOD.Studio.Bus[] myBuses);
+            bank.getBusCount(out int busCount);
+            logBuilder.AppendLine($"Bus Count: {busCount}");
+
+            if (busCount > 0)
+            {
+                foreach (var bus in myBuses)
+                {
+                    bus.getPath(out string busPath);
+                    logBuilder.AppendLine($"Bus Path: {busPath}");
+                }
+            }
+        }
+
+        // Log all the accumulated information at once
+        Debug.Log(logBuilder.ToString());
+        
+        MasterBus = RuntimeManager.GetBus("bus:/");
+        MusicMasterBus = RuntimeManager.GetBus("bus:/MusicMaster");
+        SfxMasterBus = RuntimeManager.GetBus("bus:/SfxMaster");
     }
 
     private IEnumerator WaitForBanksToLoadCoroutine()
@@ -70,8 +95,9 @@ public class AudioManager : MonoBehaviour
         {
             yield return null;
         }
-        InitializeEventInstances();
 
+        InitializeBusses();
+        InitializeEventInstances();
     }
 
     private void InitializeEventInstances()
