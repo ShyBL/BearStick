@@ -5,405 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a8ccd4-6aec-4372-abfb-0de7df0f6ac3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BearStick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/1st ramp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/1st ramp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Full road.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Full road.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/14solo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/14solo.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/14soloAlt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/14soloAlt.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/14soloDecay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/14soloDecay.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/19.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/20.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/21.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/7.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/metalSeperator.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/metalSeperator.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/platform 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/platform 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/platform.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/platform.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/redMetStray.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/redMetStray.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/redMetalBlock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/redMetalBlock.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/rubble tinted.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/rubble tinted.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/slantWall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/slantWall.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/small rocks tinted.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/small rocks tinted.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/smallRockWallBlock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Reusable Assets/smallRockWallBlock.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Under Variant 1.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Under Variant 1.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Under Variant 2.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Under Variant 2.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Under Variant 3.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Under Variant 3.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Under fix.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Under fix.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/Additive Rooftiop 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/Additive Rooftiop 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/Apartment bottom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/Apartment bottom.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/House 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/House 3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/House 4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/House 4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/House.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/House.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 5.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 7.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 8.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/house 9.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/tent 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Level Houses and Platforms/tent 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/Ramp 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/Ramp 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/Ramp 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/Ramp 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/Roof 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/Roof 3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/Roof 4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/Roof 4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/Wooden platform 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/Wooden platform 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/rock platform 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/rock platform 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/rock platform 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/rock platform 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/rock platform 3 wider.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/rock platform 3 wider.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/roof 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/roof 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/wooden platform 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/wooden platform 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/wooden platform 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/wooden platform 3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/wooden platform 4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Platforms/wooden platform 4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Rock 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Rock 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Seats 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/Seats 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/back wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/back wall.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/backdrop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/backdrop.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/extra 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/Untinted/extra 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/10.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/11.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/12.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/13.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/14.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/14alt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/14alt.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/15.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/16.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/17.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/17fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/17fix.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/18.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/22.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/4fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/4fix.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/5.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/8.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/9.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/IMG_0738.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/IMG_0738.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/ramp tinted.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/ramp tinted.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/reMetSlant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/assets/reMetSlant.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/level.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/level.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/road fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/2nd Iteration/road fix.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/7.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/7back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/7back.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/Level.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/Level.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/bearStickNew2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/bearStickNew2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingInPiece.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingInPiece.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingLeft 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingLeft 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingLeft 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingLeft 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingLeft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingLeft.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingRight 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingRight 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingRight 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingRight 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingRight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/buildingRight.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/crate 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/crate 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/i.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/i.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/iflat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/iflat.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/platInd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/platInd.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/platIndicator.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/platIndicator.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/trapaz.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Near/trapaz.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerData.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Lights.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Lights/Global Light 2D.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Lights/Global Light 2D.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Lights/SpotLight 2D.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Lights/SpotLight 2D.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/New Volume Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/New Volume Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs/Cache 2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs/Cache 2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs/Dumpster 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs/Dumpster 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs/NPC_Georgie 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs/NPC_Georgie 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs/Shop_Ext 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs/Shop_Ext 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs/TrashCan.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/NewPrefabs/TrashCan.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/DrawLineRenderer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/DrawLineRenderer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/InteractiveObject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/InteractiveObject.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NPCDialogue.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NPCDialogue.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NewCache.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NewCache.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NewShopController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NewShopController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NewStash.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/NewStash.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/ParallaxLayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Scripts/ParallaxLayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Prototype_Grey.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Prototype_Grey.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Prototype_White.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Prototype_White.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Sprite Shape Shadow.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Sprite Shape Shadow.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Sprite Shape Warehouse Background.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Sprite Shape Warehouse Background.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Statue_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Statue_background.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Statue_background_defiled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Statue_background_defiled.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Statue_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Statue_foreground.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Statue_foreground_defiled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/Statue_foreground_defiled.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/imgonline-com-ua-TextureSeamless-KxNps3jbQcv8iX8H.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/imgonline-com-ua-TextureSeamless-KxNps3jbQcv8iX8H.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/imgonline-com-ua-TextureSeamless-YgTwBEQEumZ3YroE.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shy/Sprites/imgonline-com-ua-TextureSeamless-YgTwBEQEumZ3YroE.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Animation/CacheController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Animation/CacheController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Animation/DumpsterController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Animation/DumpsterController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Animation/GeorgieController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Animation/GeorgieController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Animation/TrashcanController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Animation/TrashcanController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Cache.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Cache.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Dumpster.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Dumpster.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/NPC_Georgie.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/NPC_Georgie.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Shop_Ext.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Shop_Ext.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Trashcan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Trashcan.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Trashcan.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Prefabs/Trashcan.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Cache.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Cache.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/NPC.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/NPC.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/ShopControl.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/ShopControl.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Stash.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Scripts/Stash.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Sprites/Tutorial Level Back Layer.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Sprites/Tutorial Level Back Layer.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Sprites/Tutorial Level Front Layer.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Area/Sprites/Tutorial Level Front Layer.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Item/Sprites/WoodenCrate2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Game Item/Sprites/WoodenCrate2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Prefabs/TestItem1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Prefabs/TestItem1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Prefabs/TestItem2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Prefabs/TestItem2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Prefabs/UI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Prefabs/UI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Prefabs/hud.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Prefabs/hud.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/EmptyFoodCan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/EmptyFoodCan.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/MetalSheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/MetalSheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/NearlyEmptyPizzaBox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/NearlyEmptyPizzaBox.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/PropaneTank.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/PropaneTank.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/Spoon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/Spoon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/Springs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/Springs.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/Tire1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/Tire1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/Turnip1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/Turnip1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/WaterBottle1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/Sprites/WaterBottle1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/UI Toolkit/HUD.uxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Inventory/UI Toolkit/HUD.uxml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Animation/EmmaAnimController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Animation/EmmaAnimController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Animation/PlayerAnimator.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Player/Animation/PlayerAnimator.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainLevel.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Scenes/MainLevel.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Bank A.bank" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Bank A.bank.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Character.bank" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Character.bank.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Items.bank" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Items.bank.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Master.bank" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Master.bank.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Master.strings.bank" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Master.strings.bank.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Music.bank" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/Music.bank.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/UI.bank" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/Sound/FMOD/UI.bank.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Sprites/Final-InventoryBackgroundStrappedBag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Sprites/Final-InventoryBackgroundStrappedBag.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Sprites/LetterCutscene.mov" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/UI/Sprites/LetterCutscene.mov.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/7.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/7back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/7back.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingInPiece.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingInPiece.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingLeft 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingLeft 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingRight 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/buildingRight 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/crate 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/crate 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/crate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/crate.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/i.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/i.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/iflat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/iflat.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/marioBrick.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/marioBrick.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/semiSolidTop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/semiSolidTop.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/trapaz.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tests/trapaz.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Broken Room C outline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Broken Room C outline.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Pillars C Edit.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Pillars C Edit.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Broken Pillar bottom C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Broken Pillar bottom C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Broken Window C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Broken Window C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Camp House C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Camp House C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Catwalk C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Catwalk C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Copy of Shelf No Filter.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Copy of Shelf No Filter.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Debris C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Debris C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Pipe C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Pipe C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Posters C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Posters C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Stairs C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Stairs C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Tutorial Background C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Tutorial Background C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Vent C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Vent C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Wall A.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Wall A.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Windows C.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces Filter/Windows C.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces NF.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces NF/Background level.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/Sprites/Tutorial Level/Tutorial Level Pieces NF/Background level.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/newLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/newLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Underneath/_Levels/EmmaLevel 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Underneath/_Levels/EmmaLevel 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -429,24 +33,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Development-Build002",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Art-Tests&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/PC/1.3\Underneath.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/PC/1.3.1/Underneath.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\UnityProjects\BearStick\Builds\PC" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -547,7 +151,13 @@
       <workItem from="1732543435545" duration="3101000" />
       <workItem from="1732680108526" duration="3373000" />
       <workItem from="1732687356614" duration="339000" />
-      <workItem from="1736625223356" duration="1182000" />
+      <workItem from="1734349486593" duration="5022000" />
+      <workItem from="1734356678431" duration="6937000" />
+      <workItem from="1734723796721" duration="599000" />
+      <workItem from="1735131032129" duration="103000" />
+      <workItem from="1735831731894" duration="62000" />
+      <workItem from="1741175502417" duration="25000" />
+      <workItem from="1741723996178" duration="1205000" />
     </task>
     <servers />
   </component>

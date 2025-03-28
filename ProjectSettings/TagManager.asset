@@ -43,6 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Far Background
+    uniqueID: 328641911
+    locked: 0
+  - name: Fog
+    uniqueID: 181199395
+    locked: 0
+  - name: Background Blur
+    uniqueID: 3491439877
+    locked: 0
   - name: Background
     uniqueID: 3476714515
     locked: 0
@@ -54,6 +63,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1519769909
+    locked: 0
+  - name: Ground
+    uniqueID: 3623696735
     locked: 0
   - name: Front Layer
     uniqueID: 1604884155
