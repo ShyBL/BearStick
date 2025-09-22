@@ -10,6 +10,7 @@ public partial class CustomButton : Button
     float MinHoverRotation { get; set; }
     float MaxHoverRotation { get; set; }
     int StartingDirection { get; set; }
+    bool ShowBorder { get; set; }
 
     public CustomButton()
     {
@@ -50,6 +51,11 @@ public partial class CustomButton : Button
             name = "Text",
             defaultValue = "Test"
         };
+        UxmlBoolAttributeDescription m_ShowBorderAttr = new UxmlBoolAttributeDescription
+        {
+            name = "Show-Border",
+            defaultValue = true
+        };
 
         public override void Init(VisualElement button, IUxmlAttributes bag, CreationContext cc)
         {
@@ -62,8 +68,26 @@ public partial class CustomButton : Button
             but.MinHoverRotation = m_MinHoverRotationAttr.GetValueFromBag(bag, cc);
             but.MaxHoverRotation = m_MaxHoverRotationAttr.GetValueFromBag(bag, cc);
             but.StartingDirection = m_StartingDirAttr.GetValueFromBag(bag, cc);
+            but.ShowBorder = m_ShowBorderAttr.GetValueFromBag(bag, cc);
 
+            but.SetupBorder();
             but.EndHover();
+        }
+    }
+    
+    private void SetupBorder()
+    {
+        var existingBorder = this.Q("_border");
+        if (existingBorder != null)
+        {
+            Remove(existingBorder);
+        }
+
+        if (ShowBorder)
+        {
+            var border = new VisualElement { name = "_border", focusable = false };
+            border.AddToClassList("button-border");
+            Add(border);
         }
     }
 

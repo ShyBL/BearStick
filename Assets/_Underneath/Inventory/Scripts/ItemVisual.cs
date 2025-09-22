@@ -10,6 +10,8 @@ public partial class ItemVisual : VisualElement
     public VisualElement Icon;
     private ItemTooltip m_Tooltip;
     private bool m_Dragging = false;
+    private Vector2 m_OriginalPosition;
+    private VisualElement m_DragPreview;
 
     public ItemVisual(StoredItem item, VisualElement root)
     {
@@ -18,50 +20,60 @@ public partial class ItemVisual : VisualElement
         m_Inventory = Root.Q<VisualElement>("Inventory");
         m_InventoryComp = Inventory.Instance;
 
-        // Name it based on the user friendly name of the item.
         name = $"{m_Item.Details.FriendlyName}";
-        // Set it to hidden at first so it doesn't show up till we find a spot for it in inventory.
         style.visibility = Visibility.Hidden;
 
-        // Create the actual icon image child element
         Icon = new VisualElement
         {
+            focusable = true,
             style = {
                 backgroundImage = m_Item.Details.Icon.texture,
-                // TODO in the future if we support bigger items change this as this only works with 1x1 items
-                // Set the width and length depending on the size of the object using percent as pixel had floating point inaccuracies.
                 width = Length.Percent(100 * item.Details.SlotDimension.Width),
                 height = Length.Percent(100 * item.Details.SlotDimension.Height)
             }
         };
         Add(Icon);
 
-        // Create the tool tip but don't add it for now, only add it when the mouse hovers over the icon.
         m_Tooltip = new ItemTooltip(m_Item, Root, Icon);
 
-        // Add the selectors to the elements created so the correct styles are applied
         Icon.AddToClassList("visual-icon");
         AddToClassList("visual-icon-container");
 
-        // Register events for pointer to handle tooltip and dragging items.
         RegisterCallback<PointerDownEvent>(OnPointerDown);
     }
 
-    // When the mouse is pressed on a slot we need to start dragging that item
     void OnPointerDown(PointerDownEvent data)
     {
-        // Set the icon's position to the current position of the mouse
-        MoveItem(data.localPosition);
-
-        // Register the mouse move event for dragging, use m_Root so it keeps tracking
-        // movement even if cursor manages to get outside the icon.
+        StartDragging(data.localPosition);
         Root.RegisterCallback<PointerMoveEvent>(DragItem);
         Root.RegisterCallback<PointerUpEvent>(OnPointerUp);
-
-        // Set dragging to true
-        m_Dragging = true;
-        // Hides the tool tip while we are dragging
         m_Tooltip.StopShowingTooltip();
+    }
+
+    void StartDragging(Vector2 startPos)
+    {
+        m_Dragging = true;
+        m_OriginalPosition = new Vector2(Icon.style.left.value.value, Icon.style.top.value.value);
+        
+        // Create drag preview that renders on top
+        m_DragPreview = new VisualElement
+        {
+            style = {
+                position = Position.Absolute,
+                backgroundImage = m_Item.Details.Icon.texture,
+                width = Icon.resolvedStyle.width,
+                height = Icon.resolvedStyle.height,
+                opacity = 0.8f
+            }
+        };
+        m_DragPreview.AddToClassList("visual-icon");
+        m_DragPreview.AddToClassList("drag-preview");
+        Root.Add(m_DragPreview);
+        
+        // Hide original icon during drag
+        Icon.style.opacity = 0.3f;
+        
+        MoveElement(m_DragPreview, startPos);
     }
 
     void OnPointerUp(PointerUpEvent data) 
@@ -69,53 +81,122 @@ public partial class ItemVisual : VisualElement
         EndDragging(data.position);
     }
 
-    // Mouse move event for dragging the item, called while dragging an item every time the mouse moves
     void DragItem(PointerMoveEvent data)
     {
-        // If the mouse is still being held down
-        if(Input.GetMouseButton(0))
-            // Move the item, converting the world position of the mouse to the local position of the slot
-            MoveItem(this.WorldToLocal(data.position));
-        // If the mouse isn't held down anymore
+        if (Input.GetMouseButton(0) && m_DragPreview != null)
+            MoveElement(m_DragPreview, Root.WorldToLocal(data.position));
         else
-            // Call the function to end dragging
             EndDragging(data.position);
     }
 
-    // Ends the dragging, either removing the item if outside the inventory or resetting it if inside the inventory
-    void EndDragging(UnityEngine.Vector2 pos)
+    void EndDragging(Vector2 pos)
     {
-        // Unregister the drag event
+
+        var grid = Root.Q<VisualElement>("Grid");
+        var lPos = grid.WorldToLocal(pos);
+        var normalizedPos = new Vector2(lPos.x / grid.resolvedStyle.width, lPos.y / grid.resolvedStyle.height);
+        Debug.Log($"Ending drag at {lPos}");
+
         Root.UnregisterCallback<PointerMoveEvent>(DragItem);
         Root.UnregisterCallback<PointerUpEvent>(OnPointerUp);
 
-        // Check if the mouse is currently inside the inventory box
+        // Clean up drag preview
+        if (m_DragPreview != null)
+        {
+            Root.Remove(m_DragPreview);
+            m_DragPreview = null;
+        }
+        
+        Icon.style.opacity = 1f;
+
         if (m_Inventory.localBound.Contains(m_Inventory.WorldToLocal(pos)))
         {
-            // If it is reset the item back to its slot
-            Icon.style.left = 0;
-            Icon.style.top = 0;
+            Vector2 localPos = m_Inventory.WorldToLocal(pos);
+            Vector2Int gridPos = GetGridPosition(localPos);
+            
+            if (CanPlaceItemAt(gridPos.x, gridPos.y))
+            {
+                MoveItemToPosition(gridPos.x, gridPos.y);
+            }
+            else
+            {
+                // Reset to original position if can't place
+                Icon.style.left = m_OriginalPosition.x;
+                Icon.style.top = m_OriginalPosition.y;
+            }
         }
-        // If it's not inside the inventory
         else
-            // TODO add code to spew the item out here
-            // Delete the item from the inventory
+        {
+            // Drop outside inventory - remove item
             m_InventoryComp.DeleteItem(m_Item);
+        }
 
-        // Set dragging back to false
         m_Dragging = false;
-        // Start showing the tooltip again after being done dragging
         m_Tooltip.StartShowingTooltip();
     }
 
-    // Function for moving the item icons, use this instead of move element for moving an item icon
-    void MoveItem(UnityEngine.Vector2 pos)
+    bool CanPlaceItemAt(int x, int y)
+    {
+        Rect itemRect = new Rect(x, y, m_Item.Details.SlotDimension.Width, m_Item.Details.SlotDimension.Height);
+        
+        // Check bounds
+        if (x + itemRect.width > m_InventoryComp.InventoryDimensions.Width || 
+            y + itemRect.height > m_InventoryComp.InventoryDimensions.Height)
+            return false;
+
+        // Check for overlaps with other items (excluding this item)
+        foreach(StoredItem item in m_InventoryComp.StoredItems)
+        {
+            if (item != m_Item && item.RootVisual.Count > 0 && item.OverlapRectangle.Overlaps(itemRect))
+                return false;
+        }
+        
+        return true;
+    }
+
+    void MoveItemToPosition(int x, int y)
+    {
+        // Remove from current position
+        foreach(var layoutVisualPair in m_Item.RootVisual)
+        {
+            layoutVisualPair.Value.RemoveFromHierarchy();
+        }
+        
+        // Update the item's overlap rectangle
+        m_Item.OverlapRectangle = new Rect(x, y, m_Item.Details.SlotDimension.Width, m_Item.Details.SlotDimension.Height);
+        
+        // Add to new position in all layouts
+        foreach(var layoutVisualPair in m_Item.RootVisual)
+        {
+            layoutVisualPair.Key.AddItem(layoutVisualPair.Value, x, y);
+        }
+        
+        // Reset local position
+        Icon.style.left = 0;
+        Icon.style.top = 0;
+    }
+
+    Vector2Int GetGridPosition(Vector2 localPos)
+    {
+        // Estimate slot size based on inventory dimensions and container size
+        float containerWidth = m_Inventory.resolvedStyle.width;
+        float containerHeight = m_Inventory.resolvedStyle.height;
+        
+        float slotWidth = containerWidth / m_InventoryComp.InventoryDimensions.Width;
+        float slotHeight = containerHeight / m_InventoryComp.InventoryDimensions.Height;
+        
+        return new Vector2Int(
+            Mathf.FloorToInt(localPos.x / slotWidth),
+            Mathf.FloorToInt(localPos.y / slotHeight)
+        );
+    }
+
+    void MoveItem(Vector2 pos)
     {
         MoveElement(Icon, pos);
     }
 
-    // Moves the tooltip based on the provided position, assumed position is in local space of the root element
-    void MoveElement(VisualElement item, UnityEngine.Vector2 pos)
+    void MoveElement(VisualElement item, Vector2 pos)
     {
         item.style.left = pos.x;
         item.style.top = pos.y;

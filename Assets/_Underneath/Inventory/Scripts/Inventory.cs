@@ -44,6 +44,8 @@ public class Inventory : MonoBehaviour
         {
             Destroy(this);
         }
+
+        StoredItems = new List<StoredItem>();
     }
 
     private void Start()
@@ -115,6 +117,9 @@ public class Inventory : MonoBehaviour
 
         if(result)
             StoredItems.Add(sItem);
+
+           
+        RecalculateWeight();
 
         return result;
     }

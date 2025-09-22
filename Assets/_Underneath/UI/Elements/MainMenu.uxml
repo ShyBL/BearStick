@@ -1,11 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/BaseUIStyle.uss?fileID=7433441132597879392&amp;guid=302a0e2215d761242893af0356419587&amp;type=3#BaseUIStyle" />
-    <ui:VisualElement name="Container" class="container" style="flex-grow: 1;">
-        <ui:Label tabindex="-1" text="Underneath" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 154px; color: rgb(161, 161, 161); height: 33%;" />
-        <ui:VisualElement name="VisualElement" style="height: 55%; justify-content: space-between;">
-            <CustomButton Text="Play" name="Play" Starting-Direction="1" class="element-background button" style="width: 20%; -unity-font-style: bold; font-size: 62px;" />
-            <CustomButton Text="Delete Saves" name="Delete" Starting-Direction="0" class="element-background button" style="width: 20%; height: auto; font-size: 45px; white-space: normal;" />
-            <CustomButton Text="Exit" name="Exit" Starting-Direction="-1" class="element-background button" style="width: 20%; -unity-font-style: bold; font-size: 62px;" />
+    <ui:VisualElement name="Root" style="flex-grow: 1; -unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/_Underneath/UI/Sprites/NEW/MainMenuBackground.png?fileID=2800000&amp;guid=aa6a8490259612f45b3e5d4b25746d05&amp;type=3#MainMenuBackground&quot;); background-color: rgba(0, 0, 0, 0); -unity-background-scale-mode: scale-and-crop; justify-content: space-between;">
+        <ui:VisualElement name="Vignette" style="width: 100%; height: 100%; background-image: url(&quot;project://database/Assets/_Underneath/UI/CaraTemp/vignette.png?fileID=2800000&amp;guid=cdd8232d1f3132041bfeca08595aa873&amp;type=3#vignette&quot;); -unity-background-scale-mode: stretch-to-fill; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(0, 0, 0); position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: none; visibility: hidden; overflow: hidden;" />
+        <ui:VisualElement name="Title" style="background-image: url(&quot;project://database/Assets/_Underneath/UI/CaraTemp/Title%20Logos.png?fileID=2800000&amp;guid=2cd67a7e5dcf44a4fb1adeba837804ea&amp;type=3#Title Logos&quot;); -unity-background-scale-mode: scale-to-fit; height: 279px; margin-top: 50px;" />
+        <ui:VisualElement name="ButtonsPanel" style="flex-direction: row; justify-content: center; align-self: center; width: 100%; height: 100px; display: flex; visibility: visible; overflow: visible; opacity: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-bottom: 55px;">
+            <CustomButton Text="Play" name="Play" Starting-Direction="1" Min-Random-Rotation="4" Show-Border="true" class="button mainmenu-button tiled-background" />
+            <CustomButton Text="Saves" name="Saves" Starting-Direction="0" class="button mainmenu-button tiled-background" />
+            <CustomButton Text="Exit" name="Exit" Starting-Direction="-1" class="button mainmenu-button tiled-background" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -1,38 +1,40 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/BaseUIStyle.uss?fileID=7433441132597879392&amp;guid=302a0e2215d761242893af0356419587&amp;type=3#BaseUIStyle" />
     <Style src="project://database/Assets/_Underneath/Inventory/UI%20Toolkit/InventoryStyle.uss?fileID=7433441132597879392&amp;guid=d73c7c6713ca5fb48aa9f2e6da70bb4e&amp;type=3#InventoryStyle" />
-    <ui:VisualElement name="Inventory" style="flex-direction: row; align-items: stretch; justify-content: center; flex-grow: 1;">
-        <ui:VisualElement name="BagArea" style="align-items: center; justify-content: center; width: 75%; height: 95%; align-self: center;">
-            <ui:VisualElement style="position: absolute; height: 125%; background-image: url(&apos;project://database/Assets/_Underneath/UI/Sprites/NEW/InventoryBag.png?fileID=21300000&amp;guid=6dd52d1ac17652c4298c246d4e0b154d&amp;type=3#InventoryBag&apos;); width: 150%;" />
-            <ui:VisualElement name="Grid" style="flex-direction: row; flex-wrap: wrap; height: 66%; justify-content: center; padding-bottom: 0; width: 115%; top: 27px;">
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
-                <ui:VisualElement name="Slot" class="slots" />
+    <AspectRatioElement aspect-ratio="0.6953642" max-size="10000" name="Inventory" style="width: 563px; background-image: url(&apos;project://database/Assets/_Underneath/UI/Sprites/NEW/InventoryBag.png?fileID=2800000&amp;guid=6dd52d1ac17652c4298c246d4e0b154d&amp;type=3#InventoryBag&apos;); align-items: stretch; justify-content: center; height: 720px; position: absolute;">
+        <ui:VisualElement name="BagArea" style="align-items: stretch; flex-grow: 1; justify-content: space-between; margin-top: 17%; margin-right: 13%; margin-bottom: 7%; margin-left: 13%;">
+            <ui:VisualElement name="Grid" style="flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: center; margin-left: 3%; margin-right: 3%;">
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
+                <AspectRatioElement name="Slot" aspect-ratio="0.90" class="slots" />
             </ui:VisualElement>
-            <ui:VisualElement name="Pockets" style="width: 100%; height: 33%; flex-direction: row; justify-content: space-between; padding-top: 5%;">
-                <ui:VisualElement name="Empty1" class="pocket-item" />
-                <ui:VisualElement name="Empty2" class="pocket-item" />
+            <ui:VisualElement name="Pockets" style="width: 95%; height: 33%; flex-direction: row; justify-content: space-between; align-items: flex-start; padding-left: 8%;">
+                <ui:VisualElement name="WatchArea" style="width: 40%;">
+                    <AspectRatioElement name="Sprite" aspect-ratio="0.8250825" size="175" style="background-image: url(&apos;project://database/Assets/_Underneath/UI/Sprites/pocketWatch.png?fileID=2800000&amp;guid=55d383a437eb0674989dede92739a22d&amp;type=3#pocketWatch&apos;); justify-content: center; align-items: center; padding-top: 26%; padding-right: 5.25%;">
+                        <ui:VisualElement name="ClockHand" style="background-image: url(&apos;project://database/Assets/_Underneath/UI/Sprites/NEW/WatchHand.png?fileID=21300000&amp;guid=cfc37364d1946db4cbcf1d648a76001d&amp;type=3#WatchHand&apos;); -unity-background-image-tint-color: rgb(255, 255, 255); transform-origin: center 95%; bottom: 28px; height: 65px; width: 6px;" />
+                    </AspectRatioElement>
+                </ui:VisualElement>
                 <ui:VisualElement name="Wallet" class="pocket-item" style="background-image: url(&apos;project://database/Assets/_Underneath/UI/Sprites/NEW/Wallet.png?fileID=21300000&amp;guid=69e010fd987a9de46925b50294d6444d&amp;type=3#Wallet&apos;); -unity-background-scale-mode: stretch-to-fill; width: 29%; height: 86%; bottom: 5%; -unity-background-image-tint-color: rgb(255, 255, 255);">
-                    <ui:Label tabindex="-1" text="20" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WalletCounter" class="element-background text" style="color: rgb(255, 255, 255); font-size: 50px; -unity-text-align: middle-center; padding-top: 0; padding-right: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-left: 0; padding-bottom: 0; margin-bottom: 108%; background-image: none; flex-grow: 1;" />
+                    <ui:Label tabindex="-1" text="20" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WalletCounter" class="element-background text" style="color: rgb(255, 255, 255); font-size: 50px; -unity-text-align: middle-center; margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 123%; background-image: none; flex-grow: 1;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-    </ui:VisualElement>
+    </AspectRatioElement>
 </ui:UXML>

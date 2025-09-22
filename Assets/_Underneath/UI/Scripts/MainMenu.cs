@@ -12,47 +12,58 @@ public class MainMenu : OurMonoBehaviour
     private VisualElement m_Root;
     private Button m_Play;
     private Button m_Exit;
-    private Button m_Delete;
+    private Button m_Saves;
 
     private void Awake()
-    { 
+    {
+        //null check for editor
+        if (GameManager == null || GameManager.AudioManager == null)
+        {
+            Debug.LogError("AudioManager is not initialized");
+            return;
+        }
         GameManager.AudioManager.ChangeTheme("Menu");
     }
 
     void Start()
     {
         m_Doc = GetComponent<UIDocument>();
+
         m_Root = m_Doc.rootVisualElement;
         m_Play = m_Root.Q<Button>("Play");
-        m_Delete = m_Root.Q<Button>("Delete");
+        m_Saves = m_Root.Q<Button>("Saves");
         m_Exit = m_Root.Q<Button>("Exit");
-        
+
+
         m_Play.RegisterCallback<ClickEvent>(PlayPressed);
-        m_Delete.RegisterCallback<ClickEvent>(DeletePressed);
+        m_Saves.RegisterCallback<ClickEvent>(SavesPressed);
         m_Exit.RegisterCallback<ClickEvent>(ExitPressed);
     }
 
-    private void DeletePressed(ClickEvent evt)
+    private void SavesPressed(ClickEvent evt)
     {
-        var path = Application.persistentDataPath;
-        var files = Directory.GetFiles(path);
+        // TODO: MOVING?
+        // var path = Application.persistentDataPath;
+        // var files = Directory.GetFiles(path);
 
-        foreach (var fileName in files)
-        {
-            if (fileName.Contains("PlayerData"))
-            {
-                Debug.Log($"Deleting {fileName}");
-                File.Delete(fileName);
-            }
-        }
+        // foreach (var fileName in files)
+        // {
+        //     if (fileName.Contains("PlayerData"))
+        //     {
+        //         Debug.Log($"Deleting {fileName}");
+        //         File.Delete(fileName);
+        //     }
+        // }
     }
 
     void PlayPressed(ClickEvent evt)
     {
 #if UNITY_WEBGL
+        Debug.Log("play pressed");
+
         StartCoroutine(LoadMainLevelCoroutine());
 #else
-            LoadMainLevelAsync();
+        LoadMainLevelAsync();
 #endif
     }
 
